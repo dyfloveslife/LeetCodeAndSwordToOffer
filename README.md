@@ -3,5 +3,5 @@
 |:-:|:-:|
 |1|-|
 
-# LeetCode:x
+# LeetCode
 
