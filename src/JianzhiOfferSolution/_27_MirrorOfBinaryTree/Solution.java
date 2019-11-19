@@ -19,9 +19,11 @@ class TreeNode {
 public class Solution {
 	public void mirrorOfBinaryTree(TreeNode root) {
 		if (root == null) return;
+
+		// 说明已经到了叶节点了
 		if (root.left == null && root.right == null) return;
 
-		// swap
+		// 交换操作
 		TreeNode tempNode = root.left;
 		root.left = root.right;
 		root.right = tempNode;
