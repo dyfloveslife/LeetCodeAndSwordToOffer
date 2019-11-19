@@ -1,4 +1,4 @@
-package _03_FindDuplicationInArray;
+package JianzhiOfferSolution._03_FindDuplicationInArray;
 
 public class Solution {
 	public static boolean duplicate(int[] nums, int length, int[] duplicate) {

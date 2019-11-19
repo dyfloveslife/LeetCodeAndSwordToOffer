@@ -1,4 +1,4 @@
-package _05_ReplaceSpaces;
+package JianzhiOfferSolution._05_ReplaceSpaces;
 
 public class Solution {
 	public static String replaceSpaces(StringBuffer str) {

@@ -1,4 +1,4 @@
-package _18_02_DeleteDuplicatedNode;
+package JianzhiOfferSolution._18_02_DeleteDuplicatedNode;
 
 public class Solution {
 	public class ListNode {

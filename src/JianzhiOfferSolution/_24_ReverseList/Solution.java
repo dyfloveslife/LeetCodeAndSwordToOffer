@@ -1,4 +1,4 @@
-package _24_ReverseList;
+package JianzhiOfferSolution._24_ReverseList;
 
 /**
  * 翻转单链表

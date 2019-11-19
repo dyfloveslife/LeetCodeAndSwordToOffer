@@ -1,4 +1,4 @@
-package _15_NumberOf1InBinary;
+package JianzhiOfferSolution._15_NumberOf1InBinary;
 
 public class Solution {
 	private static int numberOf1(int n) {

@@ -1,4 +1,4 @@
-package _17_Print1ToMaxOfNDigits;
+package JianzhiOfferSolution._17_Print1ToMaxOfNDigits;
 
 public class Solution {
 	// 方法一

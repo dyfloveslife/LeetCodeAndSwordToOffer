@@ -1,4 +1,4 @@
-package _27_MirrorOfBinaryTree;
+package JianzhiOfferSolution._27_MirrorOfBinaryTree;
 
 /**
  * 求二叉树的镜像

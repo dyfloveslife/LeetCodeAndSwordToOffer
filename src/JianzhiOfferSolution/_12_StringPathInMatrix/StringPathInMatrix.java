@@ -1,4 +1,4 @@
-package _12_StringPathInMatrix;
+package JianzhiOfferSolution._12_StringPathInMatrix;
 
 /**
  * 实现一：

@@ -1,4 +1,4 @@
-package _04_FindInPartiallySortedMatrix;
+package JianzhiOfferSolution._04_FindInPartiallySortedMatrix;
 
 /**
  * 题目描述：

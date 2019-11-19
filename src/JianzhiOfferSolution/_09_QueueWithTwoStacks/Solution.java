@@ -1,4 +1,4 @@
-package _09_QueueWithTwoStacks;
+package JianzhiOfferSolution._09_QueueWithTwoStacks;
 
 import java.util.Stack;
 

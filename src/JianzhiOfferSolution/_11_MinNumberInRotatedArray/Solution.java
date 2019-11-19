@@ -1,4 +1,4 @@
-package _11_MinNumberInRotatedArray;
+package JianzhiOfferSolution._11_MinNumberInRotatedArray;
 
 public class Solution {
 	public int minNumberInRotateArray(int[] array) {

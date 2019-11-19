@@ -1,4 +1,4 @@
-package _21_ReorderArray;
+package JianzhiOfferSolution._21_ReorderArray;
 
 public class Solution {
 	public void reorderArray(int[] array) {

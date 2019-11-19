@@ -1,4 +1,4 @@
-package _06_PrintListInReversedOrder;
+package JianzhiOfferSolution._06_PrintListInReversedOrder;
 
 import java.util.ArrayList;
 import java.util.Stack;

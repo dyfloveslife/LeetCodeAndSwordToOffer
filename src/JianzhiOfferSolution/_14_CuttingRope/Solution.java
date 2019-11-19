@@ -1,4 +1,4 @@
-package _14_CuttingRope;
+package JianzhiOfferSolution._14_CuttingRope;
 
 public class Solution {
 	/**

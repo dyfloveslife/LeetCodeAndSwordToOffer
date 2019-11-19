@@ -1,4 +1,4 @@
-package _25_MergeSortedLists;
+package JianzhiOfferSolution._25_MergeSortedLists;
 
 /**
  * 合并两个单链表

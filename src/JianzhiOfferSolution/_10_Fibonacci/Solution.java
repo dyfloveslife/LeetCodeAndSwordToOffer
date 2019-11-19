@@ -1,4 +1,4 @@
-package _10_Fibonacci;
+package JianzhiOfferSolution._10_Fibonacci;
 
 public class Solution {
 	public int Fibpnacci(int n) {

@@ -1,4 +1,4 @@
-package _16_Power;
+package JianzhiOfferSolution._16_Power;
 
 /**
  * 1、当底数是 0 且指数为 负数 的时候，就返回 0

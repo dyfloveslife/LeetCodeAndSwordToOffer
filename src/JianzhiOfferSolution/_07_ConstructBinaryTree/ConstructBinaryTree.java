@@ -1,4 +1,4 @@
-package _07_ConstructBinaryTree;
+package JianzhiOfferSolution._07_ConstructBinaryTree;
 
 import other.BinaryTreeOrder;
 

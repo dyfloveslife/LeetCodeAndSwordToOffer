@@ -1,4 +1,4 @@
-package _22_KthNodeFromEnd;
+package JianzhiOfferSolution._22_KthNodeFromEnd;
 
 /**
  * 求链表中倒数第 K 个节点

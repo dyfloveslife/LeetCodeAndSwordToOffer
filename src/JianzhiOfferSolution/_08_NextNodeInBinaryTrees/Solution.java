@@ -1,4 +1,4 @@
-package _08_NextNodeInBinaryTrees;
+package JianzhiOfferSolution._08_NextNodeInBinaryTrees;
 
 class TreeNode<Integer> {
 	int val = 0;

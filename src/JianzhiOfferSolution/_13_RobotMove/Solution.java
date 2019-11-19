@@ -1,4 +1,4 @@
-package _13_RobotMove;
+package JianzhiOfferSolution._13_RobotMove;
 
 /**
  * 机器人走格子

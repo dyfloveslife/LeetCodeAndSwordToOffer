@@ -1,4 +1,4 @@
-package _26_SubstructureInTree;
+package JianzhiOfferSolution._26_SubstructureInTree;
 
 /**
  * 注意 null的条件，HasSubTree 中，如果两棵树都不为空才进行判断，

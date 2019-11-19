@@ -1,4 +1,4 @@
-package _23_EntryNodeInListLoop;
+package JianzhiOfferSolution._23_EntryNodeInListLoop;
 
 /**
  * 如何在一个包含环的链表中，找出环的入口点?
