@@ -28,5 +28,9 @@
 |  25   |            [MergeSortedLists](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_25_MergeSortedLists/Solution.java)            |
 |  26   |          [SubstructureInTree](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_26_SubstructureInTree/Solution.java)          |
 |  27   |          [MirrorOfBinaryTree](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_27_MirrorOfBinaryTree/Solution.java)          |
+|  28   |       [SymmetricalBinaryTree](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_28_SymmetricalBinaryTree/Solution.java)       |
+|  29   |                 [PrintMatrix](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_29_PrintMatrix/Solution.java)                 |
+|  30   |                  [MinInStack](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_30_MinInStack/Solution.java)                  |
+
 
 # LeetCode
