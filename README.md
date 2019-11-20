@@ -31,6 +31,6 @@
 |  28   |       [SymmetricalBinaryTree](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_28_SymmetricalBinaryTree/Solution.java)       |
 |  29   |                 [PrintMatrix](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_29_PrintMatrix/Solution.java)                 |
 |  30   |                  [MinInStack](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_30_MinInStack/Solution.java)                  |
-
+|  31   |           [StackPushPopOrder](https://github.com/dyfloveslife/LeetCodeAndJianzhiOffer/blob/master/src/JianzhiOfferSolution/_31_StackPushPopOrder/Solution.java)           |
 
 # LeetCode
