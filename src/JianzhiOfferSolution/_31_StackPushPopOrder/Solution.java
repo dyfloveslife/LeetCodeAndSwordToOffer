@@ -20,7 +20,7 @@ public class Solution {
 		Stack<Integer> stack = new Stack<>();
 		// 弹出序列的位置
 		int popIndex = 0;
-		for (int pushIndex = 0 ; pushIndex < pushSequence.length; pushIndex++) {
+		for (int pushIndex = 0 ;pushIndex < pushSequence.length; pushIndex++) {
 			stack.push(pushSequence[pushIndex]);
 
 			while (!stack.isEmpty() && stack.peek() == popSequence[popIndex]) {
@@ -32,7 +32,6 @@ public class Solution {
 		}
 		return stack.isEmpty();
 	}
-
 
 	public static void main(String[] args) {
 		int[] push = {1, 2, 3, 4, 5};
