@@ -28,7 +28,6 @@ public class Solution {
 				popIndex++;
 
 			}
-
 		}
 		return stack.isEmpty();
 	}
