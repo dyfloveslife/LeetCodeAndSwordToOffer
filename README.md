@@ -32,5 +32,10 @@
 |  29   |                 [PrintMatrix](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_29_PrintMatrix/Solution.java)                 |
 |  30   |                  [MinInStack](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_30_MinInStack/Solution.java)                  |
 |  31   |           [StackPushPopOrder](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_31_StackPushPopOrder/Solution.java)           |
+| 32_01 |  [PrintTreeFromTopToBottom](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_01_PrintTreeFromTopToBottom/Solution.java)   |
+| 32_02 |         [PrintTreesInLines](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_02_PrintTreesInLines/Solution.java)          |
+| 32_03 |        [PrintTreesInZigzag](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_03_PrintTreesInZigzag/Solution.java)         |
+|  33   |                [SquenceOfBST](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_33_SquenceOfBST/Solution.java)                |
+
 
 # LeetCode
