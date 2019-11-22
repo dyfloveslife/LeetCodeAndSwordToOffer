@@ -26,12 +26,16 @@ public class Solution {
 	}
 
 	private boolean isSymmertical(TreeNode pRoot1, TreeNode pRoot2) {
+	    // 如果两个根节点都是空
 		if (pRoot1 == null && pRoot2 == null) return true;
 
+		// 其中一个节点不为空
 		if (pRoot1 == null || pRoot2 == null) return false;
 
+		// 不满足对称的条件，则返回 false
 		if (pRoot1.val != pRoot2.val) return false;
 
+		// 递归检查对称位置
 		return isSymmertical(pRoot1.left, pRoot2.right) && isSymmertical(pRoot1.right, pRoot2.left);
 	}
 }
