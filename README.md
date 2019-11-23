@@ -36,6 +36,7 @@
 | 32_02 |         [PrintTreesInLines](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_02_PrintTreesInLines/Solution.java)          |
 | 32_03 |        [PrintTreesInZigzag](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_03_PrintTreesInZigzag/Solution.java)         |
 |  33   |          [VerifySquenceOfBST](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_33_VerifySquenceOfBST/Solution.java)          |
-
+|  34   |                  [PathInTree](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_34_PathInTree/Solution.java)                  |
+|  35   |             [CopyComplexList](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_35_CopyComplexList/Solution.java)             |
 
 # LeetCode
