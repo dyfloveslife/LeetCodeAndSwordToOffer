@@ -5,14 +5,20 @@ import java.util.HashMap;
 /**
  * 复杂链表的复制
  * 思路一：使用哈希表
+ * <p>
  * 开一个哈希表，key 存储当前节点， value 存储由当前节点复制过来的节点，即 A->A'；
  * 然后后移，将下一个节点以及其复制节点也存储到哈希表中，即 B->B'；
  * 重复此操作后，就有了一个节点及其拷贝节点之间的关系；
- *
+ * <p>
  * 关系确定了之后，如何确定拷贝节点的 next 与 random 的指针呢？
  * 1. 我们知道原链表 A 的 next 是 B，用 B 去查哈希表，得到 B'，所以 A' 的 random 就指向 B'；
  * 2. 原链表 A 的 random 是 C，用 C 去查哈希表，得到 C'，所以 A' 的 random 就指向 C'。
  * 重复以上操作即可。
+ *
+ * 思路二：
+ * 1. 将当前节点的拷贝节点放在当前节点的后面，也就是说放在下一个节点之前。
+ * 2. 由于 A 的 random 是 C，那我们直接找到 C 的 next，即 C'，让 A' 的 random 指向 C' 即可。
+ * 3. 重复以上操作后，再将原链表和复制后的链表进行分离即可。
  */
 class RandomListNode {
     int label = 0;
@@ -26,7 +32,7 @@ class RandomListNode {
 
 public class Solution {
     // 方法一：使用额外空间：哈希表
-    public RandomListNode clone(RandomListNode pHead){
+    public RandomListNode clone1(RandomListNode pHead) {
         HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
 
         RandomListNode cur = pHead;
@@ -49,5 +55,42 @@ public class Solution {
         }
         // 返回的是原链表头节点的拷贝节点
         return map.get(pHead);
+    }
+
+    // 方法二：将每个节点的拷贝节点放在其节点之后，类似于 A->A'->B->B'。
+    public RandomListNode clone2(RandomListNode pHead) {
+        if (pHead == null) return null;
+
+        // 复制链表的同时，将复制后的节点放到原节点之后，只关心 next，不关系 random。
+        RandomListNode cur = pHead;
+        RandomListNode next = null;
+        while (cur != null) {
+            next = cur.next;
+            cur.next = new RandomListNode(cur.label); // 原节点指向复制后的节点
+            cur.next.next = next; // 复制后的节点指向下一个新的节点
+            cur = next; // cur 移动到该新的节点
+        }
+
+        // 设置每个节点的 random 指针
+        cur = pHead;
+        RandomListNode curCopy = null;
+        while (cur != null) {
+            next = cur.next.next;
+            curCopy = cur.next;
+            curCopy.random = cur.random != null ? cur.random.next : null;
+            cur = next;
+        }
+
+        // 将两个链表进行分离
+        cur = pHead;
+        RandomListNode res = pHead.next; //不能设置为 cur.next，因为 cur 是变化的，而 head 是不变的
+        while (cur != null) {
+            next = cur.next.next;
+            curCopy = cur.next;
+            cur.next = next; // 先连接原链表
+            curCopy.next = next != null ? next.next : null; // 再连接拷贝链表
+            cur = next;
+        }
+        return res;
     }
 }
