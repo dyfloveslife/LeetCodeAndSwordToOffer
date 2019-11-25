@@ -36,11 +36,11 @@ public class Solution {
         return res;
     }
 
-    // 将字符串逐个添加到队列中
+    // 反序列化：将字符串逐个添加到队列中
     TreeNode Deserialize(String str) {
         String[] values = str.split("_");
         Queue<String> queue = new LinkedList<>();
-        for (int i = 0; i != values.length; i++) {
+        for (int i = 0; i < values.length; i++) {
             queue.offer(values[i]);
         }
         return reconPreOrder(queue);
