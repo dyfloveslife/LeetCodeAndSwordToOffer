@@ -1,27 +1,29 @@
 package SwordToOfferSolution._07_ConstructBinaryTree;
 
-class TreeNode<Integer> {
+/**
+ * 重建二叉树
+ * 思路：
+ * 根据前序遍历和中序遍历可重建二叉树；
+ * 根据中序遍历和后序遍历棵重建二叉树。
+ */
+class TreeNode {
 	int val = 0;
-	TreeNode left;
-	TreeNode right;
-	TreeNode parent;
+	TreeNode left = null;
+	TreeNode right = null;
 
 	TreeNode(int val) {
 		this.val = val;
-		this.left = null;
-		this.right = null;
-		this.parent = null;
 	}
 }
 
 class Solution {
-	public static TreeNode constructBinaryTree(int[] pre, int[] in) {
+	public TreeNode constructBinaryTree(int[] pre, int[] in) {
 		if (pre == null || in == null || pre.length <= 0 ||
 				in.length <= 0 || pre.length != in.length) return null;
 		return reConstructBinaryTree(pre, 0, pre.length - 1, in, 0, in.length - 1);
 	}
 
-	public static TreeNode reConstructBinaryTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn) {
+	public TreeNode reConstructBinaryTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn) {
 		if (startPre > endPre || startIn > endIn) return null;
 		TreeNode root = new TreeNode(pre[startPre]);
 
