@@ -77,9 +77,10 @@ public class Solution {
         // 设置大顶堆
         // 若 o2 > o1，则返回正数；若 o2 < o1，则返回负数；否则返回 0。
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, new Comparator<Integer>() {
+            // 默认是小顶堆，如果要实现大顶堆，则需要翻转默认的排序器
             @Override
             public int compare(Integer o1, Integer o2) {
-                return o2.compareTo(o1);    // 大顶堆
+                return o2.compareTo(o1);
             }
         });
 
