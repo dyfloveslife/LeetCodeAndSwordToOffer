@@ -38,5 +38,11 @@
 |  33   |          [VerifySquenceOfBST](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_33_VerifySquenceOfBST/Solution.java)          |
 |  34   |                  [PathInTree](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_34_PathInTree/Solution.java)                  |
 |  35   |             [CopyComplexList](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_35_CopyComplexList/Solution.java)             |
+|  36   |     [ConvertBinarySearchTree](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_36_ConvertBinarySearchTree/Solution.java)     |
+|  37   |        [SerializeBinaryTrees](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_37_SerializeBinaryTrees/Solution.java)        |
+|  38   |           [StringPermutation](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_38_StringPermutation/Solution.java)           |
+|  39   |          [MoreThanHalfNumber](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_39_MoreThanHalfNumber/Solution.java)          |
+|  40   |               [KLeastNumbers](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_40_KLeastNumbers/Solution.java)               |
+
 
 # LeetCode

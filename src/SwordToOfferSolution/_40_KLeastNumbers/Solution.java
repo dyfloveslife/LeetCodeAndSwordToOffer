@@ -41,6 +41,8 @@ public class Solution {
         int pivot = nums[low];
         int i = low, j = height + 1;
         while (true) {
+            // 保持头尾两个指针向中间扫描，每次在头部找到大于pivot的值，同时在尾部找到小于pivot的值，
+            // 然后将它们做一个交换，就可以一次把这两个数字放到最终的位置。
             // 从左到右，不断找到小于 pivot 的数
             while (i != height && nums[++i] < pivot) ;
             // 从右到左，不断找到大于 pivot 的数
