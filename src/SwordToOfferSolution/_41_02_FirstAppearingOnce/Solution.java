@@ -36,6 +36,5 @@ public class Solution {
     // 返回当前字符流中第一个不重复出现的字符
     public char firstAppearingOnce() {
         return queue.isEmpty() ? '#' : queue.peek();
-
     }
 }
