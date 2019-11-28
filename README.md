@@ -43,6 +43,9 @@
 |  38   |           [StringPermutation](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_38_StringPermutation/Solution.java)           |
 |  39   |          [MoreThanHalfNumber](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_39_MoreThanHalfNumber/Solution.java)          |
 |  40   |               [KLeastNumbers](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_40_KLeastNumbers/Solution.java)               |
-
+| 41_01 |              [StreamMedian](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_41_01_StreamMedian/Solution.java)               |
+| 41_02 |        [FirstAppearingOnce](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_41_02_FirstAppearingOnce/Solution.java)         |
+|  42   |      [GreatestSumOfSubarrays](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_42_GreatestSumOfSubarrays/Solution.java)      |
+|  43   |       [NumberOf1Between1AndN](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_43_NumberOf1Between1AndN/Solution.java)       |
 
 # LeetCode
