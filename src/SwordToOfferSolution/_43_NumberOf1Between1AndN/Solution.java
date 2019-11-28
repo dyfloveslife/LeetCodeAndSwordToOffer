@@ -4,7 +4,7 @@ package SwordToOfferSolution._43_NumberOf1Between1AndN;
  * 从整数 1 到 n 中 1 出现的次数
  * 思路：
  * 找数字的规律
- *
+ * https://dyfloveslife.github.io/2019/11/28/offer-NumberOf1Between1AndN/
  */
 public class Solution {
     public int numberOf1Between1AndN_Solution(int n) {
