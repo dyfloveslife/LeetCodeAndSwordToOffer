@@ -1,4 +1,4 @@
-package other;
+package Other.Other;
 
 public class ArrayPartition {
 	public static int arrayPairSum(int[] nums) {

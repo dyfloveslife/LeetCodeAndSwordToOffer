@@ -1,4 +1,4 @@
-package other;
+package Other.Other;
 
 /**
  * 删除链表的中间节点

@@ -1,4 +1,4 @@
-package other;
+package Other.Other;
 
 public class FlipAndInvertImage {
 	public static int[][] flipAndInvertImage(int[][] A) {

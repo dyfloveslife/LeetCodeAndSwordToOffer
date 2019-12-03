@@ -1,4 +1,4 @@
-package other;
+package Other.Other;
 
 /**
  * 在数组中找到一个局部最小的位置

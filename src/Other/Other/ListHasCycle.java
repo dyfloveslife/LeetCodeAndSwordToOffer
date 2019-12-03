@@ -1,4 +1,4 @@
-package other;
+package Other.Other;
 
 /**
  * 判断链表是否有环

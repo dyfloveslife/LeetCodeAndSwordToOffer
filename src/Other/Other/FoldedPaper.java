@@ -1,4 +1,4 @@
-package other;
+package Other.Other;
 
 /**
  * 折纸问题
