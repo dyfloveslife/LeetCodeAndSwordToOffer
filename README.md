@@ -47,5 +47,9 @@
 | 41_02 |        [FirstAppearingOnce](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_41_02_FirstAppearingOnce/Solution.java)         |
 |  42   |      [GreatestSumOfSubarrays](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_42_GreatestSumOfSubarrays/Solution.java)      |
 |  43   |       [NumberOf1Between1AndN](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_43_NumberOf1Between1AndN/Solution.java)       |
+|  44   |            [DigitsInSequence](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_44_DigitsInSequence/Solution.java)            |
+|  45   |       [SortArrayForMinNumber](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_45_SortArrayForMinNumber/Solution.java)       |
+|  46   |   [TranslateNumbersToStrings](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_46_TranslateNumbersToStrings/Solution.java)   |
+
 
 # LeetCode
