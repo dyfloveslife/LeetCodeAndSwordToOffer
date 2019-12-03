@@ -3,7 +3,7 @@ package SwordToOfferSolution._38_StringPermutation;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
+/*
  * 字符串的排列
  * 图示： https://i.loli.net/2019/11/25/6qRl5XMgOAUcfmZ.png
  * 思路：递归

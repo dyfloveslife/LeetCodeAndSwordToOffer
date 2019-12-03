@@ -2,7 +2,7 @@ package SwordToOfferSolution._30_MinInStack;
 
 import java.util.Stack;
 
-/**
+/*
  * 包含 min 函数的栈
  * 可以设置一个辅助栈，将每次最小的元素（之前最小的元素与新加入的元素，这两者之间的最小值）都保存起来。
  */

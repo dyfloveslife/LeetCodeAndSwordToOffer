@@ -2,7 +2,7 @@ package SwordToOfferSolution._31_StackPushPopOrder;
 
 import java.util.Stack;
 
-/**
+/*
  * 栈的压入、弹出序列
  * 思路：
  * 首先把 入栈序列的第一个元素 放入辅助栈中，这时判断 栈顶元素 和 出栈序列的第一个元素 是否相等。如果不等则继续压栈，

@@ -1,6 +1,6 @@
 package SwordToOfferSolution._44_DigitsInSequence;
 
-/**
+/*
  * 数字序列中的某一位数字
  * 思路：
  * https://dyfloveslife.github.io/2019/11/29/offer-DigitsInSequence/

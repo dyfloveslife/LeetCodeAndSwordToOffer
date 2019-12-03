@@ -1,6 +1,6 @@
 package SwordToOfferSolution._18_01_DeleteNodeInList;
 
-/**
+/*
  * 在 O(1) 的时间内删除链表节点
  */
 public class Solution {

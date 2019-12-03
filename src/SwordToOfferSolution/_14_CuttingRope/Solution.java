@@ -1,7 +1,10 @@
 package SwordToOfferSolution._14_CuttingRope;
 
+/*
+ * 剪绳子
+ */
 public class Solution {
-	/**
+	/*
 	 * 动态规划
 	 * 0  1  2  3  4  5
 	 * 0  1  2  3 (4) (6)

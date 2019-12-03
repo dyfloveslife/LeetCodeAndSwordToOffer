@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-/**
+/*
  * 把数组排成最小的数
  * 思路:
  * 1. 比较字符串 s1s2 与 s2s1 的大小，如果 s1s2 > s2s1，则把 s2 排在前面；否则把 s1 排在前面；

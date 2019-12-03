@@ -1,6 +1,6 @@
 package SwordToOfferSolution._27_MirrorOfBinaryTree;
 
-/**
+/*
  * 求二叉树的镜像
  * 思路：
  * 前序遍历树中的每个节点，如果遍历到的节点有子节点，则交换两个子节点。

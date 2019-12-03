@@ -1,10 +1,8 @@
 package SwordToOfferSolution._36_ConvertBinarySearchTree;
 
-import sun.reflect.generics.tree.Tree;
-
-/**
+/*
  * 二叉搜索树与双向链表
- * <p>
+ *
  * 思路：
  * 1. 将左子树构造成双链表，并返回链表头节点；
  * 2. 新增一个全局变量记录左子树的最后一个节点；

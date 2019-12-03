@@ -1,6 +1,6 @@
 package SwordToOfferSolution._39_MoreThanHalfNumber;
 
-/**
+/*
  * 数组中出现次数超过一半的数字
  * 思路：多数投票算法
  * 1. 定义两个变量：一个是数组中的第一个数，另一个是出现的次数，初始值为 1；

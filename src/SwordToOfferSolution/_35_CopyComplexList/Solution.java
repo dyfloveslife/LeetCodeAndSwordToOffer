@@ -2,14 +2,14 @@ package SwordToOfferSolution._35_CopyComplexList;
 
 import java.util.HashMap;
 
-/**
+/*
  * 复杂链表的复制
  * 思路一：使用哈希表
- * <p>
+ *
  * 开一个哈希表，key 存储当前节点， value 存储由当前节点复制过来的节点，即 A->A'；
  * 然后后移，将下一个节点以及其复制节点也存储到哈希表中，即 B->B'；
  * 重复此操作后，就有了一个节点及其拷贝节点之间的关系；
- * <p>
+ *
  * 关系确定了之后，如何确定拷贝节点的 next 与 random 的指针呢？
  * 1. 我们知道原链表 A 的 next 是 B，用 B 去查哈希表，得到 B'，所以 A' 的 random 就指向 B'；
  * 2. 原链表 A 的 random 是 C，用 C 去查哈希表，得到 C'，所以 A' 的 random 就指向 C'。

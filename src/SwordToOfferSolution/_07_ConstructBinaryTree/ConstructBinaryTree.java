@@ -1,6 +1,6 @@
 package SwordToOfferSolution._07_ConstructBinaryTree;
 
-/**
+/*
  * 重建二叉树
  * 思路：
  * 根据前序遍历和中序遍历可重建二叉树；

@@ -1,6 +1,6 @@
 package SwordToOfferSolution._43_NumberOf1Between1AndN;
 
-/**
+/*
  * 从整数 1 到 n 中 1 出现的次数
  * 思路：
  * 找数字的规律

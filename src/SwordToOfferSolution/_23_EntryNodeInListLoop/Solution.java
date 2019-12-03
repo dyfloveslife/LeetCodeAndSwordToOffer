@@ -1,6 +1,6 @@
 package SwordToOfferSolution._23_EntryNodeInListLoop;
 
-/**
+/*
  * 如何在一个包含环的链表中，找出环的入口点?
  * 分析：
  * 两个指针一个fast、一个slow同时从一个链表的头部出发，

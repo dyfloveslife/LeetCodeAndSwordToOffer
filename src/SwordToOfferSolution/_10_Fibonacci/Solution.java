@@ -1,5 +1,9 @@
 package SwordToOfferSolution._10_Fibonacci;
 
+/*
+ * 斐波那契数列
+ * 改进的 DP
+ */
 public class Solution {
 	public int Fibpnacci(int n) {
 		if (n < 2) return n;

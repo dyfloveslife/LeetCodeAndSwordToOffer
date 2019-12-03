@@ -1,6 +1,6 @@
 package SwordToOfferSolution._33_VerifySquenceOfBST;
 
-/**
+/*
  * 二叉搜索树（排序树、查找树）的后序遍历序列
  * 思路：
  * 1. 后序遍历序列中，最后一个值是 根节点；

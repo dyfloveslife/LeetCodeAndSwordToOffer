@@ -1,5 +1,8 @@
 package SwordToOfferSolution._17_Print1ToMaxOfNDigits;
 
+/*
+ * 打印从 1 到最大的 n 位数
+ */
 public class Solution {
 	// 方法一
 	private static void print1ToMaxOfNDigits_Solution1(int n) {

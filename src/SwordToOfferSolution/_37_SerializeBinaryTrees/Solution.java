@@ -3,7 +3,7 @@ package SwordToOfferSolution._37_SerializeBinaryTrees;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
+/*
  * 序列化二叉树
  * 思路：
  *

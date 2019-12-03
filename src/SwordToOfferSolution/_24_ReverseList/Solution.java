@@ -1,6 +1,6 @@
 package SwordToOfferSolution._24_ReverseList;
 
-/**
+/*
  * 翻转单链表
  * 递归实现：
  */
@@ -25,7 +25,7 @@ public class Solution {
 		return newList;
 	}
 
-	/**
+	/*
 	 * 定义三个节点：
 	 * preNode: 当前节点的前一个节点
 	 * curNode: 当前节点

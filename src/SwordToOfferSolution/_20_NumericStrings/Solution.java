@@ -1,6 +1,6 @@
 package SwordToOfferSolution._20_NumericStrings;
 
-/*
+/*  表示数值的字符串
 	[]  ： 字符集合
 	()  ： 分组
 	?   ： 重复 0 ~ 1 次

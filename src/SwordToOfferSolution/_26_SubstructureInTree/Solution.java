@@ -1,6 +1,7 @@
 package SwordToOfferSolution._26_SubstructureInTree;
 
-/**
+/*
+ * 树的子结构
  * 注意 null的条件，HasSubTree 中，如果两棵树都不为空才进行判断，
  * DoesTree1HasTree2 中，如果 Tree2 为空，则说明第二棵树遍历完了，即匹配成功，
  * tree1 为空有两种情况:
