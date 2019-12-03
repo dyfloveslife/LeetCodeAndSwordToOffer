@@ -12,7 +12,7 @@ package Other.BasicAlgorithm._02_BubbleSort;
  * 0~N-2，共 N - 1 个数；
  * 0~N-3，共 N - 2 个数；
  * ......
- * 这是一个等差数列，最后的形式如同 a*N^2+bN+1，舍弃低阶项、常数项和系数，则时间复杂度就是 O(N^2)。　
+ * 这是一个等差数列，最后的形式如同 a*N^2+b*N+1，舍弃低阶项、常数项和系数，则时间复杂度就是 O(N^2)。　
  */
 public class Solution {
     public static void bubbleSort(int[] arr) {
