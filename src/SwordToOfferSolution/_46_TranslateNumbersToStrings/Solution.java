@@ -2,14 +2,14 @@ package SwordToOfferSolution._46_TranslateNumbersToStrings;
 
 import java.util.HashMap;
 
-/**
+/*
  * 把数字翻译成字符串
  * 思路1：递归
  * 对于一组数字可以将大问题划分成小问题，最后统计问题的数量即可。
- * <p>
+ *
  * 思路2：带有备忘录的递归
  * 将结果保存下来，如果有需要的话直接拿来用就可以了。
- * <p>
+ *
  * 思路3: DP
  * 采用自底向上的方式，dp[i] 表示字符串 s[i, s.len-1] 从 i 开始到结尾的字符串的所有的解码方式。
  * 如果 s[i] 和 s[i+1] 组成的数字小于 26，则 dp[i] = dp[i+1] + dp[i+2]。
