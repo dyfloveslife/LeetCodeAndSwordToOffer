@@ -1,6 +1,6 @@
 package SwordToOfferSolution._13_RobotMove;
 
-/**
+/*
  * 机器人走格子
  */
 public class Solution {
@@ -24,16 +24,8 @@ public class Solution {
 		return count;
 	}
 
-	/**
+	/*
 	 * 检查机器人能否进入 (row, col) 的方格
-	 *
-	 * @param threshold
-	 * @param rows
-	 * @param cols
-	 * @param row
-	 * @param col
-	 * @param visited
-	 * @return
 	 */
 	private boolean check(int threshold, int rows, int cols, int row, int col, boolean[][] visited) {
 		if (row >= 0 && row < rows && col >= 0 && col < cols && getDigitSum(row) + getDigitSum(col) <= threshold && !visited[row][col])
@@ -41,11 +33,8 @@ public class Solution {
 		return false;
 	}
 
-	/**
+	/*
 	 * 计算数位之和
-	 *
-	 * @param num
-	 * @return
 	 */
 	private int getDigitSum(int num) {
 		int sum = 0;
