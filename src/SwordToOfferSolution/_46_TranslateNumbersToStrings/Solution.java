@@ -18,7 +18,6 @@ public class Solution {
     // 方法一
     public int getTranslationCount1(String s) {
         return getResult1(s, 0);
-
     }
 
     private int getResult1(String s, int start) {
@@ -44,7 +43,6 @@ public class Solution {
     public int getTranslationCount2(String s) {
         HashMap<Integer, Integer> map = new HashMap<>();
         return getResult2(s, 0, map);
-
     }
 
     private int getResult2(String s, int start, HashMap<Integer, Integer> map) {
