@@ -22,11 +22,14 @@ public class Solution {
     }
 
     private int getResult1(String s, int start) {
+        // 如果到了最后一个字符，则只有一种翻译方式
         if (start == s.length()) return 1;
+        // 如果遇到了字符 0，则没法翻译
         if (s.charAt(start) == '0') return 0;
-
+        // 第一种翻译方式
         int ans1 = getResult1(s, start + 1);
         int ans2 = 0;
+        // 前两个数字小于 26 才可以继续递归（才能满足条件）
         if (start < s.length() - 1) {
             int ten = (s.charAt(start) - '0') * 10;
             int one = s.charAt(start + 1) - '0';
@@ -48,8 +51,8 @@ public class Solution {
         if (start == s.length()) return 1;
         if (s.charAt(start) == '0') return 0;
 
-        // 判断一下之前是否计算过
-        // getOrDefault(Object key, V defaultValue) 如果有这个 key，则使用 key 对应的 value，否则就使用默认值 defaultValue。
+        // 判断一下之前是否计算过，如果计算过的话就不用再重复计算了
+        // getOrDefault(Object key, V defaultValue) 如果有这个 key，则使用其对应的 value，否则就使用默认值 defaultValue。
         int m = map.getOrDefault(start, -1);
         if (m != -1) return m;
 
@@ -61,6 +64,8 @@ public class Solution {
             if (ten + one <= 26)
                 ans2 = getResult2(s, start + 2, map);
         }
+        // 保存结果
+        map.put(start, ans1 + ans2);
         return ans1 + ans2;
     }
 
