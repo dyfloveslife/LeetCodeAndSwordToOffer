@@ -35,7 +35,8 @@ public class Solution {
         // 统计小和的个数
         int res = 0;
         while (position1 <= middle && position2 <= right) {
-            // 如果指针 position1 对应的数比指针 position2 对应的数小，则指针 position1 对应的数的小和的个数就是从 position2 到 right 的个数再乘以 arr[position1]。
+            // 如果指针 position1 对应的数比指针 position2 对应的数小，
+            // 则指针 position1 对应的数的小和的个数就是从 position2 到 right 的个数再乘以 arr[position1]。
             res += arr[position1] < arr[position2] ? (right - position2 + 1) * arr[position1] : 0;
             help[i++] = arr[position1] < arr[position2] ? arr[position1] : arr[position2];
         }
