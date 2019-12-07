@@ -34,17 +34,13 @@ public class Solution {
     // 方法一：使用额外空间：哈希表
     public RandomListNode clone1(RandomListNode pHead) {
         HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
-
         RandomListNode cur = pHead;
-
         // 在复制节点的同时将 每个节点 以及 每个节点对应的拷贝节点 存储到哈希表中
         while (cur != null) {
             map.put(cur, new RandomListNode(cur.label));
             cur = cur.next;
         }
-
         cur = pHead;
-
         // 指定拷贝后链表中每个节点的 next 和 random
         while (cur != null) {
             // 当前节点的拷贝节点的 next 指针，指向的是 当前节点的下一个节点的拷贝节点。
@@ -59,8 +55,9 @@ public class Solution {
 
     // 方法二：将每个节点的拷贝节点放在其节点之后，类似于 A->A'->B->B'。
     public RandomListNode clone2(RandomListNode pHead) {
-        if (pHead == null) return null;
-
+        if (pHead == null) {
+            return null;
+        }
         // 复制链表的同时，将复制后的节点放到原节点之后，只关心 next，不关系 random。
         RandomListNode cur = pHead;
         RandomListNode next = null;
@@ -70,7 +67,6 @@ public class Solution {
             cur.next.next = next; // 复制后的节点指向下一个新的节点
             cur = next; // cur 移动到该新的节点
         }
-
         // 设置每个节点的 random 指针
         cur = pHead;
         RandomListNode curCopy = null;
@@ -80,7 +76,6 @@ public class Solution {
             curCopy.random = cur.random != null ? cur.random.next : null;
             cur = next;
         }
-
         // 将两个链表进行分离
         cur = pHead;
         RandomListNode res = pHead.next; //不能设置为 cur.next，因为 cur 是变化的，而 head 是不变的

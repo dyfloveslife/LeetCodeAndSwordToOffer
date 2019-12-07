@@ -7,9 +7,12 @@ package SwordToOfferSolution._44_DigitsInSequence;
  */
 public class Solution {
     public int digitsInSequence(int arr[], int n) {
-        if (n < 0) return -1;
-        if (n <= 9) return n;
-
+        if (n < 0) {
+            return -1;
+        }
+        if (n <= 9) {
+            return n;
+        }
         int index = 0;
         for (int i = 1; i <= 9; i++) {
             if (arr[i] >= n) {
@@ -17,7 +20,6 @@ public class Solution {
                 break;
             }
         }
-
         n = n - arr[index - 1];
         int temp1 = n / index;
         int temp2 = n % index;

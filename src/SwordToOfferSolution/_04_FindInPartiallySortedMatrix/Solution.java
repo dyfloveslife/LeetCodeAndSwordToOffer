@@ -14,22 +14,22 @@ package SwordToOfferSolution._04_FindInPartiallySortedMatrix;
  * 3、如果相等，返回true;
  */
 public class Solution {
-	public boolean Find(int target, int[][] array) {
-		if (array.length == 0 || array[0].length == 0)
-			return false;
-		int rows = array.length - 1;
-		int columns = array[0].length - 1;
-		int row = 0;
-		int column = columns;
-		while (row <= rows && column >= 0) {
-			if (array[row][column] < target) {
-				row++;
-			} else if (array[row][column] > target) {
-				column--;
-			} else {
-				return true;
-			}
-		}
-		return false;
-	}
+    public boolean Find(int target, int[][] array) {
+        if (array.length == 0 || array[0].length == 0)
+            return false;
+        int rows = array.length - 1;
+        int columns = array[0].length - 1;
+        int row = 0;
+        int column = columns;
+        while (row <= rows && column >= 0) {
+            if (array[row][column] < target) {
+                row++;
+            } else if (array[row][column] > target) {
+                column--;
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
 }

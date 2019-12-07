@@ -14,12 +14,16 @@ package Other.BasicAlgorithm._06_MergeSort;
  */
 public class Soluion {
     public static void mergeSort(int[] arr) {
-        if (arr == null || arr.length < 2) return;
+        if (arr == null || arr.length < 2) {
+            return;
+        }
         sortProcess(arr, 0, arr.length - 1);
     }
 
     private static void sortProcess(int[] arr, int left, int right) {
-        if (left == right) return;
+        if (left == right) {
+            return;
+        }
         int middle = left + ((right - left) >> 1);
         sortProcess(arr, left, middle);
         sortProcess(arr, middle + 1, right);
@@ -32,16 +36,16 @@ public class Soluion {
         int position1 = left;
         int position2 = middle + 1;
         // 进行比较，谁小就将其填到 help 数组中
-        while (position1 <= middle && position2 <= right)
+        while (position1 <= middle && position2 <= right) {
             help[i++] = arr[position1] < arr[position2] ? arr[position1++] : arr[position2++];
-
+        }
         // 对于划分后的两部分来说，如果其中一部分的指针到头了，则将另一回部分的数直接放到 help 中
-        while (position1 <= middle)
+        while (position1 <= middle) {
             help[i++] = arr[position1++];
-
-        while (position2 <= right)
+        }
+        while (position2 <= right) {
             help[i++] = arr[position2++];
-
+        }
         // 将 help 中的数拷贝到原数组中
         for (i = 0; i < help.length; i++) {
             arr[right + i] = help[i];

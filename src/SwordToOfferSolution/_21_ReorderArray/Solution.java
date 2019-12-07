@@ -6,15 +6,19 @@ package SwordToOfferSolution._21_ReorderArray;
 public class Solution {
     public void reorderArray(int[] array) {
         int oddCount = 0;
-        for (int x : array)
-            if (!isEven(x)) oddCount++;
+        for (int x : array) {
+            if (!isEven(x)) {
+                oddCount++;
+            }
+        }
         int[] copyArray = array.clone();
         int i = 0, j = oddCount;
         for (int num : copyArray) {
-            if (num % 2 == 1)
+            if (num % 2 == 1) {
                 array[i++] = num;
-            else
+            } else {
                 array[j++] = num;
+            }
         }
     }
 

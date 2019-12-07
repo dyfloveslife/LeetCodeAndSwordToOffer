@@ -15,6 +15,5 @@ public class Solution {
             res += (a + 8) / 10 * m + (a % 10 == 1 ? b + 1 : 0);
         }
         return res;
-
     }
 }

@@ -15,7 +15,9 @@ import java.util.Collections;
 public class Solution {
     private ArrayList<String> permutation(String str) {
         ArrayList<String> res = new ArrayList<>();
-        if (str.length() == 0) return res;
+        if (str.length() == 0) {
+            return res;
+        }
         backtracking(str.toCharArray(), res, 0);
         // 对 res 中的每个排列进行排序，即按照字典序进行排列
         Collections.sort(res);

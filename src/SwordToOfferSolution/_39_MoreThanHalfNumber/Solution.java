@@ -11,8 +11,9 @@ package SwordToOfferSolution._39_MoreThanHalfNumber;
  */
 public class Solution {
     private int moreThanHalfNumber(int[] arr) {
-        if (arr == null || arr.length == 0) return 0;
-
+        if (arr == null || arr.length == 0) {
+            return 0;
+        }
         int res = arr[0];
         int times = 1;
         for (int i = 0; i < arr.length; i++) {
@@ -20,14 +21,20 @@ public class Solution {
                 // 更新 res 为当前元素
                 res = arr[i];
                 times = 1;
-            } else if (res == arr[i]) times++;
-            else times--;
+            } else if (res == arr[i]) {
+                times++;
+            } else {
+                times--;
+            }
         }
 
         // 判断 res 出现次数是否大于数组长度的一半
         int count = 0;
-        for (int i = 0; i < arr.length; i++)
-            if (arr[i] == res) count++;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == res) {
+                count++;
+            }
+        }
         return (count > arr.length / 2) ? res : 0;
     }
 }

@@ -10,33 +10,35 @@ package SwordToOfferSolution._23_EntryNodeInListLoop;
  */
 
 class ListNode {
-	int val;
-	ListNode next = null;
+    int val;
+    ListNode next = null;
 
-	ListNode(int val) {
-		this.val = val;
-	}
+    ListNode(int val) {
+        this.val = val;
+    }
 }
 
 public class Solution {
-	public ListNode entryNodeInListLoop(ListNode pHead) {
-		if (pHead == null || pHead.next == null) return null;
-
-		ListNode slowNode = pHead;
-		ListNode fastNode = pHead;
-
-		while (fastNode != null && fastNode.next != null) {
-			slowNode = slowNode.next;   //慢指针走一步
-			fastNode = fastNode.next.next;  //快指针走两步
-			if (slowNode == fastNode) { //如果两个指针相遇了，就让快指针重新指向链表头，然后和慢指针一起同速走
-				fastNode = pHead;
-				while (slowNode != fastNode) {
-					slowNode = slowNode.next;
-					fastNode = fastNode.next;
-				}
-			}
-			if (slowNode == fastNode) return fastNode;  //再次相遇的时候就是环入口
-		}
-		return null;    //要是没有相遇，此链表没有环返回空
-	}
+    public ListNode entryNodeInListLoop(ListNode pHead) {
+        if (pHead == null || pHead.next == null) {
+            return null;
+        }
+        ListNode slowNode = pHead;
+        ListNode fastNode = pHead;
+        while (fastNode != null && fastNode.next != null) {
+            slowNode = slowNode.next;   //慢指针走一步
+            fastNode = fastNode.next.next;  //快指针走两步
+            if (slowNode == fastNode) { //如果两个指针相遇了，就让快指针重新指向链表头，然后和慢指针一起同速走
+                fastNode = pHead;
+                while (slowNode != fastNode) {
+                    slowNode = slowNode.next;
+                    fastNode = fastNode.next;
+                }
+            }
+            if (slowNode == fastNode) {
+                return fastNode;  //再次相遇的时候就是环入口
+            }
+        }
+        return null;    //要是没有相遇，此链表没有环返回空
+    }
 }

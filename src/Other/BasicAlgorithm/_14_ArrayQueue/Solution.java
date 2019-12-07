@@ -17,8 +17,9 @@ public class Solution {
 
         // 初始化数组
         public ArrayQueue(int initSize) {
-            if (initSize < 0)
+            if (initSize < 0) {
                 throw new IllegalArgumentException("The init size is less than 0.");
+            }
             arr = new Integer[initSize];
             size = 0;
             start = 0;
@@ -27,15 +28,17 @@ public class Solution {
 
         // 返回队首元素
         public Integer peek() {
-            if (size == 0)
+            if (size == 0) {
                 return null;
+            }
             return arr[start];
         }
 
         // 入队
         public void push(int num) {
-            if (size == arr.length)
+            if (size == arr.length) {
                 throw new ArrayIndexOutOfBoundsException("The queue is full.");
+            }
             size++;
             arr[end] = num;
             // 只要 end 到数组的底部了，就回到开头；否则 end+1
@@ -44,8 +47,9 @@ public class Solution {
 
         // 出队
         public Integer pull() {
-            if (size == 0)
+            if (size == 0) {
                 throw new ArrayIndexOutOfBoundsException("The queue is empty.");
+            }
             size--;
             int temp = start;
             start = start == arr.length - 1 ? 0 : start + 1;

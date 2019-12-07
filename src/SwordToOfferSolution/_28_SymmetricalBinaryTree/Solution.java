@@ -1,13 +1,13 @@
 package SwordToOfferSolution._28_SymmetricalBinaryTree;
 
 class TreeNode {
-	int val = 0;
-	TreeNode left = null;
-	TreeNode right = null;
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
 
-	TreeNode(int val) {
-		this.val = val;
-	}
+    TreeNode(int val) {
+        this.val = val;
+    }
 }
 
 /*
@@ -21,21 +21,24 @@ class TreeNode {
  *     pRoot1.left  pRoot1.right      pRoot2.left  pRoot2.right
  */
 public class Solution {
-	boolean isSymmetrical(TreeNode pRoot) {
-		return isSymmertical(pRoot, pRoot);
-	}
+    boolean isSymmetrical(TreeNode pRoot) {
+        return isSymmertical(pRoot, pRoot);
+    }
 
-	private boolean isSymmertical(TreeNode pRoot1, TreeNode pRoot2) {
-	    // 如果两个根节点都是空
-		if (pRoot1 == null && pRoot2 == null) return true;
-
-		// 其中一个节点不为空
-		if (pRoot1 == null || pRoot2 == null) return false;
-
-		// 不满足对称的条件，则返回 false
-		if (pRoot1.val != pRoot2.val) return false;
-
-		// 递归检查对称位置
-		return isSymmertical(pRoot1.left, pRoot2.right) && isSymmertical(pRoot1.right, pRoot2.left);
-	}
+    private boolean isSymmertical(TreeNode pRoot1, TreeNode pRoot2) {
+        // 如果两个根节点都是空
+        if (pRoot1 == null && pRoot2 == null) {
+            return true;
+        }
+        // 其中一个节点不为空
+        if (pRoot1 == null || pRoot2 == null) {
+            return false;
+        }
+        // 不满足对称的条件，则返回 false
+        if (pRoot1.val != pRoot2.val) {
+            return false;
+        }
+        // 递归检查对称位置
+        return isSymmertical(pRoot1.left, pRoot2.right) && isSymmertical(pRoot1.right, pRoot2.left);
+    }
 }

@@ -29,7 +29,9 @@ class TreeNode {
 public class Solution {
     // 序列化：将二叉树序列化成字符串
     String Serialize(TreeNode root) {
-        if (root == null) return "#_";
+        if (root == null) {
+            return "#_";
+        }
         String res = root.val + "_";
         res += Serialize(root.left);
         res += Serialize(root.right);
@@ -49,8 +51,9 @@ public class Solution {
     // 反序列化：每次从队列中弹出一个值进行判断
     private TreeNode reconPreOrder(Queue<String> queue) {
         String value = queue.poll();
-        if (value.equals("#")) return null;
-
+        if (value.equals("#")) {
+            return null;
+        }
         TreeNode root = new TreeNode(Integer.valueOf(value));
         root.left = reconPreOrder(queue);
         root.right = reconPreOrder(queue);

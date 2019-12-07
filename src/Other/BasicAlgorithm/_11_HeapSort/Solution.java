@@ -25,9 +25,12 @@ package Other.BasicAlgorithm._11_HeapSort;
  */
 public class Solution {
     public static void heapSort(int[] arr) {
-        if (arr == null || arr.length < 2) return;
-        for (int i = 0; i < arr.length; i++)
+        if (arr == null || arr.length < 2) {
+            return;
+        }
+        for (int i = 0; i < arr.length; i++) {
             heapInsert(arr, i);
+        }
         // 堆排序的过程：不断的将堆顶与堆中最后一个元素交换，然后再 heapify。
         int heapSize = arr.length;
         swap(arr, 0, --heapSize);
@@ -59,12 +62,13 @@ public class Solution {
             largest = arr[largest] > arr[index] ? largest : index;
             // 如果当前节点变了之后还是最大的，则就不往下沉了。
             // 也就是当前节点和孩子之间的最大值还是当前节点，就不需要再往下沉了。
-            if (largest == index) break;
+            if (largest == index) {
+                break;
+            }
             swap(arr, largest, index); // largest != index
             index = largest;
             left = index * 2 + 1;
         }
-
     }
 
     private static void swap(int[] arr, int i, int j) {

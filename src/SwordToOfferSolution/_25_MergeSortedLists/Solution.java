@@ -8,28 +8,30 @@ package SwordToOfferSolution._25_MergeSortedLists;
  */
 
 class ListNode {
-	int val;
-	ListNode next = null;
+    int val;
+    ListNode next = null;
 
-	ListNode(int val) {
-		this.val = val;
-	}
+    ListNode(int val) {
+        this.val = val;
+    }
 }
 
 public class Solution {
-	public ListNode mergeList(ListNode head1, ListNode head2) {
-		if (head1 == null) return head2;
-		if (head2 == null) return head1;
-
-		ListNode mergedHead = null;
-
-		if (head1.val < head2.val) {
-			mergedHead = head1;
-			mergedHead.next = mergeList(head1.next, head2);
-		} else {
-			mergedHead = head2;
-			mergedHead.next = mergeList(head1, head2.next);
-		}
-		return mergedHead;
-	}
+    public ListNode mergeList(ListNode head1, ListNode head2) {
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null) {
+            return head1;
+        }
+        ListNode mergedHead = null;
+        if (head1.val < head2.val) {
+            mergedHead = head1;
+            mergedHead.next = mergeList(head1.next, head2);
+        } else {
+            mergedHead = head2;
+            mergedHead.next = mergeList(head1, head2.next);
+        }
+        return mergedHead;
+    }
 }

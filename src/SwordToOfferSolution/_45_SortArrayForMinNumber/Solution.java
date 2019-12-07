@@ -14,12 +14,13 @@ import java.util.Comparator;
 public class Solution {
     public String printMinNumber(int[] nums) {
         int length = nums.length;
-        if (nums == null || length < 0) return "";
-
+        if (nums == null || length < 0) {
+            return "";
+        }
         ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < length; i++)
+        for (int i = 0; i < length; i++) {
             list.add(nums[i]);
-
+        }
         Collections.sort(list, new Comparator<Integer>() {
             @Override
             public int compare(Integer str1, Integer str2) {
@@ -28,10 +29,10 @@ public class Solution {
                 return s1.compareTo(s2);
             }
         });
-
         String res = "";
-        for (Integer j : list)
+        for (Integer j : list) {
             res += j;
+        }
         return res;
     }
 

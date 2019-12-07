@@ -32,7 +32,9 @@ package Other.BasicAlgorithm._10_QuickSort;
  */
 public class Solution {
     public static void quickSort(int[] arr) {
-        if (arr == null || arr.length < 2) return;
+        if (arr == null || arr.length < 2) {
+            return;
+        }
         quickSortCore(arr, 0, arr.length - 1);
     }
 
@@ -53,12 +55,13 @@ public class Solution {
         int less = left - 1;
         int more = right;
         while (left < more) {
-            if (arr[left] < arr[right])
+            if (arr[left] < arr[right]) {
                 swap(arr, ++less, left++);
-            else if (arr[left] > arr[right])
+            } else if (arr[left] > arr[right]) {
                 swap(arr, --more, left);
-            else
+            } else {
                 left++;
+            }
         }
         // 由于改进后的 partition 函数，初始的时候大于 x 的区域是包含 x 的，所以在划分完之后，
         // 需要将最后一个 x 的位置与 大于 x 区域的第一个数交换，这样就实现了小于 x 的在左边，

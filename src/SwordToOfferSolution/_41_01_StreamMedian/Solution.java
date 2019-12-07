@@ -27,7 +27,6 @@ public class Solution {
 
     // 记录数据的数量是奇数个还是偶数个
     private int count = 0;
-
     // 插入从数据流中读出来的数据
     private void insert(Integer num) {
         // 数据总量为偶数
@@ -45,9 +44,10 @@ public class Solution {
 
     // 得到已有所有数据的中位数
     private Double getMedian() {
-        if ((count & 1) == 0)
+        if ((count & 1) == 0) {
             return new Double(maxHeap.peek() + minHeap.peek()) / 2;
-        else
+        } else {
             return new Double(minHeap.peek());
+        }
     }
 }

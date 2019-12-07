@@ -23,7 +23,9 @@ public class Solution {
     // 方法一
     private ArrayList<Integer> getLeastNumbers(int[] nums, int k) {
         ArrayList<Integer> res = new ArrayList<>();
-        if (nums == null || k > nums.length || k <= 0) return res;
+        if (nums == null || k > nums.length || k <= 0) {
+            return res;
+        }
         findKthSmallest(nums, k - 1);
         for (int i = 0; i < k; i++) {
             res.add(nums[i]);
@@ -38,11 +40,17 @@ public class Solution {
         while (low < height) {
             // partition() 方法返回一个 index，该 index 满足 nums[low, index-1] <= nums[index] <= nums[index+1, height]。
             int index = partition(nums, low, height);
-            if (index == k) break;
+            if (index == k) {
+                break;
+            }
             // k 在 index 的左侧，则调整 height
-            if (index > k) height = index - 1;
+            if (index > k) {
+                height = index - 1;
+            }
             // k 在 index 的右侧，则调整 low
-            if (index < k) low = index + 1;
+            if (index < k) {
+                low = index + 1;
+            }
         }
     }
 
@@ -56,7 +64,9 @@ public class Solution {
             while (i != height && nums[++i] < pivot) ;
             // 从右到左，不断找到大于 pivot 的数
             while (j != low && nums[--j] > pivot) ;
-            if (i >= j) break;
+            if (i >= j) {
+                break;
+            }
             swap(nums, i, j);
         }
         swap(nums, low, j);
@@ -72,7 +82,9 @@ public class Solution {
     // 方法二
     private ArrayList<Integer> getLeastNumbers2(int[] nums, int k) {
         ArrayList<Integer> res = new ArrayList<>();
-        if (nums == null || k > nums.length || k <= 0) return res;
+        if (nums == null || k > nums.length || k <= 0) {
+            return res;
+        }
 
         // 设置大顶堆
         // 若 o2 > o1，则返回正数；若 o2 < o1，则返回负数；否则返回 0。
@@ -86,9 +98,10 @@ public class Solution {
 
         // 如果容器中已有的数字小于 k 个的话，则直接将当前数字放入到容器中。
         for (int i = 0; i < nums.length; i++)
-            if (maxHeap.size() < k)
+            if (maxHeap.size() < k) {
                 maxHeap.offer(nums[i]);
-                // 如果当前数字比容器中的最大值要小的话，则用该数字替换已有的最大值。
+            }
+            // 如果当前数字比容器中的最大值要小的话，则用该数字替换已有的最大值。
             else if (nums[i] < maxHeap.peek()) {
                 Integer temp = maxHeap.poll();
                 temp = null;

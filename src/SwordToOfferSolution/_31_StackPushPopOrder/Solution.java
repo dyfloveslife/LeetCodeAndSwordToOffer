@@ -16,26 +16,24 @@ import java.util.Stack;
  * 如果所有数字都压入栈后仍没有找到下一个弹出的数字，则该序列就不是一个弹出序列。
  */
 public class Solution {
-	public static boolean inPopOrder(int[] pushSequence, int[] popSequence) {
-		Stack<Integer> stack = new Stack<>();
-		// 弹出序列的位置
-		int popIndex = 0;
-		for (int pushIndex = 0 ;pushIndex < pushSequence.length; pushIndex++) {
-			stack.push(pushSequence[pushIndex]);
+    public static boolean inPopOrder(int[] pushSequence, int[] popSequence) {
+        Stack<Integer> stack = new Stack<>();
+        // 弹出序列的位置
+        int popIndex = 0;
+        for (int pushIndex = 0 ;pushIndex < pushSequence.length; pushIndex++) {
+            stack.push(pushSequence[pushIndex]);
+            while (!stack.isEmpty() && stack.peek() == popSequence[popIndex]) {
+                stack.pop();
+                popIndex++;
+            }
+        }
+        return stack.isEmpty();
+    }
 
-			while (!stack.isEmpty() && stack.peek() == popSequence[popIndex]) {
-				stack.pop();
-				popIndex++;
-
-			}
-		}
-		return stack.isEmpty();
-	}
-
-	public static void main(String[] args) {
-		int[] push = {1, 2, 3, 4, 5};
-		int[] pop = {4, 5, 3, 2, 1, 0};
-		boolean b = inPopOrder(push, pop);
-		System.out.println(b);
-	}
+    public static void main(String[] args) {
+        int[] push = {1, 2, 3, 4, 5};
+        int[] pop = {4, 5, 3, 2, 1, 0};
+        boolean b = inPopOrder(push, pop);
+        System.out.println(b);
+    }
 }

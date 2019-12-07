@@ -11,5 +11,4 @@ package Other.BasicAlgorithm._08_ArrayDivision;
  *  3. 直到最后，数组 arr 就会被划分成小于等于 num 的在数组左边，大于 num 的在数组右边。
  */
 public class Solution {
-
 }

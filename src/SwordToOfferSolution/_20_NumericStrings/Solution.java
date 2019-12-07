@@ -11,14 +11,16 @@ package SwordToOfferSolution._20_NumericStrings;
 	\\d ： 数字
  */
 public class Solution {
-	public boolean isNumeric(char[] str) {
-		if (str == null || str.length == 0) return false;
-		return new String(str).matches("[+-]?\\d*(\\.\\d+)?([eE][+-]?\\d+)?");
-	}
+    public boolean isNumeric(char[] str) {
+        if (str == null || str.length == 0) {
+            return false;
+        }
+        return new String(str).matches("[+-]?\\d*(\\.\\d+)?([eE][+-]?\\d+)?");
+    }
 
-	public static void main(String[] args) {
-		Solution numericStrings = new Solution();
-		boolean b = numericStrings.isNumeric("123.45e+6".toCharArray());
-		System.out.println(b);
-	}
+    public static void main(String[] args) {
+        Solution numericStrings = new Solution();
+        boolean b = numericStrings.isNumeric("123.45e+6".toCharArray());
+        System.out.println(b);
+    }
 }

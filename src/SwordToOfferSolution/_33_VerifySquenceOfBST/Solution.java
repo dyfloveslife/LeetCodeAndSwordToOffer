@@ -10,29 +10,32 @@ package SwordToOfferSolution._33_VerifySquenceOfBST;
  */
 public class Solution {
     public boolean VerifySquenceOfBST(int[] sequence) {
-        if (sequence == null || sequence.length == 0) return false;
-
+        if (sequence == null || sequence.length == 0) {
+            return false;
+        }
         return verify(sequence, 0, sequence.length - 1);
     }
 
     public boolean verify(int[] sequence, int start, int end) {
         // 递归结束的条件
         //if (end - start <= 1)
-        if (start >= end)  return true;
-
+        if (start >= end) {
+            return true;
+        }
         // 得到 根节点 的值
         int rootVal = sequence[end];
         int curIndex = start;
-
         // 找到第一个大于 根节点 的位置
         // curIndex < end：满足索引从小到大的原则
         // sequence[curIndex] < root：满足 根节点 的值要比 根节点左子树上的值 要大的原则
-        while (curIndex < end && sequence[curIndex] < rootVal) curIndex++;
-
+        while (curIndex < end && sequence[curIndex] < rootVal) {
+            curIndex++;
+        }
         // 遍历根节点右子树上的值
         for (int i = curIndex; i < end; i++)
-            if (sequence[i] < rootVal) return false;
-
+            if (sequence[i] < rootVal) {
+                return false;
+            }
         return verify(sequence, start, curIndex - 1) && verify(sequence, curIndex, end - 1);
     }
 }

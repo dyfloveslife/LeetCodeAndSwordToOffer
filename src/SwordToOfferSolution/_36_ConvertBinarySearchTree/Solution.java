@@ -23,10 +23,12 @@ class TreeNode {
 
 public class Solution {
     // 用于记录左子树的最后一个节点
-    private TreeNode  leftLast = null;
+    private TreeNode leftLast = null;
 
     public TreeNode Convert(TreeNode root) {
-        if (root == null) return null;
+        if (root == null) {
+            return null;
+        }
         if (root.left == null && root.right == null) {
             leftLast = root;
             return root;

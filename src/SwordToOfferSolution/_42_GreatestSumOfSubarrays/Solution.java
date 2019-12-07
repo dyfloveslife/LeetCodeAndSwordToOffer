@@ -22,25 +22,29 @@ package SwordToOfferSolution._42_GreatestSumOfSubarrays;
 public class Solution {
     // 方法一
     public int findGreatestSumOfSubArray(int[] array) {
-        if (array == null || array.length == 0) return 0;
+        if (array == null || array.length == 0) {
+            return 0;
+        }
         int curSum = 0;
         int maxSum = Integer.MIN_VALUE;
-
         for (int i = 0; i < array.length; i++) {
-            if (curSum <= 0)
+            if (curSum <= 0) {
                 curSum = array[i];
-            else
+            } else {
                 curSum += array[i];
-
-            if (curSum > maxSum)
+            }
+            if (curSum > maxSum) {
                 maxSum = curSum;
+            }
         }
         return maxSum;
     }
 
     // 方法二
     public int findGreatestSumOfSubArray2(int[] array) {
-        if (array == null || array.length == 0) return 0;
+        if (array == null || array.length == 0) {
+            return 0;
+        }
         int res = array[0]; // 当前所有子数组的和的最大值
         int max = array[0]; // 包含 array[i] 的连续数组最大值
         // 从 1 开始，因为初始值已经考虑了 0 的情况

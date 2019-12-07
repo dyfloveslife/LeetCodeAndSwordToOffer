@@ -42,15 +42,18 @@ public class Solution {
                     break;  // 跳出 while
                 }
                 // 从 A 中的左半部分开始查找
-                if (A[middle] > B[i])
+                if (A[middle] > B[i]) {
                     right = middle - 1;
+                }
                 // 从 A 中的右半部分开始查找
-                else
+                else {
                     left = middle + 1;
+                }
             }
             // B 中的数在 A 中找不到的话，说明 B 中的某个数不在 A 中，则将 B 中当前的数添加到结果集中
-            if (!contains)
+            if (!contains)  {
                 res.add(B[i]);
+            }
         }
         return res;
     }

@@ -5,13 +5,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class TreeNode {
-	int val = 0;
-	TreeNode left = null;
-	TreeNode right = null;
+    int val = 0;
+    TreeNode left = null;
+    TreeNode right = null;
 
-	TreeNode(int val) {
-		this.val = val;
-	}
+    TreeNode(int val) {
+        this.val = val;
+    }
 }
 
 /*
@@ -23,24 +23,25 @@ class TreeNode {
  * 如果队首元素为空则跳过，否则将队首元素的左右孩子加入到队列中。
  */
 public class Solution {
-	public ArrayList<Integer> printFromTopToBottom(TreeNode root) {
-		Queue<TreeNode> queue = new LinkedList<>();
-		ArrayList<Integer> list = new ArrayList<>();
-
-		if (root == null) return list;
-
-		queue.offer(root);
-
-		while (!queue.isEmpty()) {
-			int count = queue.size();
-			while (count-- > 0) {
-				TreeNode node = queue.poll();
-				if (node == null) continue;
-				list.add(node.val);
-				queue.offer(node.left);
-				queue.offer(node.right);
-			}
-		}
-		return list;
-	}
+    public ArrayList<Integer> printFromTopToBottom(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        if (root == null) {
+            return list;
+        }
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int count = queue.size();
+            while (count-- > 0) {
+                TreeNode node = queue.poll();
+                if (node == null) {
+                    continue;
+                }
+                list.add(node.val);
+                queue.offer(node.left);
+                queue.offer(node.right);
+            }
+        }
+        return list;
+    }
 }

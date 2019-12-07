@@ -18,7 +18,6 @@ import java.util.Queue;
  * 3. 由于重复的字符都出队了，所以最后返回队头元素就是第一个不重复出现的字符。
  */
 public class Solution {
-
     private int[] count = new int[256];
     private Queue<Character> queue = new LinkedList<>();
 
@@ -28,9 +27,9 @@ public class Solution {
         // 统计每个 ch 的数量
         count[ch]++;
         queue.offer(ch); // 入队
-        while (!queue.isEmpty() && count[queue.peek()] > 1)
+        while (!queue.isEmpty() && count[queue.peek()] > 1) {
             queue.poll(); // 出队
-
+        }
     }
 
     // 返回当前字符流中第一个不重复出现的字符

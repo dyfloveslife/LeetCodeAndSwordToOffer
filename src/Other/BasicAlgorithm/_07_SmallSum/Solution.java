@@ -15,12 +15,16 @@ package Other.BasicAlgorithm._07_SmallSum;
  */
 public class Solution {
     public static int smallSum(int[] arr) {
-        if (arr == null || arr.length < 2) return 0;
+        if (arr == null || arr.length < 2) {
+            return 0;
+        }
         return mergeSort(arr, 0, arr.length - 1);
     }
 
     private static int mergeSort(int[] arr, int left, int right) {
-        if (left == right) return 0;
+        if (left == right) {
+            return 0;
+        }
         int middle = left + ((right - left) >> 1);
         return mergeSort(arr, left, middle)
                 + mergeSort(arr, middle + 1, right)
@@ -40,12 +44,15 @@ public class Solution {
             res += arr[position1] < arr[position2] ? (right - position2 + 1) * arr[position1] : 0;
             help[i++] = arr[position1] < arr[position2] ? arr[position1] : arr[position2];
         }
-        while (position1 <= middle)
+        while (position1 <= middle) {
             help[i++] = arr[position1];
-        while (position2 <= right)
+        }
+        while (position2 <= right) {
             help[i++] = arr[position2];
-        for (i = 0; i < help.length; i++)
+        }
+        for (i = 0; i < help.length; i++) {
             arr[right + i] = help[i];
+        }
         return res;
     }
 }
