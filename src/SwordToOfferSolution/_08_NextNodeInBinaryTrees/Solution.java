@@ -19,7 +19,9 @@ class TreeNode<Integer> {
 
 public class Solution {
     public static TreeNode<Integer> getNextNode(TreeNode<Integer> node) {
-        if (node == null) return null;
+        if (node == null) {
+            return null;
+        }
         else if (node.right != null) {
             node = node.right;
             while (node.left != null) {
@@ -27,7 +29,6 @@ public class Solution {
             }
             return node;
         }
-
         while (node.parent != null) {
             if (node.parent.left == node) return node.parent;
             node = node.parent;
