@@ -85,7 +85,6 @@ public class Solution {
         if (nums == null || k > nums.length || k <= 0) {
             return res;
         }
-
         // 设置大顶堆
         // 若 o2 > o1，则返回正数；若 o2 < o1，则返回负数；否则返回 0。
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, new Comparator<Integer>() {
@@ -95,7 +94,6 @@ public class Solution {
                 return o2.compareTo(o1);
             }
         });
-
         // 如果容器中已有的数字小于 k 个的话，则直接将当前数字放入到容器中。
         for (int i = 0; i < nums.length; i++)
             if (maxHeap.size() < k) {

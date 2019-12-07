@@ -27,7 +27,7 @@ public class Solution {
     // 保存当前节点
     private ArrayList<Integer> list = new ArrayList<>();
 
-    public ArrayList<ArrayList<Integer>> FindPath(TreeNode root, int target) {
+    public ArrayList<ArrayList<Integer>> findPath(TreeNode root, int target) {
         if (root == null) return res;
         list.add(root.val);
         target -= root.val;
@@ -36,8 +36,8 @@ public class Solution {
         if (target == 0 && root.left == null && root.right == null) {
             res.add(new ArrayList<>(list));
         }
-        FindPath(root.left, target);
-        FindPath(root.right, target);
+        findPath(root.left, target);
+        findPath(root.right, target);
         // 在返回父节点之前，在路径上删除最后一个节点，遍历完一条路径要回退
         // 能走到这一步，说明已经到了叶节点了，但路径和不等于 target，需要返回父节点
         list.remove(list.size() - 1);

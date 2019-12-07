@@ -38,7 +38,6 @@ public class Solution {
             heapify(arr, 0, heapSize);
             swap(arr, 0, --heapSize);
         }
-
     }
 
     // 从 0~(i-1) 位置已经构成大根堆了，现在需要把第 i 的位置上的元素加进去。

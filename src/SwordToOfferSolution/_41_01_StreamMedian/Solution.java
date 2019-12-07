@@ -24,7 +24,6 @@ public class Solution {
             return o2.compareTo(o1);
         }
     });
-
     // 记录数据的数量是奇数个还是偶数个
     private int count = 0;
     // 插入从数据流中读出来的数据

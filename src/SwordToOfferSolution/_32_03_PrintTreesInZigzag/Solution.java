@@ -25,13 +25,10 @@ public class Solution {
         int layer = 1;
         // 存放结果
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-
         // 用于存放奇数行和偶数行的节点
         Stack<TreeNode> stackOdd = new Stack<>();
         Stack<TreeNode> stackEven = new Stack<>();
-
         stackOdd.push(root);
-
         while (!stackOdd.isEmpty() || !stackEven.isEmpty()) {
             // 奇数层
             if (layer % 2 != 0) {
