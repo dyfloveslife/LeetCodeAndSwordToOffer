@@ -31,7 +31,9 @@ public class Solution {
         // 链表中有多个节点，删除尾节点
         else {
             ListNode cur = head;
-            while (cur.next != toBeDeleted) cur = cur.next;
+            while (cur.next != toBeDeleted) {
+                cur = cur.next;
+            }
             cur.next = null;
         }
     }

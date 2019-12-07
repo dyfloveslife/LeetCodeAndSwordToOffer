@@ -56,38 +56,38 @@ public class StringPathInMatrix {
  */
 class Solution {
     public boolean hasPath(char[][] matrix, String str) {
-        if (matrix == null || str == null) return false;
+        if (matrix == null || str == null) {
+            return false;
+        }
         int rows = matrix.length;
-        if (rows == 0) return false;
-
+        if (rows == 0) {
+            return false;
+        }
         int cols = matrix[0].length;
-
         int pathLength = 0;
         boolean[][] visited = new boolean[rows][cols];
-
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                if (hasPathCore(matrix, rows, cols, i, j, str, pathLength, visited))
+                if (hasPathCore(matrix, rows, cols, i, j, str, pathLength, visited)) {
                     return true;
+                }
             }
         }
         return false;
     }
 
-    private boolean hasPathCore(char[][] matrix, int rows, int cols, int i, int j,
-                                String str, int pathLength, boolean[][] visited) {
+    private boolean hasPathCore(char[][] matrix, int rows, int cols, int i, int j, String str, int pathLength, boolean[][] visited) {
         boolean flag = false;
         if (i >= 0 && i < rows && j >= 0 && j < cols && !visited[i][j] && matrix[i][j] == str.charAt(pathLength)) {
             pathLength++;
             visited[i][j] = true;
-
-            if (pathLength == str.length()) return true;
-
+            if (pathLength == str.length()) {
+                return true;
+            }
             flag = hasPathCore(matrix, rows, cols, i + 1, j, str, pathLength, visited) ||
                     hasPathCore(matrix, rows, cols, i, j + 1, str, pathLength, visited) ||
                     hasPathCore(matrix, rows, cols, i - 1, j, str, pathLength, visited) ||
                     hasPathCore(matrix, rows, cols, i, j - 1, str, pathLength, visited);
-
             if (!flag) {
                 pathLength--; // 回溯
                 visited[i][j] = false;

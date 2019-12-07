@@ -10,22 +10,28 @@ public class Solution {
      * 0  1  2  3 (4) (6)
      */
     public static int cuttingRopeSolution1(int length) {
-        if (length < 2) return 0;
-        if (length == 2) return 1;
-        if (length == 3) return 2;
-
+        if (length < 2) {
+            return 0;
+        }
+        if (length == 2) {
+            return 1;
+        }
+        if (length == 3) {
+            return 2;
+        }
         int[] arr = new int[length + 1];
         arr[0] = 0;
         arr[1] = 1;
         arr[2] = 2;
         arr[3] = 2;
-
         int res;
         for (int i = 4; i <= length; i++) {
             int max = 0;
             for (int j = 1; j <= i / 2; j++) {
                 int num = arr[j] * arr[i - j];
-                if (max < num) max = num;
+                if (max < num) {
+                    max = num;
+                }
                 arr[i] = max;
             }
         }
@@ -33,12 +39,12 @@ public class Solution {
         return res;
     }
 
-
     // 贪婪
     public static int cuttingRopeSolution2(int length) {
-        if (length <= 3) return 1 * (length - 1);
+        if (length <= 3) {
+            return 1 * (length - 1);
+        }
         int res = 1;
-
         if (length % 3 == 1) {
             res = 4;
             length -= 4;

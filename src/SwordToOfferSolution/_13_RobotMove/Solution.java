@@ -5,7 +5,9 @@ package SwordToOfferSolution._13_RobotMove;
  */
 public class Solution {
     public int movingCount(int threshold, int rows, int cols) {
-        if (threshold < 0 || rows <= 0 || cols <= 0) return 0;
+        if (threshold < 0 || rows <= 0 || cols <= 0) {
+            return 0;
+        }
         boolean[][] visited = new boolean[rows][cols];
         int count = movingCountCore(threshold, rows, cols, 0, 0, visited);
         return count;
@@ -15,7 +17,6 @@ public class Solution {
         int count = 0;
         if (check(threshold, rows, cols, row, col, visited)) {
             visited[row][col] = true;
-
             count = 1 + movingCountCore(threshold, rows, cols, row - 1, col, visited) +
                     movingCountCore(threshold, rows, cols, row + 1, col, visited) +
                     movingCountCore(threshold, rows, cols, row, col - 1, visited) +
@@ -26,8 +27,9 @@ public class Solution {
 
     // 检查机器人能否进入 (row, col) 的方格
     private boolean check(int threshold, int rows, int cols, int row, int col, boolean[][] visited) {
-        if (row >= 0 && row < rows && col >= 0 && col < cols && getDigitSum(row) + getDigitSum(col) <= threshold && !visited[row][col])
+        if (row >= 0 && row < rows && col >= 0 && col < cols && getDigitSum(row) + getDigitSum(col) <= threshold && !visited[row][col]) {
             return true;
+        }
         return false;
     }
 
