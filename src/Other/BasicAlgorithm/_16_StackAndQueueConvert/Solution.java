@@ -1,7 +1,5 @@
 package Other.BasicAlgorithm._16_StackAndQueueConvert;
 
-import com.sun.org.apache.bcel.internal.generic.SWAP;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
