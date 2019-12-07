@@ -1,7 +1,7 @@
 package Other.BasicAlgorithm._14_ArrayQueue;
 
 /*
- * 用固定数组实现队列
+ * 用数组实现固定的队列
  * 思路：
  * 1. 设置一个 end 和 start 都指向数组的 0 位置，end 表示新加入的元素应该放在哪个位置，start 表示从哪个位置上的数拿给用户；
  * 2. 设置 size 变量来约束 end 和 start 的行为：

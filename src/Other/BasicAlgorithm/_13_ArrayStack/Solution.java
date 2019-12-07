@@ -1,7 +1,7 @@
 package Other.BasicAlgorithm._13_ArrayStack;
 
 /*
- * 用固定的数组实现栈
+ * 用数组实现固定的栈
  * 思路：
  * 1. 用 index 表示新进来的数应该放在哪个位置；
  * 2. 如果需要添加元素（进栈），则将新的元素放到 index 的位置，然后 index++；
