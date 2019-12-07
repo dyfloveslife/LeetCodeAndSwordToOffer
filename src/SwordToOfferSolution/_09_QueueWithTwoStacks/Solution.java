@@ -6,22 +6,32 @@ import java.util.Stack;
  * 用两个栈实现队列
  */
 public class Solution {
-    Stack<Integer> stack1 = new Stack<>();
-    Stack<Integer> stack2 = new Stack<>();
+    Stack<Integer> stackPush = new Stack<>();
+    Stack<Integer> stackPop = new Stack<>();
 
     public void push(int node) {
-        stack1.push(node);
+        stackPush.push(node);
     }
 
-    public int pop() throws Exception {
-        if (stack2.isEmpty()) {
-            while (!stack1.isEmpty()) {
-                stack2.push(stack1.pop());
+    public int poll() {
+        if (stackPop.isEmpty() && stackPush.isEmpty())
+            throw new RuntimeException("Queue is empty.");
+        else if (stackPop.isEmpty()) {
+            while (!stackPush.isEmpty()) {
+                stackPop.push(stackPush.pop());
             }
         }
-        if (stack2.isEmpty())
-            throw new Exception("queue is empty");
+        return stackPop.pop();
+    }
 
-        return stack2.pop();
+    public int peek() {
+        if (stackPop.isEmpty() && stackPush.isEmpty()) {
+            throw new RuntimeException("Queue is empty.");
+        } else if (stackPop.isEmpty()) {
+            while (!stackPush.isEmpty()) {
+                stackPop.push(stackPush.pop());
+            }
+        }
+        return stackPop.peek();
     }
 }
