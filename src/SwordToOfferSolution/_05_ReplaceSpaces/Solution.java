@@ -6,14 +6,16 @@ package SwordToOfferSolution._05_ReplaceSpaces;
 public class Solution {
     public static String replaceSpaces(StringBuffer str) {
         String str1 = str.toString();
-        if (str1.equals("")) return str1;
+        if (str1.equals("")) {
+            return str1;
+        }
         char[] strArray = str1.toCharArray();
-
         int i = 0;
         int lengthSpaces = 0;
         while (i < strArray.length) {
-            if (strArray[i] == ' ')
+            if (strArray[i] == ' ') {
                 lengthSpaces++;
+            }
             i++;
         }
         int newStrLength = strArray.length + lengthSpaces * 2;

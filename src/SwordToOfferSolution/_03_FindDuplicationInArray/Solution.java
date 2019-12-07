@@ -5,9 +5,13 @@ package SwordToOfferSolution._03_FindDuplicationInArray;
  */
 public class Solution {
     public static boolean duplicate(int[] nums, int length, int[] duplicate) {
-        if (nums == null || length <= 0) return false;
+        if (nums == null || length <= 0) {
+            return false;
+        }
         for (int i = 0; i < length; i++) {
-            if (nums[i] < 0 || nums[i] > length - 1) return false;
+            if (nums[i] < 0 || nums[i] > length - 1) {
+                return false;
+            }
         }
         for (int i = 0; i < length; i++) {
             while (nums[i] != i) {

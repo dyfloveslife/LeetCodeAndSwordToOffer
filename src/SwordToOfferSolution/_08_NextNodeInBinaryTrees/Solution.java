@@ -30,7 +30,9 @@ public class Solution {
             return node;
         }
         while (node.parent != null) {
-            if (node.parent.left == node) return node.parent;
+            if (node.parent.left == node) {
+                return node.parent;
+            }
             node = node.parent;
         }
         return null;
