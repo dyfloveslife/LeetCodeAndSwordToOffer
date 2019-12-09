@@ -11,7 +11,9 @@ public class StringPathInMatrix {
         // 2.遍历数组，找到第一个与 str 字符串的第一个字符相匹配的矩阵元素，并进入 hasPathCore()
         for (int row = 0; row < rows; row++) {
             for (int col = 0; col < cols; col++) {
-                if (hasPathCore(matrix, row, col, rows, cols, flag, str, 0)) return true;
+                if (hasPathCore(matrix, row, col, rows, cols, flag, str, 0)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -23,20 +25,24 @@ public class StringPathInMatrix {
         // 3.根据 row 和 col 计算匹配第一个元素在字符数组中的位置
         int index = row * cols + col;
         // 4.递归终止的条件: 越界、在字符矩阵中找到的字符不等于待判定字符串 str 中的字符、已经走过的字符
-        if (row < 0 || col < 0 || row >= rows || col >= cols || matrix[index] != str[k] || flag[index] == true)
+        if (row < 0 || col < 0 || row >= rows || col >= cols || matrix[index] != str[k] || flag[index] == true) {
             return false;
+        }
         // 5.待判断字符串中字符的位置 k 已经到达 str 的末尾了，说明之前的都应匹配成功了，则返回 true
-        if (k == str.length - 1) return true;
+        if (k == str.length - 1) {
+            return true;
+        }
         // 6.要走的第一个位置为 true，说明已经走过了
         flag[index] = true;
-        // 7.回溯递归寻找周围四个格子是否符合条件，要是找到了的话就 k+1。
+        // 7.回溯递归寻找周围四个格子是否符合条件，要是找到了的话就 k+1
         //	只要有一个格子符合条件，就继续再找这个符合条件的格子的四周是否存在符
-        //	合条件的格子，直到 k 到达末尾或者不满足递归条件就停止。
+        //	合条件的格子，直到 k 到达末尾或者不满足递归条件就停止
         if (hasPathCore(matrix, row - 1, col, rows, cols, flag, str, k + 1) ||
                 hasPathCore(matrix, row + 1, col, rows, cols, flag, str, k + 1) ||
                 hasPathCore(matrix, row, col - 1, rows, cols, flag, str, k + 1) ||
-                hasPathCore(matrix, row, col + 1, rows, cols, flag, str, k + 1))
+                hasPathCore(matrix, row, col + 1, rows, cols, flag, str, k + 1)) {
             return true;
+        }
         // 8.走到这说明该路不通，则回溯，再找其他的路
         flag[index] = false;
         return true;
@@ -59,10 +65,12 @@ class Solution {
         if (matrix == null || str == null) {
             return false;
         }
+
         int rows = matrix.length;
         if (rows == 0) {
             return false;
         }
+
         int cols = matrix[0].length;
         int pathLength = 0;
         boolean[][] visited = new boolean[rows][cols];
@@ -89,7 +97,8 @@ class Solution {
                     hasPathCore(matrix, rows, cols, i - 1, j, str, pathLength, visited) ||
                     hasPathCore(matrix, rows, cols, i, j - 1, str, pathLength, visited);
             if (!flag) {
-                pathLength--; // 回溯
+                // 回溯
+                pathLength--;
                 visited[i][j] = false;
             }
         }

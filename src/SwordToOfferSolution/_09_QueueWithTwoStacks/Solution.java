@@ -19,8 +19,7 @@ public class Solution {
     public int poll() {
         if (stackPop.isEmpty() && stackPush.isEmpty()) {
             throw new RuntimeException("Queue is empty.");
-        }
-        else if (stackPop.isEmpty()) {
+        } else if (stackPop.isEmpty()) {
             while (!stackPush.isEmpty()) {
                 stackPop.push(stackPush.pop());
             }

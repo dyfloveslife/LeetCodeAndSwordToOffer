@@ -11,6 +11,7 @@ public class Solution {
         if (base == 0.0 && exponent < 0) {
             return 0.0;
         }
+
         int absExponent = exponent;
         if (exponent < 0) absExponent = -exponent;
         double res = powerCore(base, absExponent);

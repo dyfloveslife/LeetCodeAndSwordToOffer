@@ -17,14 +17,14 @@ class TreeNode {
 }
 
 class Solution {
-    public TreeNode constructBinaryTree(int[] pre, int[] in) {
+    private TreeNode constructBinaryTree(int[] pre, int[] in) {
         if (pre == null || in == null || pre.length <= 0 || in.length <= 0 || pre.length != in.length) {
             return null;
         }
         return reConstructBinaryTree(pre, 0, pre.length - 1, in, 0, in.length - 1);
     }
 
-    public TreeNode reConstructBinaryTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn) {
+    private TreeNode reConstructBinaryTree(int[] pre, int startPre, int endPre, int[] in, int startIn, int endIn) {
         if (startPre > endPre || startIn > endIn) {
             return null;
         }

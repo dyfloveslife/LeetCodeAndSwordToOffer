@@ -18,7 +18,7 @@ class TreeNode<Integer> {
 }
 
 public class Solution {
-    public static TreeNode<Integer> getNextNode(TreeNode<Integer> node) {
+    private static TreeNode<Integer> getNextNode(TreeNode<Integer> node) {
         if (node == null) {
             return null;
         }

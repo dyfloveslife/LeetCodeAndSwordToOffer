@@ -9,6 +9,7 @@ public class Solution {
         if (n <= 0) {
             return;
         }
+
         // 初始化数组，并将每个字符置为 '0'
         char[] arr = new char[n];
         for (int i = 0; i < n; i++) {
@@ -24,6 +25,7 @@ public class Solution {
         if (arr == null || arr.length == 0) {
             return false;
         }
+
         boolean isOverFlow = false; // 是否超过最大数值
         int nTakeOver = 0; // 是否进位
         for (int i = arr.length - 1; i >= 0; i--) {
@@ -31,11 +33,14 @@ public class Solution {
             // 取到第 i 个字符，减 '0' 后变成整数，然后再加上进位符
             int nSum = arr[i] - '0' + nTakeOver;
             if (i == arr.length - 1) {
-                nSum++;    // 每次将最低位进行加一
+                // 每次将最低位进行加一
+                nSum++;
             }
-            if (nSum >= 10) {   // 如果发生了进位
+            // 如果发生了进位
+            if (nSum >= 10) {
                 if (i == 0) {
-                    isOverFlow = true; // 最高位发生进位，则已经达到最大值，发生溢出
+                    // 最高位发生进位，则已经达到最大值，发生溢出
+                    isOverFlow = true;
                 } else {
                     nSum -= 10;
                     nTakeOver = 1;
@@ -54,10 +59,13 @@ public class Solution {
         if (n <= 0) {
             return;
         }
+
         char[] nums = new char[n];
         for (int i = 0; i < 10; i++) {
-            String str = String.valueOf(i); // 将整数转换成字符串
-            nums[0] = str.charAt(0); // 将字符串中索引为 0 的字符赋值给数组中索引也为 0 的位置,charAt() 方法用于返回指定索引处的字符
+            // 将整数转换成字符串
+            String str = String.valueOf(i);
+            // 将字符串中索引为 0 的字符赋值给数组中索引也为 0 的位置，charAt() 方法用于返回指定索引处的字符
+            nums[0] = str.charAt(0);
             print1ToMaxOfDigitsRecursively(nums, n, 0);
         }
     }
@@ -70,9 +78,11 @@ public class Solution {
             printNumber(nums);
             return;
         }
+
         for (int i = 0; i < 10; i++) {
             String str = String.valueOf(i);
-            nums[index + 1] = str.charAt(0); // 将 index+1 处的元素设置为 i 的值
+            // 将 index+1 处的元素设置为 i 的值
+            nums[index + 1] = str.charAt(0);
             print1ToMaxOfDigitsRecursively(nums, length, index + 1);
         }
     }
@@ -82,6 +92,7 @@ public class Solution {
         if (arr == null) {
             return;
         }
+
         boolean isBegin0 = true;
         for (char c : arr) {
             if (isBegin0 && c != '0') {

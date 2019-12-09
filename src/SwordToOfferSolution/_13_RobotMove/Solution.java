@@ -8,6 +8,7 @@ public class Solution {
         if (threshold < 0 || rows <= 0 || cols <= 0) {
             return 0;
         }
+
         boolean[][] visited = new boolean[rows][cols];
         int count = movingCountCore(threshold, rows, cols, 0, 0, visited);
         return count;
@@ -17,10 +18,10 @@ public class Solution {
         int count = 0;
         if (check(threshold, rows, cols, row, col, visited)) {
             visited[row][col] = true;
-            count = 1 + movingCountCore(threshold, rows, cols, row - 1, col, visited) +
-                    movingCountCore(threshold, rows, cols, row + 1, col, visited) +
-                    movingCountCore(threshold, rows, cols, row, col - 1, visited) +
-                    movingCountCore(threshold, rows, cols, row, col + 1, visited);
+            count = 1 + movingCountCore(threshold, rows, cols, row - 1, col, visited)
+                    + movingCountCore(threshold, rows, cols, row + 1, col, visited)
+                    + movingCountCore(threshold, rows, cols, row, col - 1, visited)
+                    + movingCountCore(threshold, rows, cols, row, col + 1, visited);
         }
         return count;
     }

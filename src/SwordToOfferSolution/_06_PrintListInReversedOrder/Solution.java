@@ -20,23 +20,24 @@ public class Solution {
     }
 
     // 非递归实现
-    public static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+    private static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         Stack<Integer> stack = new Stack<>();
         ArrayList<Integer> list = new ArrayList<>();
         while (listNode != null) {
             stack.push(listNode.val);
-            listNode = listNode.next; //后移
+            listNode = listNode.next;
         }
         while (!stack.isEmpty()) {
-            list.add(stack.pop()); //出栈的时候需要放在 list 中
+            //出栈的时候需要放在 list 中
+            list.add(stack.pop());
         }
         return list;
     }
 
     // 递归实现
-    static ArrayList<Integer> list_Recursively = new ArrayList<>();
+    private static ArrayList<Integer> list_Recursively = new ArrayList<>();
 
-    public static ArrayList<Integer> printListFromTailToHead_Recursively(ListNode listNode) {
+    private static ArrayList<Integer> printListFromTailToHead_Recursively(ListNode listNode) {
         if (listNode != null) {
             printListFromTailToHead_Recursively(listNode.next);
             list_Recursively.add(listNode.val);

@@ -8,9 +8,11 @@ public class Solution {
         if (array.length <= 0) {
             return 0;
         }
+
         int index1 = 0;
         int index2 = array.length - 1;
-        int indexMid = index1;  //如果旋转后的数组是排序数组本身，则第一个元素就是最小的
+        //如果旋转后的数组是排序数组本身，则第一个元素就是最小的
+        int indexMid = index1;
         while (array[index1] >= array[index2]) {
             if (index2 - index1 == 1) {
                 indexMid = index2;

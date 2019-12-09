@@ -19,6 +19,7 @@ public class Solution {
         if (length == 3) {
             return 2;
         }
+
         int[] arr = new int[length + 1];
         arr[0] = 0;
         arr[1] = 1;
