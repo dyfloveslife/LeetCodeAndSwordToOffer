@@ -13,7 +13,6 @@ public class Solution {
         char[] strArray = str1.toCharArray();
         int i = 0;
         int lengthSpaces = 0;
-
         while (i < strArray.length) {
             if (strArray[i] == ' ') {
                 lengthSpaces++;
@@ -25,7 +24,6 @@ public class Solution {
         char[] newStr = new char[newStrLength];
         int indexOfOriginal = strArray.length - 1;
         int indexOfNew = newStrLength - 1;
-        
         while (indexOfOriginal >= 0) {
             if (strArray[indexOfOriginal] != ' ') {
                 newStr[indexOfNew--] = strArray[indexOfOriginal--];
