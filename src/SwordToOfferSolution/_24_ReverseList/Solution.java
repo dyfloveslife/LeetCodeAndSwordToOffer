@@ -18,6 +18,7 @@ public class Solution {
         if (head == null || head.next == null) {
             return head;
         }
+
         ListNode newList = reverseList(head.next);
         ListNode t1 = head.next;
         t1.next = head;
@@ -37,8 +38,9 @@ public class Solution {
         ListNode curNode = head;
         ListNode reversedHead = null;
         while (curNode != null) {
-            ListNode nextNode = curNode.next; //让 nextNode 保存当前节点 curNode 的下一个节点信息，防止链表断开。
-            // 如果当前节点的下一个节点为空，即 nextNode 为空，则说明链表中只有一个节点，这时将当前节点传递给 reversedHead 返回即可。
+            // 让 nextNode 保存当前节点 curNode 的下一个节点信息，防止链表断开
+            ListNode nextNode = curNode.next;
+            // 如果当前节点的下一个节点为空，即 nextNode 为空，则说明链表中只有一个节点，这时将当前节点传递给 reversedHead 返回即可
             if (nextNode == null) {
                 reversedHead = curNode;
             }

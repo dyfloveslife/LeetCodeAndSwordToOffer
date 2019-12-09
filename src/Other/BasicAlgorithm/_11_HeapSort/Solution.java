@@ -28,13 +28,13 @@ public class Solution {
         if (arr == null || arr.length < 2) {
             return;
         }
+
         for (int i = 0; i < arr.length; i++) {
             heapInsert(arr, i);
         }
         // 堆排序的过程：不断的将堆顶与堆中最后一个元素交换，然后再 heapify
         int heapSize = arr.length;
         swap(arr, 0, --heapSize);
-
         while (heapSize > 0) {
             heapify(arr, 0, heapSize);
             swap(arr, 0, --heapSize);
@@ -66,7 +66,7 @@ public class Solution {
             if (largest == index) {
                 break;
             }
-            swap(arr, largest, index); // largest != index
+            swap(arr, largest, index);
             index = largest;
             left = index * 2 + 1;
         }

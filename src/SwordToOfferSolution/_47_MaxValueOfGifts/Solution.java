@@ -11,6 +11,7 @@ public class Solution {
         if (values == null || values.length == 0 || values[0].length == 0) {
             return 0;
         }
+
         int n = values.length;
         int[][] dp = new int[n][n];
         // 初始化（0, 0）点
@@ -35,6 +36,7 @@ public class Solution {
         if (values == null || rows == 0 || columns == 0) {
             return 0;
         }
+
         int[] dp = new int[columns];
         for (int[] value : values) {
             dp[0] += value[0];

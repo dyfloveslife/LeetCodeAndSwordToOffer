@@ -18,6 +18,7 @@ public class Solution {
         if (arr == null || arr.length < 2) {
             return 0;
         }
+
         return mergeSort(arr, 0, arr.length - 1);
     }
 
@@ -25,6 +26,7 @@ public class Solution {
         if (left == right) {
             return 0;
         }
+
         int middle = left + ((right - left) >> 1);
         return mergeSort(arr, left, middle)
                 + mergeSort(arr, middle + 1, right)

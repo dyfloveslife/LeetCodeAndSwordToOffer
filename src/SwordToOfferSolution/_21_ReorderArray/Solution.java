@@ -11,6 +11,7 @@ public class Solution {
                 oddCount++;
             }
         }
+
         int[] copyArray = array.clone();
         int i = 0, j = oddCount;
         for (int num : copyArray) {

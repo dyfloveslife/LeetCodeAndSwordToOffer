@@ -27,8 +27,10 @@ public class Solution {
     // 保存当前节点
     private ArrayList<Integer> list = new ArrayList<>();
 
-    public ArrayList<ArrayList<Integer>> findPath(TreeNode root, int target) {
-        if (root == null) return res;
+    private ArrayList<ArrayList<Integer>> findPath(TreeNode root, int target) {
+        if (root == null) {
+            return res;
+        }
         list.add(root.val);
         target -= root.val;
         // 由于“路径”表示从根节点一直到叶节点所经过的路径，所以需要左右叶子为 null 的条件

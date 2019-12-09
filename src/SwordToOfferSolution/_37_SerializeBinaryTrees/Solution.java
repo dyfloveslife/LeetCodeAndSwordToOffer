@@ -28,18 +28,19 @@ class TreeNode {
 
 public class Solution {
     // 序列化：将二叉树序列化成字符串
-    String Serialize(TreeNode root) {
+    private String serialize(TreeNode root) {
         if (root == null) {
             return "#_";
         }
+
         String res = root.val + "_";
-        res += Serialize(root.left);
-        res += Serialize(root.right);
+        res += serialize(root.left);
+        res += serialize(root.right);
         return res;
     }
 
     // 反序列化：将字符串逐个添加到队列中
-    TreeNode Deserialize(String str) {
+    private TreeNode deserialize(String str) {
         String[] values = str.split("_");
         Queue<String> queue = new LinkedList<>();
         for (int i = 0; i < values.length; i++) {
@@ -54,6 +55,7 @@ public class Solution {
         if (value.equals("#")) {
             return null;
         }
+
         TreeNode root = new TreeNode(Integer.valueOf(value));
         root.left = reconPreOrder(queue);
         root.right = reconPreOrder(queue);

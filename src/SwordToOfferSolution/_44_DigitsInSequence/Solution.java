@@ -13,6 +13,7 @@ public class Solution {
         if (n <= 9) {
             return n;
         }
+
         int index = 0;
         for (int i = 1; i <= 9; i++) {
             if (arr[i] >= n) {

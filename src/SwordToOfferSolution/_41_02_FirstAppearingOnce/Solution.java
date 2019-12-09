@@ -26,9 +26,11 @@ public class Solution {
         // ch 就是对应的 ASCII 值
         // 统计每个 ch 的数量
         count[ch]++;
-        queue.offer(ch); // 入队
+        // 入队
+        queue.offer(ch);
         while (!queue.isEmpty() && count[queue.peek()] > 1) {
-            queue.poll(); // 出队
+            // 出队
+            queue.poll();
         }
     }
 

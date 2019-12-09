@@ -32,6 +32,7 @@ public class Solution {
             leftLast = root;
             return root;
         }
+
         // 将 左子树 转换成双向链表，并返回头节点
         TreeNode leftNode = Convert(root.left);
         // 如果左子树的头节点不为空，则将根节点加到左链表的最后

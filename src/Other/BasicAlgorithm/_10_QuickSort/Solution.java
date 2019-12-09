@@ -35,6 +35,7 @@ public class Solution {
         if (arr == null || arr.length < 2) {
             return;
         }
+
         quickSortCore(arr, 0, arr.length - 1);
     }
 

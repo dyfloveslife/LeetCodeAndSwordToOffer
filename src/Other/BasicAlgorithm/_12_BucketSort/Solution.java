@@ -27,10 +27,10 @@ public class Solution {
         if (nums == null || nums.length < 2) {
             return 0;
         }
+
         int len = nums.length;
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
-
         // 首先找到数组中的最小值和最大值
         for (int i = 0; i < len; i++) {
             min = Math.min(min, nums[i]);
@@ -40,12 +40,12 @@ public class Solution {
         if (min == max) {
             return 0;
         }
+
         // 定义三个数组，表示每个桶中的信息，例如桶中是否有数、桶中的最大值、桶中的最小值
         boolean[] hasNum = new boolean[len + 1];
         int[] maxs = new int[len + 1];
         int[] mins = new int[len + 1];
         int bucketId = 0;
-
         // 当前数字去几号桶，响应的桶内的信息（最大值、最小值、桶内是否有数字）就得更新
         for (int i = 0; i < len; i++) {
             bucketId = bucket(nums[i], len, min, max);
@@ -53,10 +53,10 @@ public class Solution {
             maxs[bucketId] = hasNum[bucketId] ? Math.max(maxs[bucketId], nums[i]) : nums[i];
             hasNum[bucketId] = true;
         }
+
         int res = 0;
         int lastMax = maxs[0];
         int i = 1;
-
         // 找到每一个非空桶和离它左边最近的非空桶，用当前的最小减左边的最大即可
         for (; i <= len; i++) {
             if (hasNum[i]) {

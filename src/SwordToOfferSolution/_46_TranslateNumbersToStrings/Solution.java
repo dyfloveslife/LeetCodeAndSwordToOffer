@@ -29,6 +29,7 @@ public class Solution {
         if (s.charAt(start) == '0') {
             return 0;
         }
+
         // 第一种翻译方式
         int ans1 = getResult1(s, start + 1);
         int ans2 = 0;
@@ -57,8 +58,9 @@ public class Solution {
         if (s.charAt(start) == '0') {
             return 0;
         }
+
         // 判断一下之前是否计算过，如果计算过的话就不用再重复计算了
-        // getOrDefault(Object key, V defaultValue) 如果有这个 key，则使用其对应的 value，否则就使用默认值 defaultValue。
+        // getOrDefault(Object key, V defaultValue) 如果有这个 key，则使用其对应的 value，否则就使用默认值 defaultValue
         int m = map.getOrDefault(start, -1);
         if (m != -1) {
             return m;

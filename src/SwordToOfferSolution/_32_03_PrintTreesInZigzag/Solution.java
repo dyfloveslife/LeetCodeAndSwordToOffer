@@ -68,7 +68,7 @@ public class Solution {
         return res;
     }
 
-    // 用队列实现，只不过是在 分行打印 的基础上将每次的 list 进行翻转后再加入到 res 中。
+    // 用队列实现，只不过是在 分行打印 的基础上将每次的 list 进行翻转后再加入到 res 中
     public ArrayList<ArrayList<Integer>> printTreesInZigzag2(TreeNode root) {
         boolean reverse = false;
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();

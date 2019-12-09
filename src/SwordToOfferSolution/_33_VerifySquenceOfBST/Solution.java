@@ -13,6 +13,7 @@ public class Solution {
         if (sequence == null || sequence.length == 0) {
             return false;
         }
+
         return verify(sequence, 0, sequence.length - 1);
     }
 
@@ -22,6 +23,7 @@ public class Solution {
         if (start >= end) {
             return true;
         }
+
         // 得到 根节点 的值
         int rootVal = sequence[end];
         int curIndex = start;

@@ -25,6 +25,7 @@ public class Solution {
         if (root.left == null && root.right == null) {
             return;
         }
+
         // 交换操作
         TreeNode tempNode = root.left;
         root.left = root.right;

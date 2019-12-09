@@ -17,6 +17,7 @@ public class Solution {
         if (nums == null || length < 0) {
             return "";
         }
+
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < length; i++) {
             list.add(nums[i]);

@@ -14,6 +14,7 @@ public class Solution {
         if (arr == null || arr.length == 0) {
             return 0;
         }
+
         int res = arr[0];
         int times = 1;
         for (int i = 0; i < arr.length; i++) {

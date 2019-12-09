@@ -25,6 +25,7 @@ public class Solution {
         if (array == null || array.length == 0) {
             return 0;
         }
+
         int curSum = 0;
         int maxSum = Integer.MIN_VALUE;
         for (int i = 0; i < array.length; i++) {
@@ -45,8 +46,11 @@ public class Solution {
         if (array == null || array.length == 0) {
             return 0;
         }
-        int res = array[0]; // 当前所有子数组的和的最大值
-        int max = array[0]; // 包含 array[i] 的连续数组最大值
+
+        // 当前所有子数组的和的最大值
+        int res = array[0];
+        // 包含 array[i] 的连续数组最大值
+        int max = array[0];
         // 从 1 开始，因为初始值已经考虑了 0 的情况
         for (int i = 1; i < array.length; i++) {
             max = Math.max(max + array[i], array[i]);

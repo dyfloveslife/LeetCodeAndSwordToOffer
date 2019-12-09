@@ -18,18 +18,17 @@ public class Solution {
         if (head == null || toBeDeleted == null) {
             return;
         }
+
         // 要删除的节点不是尾节点
         if (toBeDeleted.next != null) {
             ListNode p = toBeDeleted.next;
             toBeDeleted.val = p.val;
             toBeDeleted.next = p.next;
-        }
-        // 链表只有一个节点，要删除的节点是头节点或尾节点
-        else if (head == toBeDeleted) {
+            // 链表只有一个节点，要删除的节点是头节点或尾节点
+        } else if (head == toBeDeleted) {
             head = null;
-        }
-        // 链表中有多个节点，删除尾节点
-        else {
+            // 链表中有多个节点，删除尾节点
+        } else {
             ListNode cur = head;
             while (cur.next != toBeDeleted) {
                 cur = cur.next;

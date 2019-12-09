@@ -17,6 +17,7 @@ public class Solution {
         if (head == null || k == 0) {
             return null;
         }
+
         ListNode aHead = head;
         ListNode bBehind = null;
         for (int i = 0; i < k - 1; i++) {
@@ -26,6 +27,7 @@ public class Solution {
                 return null;
             }
         }
+
         bBehind = head;
         while (aHead.next != null) {
             aHead = aHead.next;

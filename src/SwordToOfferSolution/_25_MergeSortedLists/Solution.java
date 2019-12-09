@@ -24,6 +24,7 @@ public class Solution {
         if (head2 == null) {
             return head1;
         }
+
         ListNode mergedHead = null;
         if (head1.val < head2.val) {
             mergedHead = head1;

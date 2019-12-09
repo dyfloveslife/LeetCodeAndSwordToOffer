@@ -40,7 +40,8 @@ public class Solution {
                 // 如果当前 B 中的元素一开始就等于 A 中的 A[middle] 的话，就说明包含，则直接跳出
                 if (A[middle] == B[i]) {
                     contains = true;
-                    break;  // 跳出 while
+                    // 跳出 while
+                    break;
                 }
                 // 从 A 中的左半部分开始查找
                 if (A[middle] > B[i]) {

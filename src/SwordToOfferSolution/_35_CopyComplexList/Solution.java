@@ -43,9 +43,9 @@ public class Solution {
         cur = pHead;
         // 指定拷贝后链表中每个节点的 next 和 random
         while (cur != null) {
-            // 当前节点的拷贝节点的 next 指针，指向的是 当前节点的下一个节点的拷贝节点。
+            // 当前节点的拷贝节点的 next 指针，指向的是 当前节点的下一个节点的拷贝节点
             map.get(cur).next = map.get(cur.next);
-            // 当前节点的拷贝节点的 random 指针，指向的是 当前节点的 random 节点的拷贝节点。
+            // 当前节点的拷贝节点的 random 指针，指向的是 当前节点的 random 节点的拷贝节点
             map.get(cur).random = map.get(cur.random);
             cur = cur.next;
         }
@@ -53,19 +53,23 @@ public class Solution {
         return map.get(pHead);
     }
 
-    // 方法二：将每个节点的拷贝节点放在其节点之后，类似于 A->A'->B->B'。
+    // 方法二：将每个节点的拷贝节点放在其节点之后，类似于 A->A'->B->B'
     public RandomListNode clone2(RandomListNode pHead) {
         if (pHead == null) {
             return null;
         }
-        // 复制链表的同时，将复制后的节点放到原节点之后，只关心 next，不关系 random。
+
+        // 复制链表的同时，将复制后的节点放到原节点之后，只关心 next，不关系 random
         RandomListNode cur = pHead;
         RandomListNode next = null;
         while (cur != null) {
             next = cur.next;
-            cur.next = new RandomListNode(cur.label); // 原节点指向复制后的节点
-            cur.next.next = next; // 复制后的节点指向下一个新的节点
-            cur = next; // cur 移动到该新的节点
+            // 原节点指向复制后的节点
+            cur.next = new RandomListNode(cur.label);
+            // 复制后的节点指向下一个新的节点
+            cur.next.next = next;
+            // cur 移动到该新的节点
+            cur = next;
         }
         // 设置每个节点的 random 指针
         cur = pHead;
@@ -78,12 +82,15 @@ public class Solution {
         }
         // 将两个链表进行分离
         cur = pHead;
-        RandomListNode res = pHead.next; //不能设置为 cur.next，因为 cur 是变化的，而 head 是不变的
+        //不能设置为 cur.next，因为 cur 是变化的，而 head 是不变的
+        RandomListNode res = pHead.next;
         while (cur != null) {
             next = cur.next.next;
             curCopy = cur.next;
-            cur.next = next; // 先连接原链表
-            curCopy.next = next != null ? next.next : null; // 再连接拷贝链表
+            // 先连接原链表
+            cur.next = next;
+            // 再连接拷贝链表
+            curCopy.next = next != null ? next.next : null;
             cur = next;
         }
         return res;

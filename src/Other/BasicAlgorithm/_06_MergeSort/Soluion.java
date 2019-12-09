@@ -17,6 +17,7 @@ public class Soluion {
         if (arr == null || arr.length < 2) {
             return;
         }
+
         sortProcess(arr, 0, arr.length - 1);
     }
 
@@ -24,6 +25,7 @@ public class Soluion {
         if (left == right) {
             return;
         }
+
         int middle = left + ((right - left) >> 1);
         sortProcess(arr, left, middle);
         sortProcess(arr, middle + 1, right);
