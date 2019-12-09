@@ -26,7 +26,7 @@ import java.util.List;
  */
 public class Solution {
     // 二分法，也就是将 B 的每个数都利用二分法在 A 中进行查找
-    public static List<Integer> getAllNotIncluded(int[] A, int[] B) {
+    private static List<Integer> getAllNotIncluded(int[] A, int[] B) {
         List<Integer> res = new ArrayList<>();
         // for 循环用于访问 B 中的每个数
         for (int i = 0; i < B.length; i++) {
