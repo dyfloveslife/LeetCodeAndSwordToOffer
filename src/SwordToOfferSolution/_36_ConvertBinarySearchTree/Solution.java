@@ -11,19 +11,21 @@ package SwordToOfferSolution._36_ConvertBinarySearchTree;
  * 5. 如果右子树链表不为空的话，将该链表追加到 root 节点之后；
  * 6. 根据左子树链表是否为空确定返回的节点。
  */
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
 
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     // 用于记录左子树的最后一个节点
     private TreeNode leftLast = null;
+
     public TreeNode Convert(TreeNode root) {
         if (root == null) {
             return null;

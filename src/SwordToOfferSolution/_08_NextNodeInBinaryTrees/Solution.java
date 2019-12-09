@@ -3,21 +3,22 @@ package SwordToOfferSolution._08_NextNodeInBinaryTrees;
 /*
  * 二叉树的下一个结点
  */
-class TreeNode<Integer> {
-    int val = 0;
-    TreeNode left;
-    TreeNode right;
-    TreeNode parent;
-
-    TreeNode(int val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
-        this.parent = null;
-    }
-}
 
 public class Solution {
+    class TreeNode<Integer> {
+        int val = 0;
+        TreeNode left;
+        TreeNode right;
+        TreeNode parent;
+
+        TreeNode(int val) {
+            this.val = val;
+            this.left = null;
+            this.right = null;
+            this.parent = null;
+        }
+    }
+
     private static TreeNode<Integer> getNextNode(TreeNode<Integer> node) {
         if (node == null) {
             return null;

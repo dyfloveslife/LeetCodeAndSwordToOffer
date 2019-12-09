@@ -9,17 +9,17 @@ import java.util.*;
  * 对于偶数行，由于是从右到左打印的，所以存入栈2中。
  */
 
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
-
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     // 方法一：使用两个栈实现
     public ArrayList<ArrayList<Integer>> printTreesInZigzag1(TreeNode root) {
         int layer = 1;

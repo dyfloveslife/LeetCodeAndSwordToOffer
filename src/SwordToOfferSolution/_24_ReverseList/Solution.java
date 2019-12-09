@@ -1,19 +1,21 @@
 package SwordToOfferSolution._24_ReverseList;
 
 /*
- * 翻转单链表
+ * 反转单链表
  * 递归实现：
  */
-class ListNode {
-    int val;
-    ListNode next = null;
 
-    ListNode(int val) {
-        this.val = val;
-    }
-}
 
 public class Solution {
+    class ListNode {
+        int val;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
+
     private static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -44,7 +46,7 @@ public class Solution {
             if (nextNode == null) {
                 reversedHead = curNode;
             }
-            // 翻转操作（注意：curNode.next 表示当前节点的指针域域，节点有数据域和指针域）
+            // 翻转操作（注意：curNode.next 表示当前节点的指针域，节点有数据域和指针域）
             curNode.next = preNode;
             // 后移操作，继续翻转下一个节点
             preNode = curNode;

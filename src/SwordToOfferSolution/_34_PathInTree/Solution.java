@@ -11,17 +11,17 @@ import java.util.Stack;
  * 弹出结点，每一轮递归返回到父结点时，当前路径也应该回退一个结点。
  */
 
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
-
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     // 保存所有的路径
     private ArrayList<ArrayList<Integer>> res = new ArrayList<>();
     // 保存当前节点

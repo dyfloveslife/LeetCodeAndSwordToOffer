@@ -6,17 +6,18 @@ package SwordToOfferSolution._07_ConstructBinaryTree;
  * 根据前序遍历和中序遍历可重建二叉树；
  * 根据中序遍历和后序遍历棵重建二叉树。
  */
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
 
 class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     private TreeNode constructBinaryTree(int[] pre, int[] in) {
         if (pre == null || in == null || pre.length <= 0 || in.length <= 0 || pre.length != in.length) {
             return null;

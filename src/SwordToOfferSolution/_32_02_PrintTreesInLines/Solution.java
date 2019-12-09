@@ -1,5 +1,6 @@
 package SwordToOfferSolution._32_02_PrintTreesInLines;
 
+import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,18 +9,18 @@ import java.util.Queue;
  * 分行从上到下打印二叉树
  */
 
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-
-    }
-}
-
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+
+        }
+    }
+
     public ArrayList<ArrayList<Integer>> printTreesInLines(TreeNode root) {
         // 存放结果
         ArrayList<ArrayList<Integer>> res = new ArrayList<>();

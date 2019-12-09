@@ -1,14 +1,7 @@
 package SwordToOfferSolution._28_SymmetricalBinaryTree;
 
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
 
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
+import javax.swing.tree.TreeNode;
 
 /*
  * 对称的二叉树
@@ -21,6 +14,16 @@ class TreeNode {
  *     pRoot1.left  pRoot1.right      pRoot2.left  pRoot2.right
  */
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     boolean isSymmetrical(TreeNode pRoot) {
         return isSymmertical(pRoot, pRoot);
     }

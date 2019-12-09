@@ -9,16 +9,17 @@ package SwordToOfferSolution._23_EntryNodeInListLoop;
  * 这次两个指针一次走一步，相遇的地方就是入口节点。
  */
 
-class ListNode {
-    int val;
-    ListNode next = null;
-
-    ListNode(int val) {
-        this.val = val;
-    }
-}
 
 public class Solution {
+    class ListNode {
+        int val;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
+
     public ListNode entryNodeInListLoop(ListNode pHead) {
         if (pHead == null || pHead.next == null) {
             return null;

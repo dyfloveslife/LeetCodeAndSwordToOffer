@@ -7,16 +7,17 @@ package SwordToOfferSolution._25_MergeSortedLists;
  * 递归实现：
  */
 
-class ListNode {
-    int val;
-    ListNode next = null;
-
-    ListNode(int val) {
-        this.val = val;
-    }
-}
 
 public class Solution {
+    class ListNode {
+        int val;
+        ListNode next = null;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
+
     public ListNode mergeList(ListNode head1, ListNode head2) {
         if (head1 == null) {
             return head2;

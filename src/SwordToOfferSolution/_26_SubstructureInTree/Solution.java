@@ -8,21 +8,22 @@ package SwordToOfferSolution._26_SubstructureInTree;
  * （1）如果 tree1 为空 && tree2 不为空，说明不匹配，
  * （2）如果 tree1 为空，tree2 为空，说明匹配。
  */
-class TreeNode {
-    int val = 0;
-    TreeNode left;
-    TreeNode right;
-    TreeNode parent;
-
-    TreeNode(int val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
-        this.parent = null;
-    }
-}
 
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left;
+        TreeNode right;
+        TreeNode parent;
+
+        TreeNode(int val) {
+            this.val = val;
+            this.left = null;
+            this.right = null;
+            this.parent = null;
+        }
+    }
+
     public boolean hasSubtree(TreeNode root1, TreeNode root2) {
         boolean res = false;
         if (root1 != null && root2 != null) {

@@ -6,17 +6,18 @@ package SwordToOfferSolution._27_MirrorOfBinaryTree;
  * 前序遍历树中的每个节点，如果遍历到的节点有子节点，则交换两个子节点。
  * 当交换完所有非叶节点的左右子节点的时候，就可以得到二叉树的镜像。
  */
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
 
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     public void mirrorOfBinaryTree(TreeNode root) {
         if (root == null) {
             return;

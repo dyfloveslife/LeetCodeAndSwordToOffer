@@ -20,17 +20,18 @@ import java.util.HashMap;
  * 2. 由于 A 的 random 是 C，那我们直接找到 C 的 next，即 C'，让 A' 的 random 指向 C' 即可。
  * 3. 重复以上操作后，再将原链表和复制后的链表进行分离即可。
  */
-class RandomListNode {
-    int label = 0;
-    RandomListNode next = null;
-    RandomListNode random = null;
-
-    RandomListNode(int label) {
-        this.label = label;
-    }
-}
 
 public class Solution {
+    class RandomListNode {
+        int label = 0;
+        RandomListNode next = null;
+        RandomListNode random = null;
+
+        RandomListNode(int label) {
+            this.label = label;
+        }
+    }
+
     // 方法一：使用额外空间：哈希表
     public RandomListNode clone1(RandomListNode pHead) {
         HashMap<RandomListNode, RandomListNode> map = new HashMap<>();

@@ -1,5 +1,6 @@
 package SwordToOfferSolution._37_SerializeBinaryTrees;
 
+import javax.swing.tree.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -16,17 +17,18 @@ import java.util.Queue;
  * 2. 将数组中的每个值都入队；
  * 3. 采用先序遍历进行反序列化。
  */
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
 
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     // 序列化：将二叉树序列化成字符串
     private String serialize(TreeNode root) {
         if (root == null) {

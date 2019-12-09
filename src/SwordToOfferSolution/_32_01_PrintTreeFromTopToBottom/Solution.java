@@ -1,18 +1,10 @@
 package SwordToOfferSolution._32_01_PrintTreeFromTopToBottom;
 
+import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    TreeNode(int val) {
-        this.val = val;
-    }
-}
 
 /*
  * 从上到下打印二叉树（不分行）
@@ -23,6 +15,16 @@ class TreeNode {
  * 如果队首元素为空则跳过，否则将队首元素的左右孩子加入到队列中。
  */
 public class Solution {
+    class TreeNode {
+        int val = 0;
+        TreeNode left = null;
+        TreeNode right = null;
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+    }
+
     public ArrayList<Integer> printFromTopToBottom(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         ArrayList<Integer> list = new ArrayList<>();
