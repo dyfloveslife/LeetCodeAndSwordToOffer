@@ -67,7 +67,7 @@ public class Solution {
         return res;
     }
 
-    // 实现 当前数字应该入哪个桶 功能
+    // 当前数字进相应的桶
     public static int bucket(long num, long len, long min, long max) {
         return (int) ((num - min) * len / (max - min));
     }
