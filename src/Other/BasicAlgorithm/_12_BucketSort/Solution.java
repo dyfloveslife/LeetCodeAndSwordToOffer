@@ -67,7 +67,7 @@ public class Solution {
         return res;
     }
 
-    // 当前数字进相应的桶
+    // 当前数字进对应的桶
     public static int bucket(long num, long len, long min, long max) {
         return (int) ((num - min) * len / (max - min));
     }
