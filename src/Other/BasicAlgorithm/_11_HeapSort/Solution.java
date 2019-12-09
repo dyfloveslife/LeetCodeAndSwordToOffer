@@ -31,19 +31,20 @@ public class Solution {
         for (int i = 0; i < arr.length; i++) {
             heapInsert(arr, i);
         }
-        // 堆排序的过程：不断的将堆顶与堆中最后一个元素交换，然后再 heapify。
+        // 堆排序的过程：不断的将堆顶与堆中最后一个元素交换，然后再 heapify
         int heapSize = arr.length;
         swap(arr, 0, --heapSize);
+
         while (heapSize > 0) {
             heapify(arr, 0, heapSize);
             swap(arr, 0, --heapSize);
         }
     }
 
-    // 从 0~(i-1) 位置已经构成大根堆了，现在需要把第 i 的位置上的元素加进去。
+    // 从 0~(i-1) 位置已经构成大根堆了，现在需要把第 i 的位置上的元素加进去
     private static void heapInsert(int[] arr, int index) {
-        // 如果当前元素比父节点元素大，则交换。
-        // 然后当前元素的索引更新成原先父节点的索引。
+        // 如果当前元素比父节点元素大，则交换
+        // 然后当前元素的索引更新成原先父节点的索引
         while (arr[index] > arr[(index - 1) / 2]) {
             swap(arr, index, (index - 1) / 2);
             index = (index - 1) / 2;
@@ -53,14 +54,15 @@ public class Solution {
     public static void heapify(int[] arr, int index, int heapSize) {
         int left = index * 2 + 1;
         int right = left + 1;
+
         while (left < heapSize) {
             // 左右孩子选出较大的
-            // 如果右孩子越界，即 right < heapSize，则最大的就是左孩子。
+            // 如果右孩子越界，即 right < heapSize，则最大的就是左孩子
             int largest = right < heapSize && arr[left] < arr[right] ? right : left;
             // 从左右孩子中选出较大的之后，还得判断和当前节点的大小。
             largest = arr[largest] > arr[index] ? largest : index;
-            // 如果当前节点变了之后还是最大的，则就不往下沉了。
-            // 也就是当前节点和孩子之间的最大值还是当前节点，就不需要再往下沉了。
+            // 如果当前节点变了之后还是最大的，则就不往下沉了
+            // 也就是当前节点和孩子之间的最大值还是当前节点，就不需要再往下沉了
             if (largest == index) {
                 break;
             }

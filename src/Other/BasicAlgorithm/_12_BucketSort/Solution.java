@@ -30,6 +30,7 @@ public class Solution {
         int len = nums.length;
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
+
         // 首先找到数组中的最小值和最大值
         for (int i = 0; i < len; i++) {
             min = Math.min(min, nums[i]);
@@ -43,19 +44,20 @@ public class Solution {
         boolean[] hasNum = new boolean[len + 1];
         int[] maxs = new int[len + 1];
         int[] mins = new int[len + 1];
-        // 定义桶的序号
-        int bid = 0;
+        int bucketId = 0;
+
         // 当前数字去几号桶，响应的桶内的信息（最大值、最小值、桶内是否有数字）就得更新
         for (int i = 0; i < len; i++) {
-            bid = bucket(nums[i], len, min, max);
-            mins[bid] = hasNum[bid] ? Math.min(mins[bid], nums[i]) : nums[i];
-            maxs[bid] = hasNum[bid] ? Math.max(maxs[bid], nums[i]) : nums[i];
-            hasNum[bid] = true;
+            bucketId = bucket(nums[i], len, min, max);
+            mins[bucketId] = hasNum[bucketId] ? Math.min(mins[bucketId], nums[i]) : nums[i];
+            maxs[bucketId] = hasNum[bucketId] ? Math.max(maxs[bucketId], nums[i]) : nums[i];
+            hasNum[bucketId] = true;
         }
         int res = 0;
         int lastMax = maxs[0];
         int i = 1;
-        // 找到每一个非空桶和离它左边最近的非空桶，用当前的最小减左边的最大即可。
+
+        // 找到每一个非空桶和离它左边最近的非空桶，用当前的最小减左边的最大即可
         for (; i <= len; i++) {
             if (hasNum[i]) {
                 res = Math.max(res, mins[i] - lastMax);

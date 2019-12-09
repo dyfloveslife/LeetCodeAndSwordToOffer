@@ -42,6 +42,7 @@ public class Solution {
         if (left < right) {
             // 随机快排
             swap(arr, left + (int) Math.random() * (right - left + 1), right);
+
             int[] p = partition(arr, left, right);
             quickSortCore(arr, left, p[0] - 1);
             quickSortCore(arr, p[1] + 1, right);
@@ -49,11 +50,12 @@ public class Solution {
     }
 
     // 荷兰国旗问题（稍微有些不同）
-    // 该函数返回的是等于数组最后一个元素 x 的范围的左右边界。
-    // p[0] 代表等于 x 的左边界，p[1] 代表等于 x 的右边界。
+    // 该函数返回的是等于数组最后一个元素 x 的范围的左右边界
+    // p[0] 代表等于 x 的左边界，p[1] 代表等于 x 的右边界
     private static int[] partition(int[] arr, int left, int right) {
         int less = left - 1;
         int more = right;
+
         while (left < more) {
             if (arr[left] < arr[right]) {
                 swap(arr, ++less, left++);
@@ -65,8 +67,8 @@ public class Solution {
         }
         // 由于改进后的 partition 函数，初始的时候大于 x 的区域是包含 x 的，所以在划分完之后，
         // 需要将最后一个 x 的位置与 大于 x 区域的第一个数交换，这样就实现了小于 x 的在左边，
-        // 等于 x 的在中间，大于 x 的在右边。
-        // 也就是说 x 一开始就不参与遍历，最后通过 swap 让其归位。
+        // 等于 x 的在中间，大于 x 的在右边
+        // 也就是说 x 一开始就不参与遍历，最后通过 swap 让其归位
         swap(arr, more, right);
         return new int[]{less + 1, more};
     }

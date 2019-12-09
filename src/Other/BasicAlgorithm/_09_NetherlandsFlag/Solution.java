@@ -17,22 +17,21 @@ public class Solution {
         int less = left - 1;
         int more = right + 1;
         int cur = left;
+
         while (cur < more) {
-            // 第一种情况：如果 cur 指向的元素比 num 小，则将 cur 所指向的元素与 less 的下一个元素交换，然后 cur 后移。
+            // 第一种情况：如果 cur 指向的元素比 num 小，则将 cur 所指向的元素与 less 的下一个元素交换，然后 cur 后移
             if (arr[cur] < num) {
                 swap(arr, ++less, cur++);
-            }
-            // 第二种情况：若果 cur 指向的元素比 num 大，则将 cur 所指向的元素与 more 的前一个元素交换，
-            // 然后 cur 不变，继续判断 cur 与 num 的大小。
-            else if (arr[cur] > num) {
+                // 第二种情况：若果 cur 指向的元素比 num 大，则将 cur 所指向的元素与 more 的前一个元素交换，
+                // 然后 cur 不变，继续判断 cur 与 num 的大小
+            } else if (arr[cur] > num) {
                 swap(arr, --more, cur);
-            }
-            // 第三种情况：如果 cur 指向的元素和 num 相同，则 cur 直接后移。
-            else {
+                // 第三种情况：如果 cur 指向的元素和 num 相同，则 cur 直接后移
+            } else {
                 cur++;
             }
         }
-        // 将等于 num 区域的左边界和右边界做成一个数组返回。
+        // 将等于 num 区域的左边界和右边界做成一个数组返回
         return new int[]{less + 1, more - 1};
     }
 

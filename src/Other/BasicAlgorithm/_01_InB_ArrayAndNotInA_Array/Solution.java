@@ -33,10 +33,11 @@ public class Solution {
             int left = 0;
             int right = A.length - 1;
             boolean contains = false;
+
             while (left <= right) {
                 int middle = left + ((right - left) >> 1);
-                // 由于是二分法，则需要一个 middle。
-                // 如果当前 B 中的元素一开始就等于 A 中的 A[middle] 的话，就说明包含，则直接跳出。
+                // 由于是二分法，则需要一个 middle
+                // 如果当前 B 中的元素一开始就等于 A 中的 A[middle] 的话，就说明包含，则直接跳出
                 if (A[middle] == B[i]) {
                     contains = true;
                     break;  // 跳出 while
@@ -44,14 +45,13 @@ public class Solution {
                 // 从 A 中的左半部分开始查找
                 if (A[middle] > B[i]) {
                     right = middle - 1;
-                }
-                // 从 A 中的右半部分开始查找
-                else {
+                    // 从 A 中的右半部分开始查找
+                } else {
                     left = middle + 1;
                 }
             }
             // B 中的数在 A 中找不到的话，说明 B 中的某个数不在 A 中，则将 B 中当前的数添加到结果集中
-            if (!contains)  {
+            if (!contains) {
                 res.add(B[i]);
             }
         }
