@@ -46,7 +46,7 @@ public class Solution {
         int[] maxs = new int[len + 1];
         int[] mins = new int[len + 1];
         int bucketId = 0;
-        // 当前数字去几号桶，响应的桶内的信息（最大值、最小值、桶内是否有数字）就得更新
+        // 当前数字去几号桶，相应的桶内的信息（最大值、最小值、桶内是否有数字）就得更新
         for (int i = 0; i < len; i++) {
             bucketId = bucket(nums[i], len, min, max);
             mins[bucketId] = hasNum[bucketId] ? Math.min(mins[bucketId], nums[i]) : nums[i];
