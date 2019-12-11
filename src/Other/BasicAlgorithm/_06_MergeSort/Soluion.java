@@ -1,5 +1,7 @@
 package Other.BasicAlgorithm._06_MergeSort;
 
+import java.util.Arrays;
+
 /*
  * 归并排序
  * 1. 先将数组分成两部分，然后分别将这两部分排好序；
@@ -22,6 +24,7 @@ public class Soluion {
     }
 
     private static void sortProcess(int[] arr, int left, int right) {
+        // 当前范围只有一个数，则本身就已经排好序了
         if (left == right) {
             return;
         }
@@ -32,8 +35,10 @@ public class Soluion {
         merge(arr, left, middle, right);
     }
 
+    // 左部分和右部分都已经排好序了，现在需要整体合并再排序
     private static void merge(int[] arr, int left, int middle, int right) {
         int[] help = new int[right - left + 1];
+        // i 的作用就是在谁小填谁的时候，从 0 位置开始填
         int i = 0;
         int position1 = left;
         int position2 = middle + 1;
@@ -49,8 +54,18 @@ public class Soluion {
             help[i++] = arr[position2++];
         }
         // 将 help 中的数拷贝到原数组中
-        for (i = 0; i < help.length; i++) {
-            arr[right + i] = help[i];
+        for (int j = 0; j < help.length; j++) {
+            // 为什么要加一个 left？？？
+            // 因为拷贝到原数组的过程也是在递归过程中拷贝的，
+            // 在这过程中，left 是变化的
+            arr[left + j] = help[j];
         }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 1, 7, -10, 4, 6, 12, 1};
+        System.out.println(Arrays.toString(arr));
+        mergeSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
