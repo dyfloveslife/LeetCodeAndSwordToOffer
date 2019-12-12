@@ -50,6 +50,10 @@
 |  44   |            [DigitsInSequence](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_44_DigitsInSequence/Solution.java)            |
 |  45   |       [SortArrayForMinNumber](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_45_SortArrayForMinNumber/Solution.java)       |
 |  46   |   [TranslateNumbersToStrings](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_46_TranslateNumbersToStrings/Solution.java)   |
-
+|  47   |             [MaxValueOfGifts](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_47_MaxValueOfGifts/Solution.java)             |
+|  48   |  [LongestSubstringWithoutDup](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_48_LongestSubstringWithoutDup/Solution.java)  |
+|  49   |                  [UglyNumber](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_49_UglyNumber/Solution.java)                  |
+|  50   |       [FirstNotRepeatingChar](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_50_FirstNotRepeatingChar/Solution.java)       |
+|  51   |                [InversePairs](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_51_InversePairs/Solution.java)                |
 
 # LeetCode
