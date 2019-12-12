@@ -65,7 +65,6 @@ public class Solution {
         }
         // 这里也可以复用变量 i
         for (int j = 0; j < help.length; j++) {
-            //arr[left + j] = help[j];
             arr[left + j] = help[j];
         }
     }
