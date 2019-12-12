@@ -56,8 +56,7 @@ public class Soluion {
         // 将 help 中的数拷贝到原数组中
         for (int j = 0; j < help.length; j++) {
             // 为什么要加一个 left？？？
-            // 因为拷贝到原数组的过程也是在递归过程中拷贝的，
-            // 在这过程中，left 是变化的
+            // 因为拷贝到原数组的过程也是在递归过程中拷贝的，在这过程中 left 是变化的
             arr[left + j] = help[j];
         }
     }
