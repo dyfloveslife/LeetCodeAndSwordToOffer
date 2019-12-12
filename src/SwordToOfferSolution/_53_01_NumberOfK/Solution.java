@@ -46,6 +46,7 @@ public class Solution {
         int middleData = arr[middleIndex];
 
         if (middleData == k) {
+            // 注意不要越界
             if ((middleIndex > 0 && arr[middleIndex - 1] != k) || middleIndex == 0) {
                 return middleIndex;
             } else {
@@ -70,6 +71,7 @@ public class Solution {
         int middleData = arr[middleIndex];
 
         if (middleData == k) {
+            // 注意不要越界
             if ((middleIndex < arr.length - 1 && arr[middleIndex + 1] != k) || middleIndex == arr.length - 1) {
                 return middleIndex;
             } else {
