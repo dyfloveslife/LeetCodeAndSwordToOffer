@@ -37,12 +37,12 @@ public class Solution {
     }
 
     // 得到第一次出现的位置
-    private static int getFirstK(int[] arr, int k, int start, int end) {
-        if (start > end) {
+    private static int getFirstK(int[] arr, int k, int left, int right) {
+        if (left > right) {
             return -1;
         }
 
-        int middleIndex = start + ((end - start) >> 1);
+        int middleIndex = left + ((right - left) >> 1);
         int middleData = arr[middleIndex];
 
         if (middleData == k) {
@@ -50,24 +50,24 @@ public class Solution {
             if ((middleIndex > 0 && arr[middleIndex - 1] != k) || middleIndex == 0) {
                 return middleIndex;
             } else {
-                end = middleIndex - 1;
+                right = middleIndex - 1;
             }
         } else if (middleData > k) {
-            end = middleIndex - 1;
+            right = middleIndex - 1;
         } else {
-            start = middleIndex + 1;
+            left = middleIndex + 1;
         }
-        return getFirstK(arr, k, start, end);
+        return getFirstK(arr, k, left, right);
     }
 
 
     // 得到最后一次出现的位置
-    private static int getLastK(int[] arr, int k, int start, int end) {
-        if (start > end) {
+    private static int getLastK(int[] arr, int k, int lfet, int right) {
+        if (lfet > right) {
             return -1;
         }
 
-        int middleIndex = start + ((end - start) >> 1);
+        int middleIndex = lfet + ((right - lfet) >> 1);
         int middleData = arr[middleIndex];
 
         if (middleData == k) {
@@ -75,14 +75,14 @@ public class Solution {
             if ((middleIndex < arr.length - 1 && arr[middleIndex + 1] != k) || middleIndex == arr.length - 1) {
                 return middleIndex;
             } else {
-                start = middleIndex + 1;
+                lfet = middleIndex + 1;
             }
         } else if (middleIndex > k) {
-            end = middleIndex - 1;
+            right = middleIndex - 1;
         } else {
-            start = middleIndex + 1;
+            lfet = middleIndex + 1;
         }
-        return getLastK(arr, k, start, end);
+        return getLastK(arr, k, lfet, right);
     }
 
     public static void main(String[] args) {
