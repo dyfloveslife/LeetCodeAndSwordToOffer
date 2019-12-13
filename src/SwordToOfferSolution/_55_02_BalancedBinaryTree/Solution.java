@@ -39,7 +39,9 @@ public class Solution {
         if (Math.abs(leftDepth - rightDepth) > 1) {
             isBalanced = false;
         }
-        return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
+
+        //return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
+        return Math.max(leftDepth, rightDepth) + 1;
     }
 
     // 方法二：
