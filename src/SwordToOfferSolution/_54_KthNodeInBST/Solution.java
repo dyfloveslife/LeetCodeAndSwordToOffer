@@ -30,6 +30,9 @@ public class Solution {
         Stack<TreeNode> stack = new Stack<>();
         TreeNode curNode = root;
 
+        // 如何理解这里的 while 条件？
+        // 假设 curNode 已经到了叶节点的孩子节点了，说明 curNode 为空；
+        // 那么此时栈是不为空的，即还有元素，所以还需要后序的栈弹出操作
         while (curNode != null  || !stack.isEmpty()) {
             if (curNode != null) {
                 stack.push(curNode);
