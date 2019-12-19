@@ -10,6 +10,10 @@ package SwordToOfferSolution._56_01_NumbersAppearOnce;
  * 5. 用这个位置上的数是不是 1 做划分，将原数组划分成一组在该位置上是 1 的部分，而另一组划分成在该位置上不是 1（也就是 0）的部分；
  * 6. 分别在这两部分做步骤（2）操作，即利用（2）中的思想，就可以分别得出这两部分只出现一次的数。
  *
+ * 此外，异或运算是不考虑进位的加法运算，如下：
+  *  0 XOR 0 = 0 + 0 = 0
+  *  0 XOR 1 = 0 + 1 = 1
+  *  1 XOR 1 = 1 + 1 = 0（不进位）
  */
 public class Solution {
     public void findNumsAppearOnce(int[] arr, int nums1[], int nums2[]) {
