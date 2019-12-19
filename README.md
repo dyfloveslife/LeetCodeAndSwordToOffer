@@ -55,14 +55,14 @@
 |  49   |                  [UglyNumber](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_49_UglyNumber/Solution.java)                   |
 |  50   |       [FirstNotRepeatingChar](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_50_FirstNotRepeatingChar/Solution.java)        |
 |  51   |                [InversePairs](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_51_InversePairs/Solution.java)                 |
-|  52   |    [52_FirstCommonNodesInLists](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_52_FirstCommonNodesInLists/Solution.java)    |
-| 53_01 |               [53_01_NumberOfK](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_01_NumberOfK/Solution.java)               |
-| 53_02 |           [53_02_MissingNumber](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_02_MissingNumber/Solution.java)           |
-| 53_03 | [53_03_IntegerIdenticalToIndex](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_03_IntegerIdenticalToIndex/Solution.java) |
-|  54   |               [54_KthNodeInBST](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_54_KthNodeInBST/Solution.java)               |
-| 55_01 |               [55_01_TreeDepth](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_01_TreeDepth/Solution.java)               |
-| 55_02 |      [55_02_BalancedBinaryTree](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_02_BalancedBinaryTree/Solution.java)      |
-| 56_01 |       [56_01_NumbersAppearOnce](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_01_NumbersAppearOnce/Solution.java)       |
-| 56_02 |     [56_02_NumberAppearingOnce](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_02_NumberAppearingOnce/Solution.java)     |
+|  52   |    [FirstCommonNodesInLists](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_52_FirstCommonNodesInLists/Solution.java)    |
+| 53_01 |               [NumberOfK](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_01_NumberOfK/Solution.java)               |
+| 53_02 |           [MissingNumber](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_02_MissingNumber/Solution.java)           |
+| 53_03 | [IntegerIdenticalToIndex](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_03_IntegerIdenticalToIndex/Solution.java) |
+|  54   |               [KthNodeInBST](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_54_KthNodeInBST/Solution.java)               |
+| 55_01 |               [TreeDepth](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_01_TreeDepth/Solution.java)               |
+| 55_02 |      [BalancedBinaryTree](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_02_BalancedBinaryTree/Solution.java)      |
+| 56_01 |       [NumbersAppearOnce](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_01_NumbersAppearOnce/Solution.java)       |
+| 56_02 |     [NumberAppearingOnce](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_02_NumberAppearingOnce/Solution.java)     |
 
 # LeetCode
