@@ -15,6 +15,7 @@ public class Solution {
         }
 
         int len = str.length();
+        // 边界条件，如果输入的 n 大于 str 的长度，则直接输出原先的 str
         if (n > len) {
             return str;
         }
@@ -40,6 +41,6 @@ public class Solution {
 
     public static void main(String[] args) {
         String str = "abcdefg";
-        System.out.println(leftRotateString(str, 2));
+        System.out.println(leftRotateString(str, 8));
     }
 }
