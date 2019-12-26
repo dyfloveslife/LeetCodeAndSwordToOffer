@@ -1,6 +1,5 @@
 package SwordToOfferSolution._59_01_MaxInSlidingWindow;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -8,7 +7,7 @@ import java.util.LinkedList;
  * 滑动窗口的最大值
  *
  * 思路：
- * 1. 使用双端队列统计每次窗口滑动时的最大值；
+ * 1. 使用双端队列统计每次窗口滑动时的最大值；`
  * 2. 用两个指针 L 和 R 表示窗口，R 向右移动一个位置表示加数操作，L 向右移动一个位置表示减数操作；
  * 3. 若一开始 R 向右移动一个数，则将当前数与当前数的索引共同从队尾进入到双端队列中，由于双端队列从队头到队尾是由大到小的，所以进入的时候
  *    也得保证当前进入的元素满足从大到小；
