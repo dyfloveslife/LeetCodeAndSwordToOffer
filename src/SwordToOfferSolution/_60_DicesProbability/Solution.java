@@ -41,7 +41,7 @@ public class Solution {
         for (int i = 2; i <= n; i++) {
             for (int j = 2; j <= 6 * n; j++) {
                 int sum = 0;
-                for (int m = 1; m < j && m <= 6; m++) {
+                for (int m = 1; m <= j && m <= 6; m++) {
                     sum += dp[i - 1][j - m];
                 }
                 dp[i][j] = sum;
