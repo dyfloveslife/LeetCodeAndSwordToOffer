@@ -1,4 +1,4 @@
-package SwordToOfferSolution._59_01_MaxInSlidingWindow;
+package SwordToOfferSolution._59_MaxInSlidingWindow;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
