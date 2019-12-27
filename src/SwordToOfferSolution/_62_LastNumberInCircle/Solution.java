@@ -38,6 +38,7 @@ public class Solution {
             return head;
         }
 
+        // 得到链表总长度
         Node cur = head.next;
         int temp = 1;
         while (cur != head) {
@@ -45,7 +46,7 @@ public class Solution {
             cur = cur.next;
         }
 
-        temp = getLive(temp, m);
+        temp = getLive(temp, m); // tmp -> service node position
         while (--temp != 0) {
             head = head.next;
         }
@@ -57,7 +58,7 @@ public class Solution {
         if (i == 1) {
             return 1;
         }
-        return (getLive(i - 1, m) + m -  1) % 1 + 1;
+        return (getLive(i - 1, m) + m -  1) % i + 1;
     }
 
     public static void printCircularList(Node head) {
