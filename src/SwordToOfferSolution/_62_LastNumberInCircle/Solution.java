@@ -46,10 +46,13 @@ public class Solution {
             cur = cur.next;
         }
 
-        temp = getLive(temp, m); // tmp -> service node position
+        // 得到最终存活节点的位置
+        temp = getLive(temp, m);
         while (--temp != 0) {
+            // 移动 head，找到最终存活的节点
             head = head.next;
         }
+        // 让该存活的节点自己指向自己
         head.next = head;
         return head;
     }
