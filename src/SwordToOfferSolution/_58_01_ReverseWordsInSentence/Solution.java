@@ -3,6 +3,11 @@ package SwordToOfferSolution._58_01_ReverseWordsInSentence;
 /*
  * 翻转单词顺序
  *
+ * 题目描述：
+ * 输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。
+ * 为简单起见，标点符号和普通字母一样处理。
+ * 例如输入字符串 "I am a student. "，则输出 "student. a am I"。
+ *
  * 思路：
  * 1. 不能使用额外的辅助空间；
  * 2. 先翻转整个句子，然后再翻转每个单词；
