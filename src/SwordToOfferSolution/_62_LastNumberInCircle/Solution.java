@@ -2,7 +2,7 @@ package SwordToOfferSolution._62_LastNumberInCircle;
 
 /*
  * 圆圈中最后剩下的数字
- * 详见：https://dyfloveslife.github.io/2019/12/27/offer-Josephus
+ * 详见：https://dyfloveslife.github.io/2019/12/27/offer-Josephus/
  *
  * 思路：
  * 1. 从下往上计算（反过来计算），每删除一个数，然后链表就重新编号。由于最后所剩下的节点数只有一个数，所以这个节点的编号就是 1；
