@@ -72,5 +72,11 @@
 |  60   |            [DicesProbability](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_60_DicesProbability/Solution.java)            |
 |  61   |              [ContinousCards](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_61_ContinousCards/Solution.java)              |
 |  62   |          [LastNumberInCircle](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_62_LastNumberInCircle/Solution.java)          |
+|  63   |               [MaximalProfit](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_63_MaximalProfit/Solution.java)               |
+|  64   |                  [Accumulate](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_64_Accumulate/Soltuion.java)                  |
+|  65   |               [AddTwoNumbers](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_65_AddTwoNumbers/Solution.java)               |
+|  66   |               [ConstuctArray](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_66_ConstuctArray/Solution.java)               |
+|  67   |                 [StringToInt](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_67_StringToInt/Solution.java)                 |
+|  68   |          [CommonParentInTree](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_68_CommonParentInTree/Solution.java)          |
 
 # LeetCode
