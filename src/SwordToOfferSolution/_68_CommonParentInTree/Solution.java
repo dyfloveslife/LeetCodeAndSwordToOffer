@@ -101,6 +101,7 @@ public class Solution {
         if (left != null && right != null) {
             return root;
         }
+        // 检查左子树或右子树是否是最低公共祖先
         return left != null ? left : right;
     }
 }
