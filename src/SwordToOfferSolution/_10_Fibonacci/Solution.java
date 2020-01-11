@@ -8,8 +8,8 @@ package SwordToOfferSolution._10_Fibonacci;
  *
  * 思路：
  * 1. 递归；
- * 2. 递归改 DP；
- * 3. 带有备忘录的 DP；
+ * 2. 带有备忘录的递归；
+ * 3. 递归改 DP；
  * 4. 改进的 DP。
  */
 public class Solution {

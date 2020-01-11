@@ -3,6 +3,9 @@ package SwordToOfferSolution._50_FirstNotRepeatingChar;
 /*
  * 在字符串中，第一个只出现一次的字符位置
  *
+ * 题目描述：
+ * 在字符串中找出第一个只出现一次的字符。如输入 abaccdeff，则输出 b。
+ *
  * 思路：
  * 使用每个字符的 ASCII 值最为数组的索引。
  */

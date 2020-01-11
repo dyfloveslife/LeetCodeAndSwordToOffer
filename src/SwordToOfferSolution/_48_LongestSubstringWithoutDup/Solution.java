@@ -5,6 +5,10 @@ import java.util.Arrays;
 /*
  * 最长不含重复字符的子字符串
  *
+ * 题目描述：
+ * 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
+ * 假设字符串中只包含从 a 到 z 的字符。
+ *
  * 思路：DP
  * https://dyfloveslife.github.io/2019/12/11/offer-longest-SubString-Without-Duplication/
  */
