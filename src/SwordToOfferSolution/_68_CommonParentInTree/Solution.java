@@ -95,7 +95,6 @@ public class Solution {
 
         TreeNode left = lowestCommonAncestor2(root.left, p, q);
         TreeNode right = lowestCommonAncestor2(root.right, p, q);
-
         // 当前节点得到了来自左侧非空节点的值以及右侧非空节点的值
         // 此时当前节点就是最低公共祖先
         if (left != null && right != null) {
