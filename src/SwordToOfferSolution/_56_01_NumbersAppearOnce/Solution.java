@@ -1,7 +1,7 @@
 package SwordToOfferSolution._56_01_NumbersAppearOnce;
 
 /*
- * 数组中只出现一次的数字
+ * 数组中只出现一次的两个数字
  *
  * 题目描述：
  * 一个整型数组里除了两个数字之外，其他的数字都出现了两次。

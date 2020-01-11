@@ -62,7 +62,7 @@
 |   54   | KthNodeInBST                | 二叉搜索树的第 K 大结点        |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_54_KthNodeInBST/Solution.java)          |
 | 55_01  | TreeDepth                   | 二叉树的深度                   |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_01_TreeDepth/Solution.java)          |
 | 55_02  | BalancedBinaryTree          | 平衡二叉树                     |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_02_BalancedBinaryTree/Solution.java)      |
-| 56_01  | NumbersAppearOnce           | 数组中数字出现一次的两个数字   |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_01_NumbersAppearOnce/Solution.java)      |
+| 56_01  | NumbersAppearOnce           | 数组中只出现一次的两个数字   |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_01_NumbersAppearOnce/Solution.java)      |
 | 56_02  | NumberAppearingOnce         | 数组中唯一只出现一次的数字     |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_02_NumberAppearingOnce/Solution.java)     |
 | 57_01  | TwoNumbersWithSum           | 和为 S 的两个数字              |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_57_01_TwoNumbersWithSum/Solution.java)      |
 | 57_02  | ContinuousSquenceWithSum    | 和为 S 的连续正数序列          |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_57_02_ContinuousSquenceWithSum/Solution.java)   |
