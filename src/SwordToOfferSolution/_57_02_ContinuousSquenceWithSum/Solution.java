@@ -11,9 +11,9 @@ import java.util.ArrayList;
  *
  * 思路：
  * 1. 使用两个指针 left 和 right：
- *     如果从 left 到 right 的序列的和大于 s，则可以从序列中去掉较小的值，即增大 left 的值；
- *     如果从 left 到 right 的序列的和小于 s，则可以从序列中去掉较大的值，即减小 right 的值，让这个序列包含更多的数；
- * 2. 注意在求序列和的时候，由于公差是 1，所以可以直接用求和公式：n*(a1+an)/2
+ *    1.1) 如果从 left 到 right 的序列的和大于 s，则可以从序列中去掉较小的值，即增大 left 的值；
+ *    1.2) 如果从 left 到 right 的序列的和小于 s，则可以从序列中去掉较大的值，即减小 right 的值，让这个序列包含更多的数；
+ * 2. 注意在求序列和的时候，由于公差是 1，所以可以直接用求和公式：n*(a1+an)/2。
  */
 public class Solution {
     public static ArrayList<ArrayList<Integer>> findContinuousSquence(int sum) {

@@ -16,7 +16,6 @@ package SwordToOfferSolution._64_Accumulate;
  * 2. 由于关键字的限制，这里使用短路运算符 &&;
  * 3. 如果前面的条件为假，则真个表达式的结果就是假，后面的条件就不进行判断了;
  * 4. n 直到 0 就返回结果。
- *
  */
 public class Soltuion {
     public int sum_Solution(int n) {

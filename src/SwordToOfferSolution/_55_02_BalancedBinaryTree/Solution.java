@@ -1,11 +1,14 @@
 package SwordToOfferSolution._55_02_BalancedBinaryTree;
 
 /*
- * 判断一棵树是不是平衡二叉树
+ * 平衡二叉树
+ *
+ * 题目描述：
+ * 输入一棵二叉树的根结点，判断该树是不是平衡二叉树。
+ * 如果某二叉树中任意结点的左右子树的深度相差不超过 1，那么它就是一棵平衡二叉树。
  *
  * 思路：
  * 后序遍历二叉树节点，同时统计当前节点的深度。
- *
  */
 public class Solution {
     class TreeNode {

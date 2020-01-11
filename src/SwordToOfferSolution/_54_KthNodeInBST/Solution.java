@@ -3,11 +3,14 @@ package SwordToOfferSolution._54_KthNodeInBST;
 import java.util.Stack;
 
 /*
- * 二叉查找树的第 K 个结点
+ * 二叉查找树（搜索树）的第 K 个结点
+ *
+ * 题目描述：
+ * 给定一棵二叉搜索树，请找出其中的第 k 大的结点。
  *
  * 思路：
- * 中序遍历直接梭~
- * 感觉非递归比较清晰
+ * 1. 中序遍历直接梭~
+ * 2. 感觉非递归比较清晰
  */
 public class Solution {
     class TreeNode {

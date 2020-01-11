@@ -13,11 +13,10 @@ package SwordToOfferSolution._58_01_ReverseWordsInSentence;
  * 2. 先翻转整个句子，然后再翻转每个单词；
  * 3. 翻转单词的时候，根据空格来确定每个单词的起始位置;
  * 4. 也可以先翻转每个单词，再翻转句子。
- *
- * 用双指针，begin 和 end 分别控制单词的首尾，end 不断往后移动；
- * 如果 end 到了最后或者遇到了空格，则翻转每个单词；
- * 翻转完后要更新 begin 的位置，并且 end 继续向后移动；
- * 直到最后一个单词翻转完后，再翻转整个句子。
+ * 5. 用双指针，begin 和 end 分别控制单词的首尾，end 不断往后移动；
+ * 6. 如果 end 到了最后或者遇到了空格，则翻转每个单词；
+ * 7. 翻转完后要更新 begin 的位置，并且 end 继续向后移动；
+ * 8. 直到最后一个单词翻转完后，再翻转整个句子。
  */
 public class Solution {
     public static String reverseWordsInSentence(String str) {

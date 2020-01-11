@@ -7,8 +7,7 @@ package SwordToOfferSolution._67_StringToInt;
  * 请你写一个函数StrToInt，实现把字符串转换成整数这个功能。不能使用 atoi 或者其他类似的库函数。
  *
  * 思路：
- * 该题需要考虑的特殊情况比较多，例如：数据溢出、空串、只有正负号、有无正负号、非法输入等
- *
+ * 该题需要考虑的特殊情况比较多，例如：数据溢出、空串、只有正负号、有无正负号、非法输入等。
  */
 public class Solution {
     public static int strToInt(String str) {
