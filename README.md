@@ -32,9 +32,9 @@
 |   29   | PrintMatrix                 | 顺时针打印矩阵                 |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_29_PrintMatrix/Solution.java)           |
 |   30   | MinInStack                  | 包含 min 函数的栈              |           [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_30_MinInStack/Solution.java)           |
 |   31   | StackPushPopOrder           | 栈的压入、弹出序列             |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_31_StackPushPopOrder/Solution.java)        |
-| 32_01  | PrintTreeFromTopToBottom    | 从上往下打印二叉树             |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_01_PrintTreeFromTopToBottom/Solution.java)   |
-| 32_02  | PrintTreesInLines           | 把二叉树打印成多行             |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_02_PrintTreesInLines/Solution.java)      |
-| 32_03  | PrintTreesInZigzag          | 按之字形顺序打印二叉树         |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_03_PrintTreesInZigzag/Solution.java)      |
+| 32_01  | PrintTreeFromTopToBottom    | 不分行从上往下打印二叉树             |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_01_PrintTreeFromTopToBottom/Solution.java)   |
+| 32_02  | PrintTreesInLines           | 分行从上往下打印二叉树             |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_02_PrintTreesInLines/Solution.java)      |
+| 32_03  | PrintTreesInZigzag          | 之字形打印二叉树         |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_03_PrintTreesInZigzag/Solution.java)      |
 |   33   | VerifySquenceOfBST          | 二叉搜索树的后序遍历序列       |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_33_VerifySquenceOfBST/Solution.java)       |
 |   34   | PathInTree                  | 二叉树中和为某一值的路径       |           [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_34_PathInTree/Solution.java)           |
 |   35   | CopyComplexList             | 复杂链表的复制                 |        [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_35_CopyComplexList/Solution.java)         |
@@ -47,7 +47,7 @@
 | 41_02  | FirstAppearingOnce          | 字符流中第一个不重复的字符     |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_41_02_FirstAppearingOnce/Solution.java)      |
 |   42   | GreatestSumOfSubarrays      | 连续子数组的最大和             |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_42_GreatestSumOfSubarrays/Solution.java)     |
 |   43   | NumberOf1Between1AndN       | 从 1 到 n 整数中 1 出现的次数  |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_43_NumberOf1Between1AndN/Solution.java)      |
-|   44   | DigitsInSequence            | 数字序列中的某一位数字         |        [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_44_DigitsInSequence/Solution.java)        |
+|   44   | DigitsInSequence            | 数字序列中某一位的数字         |        [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_44_DigitsInSequence/Solution.java)        |
 |   45   | SortArrayForMinNumber       | 把数组排成最小的数             |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_45_SortArrayForMinNumber/Solution.java)      |
 |   46   | TranslateNumbersToStrings   | 把数字翻译成字符串             |   [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_46_TranslateNumbersToStrings/Solution.java)    |
 |   47   | MaxValueOfGifts             | 礼物的最大价值                 |        [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_47_MaxValueOfGifts/Solution.java)         |
@@ -59,7 +59,7 @@
 | 53_01  | NumberOfK                   | 数字在排序数组中出现的次数     |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_01_NumberOfK/Solution.java)          |
 | 53_02  | MissingNumber               | 0~n-1 中缺失的数字             |        [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_02_MissingNumber/Solution.java)        |
 | 53_03  | IntegerIdenticalToIndex     | 数组中数值和下标相等的元素     |   [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_53_03_IntegerIdenticalToIndex/Solution.java)   |
-|   54   | KthNodeInBST                | 二叉查找树的第 K 个结点        |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_54_KthNodeInBST/Solution.java)          |
+|   54   | KthNodeInBST                | 二叉搜索树的第 K 大结点        |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_54_KthNodeInBST/Solution.java)          |
 | 55_01  | TreeDepth                   | 二叉树的深度                   |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_01_TreeDepth/Solution.java)          |
 | 55_02  | BalancedBinaryTree          | 平衡二叉树                     |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_02_BalancedBinaryTree/Solution.java)      |
 | 56_01  | NumbersAppearOnce           | 数组中数字出现一次的两个数字   |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_01_NumbersAppearOnce/Solution.java)      |
