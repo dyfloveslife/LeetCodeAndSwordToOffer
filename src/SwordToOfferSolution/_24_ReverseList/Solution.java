@@ -2,9 +2,13 @@ package SwordToOfferSolution._24_ReverseList;
 
 /*
  * 反转单链表
- * 递归实现：
+ *
+ * 题目描述：
+ * 定义一个函数，输入一个链表的头结点，反转该链表并输出反转后链表的头结点。
+ *
+ * 思路：
+ * 递归实现
  */
-
 
 public class Solution {
     class ListNode {

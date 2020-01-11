@@ -2,11 +2,16 @@ package SwordToOfferSolution._26_SubstructureInTree;
 
 /*
  * 树的子结构
- * 注意 null的条件，HasSubTree 中，如果两棵树都不为空才进行判断，
- * DoesTree1HasTree2 中，如果 Tree2 为空，则说明第二棵树遍历完了，即匹配成功，
- * tree1 为空有两种情况:
- * （1）如果 tree1 为空 && tree2 不为空，说明不匹配，
- * （2）如果 tree1 为空，tree2 为空，说明匹配。
+ *
+ * 题目描述：
+ * 输入两棵二叉树 A 和 B，判断 B 是不是 A 的子结构。
+ *
+ * 思路：
+ * 1. 注意 null 的条件，HasSubTree 中，如果两棵树都不为空才进行判断，
+ *    DoesTree1HasTree2 中，如果 Tree2 为空，则说明第二棵树遍历完了，即匹配成功；
+ * 2. tree1 为空有两种情况:
+ *   1) 如果 tree1 为空且 tree2 不为空，说明不匹配；
+ *   2) 如果 tree1 为空，tree2 为空，说明匹配。
  */
 
 public class Solution {
