@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 /*
+ * 从尾到头打印链表
+ *
  * 题目描述：
  * 输入一个链表，按链表值从尾到头的顺序返回一个 ArrayList。
+ * 也就是说，输入一个链表的头结点，从尾到头反过来打印出每个结点的值。
+ *
  */
 public class Solution {
 

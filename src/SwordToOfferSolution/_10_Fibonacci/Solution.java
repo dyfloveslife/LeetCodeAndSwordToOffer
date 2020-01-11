@@ -2,7 +2,15 @@ package SwordToOfferSolution._10_Fibonacci;
 
 /*
  * 斐波那契数列
- * 改进的 DP
+ *
+ * 题目描述：
+ * 写一个函数，输入 n，求斐波那契（Fibonacci）数列的第 n 项。
+ *
+ * 思路：
+ * 1. 递归；
+ * 2. 递归改 DP；
+ * 3. 带有备忘录的 DP；
+ * 4. 改进的 DP。
  */
 public class Solution {
     public int fibpnacci(int n) {

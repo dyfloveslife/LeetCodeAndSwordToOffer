@@ -2,6 +2,10 @@ package SwordToOfferSolution._17_Print1ToMaxOfNDigits;
 
 /*
  * 打印从 1 到最大的 n 位数
+ *
+ * 题目描述：
+ * 输入数字 n，按顺序打印出从 1 最大的 n 位十进制数。比如输入 3，则打印出 1、2、3 一直到最大的 3 位数即 999。
+ *
  */
 public class Solution {
     // 方法一

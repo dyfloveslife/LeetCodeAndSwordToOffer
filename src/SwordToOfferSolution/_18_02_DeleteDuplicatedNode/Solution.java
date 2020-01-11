@@ -2,6 +2,13 @@ package SwordToOfferSolution._18_02_DeleteDuplicatedNode;
 
 /*
  * 删除链表中重复的结点
+ *
+ * 题目描述：
+ * 在一个排序的链表中，如何删除重复的结点？例如，在图(a)中重复结点被删除之后，链表如图(b)所示。
+ *
+ * (a) 1->2->3->3->4->4->5
+ * (b) 1->2->5
+ *
  */
 public class Solution {
     public class ListNode {

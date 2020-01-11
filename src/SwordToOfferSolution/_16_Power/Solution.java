@@ -2,8 +2,14 @@ package SwordToOfferSolution._16_Power;
 
 /*
  * 数值的整数次方
- * 1、当底数是 0 且指数为 负数 的时候，就返回 0
- * 2、当指数为 负数 的时候，可以先对指数求绝对值，然后再将计算出的结果取倒数。
+ *
+ * 题目描述：
+ * 实现函数 double Power(double base, int exponent)，求 base 的 exponent 次方。
+ * 不得使用库函数，同时不需要考虑大数问题。
+ *
+ * 思路：
+ * 1. 当底数是 0 且指数为负数的时候，就返回 0；
+ * 2. 当指数为负数的时候，可以先对指数求绝对值，然后再将计算出的结果取倒数。
  */
 public class Solution {
 

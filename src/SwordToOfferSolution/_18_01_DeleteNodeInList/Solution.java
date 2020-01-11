@@ -2,6 +2,10 @@ package SwordToOfferSolution._18_01_DeleteNodeInList;
 
 /*
  * 在 O(1) 的时间内删除链表节点
+ *
+ * 题目描述：
+ * 给定单向链表的头指针和一个结点指针，定义一个函数在 O(1) 时间删除该结点。
+ *
  */
 public class Solution {
     public static class ListNode {
