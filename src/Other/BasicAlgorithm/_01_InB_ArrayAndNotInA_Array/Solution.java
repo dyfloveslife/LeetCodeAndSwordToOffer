@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /*
- * 一个有序数组 A，另一个无序数组 B，请打印 B 中的所有不在 A 中的数。
+ * 一个有序数组 A，另一个无序数组 B，请打印在数组 B 中而不在数组 A 中的数。
  * A 数组长度为 N，B 数组长度为 M。
  *
  * 法一：二分法，每次砍掉数组中一半的数 O(logN)

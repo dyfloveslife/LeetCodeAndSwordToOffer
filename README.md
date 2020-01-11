@@ -1,6 +1,27 @@
 # 目录/Contents
 - [剑指 Offer](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%89%91%E6%8C%87offer)
 - [LeetCode](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#leetcode)
+- 基础算法
+  - 找出在数组 B 中而不在数组 A 中的数
+  - 冒泡排序
+  - 选择排序
+  - 插入排序
+  - 介绍递归
+  - 归并排序
+  - 小和问题
+  - 数组划分问题
+  - 荷兰国旗问题
+  - 快速排序
+  - 堆排序
+  - 桶排序
+  - 用数组实现固定的栈
+  - 用数组实现固定的队列
+  - 栈与队列相互实现
+  - 顺时针打印矩阵
+  - 将正方形顺时针旋转 90°
+  - 反转单向链表和双向链表
+  - 之字形打印矩阵
+  - 在排好序的矩阵中找到指定的数
 
 # 剑指Offer
 
@@ -36,9 +57,9 @@
 |   29   | PrintMatrix                 | 顺时针打印矩阵                 |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_29_PrintMatrix/Solution.java)           |
 |   30   | MinInStack                  | 包含 min 函数的栈              |           [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_30_MinInStack/Solution.java)           |
 |   31   | StackPushPopOrder           | 栈的压入、弹出序列             |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_31_StackPushPopOrder/Solution.java)        |
-| 32_01  | PrintTreeFromTopToBottom    | 不分行从上往下打印二叉树             |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_01_PrintTreeFromTopToBottom/Solution.java)   |
-| 32_02  | PrintTreesInLines           | 分行从上往下打印二叉树             |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_02_PrintTreesInLines/Solution.java)      |
-| 32_03  | PrintTreesInZigzag          | 之字形打印二叉树         |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_03_PrintTreesInZigzag/Solution.java)      |
+| 32_01  | PrintTreeFromTopToBottom    | 不分行从上往下打印二叉树       |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_01_PrintTreeFromTopToBottom/Solution.java)   |
+| 32_02  | PrintTreesInLines           | 分行从上往下打印二叉树         |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_02_PrintTreesInLines/Solution.java)      |
+| 32_03  | PrintTreesInZigzag          | 之字形打印二叉树               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_32_03_PrintTreesInZigzag/Solution.java)      |
 |   33   | VerifySquenceOfBST          | 二叉搜索树的后序遍历序列       |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_33_VerifySquenceOfBST/Solution.java)       |
 |   34   | PathInTree                  | 二叉树中和为某一值的路径       |           [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_34_PathInTree/Solution.java)           |
 |   35   | CopyComplexList             | 复杂链表的复制                 |        [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_35_CopyComplexList/Solution.java)         |
@@ -66,7 +87,7 @@
 |   54   | KthNodeInBST                | 二叉搜索树的第 K 大结点        |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_54_KthNodeInBST/Solution.java)          |
 | 55_01  | TreeDepth                   | 二叉树的深度                   |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_01_TreeDepth/Solution.java)          |
 | 55_02  | BalancedBinaryTree          | 平衡二叉树                     |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_55_02_BalancedBinaryTree/Solution.java)      |
-| 56_01  | NumbersAppearOnce           | 数组中只出现一次的两个数字   |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_01_NumbersAppearOnce/Solution.java)      |
+| 56_01  | NumbersAppearOnce           | 数组中只出现一次的两个数字     |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_01_NumbersAppearOnce/Solution.java)      |
 | 56_02  | NumberAppearingOnce         | 数组中唯一只出现一次的数字     |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_56_02_NumberAppearingOnce/Solution.java)     |
 | 57_01  | TwoNumbersWithSum           | 和为 S 的两个数字              |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_57_01_TwoNumbersWithSum/Solution.java)      |
 | 57_02  | ContinuousSquenceWithSum    | 和为 S 的连续正数序列          |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_57_02_ContinuousSquenceWithSum/Solution.java)   |
@@ -74,8 +95,8 @@
 | 58_02  | LeftRotateString            | 左旋转字符串                   |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_58_02_LeftRotateString/Solution.java)       |
 |   59   | MaxInSlidingWindow          | 滑动窗口的最大值               |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_59_MaxInSlidingWindow/Solution.java)       |
 |   60   | DicesProbability            | n 个骰子的点数                 |        [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_60_DicesProbability/Solution.java)        |
-|   61   | ContinousCards              | 扑克牌中的顺子                     |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_61_ContinousCards/Solution.java)         |
-|   62   | LastNumberInCircle          | 圆圈中最后剩下的数字             |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_62_LastNumberInCircle/Solution.java)       |
+|   61   | ContinousCards              | 扑克牌中的顺子                 |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_61_ContinousCards/Solution.java)         |
+|   62   | LastNumberInCircle          | 圆圈中最后剩下的数字           |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_62_LastNumberInCircle/Solution.java)       |
 |   63   | MaximalProfit               | 股票的最大利润                 |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_63_MaximalProfit/Solution.java)          |
 |   64   | Accumulate                  | 求 1+2+3+...+n                 |           [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_64_Accumulate/Soltuion.java)           |
 |   65   | AddTwoNumbers               | 不用加减乘除做加法             |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_65_AddTwoNumbers/Solution.java)          |
@@ -84,6 +105,7 @@
 |   68   | CommonParentInTree          | 树中两个节点的最低公共祖先     |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_68_CommonParentInTree/Solution.java)       |
 
 # LeetCode
+[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95contents)
 
 | 序号/# | 英文题目/English Title                            | 中文题目/Chinese Title                                |              题解/Solution              | 难度/Difficulty |
 | :----: | ------------------------------------------------- | ----------------------------------------------------- | :-------------------------------------: | :-------------: |
