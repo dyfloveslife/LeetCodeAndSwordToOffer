@@ -3,7 +3,7 @@ package SwordToOfferSolution._54_KthNodeInBST;
 import java.util.Stack;
 
 /*
- * 二叉查找树（搜索树）的第 K 个结点
+ * 二叉查找树（搜索树）的第 K 大结点
  *
  * 题目描述：
  * 给定一棵二叉搜索树，请找出其中的第 k 大的结点。
