@@ -1,6 +1,6 @@
 #剑指Offer
 
-| 序号/# | 英文题目/EnglishTitle       | 中文题目/ChineseTitle          | 题解/Solution                                                                                                                                         |
+| 序号/# | 英文题目/English Title       | 中文题目/Chinese Title          | 题解/Solution                                                                                                                                         |
 | :----: | --------------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 |   3    | FindDuplicationInArray      | 数组中重复的数字               | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_03_FindDuplicationInArray/Solution.java)         |
 |   4    | FindInPartiallySortedMatrix | 二维数组中的查找               | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_04_FindInPartiallySortedMatrix/Solution.java)    |
