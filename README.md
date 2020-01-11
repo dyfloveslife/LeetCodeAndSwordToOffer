@@ -1,6 +1,6 @@
 # 剑指Offer
 
-| 序号/# | 英文题目/English Title       | 中文题目/Chinese Title          | 题解/Solution                                                                                                                                         |
+| 序号/# | 英文题目/English Title      | 中文题目/Chinese Title         | 题解/Solution                                                                                                                                         |
 | :----: | --------------------------- | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 |   3    | FindDuplicationInArray      | 数组中重复的数字               | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_03_FindDuplicationInArray/Solution.java)         |
 |   4    | FindInPartiallySortedMatrix | 二维数组中的查找               | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_04_FindInPartiallySortedMatrix/Solution.java)    |
@@ -81,6 +81,6 @@
 
 # LeetCode
 
-| 序号/# | 题目/Title                                 | 题解/Solution                           | 难度/Difficulty |
-| :----: | ------------------------------------------ | --------------------------------------- | --------------- |
-|   1    | [Example](https://dyfloveslife.github.io/) | [Java](https://dyfloveslife.github.io/) | Easy            |
+| 序号/# | 英文题目/English Title                            | 中文题目/Chinese Title                                | 题解/Solution                           | 难度/Difficulty |
+| :----: | ------------------------------------------------- | ----------------------------------------------------- | --------------------------------------- | --------------- |
+|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) | Easy            |
