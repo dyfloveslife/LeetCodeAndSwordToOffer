@@ -1,18 +1,20 @@
 package SwordToOfferSolution._32_01_PrintTreeFromTopToBottom;
 
-import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 /*
  * 从上到下打印二叉树（不分行）
- * 从上到下遍历二叉树，就是 BFS。
+ *
+ * 题目描述：
+ * 从上往下打印出二叉树的每个结点，同一层的结点按照从左到右的顺序打印。
+ *
  * 思路：
- * 用队列保存节点，用链表保存输出节点的值。
- * 当队列不为空的时候，取队首元素；
- * 如果队首元素为空则跳过，否则将队首元素的左右孩子加入到队列中。
+ * 1. 从上到下遍历二叉树，就是 BFS；
+ * 2. 用队列保存节点，用链表保存输出节点的值；
+ * 3. 当队列不为空的时候，取队首元素；
+ * 4. 如果队首元素为空则跳过，否则将队首元素的左右孩子加入到队列中。
  */
 public class Solution {
     class TreeNode {

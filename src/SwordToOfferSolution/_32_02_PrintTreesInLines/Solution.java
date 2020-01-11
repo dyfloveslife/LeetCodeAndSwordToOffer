@@ -1,12 +1,15 @@
 package SwordToOfferSolution._32_02_PrintTreesInLines;
 
-import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 /*
  * 分行从上到下打印二叉树
+ *
+ * 题目描述：
+ * 从上到下按层打印二叉树，同一层的结点按从左到右的顺序打印，每一层打印到一行。
+ *
  */
 
 public class Solution {

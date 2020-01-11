@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /*
- * 字符串的排列
- * 图示： https://i.loli.net/2019/11/25/6qRl5XMgOAUcfmZ.png
+ * 字符串的排列 https://i.loli.net/2019/11/25/6qRl5XMgOAUcfmZ.png
+ *
+ * 题目描述：
+ * 输入一个字符串，打印出该字符串中字符的所有排列。
+ * 例如输入字符串 abc，则打印出由字符 a、b、c 所能排列出来的所有字符串 abc、acb、bac、bca、cab 和 cba。
+ *
  * 思路：递归
  * 1. 遍历出所有可能出现在第一个位置的字符，即将第一个字符依次和后面的字符交换；
  * 2. 固定第一个字符，将后面的字符进行排列。

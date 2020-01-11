@@ -1,13 +1,15 @@
 package SwordToOfferSolution._37_SerializeBinaryTrees;
 
-import javax.swing.tree.TreeNode;
 import java.util.LinkedList;
 import java.util.Queue;
 
 /*
  * 序列化二叉树
- * 思路：
  *
+ * 题目描述：
+ * 请实现两个函数，分别用来序列化和反序列化二叉树。
+ *
+ * 思路：
  * 序列化：
  * 1. 先序遍历二叉树，如果当前节点不为空，则采用 “节点_” 的形式记录；如果当前节点为空，则采用 “#_” 记录；
  *  1.1 用 “#” 占据空位置的目的就是防止二叉树节点有相同值的情况下造成的歧义。
