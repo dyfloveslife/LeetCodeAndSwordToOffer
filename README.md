@@ -2,28 +2,29 @@
 - [剑指 Offer](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%89%91%E6%8C%87offer)
 - [LeetCode](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#leetcode)
 - 基础算法
-  - 找出在数组 B 中而不在数组 A 中的数
-  - 冒泡排序
-  - 选择排序
-  - 插入排序
-  - 介绍递归
-  - 归并排序
-  - 小和问题
-  - 数组划分问题
-  - 荷兰国旗问题
-  - 快速排序
-  - 堆排序
-  - 桶排序
-  - 用数组实现固定的栈
-  - 用数组实现固定的队列
-  - 栈与队列相互实现
-  - 顺时针打印矩阵
-  - 将正方形顺时针旋转 90°
-  - 反转单向链表和双向链表
-  - 之字形打印矩阵
-  - 在排好序的矩阵中找到指定的数
+  - [找出在数组 B 中而不在数组 A 中的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_01_InB_ArrayAndNotInA_Array/Solution.java)
+  - [冒泡排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_02_BubbleSort/Solution.java)
+  - [选择排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_03_SelectionSort/Solution.java)
+  - [插入排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_04_InsertionSort/Solution.java)
+  - [介绍递归](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_05_Recursive/Solution.java)
+  - [归并排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_06_MergeSort/Soluion.java)
+  - [小和问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_07_SmallSum/Solution.java)
+  - [数组划分问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_08_ArrayDivision/Solution.java)
+  - [荷兰国旗问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_09_NetherlandsFlag/Solution.java)
+  - [快速排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_10_QuickSort/Solution.java)
+  - [堆排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_11_HeapSort/Solution.java)
+  - [桶排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_12_BucketSort/Solution.java)
+  - [用数组实现固定的栈](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_13_ArrayStack/Solution.java)
+  - [用数组实现固定的队列](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_14_ArrayQueue/Solution.java)
+  - [栈与队列相互实现](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_16_StackAndQueueConvert/Solution.java)
+  - [顺时针打印矩阵](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_17_PrintMatrixSpiralOrder/Solution.java)
+  - [将正方形顺时针旋转 90°](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_18_RotateMatrix/Solution.java)
+  - [反转单向链表和双向链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_19_ReverseList/Solution.java)
+  - [之字形打印矩阵](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_20_ZigZagPrintMatrix/Solution.java)
+  - [在排好序的矩阵中找到指定的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_21_FindNumInSortedMatrix/Solution.java)
 
 # 剑指Offer
+[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95contents)
 
 | 序号/# | 英文题目/English Title      | 中文题目/Chinese Title         |                                                                     题解/Solution                                                                     |
 | :----: | --------------------------- | ------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------: |
