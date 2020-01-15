@@ -2,7 +2,22 @@
 - [剑指 Offer](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%89%91%E6%8C%87offer)
 - [LeetCode](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#leetcode)
   - [算法思想相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3%E7%9B%B8%E5%85%B3)
+    - [01.双指针]()
+    - [02.动态规划]()
+    - [03.贪心]()
+    - [04.二分查找]()
+    - [05.分治]()
+    - [06.搜索]()
+    - [07.排序]()
+    - [08.数学]()
   - [数据结构相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3)
+    - [01.数组和矩阵]()
+    - [02.字符串]()
+    - [03.树]()
+    - [04.哈希表]()
+    - [05.栈和队列]()
+    - [06.图]()
+    - [07.位运算]()
 - 基础算法
   - [找出在数组 B 中而不在数组 A 中的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_01_InB_ArrayAndNotInA_Array/Solution.java)
   - [冒泡排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_02_BubbleSort/Solution.java)
@@ -114,8 +129,7 @@
 按照不同的类别进行分类，参考自 [CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md) 。
 
 ## 算法思想相关
-#### 双指针 :arrow_heading_down:
-:+1:
+#### 01.双指针
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
@@ -124,8 +138,7 @@
 |   3    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   4    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 动态规划 :hammer:
-:hammer:
+#### 02.动态规划 
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
@@ -134,42 +147,42 @@
 |   3    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   4    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 贪心
+#### 03.贪心
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 二分查找
+#### 04.二分查找
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 分治
+#### 05.分治
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 搜索
+#### 06.搜索
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 排序
+#### 07.排序
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 数学
+#### 08.数学
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
@@ -178,49 +191,49 @@
 
 ## 数据结构相关
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95contents)
-- 数组和矩阵
+#### 01.数组和矩阵
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 字符串
+#### 02.字符串
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 树
+#### 03.树
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 哈希表
+#### 04.哈希表
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 栈和队列
+#### 05.栈和队列
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 图
+#### 06.图
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 位运算
+#### 07.位运算
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
