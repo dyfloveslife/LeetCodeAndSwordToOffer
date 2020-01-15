@@ -114,7 +114,8 @@
 按照不同的类别进行分类，参考自 [CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md) 。
 
 ## 算法思想相关
-- 双指针
+#### 双指针 :arrow_heading_down:
+:+1:
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
@@ -123,7 +124,8 @@
 |   3    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 |   4    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
-- 动态规划
+- 动态规划 :hammer:
+:hammer:
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
