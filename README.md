@@ -1,7 +1,7 @@
 # 目录/Contents
 - [剑指 Offer](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%89%91%E6%8C%87offer)
 - [LeetCode](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#leetcode)
-  - [算法相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3)
+  - [算法思想相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3)
   - [数据结构相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3)
 - 基础算法
   - [找出在数组 B 中而不在数组 A 中的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_01_InB_ArrayAndNotInA_Array/Solution.java)
@@ -113,7 +113,7 @@
 
 按照不同的类别进行分类，参考自 [CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md) 。
 
-## 算法相关
+## 算法思想相关
 - 双指针
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
@@ -175,6 +175,7 @@
 |   2    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 ## 数据结构相关
+[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95contents)
 - 数组和矩阵
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
