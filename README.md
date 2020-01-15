@@ -1,7 +1,7 @@
 # 目录/Contents
 - [剑指 Offer](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%89%91%E6%8C%87offer)
 - [LeetCode](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#leetcode)
-  - [算法思想相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%AE%97%E6%B3%95%E7%9B%B8%E5%85%B3)
+  - [算法思想相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3%E7%9B%B8%E5%85%B3)
   - [数据结构相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3)
 - 基础算法
   - [找出在数组 B 中而不在数组 A 中的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_01_InB_ArrayAndNotInA_Array/Solution.java)
