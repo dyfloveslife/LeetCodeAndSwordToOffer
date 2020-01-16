@@ -117,7 +117,7 @@ public class Solution {
             slow = fast;
             fast = temp;
         }
-        // 经过上面的 while 后，slow 已经来到最后一个节点了
+        // 经过上面的 while 后，slow 已经来到最后一个节点了，temp 和 fast 都指向了 null
         // 然后让 temp 指向最后一个节点
         temp = slow;
         fast = head;
@@ -133,7 +133,9 @@ public class Solution {
             slow = slow.next;
             fast = fast.next;
         }
+        // 先让 slow 指向最后一个节点的前一个节点，即倒数第二个节点
         slow = temp.next;
+        // temp 指向的是最后一个节点，此时让最后一个节点指向 null，便于和之前的节点分开
         temp.next = null;
         // 调整右半部分链表的指向
         while (slow != null) {
