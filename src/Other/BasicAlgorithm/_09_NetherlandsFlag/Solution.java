@@ -13,11 +13,14 @@ package Other.BasicAlgorithm._09_NetherlandsFlag;
  * 5. 直到 cur 与大于区域相遇的时候，流程结束。
  */
 public class Solution {
+    // 该函数可以实现在 left 和 right 范围内的划分问题
+    // 一开始的时候，less 在 left 的左边，more 在 right 的右边
     public static int[] netherlandsFlag(int[] arr, int left, int right, int num) {
         int less = left - 1;
         int more = right + 1;
         int cur = left;
 
+        // cur 不能与 more 部分相遇
         while (cur < more) {
             // 第一种情况：如果 cur 指向的元素比 num 小，则将 cur 所指向的元素与 less 的下一个元素交换，然后 cur 后移
             if (arr[cur] < num) {
