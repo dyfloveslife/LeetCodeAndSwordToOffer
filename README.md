@@ -39,6 +39,8 @@
   - [反转单向链表和双向链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_19_ReverseList/Solution.java)
   - [之字形打印矩阵](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_20_ZigZagPrintMatrix/Solution.java)
   - [在排好序的矩阵中找到指定的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_21_FindNumInSortedMatrix/Solution.java)
+  - [判断一个链表是否是回文结构](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_22_IsPalindromeList/Solution.java)
+  - [根据给定的值划分单向链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_23_SmallerEqualBiggerInList/Solution.java)
 - 进阶算法
 
 # 剑指Offer
