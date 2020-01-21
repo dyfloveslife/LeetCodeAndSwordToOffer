@@ -85,10 +85,10 @@ public class Solution {
             curCopy.random = cur.random != null ? cur.random.next : null;
             cur = next;
         }
-        // 将两个链表进行分离
-        cur = pHead;
         //不能设置为 cur.next，因为 cur 是变化的，而 head 是不变的
         RandomListNode res = pHead.next;
+        // 将两个链表进行分离
+        cur = pHead;
         while (cur != null) {
             next = cur.next.next;
             curCopy = cur.next;
