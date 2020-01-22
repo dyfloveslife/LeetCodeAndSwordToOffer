@@ -18,18 +18,18 @@ import java.util.Stack;
  */
 public class Solution {
 
-    class ListNode {
+    class TreeNode {
         int val;
-        ListNode left;
-        ListNode right;
+        TreeNode left;
+        TreeNode right;
 
-        ListNode(int val) {
+        TreeNode(int val) {
             this.val = val;
         }
     }
 
     // 先序遍历(递归)
-    public void preOrderRecursion(ListNode head) {
+    public void preOrderRecursion(TreeNode head) {
         if (head == null) {
             return;
         }
@@ -40,7 +40,7 @@ public class Solution {
     }
 
     // 中序遍历(递归)
-    public void inOrderRecursion(ListNode head) {
+    public void inOrderRecursion(TreeNode head) {
         if (head == null) {
             return;
         }
@@ -50,7 +50,7 @@ public class Solution {
     }
 
     // 后序遍历(递归)
-    public void postOrderRecursion(ListNode head) {
+    public void postOrderRecursion(TreeNode head) {
         if (head == null) {
             return;
         }
@@ -60,9 +60,9 @@ public class Solution {
     }
 
     // 先序遍历(非递归)
-    public void preOrderNoRecursion(ListNode head) {
+    public void preOrderNoRecursion(TreeNode head) {
         if (head != null) {
-            Stack<ListNode> stack = new Stack<>();
+            Stack<TreeNode> stack = new Stack<>();
             stack.push(head);
             while (!stack.isEmpty()) {
                 // 当前节点在出栈的时候，先让右孩子入栈，再让左孩子入栈
@@ -81,9 +81,9 @@ public class Solution {
 
     // 中序遍历(非递归)
     // 对于当前节点来说，会把它的左边界全都入栈，一压压一溜
-    public void inOrderNoRecursion(ListNode head) {
+    public void inOrderNoRecursion(TreeNode head) {
         if (head != null) {
-            Stack<ListNode> stack = new Stack<>();
+            Stack<TreeNode> stack = new Stack<>();
             while (!stack.isEmpty() || head != null) {
                 // 将当前节点的左边界全部入栈
                 if (head != null) {
@@ -104,10 +104,10 @@ public class Solution {
     // 之前的先序遍历是 中左右，即先压右孩子，再压左孩子；
     // 则可以通过先压左孩子，再压右孩子，变成 中右左；
     // 最后再将要输出的节点放到一个栈中，从而逆序输出后序的 左右中。
-    public void postOrderNoRecursion(ListNode head) {
+    public void postOrderNoRecursion(TreeNode head) {
         if (head != null) {
-            Stack<ListNode> s1 = new Stack<>();
-            Stack<ListNode> s2 = new Stack<>();
+            Stack<TreeNode> s1 = new Stack<>();
+            Stack<TreeNode> s2 = new Stack<>();
             s1.push(head);
             while (!s1.isEmpty()) {
                 head = s1.pop();

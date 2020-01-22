@@ -9,7 +9,7 @@ package SwordToOfferSolution._08_NextNodeInBinaryTrees;
  */
 
 public class Solution {
-    class TreeNode<Integer> {
+    class TreeNode {
         int val = 0;
         TreeNode left;
         TreeNode right;
@@ -23,7 +23,7 @@ public class Solution {
         }
     }
 
-    private static TreeNode<Integer> getNextNode(TreeNode<Integer> node) {
+    private static TreeNode getNextNode(TreeNode node) {
         if (node == null) {
             return null;
         }
