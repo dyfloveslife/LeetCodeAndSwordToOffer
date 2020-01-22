@@ -41,6 +41,7 @@
   - [在排好序的矩阵中找到指定的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_21_FindNumInSortedMatrix/Solution.java)
   - [判断一个链表是否是回文结构](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_22_IsPalindromeList/Solution.java)
   - [根据给定的值划分单向链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_23_SmallerEqualBiggerInList/Solution.java)
+  - [两个单链表相交的一系列问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_25_FindFirstIntersectNode/Solution.java)
 - 进阶算法
 
 # 剑指Offer

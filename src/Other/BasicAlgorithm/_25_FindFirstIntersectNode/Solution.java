@@ -1,6 +1,6 @@
 package Other.BasicAlgorithm._25_FindFirstIntersectNode;
 
-/**
+/*
  * 两个单链表相交的一系列问题
  *
  * 题目描述：

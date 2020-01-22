@@ -1,6 +1,6 @@
 package Other.BasicAlgorithm._24_CopyListWithRandom;
 
-/**
+/*
  * 复制含有随机指针节点的链表
  *
  * 问题描述：
