@@ -31,7 +31,7 @@ public class Solution {
         }
     }
 
-    // 序列化：将二叉树序列化成字符串
+    // 序列化：使用先序遍历，将二叉树序列化成字符串
     private String serialize(TreeNode root) {
         if (root == null) {
             return "#_";
@@ -54,6 +54,7 @@ public class Solution {
     }
 
     // 反序列化：每次从队列中弹出一个值进行判断
+    // 使用先序遍历
     private TreeNode reconPreOrder(Queue<String> queue) {
         String value = queue.poll();
         if (value.equals("#")) {
