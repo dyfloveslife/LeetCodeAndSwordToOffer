@@ -7,12 +7,19 @@ package SwordToOfferSolution._55_02_BalancedBinaryTree;
  * 输入一棵二叉树的根结点，判断该树是不是平衡二叉树。
  * 如果某二叉树中任意结点的左右子树的深度相差不超过 1，那么它就是一棵平衡二叉树。
  *
- * 思路：
- * 后序遍历二叉树节点，同时统计当前节点的深度。
+ * 思路 1：
+ * 后序遍历二叉树节点，同时统计当前节点的深度；
+ *
+ * 思路 2：
+ * 1. 由于递归可以访问当前节点三次，所以使用递归；
+ * 2. 先判断当前节点的左子树是否平衡，并将高度记录下来，右子树也做相同的操作；
+ * 3. 然后当前节点将收集到的信息进行判断，从而判断整棵树是否是平衡二叉树。
+ *
+ * 树型 DP
  */
 public class Solution {
     class TreeNode {
-        int val = 0;
+        int val;
         TreeNode left = null;
         TreeNode right = null;
 
@@ -25,6 +32,7 @@ public class Solution {
     // 在后序遍历到当前节点的时候，该节点的左右子树就已经遍历了
     // 从底往上遍历，每个节点只需要遍历一次
     private boolean isBalanced = true;
+
     public boolean isBalanced(TreeNode root) {
         getDepth(root);
         return isBalanced;
@@ -34,16 +42,12 @@ public class Solution {
         if (root == null || !isBalanced) {
             return 0;
         }
-        // 左
         int leftDepth = getDepth(root.left);
-        // 右
         int rightDepth = getDepth(root.right);
-        // 根
         if (Math.abs(leftDepth - rightDepth) > 1) {
             isBalanced = false;
         }
 
-        //return leftDepth > rightDepth ? leftDepth + 1 : rightDepth + 1;
         return Math.max(leftDepth, rightDepth) + 1;
     }
 
@@ -70,5 +74,40 @@ public class Solution {
         }
 
         return Math.max(getTreeDepth(root.left), getTreeDepth(root.right)) + 1;
+    }
+
+    // ※ 思路二
+    public static class ReturnData {
+        boolean isB;
+        int h;
+
+        ReturnData(boolean isB, int h) {
+            this.isB = isB;
+            this.h = h;
+        }
+    }
+
+    // 主方法
+    public static boolean isB(TreeNode head) {
+        return process(head).isB;
+    }
+
+    public static ReturnData process(TreeNode head) {
+        if (head == null) {
+            return new ReturnData(true, 0);
+        }
+
+        ReturnData leftData = process(head.left);
+        if (!leftData.isB) {
+            return new ReturnData(false, 0);
+        }
+        ReturnData rightData = process(head.right);
+        if (!rightData.isB) {
+            return new ReturnData(false, 0);
+        }
+        if (Math.abs(leftData.h - rightData.h) > 1) {
+            return new ReturnData(false, 0);
+        }
+        return new ReturnData(true, Math.max(leftData.h, rightData.h) + 1);
     }
 }
