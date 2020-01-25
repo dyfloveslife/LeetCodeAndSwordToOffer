@@ -3,7 +3,7 @@ package Other.BasicAlgorithm._28_IsCompleteBinaryTree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/**
+/*
  * 判断一棵树是否是完全二叉树
  *
  * 思路：
