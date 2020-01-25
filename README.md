@@ -45,6 +45,7 @@
   - [二叉树的先序、中序、后序遍历（递归与非递归）](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_26_PreInPosTraversal/Solution.java)
   - [判断一棵树是否是二叉搜索树](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_27_IsBinarySearchTree/Solution.java)
   - [判断一棵树是否是完全二叉树](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_28_IsCompleteBinaryTree/Solution.java)
+  - [求完全二叉树节点的个数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_29_CompleteBinaryTreeNodeNumber/Solution.java)
 - 进阶算法
 
 # 剑指Offer
