@@ -47,6 +47,7 @@
   - [判断一棵树是否是完全二叉树](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_28_IsCompleteBinaryTree/Solution.java)
   - [求完全二叉树节点的个数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_29_CompleteBinaryTreeNodeNumber/Solution.java)
   - [哈希表的基本使用](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_30_HashMap/Solution.java)
+  - [实现 RandomPool](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_31_RandomPool/Solution.java)
 - 进阶算法
 
 # 剑指Offer
