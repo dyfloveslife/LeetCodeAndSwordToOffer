@@ -48,6 +48,8 @@
   - [求完全二叉树节点的个数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_29_CompleteBinaryTreeNodeNumber/Solution.java)
   - [哈希表的基本使用](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_30_HashMap/Solution.java)
   - [实现 RandomPool](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_31_RandomPool/Solution.java)
+  - [并查集的查找与合并操作](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_32_UnionFind/Solution.java)
+  - [岛问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_33_Islands/Solution.java)
 - 进阶算法
 
 # 剑指Offer
