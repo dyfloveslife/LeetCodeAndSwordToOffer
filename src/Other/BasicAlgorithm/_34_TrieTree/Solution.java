@@ -112,6 +112,9 @@ public class Solution {
         trie.insert("duan");
         System.out.println(trie.search("duan")); // 1
 
+        // 这里删除了 duan 之后，查询结果返回的仍是 1
+        // 是因为 duan 在遇到第一个 d 的时候，判断如果 path 置为 0 的情况时候为 null，就直接 return，
+        // 但 duan 的最后一个字符的 end 仍是 1
         trie.delete("duan");
         System.out.println(trie.search("duan")); // 1
 
