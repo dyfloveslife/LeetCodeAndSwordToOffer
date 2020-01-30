@@ -50,6 +50,8 @@
   - [实现 RandomPool](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_31_RandomPool/Solution.java)
   - [并查集的查找与合并操作](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_32_UnionFind/Solution.java)
   - [岛问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_33_Islands/Solution.java)
+  - [前缀树](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_34_TrieTree/Solution.java)
+  - [字典序最小的字符串](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_35_LowestLexicography/Solution.java)
 - 进阶算法
 
 # 剑指Offer
