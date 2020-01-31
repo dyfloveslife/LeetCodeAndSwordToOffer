@@ -1,6 +1,5 @@
 package Other.BasicAlgorithm._35_LowestLexicography;
 
-import java.security.Key;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -34,11 +33,12 @@ public class Solution {
         }
 
         Arrays.sort(strs, new MyComparator());
-        String res = "";
+
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < strs.length; i++) {
-            res += strs[i];
+            sb.append(strs[i]);
         }
-        return res;
+        return sb.toString();
     }
 
     public static void main(String[] args) {
