@@ -1,4 +1,4 @@
-# 目录/Contents
+# 目录
 - [剑指 Offer](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%89%91%E6%8C%87offer)
 - [LeetCode](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#leetcode)
   - [算法思想相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3%E7%9B%B8%E5%85%B3)
@@ -52,6 +52,13 @@
   - [岛问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_33_Islands/Solution.java)
   - [前缀树](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_34_TrieTree/Solution.java)
   - [字典序最小的字符串](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_35_LowestLexicography/Solution.java)
+  - [分割金条的最小代价](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_36_LessMoney/Solution.java)
+  - [项目的最大钱数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_37_MaximizedCapital/Solution.java)
+  - [最多的宣讲场次](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_38_BestArrange/Solution.java)
+  - [求 n 的阶乘](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_39_Factorial/Solution.java)
+  - [汉诺塔问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_40_TowerOfHanoi/Solution.java)
+  - [打印一个字符串的全部子序列，包括空字符串](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_41_PrintAllSubsquences/Solution.java)
+  - [母牛生崽问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_42_CowNumber/Solution.java)
 - 进阶算法
 
 # 剑指Offer

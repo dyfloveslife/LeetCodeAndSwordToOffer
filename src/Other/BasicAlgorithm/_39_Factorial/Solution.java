@@ -11,7 +11,6 @@ public class Solution {
         if (n == 1) {
             return 1L;
         }
-
         return (long) n * getFactorial1(n - 1);
     }
 
