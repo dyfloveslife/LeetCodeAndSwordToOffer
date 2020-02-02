@@ -64,7 +64,7 @@
 - 进阶算法
 
 # 剑指Offer
-[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95contents)
+[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 
 | 序号/# | 英文题目/English Title      | 中文题目/Chinese Title         |                                                                     题解/Solution                                                                     |
 | :----: | --------------------------- | ------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -146,7 +146,7 @@
 |   68   | CommonParentInTree          | 树中两个节点的最低公共祖先     |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_68_CommonParentInTree/Solution.java)       |
 
 # LeetCode
-[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95contents)
+[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 
 按照不同的类别进行分类，参考自 [CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md) 。
 
@@ -208,7 +208,7 @@
 
 
 ## 数据结构相关
-[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95contents)
+[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 #### 01.数组和矩阵
 
 | 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
