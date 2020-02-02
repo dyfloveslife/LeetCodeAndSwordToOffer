@@ -59,6 +59,8 @@
   - [汉诺塔问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_40_TowerOfHanoi/Solution.java)
   - [打印一个字符串的全部子序列，包括空字符串](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_41_PrintAllSubsquences/Solution.java)
   - [母牛生崽问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_42_CowNumber/Solution.java)
+  - [矩阵中的最小路径和](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_43_MinPathInMatrix/Solution.java)
+  - [数组中的数累加起来等于目标值](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_44_IsAimValueInArray/Solution.java)
 - 进阶算法
 
 # 剑指Offer
