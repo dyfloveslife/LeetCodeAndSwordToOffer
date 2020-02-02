@@ -104,10 +104,10 @@ class Solution {
             if (pathLength == str.length()) {
                 return true;
             }
-            flag = hasPathCore(matrix, rows, cols, i + 1, j, str, pathLength, visited) ||
-                    hasPathCore(matrix, rows, cols, i, j + 1, str, pathLength, visited) ||
-                    hasPathCore(matrix, rows, cols, i - 1, j, str, pathLength, visited) ||
-                    hasPathCore(matrix, rows, cols, i, j - 1, str, pathLength, visited);
+            flag = hasPathCore(matrix, rows, cols, i + 1, j, str, pathLength, visited)
+                    || hasPathCore(matrix, rows, cols, i, j + 1, str, pathLength, visited)
+                    || hasPathCore(matrix, rows, cols, i - 1, j, str, pathLength, visited)
+                    || hasPathCore(matrix, rows, cols, i, j - 1, str, pathLength, visited);
             if (!flag) {
                 // 回溯
                 pathLength--;
