@@ -67,7 +67,7 @@
 # 剑指Offer
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 
-| 序号/# | 英文题目/English Title      | 中文题目/Chinese Title         |                                                                     题解/Solution                                                                     |
+| 题号/# | 英文题目/English Title      | 中文题目/Chinese Title         |                                                                     题解/Solution                                                                     |
 | :----: | --------------------------- | ------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------: |
 |   3    | FindDuplicationInArray      | 数组中重复的数字               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_03_FindDuplicationInArray/Solution.java)     |
 |   4    | FindInPartiallySortedMatrix | 二维数组中的查找               |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_04_FindInPartiallySortedMatrix/Solution.java)   |
@@ -154,113 +154,53 @@
 ## 算法思想相关
 #### 01.双指针
 
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
+| 题号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-
+|   167    | [Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/) | [两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
+|   633    | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/) | [平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers/description/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 #### 02.动态规划 
-
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 
 #### 03.贪心
 
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-
 
 #### 04.二分查找
-
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 
 #### 05.分治
 
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-
 
 #### 06.搜索
-
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 
 #### 07.排序
 
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-
 
 #### 08.数学
-
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 
 ## 数据结构相关
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 #### 01.数组和矩阵
 
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-
 
 #### 02.字符串
-
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 
 #### 03.树
 
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-
 
 #### 04.哈希表
-
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 
 #### 05.栈和队列
 
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-
 
 #### 06.图
-
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
 
 
 #### 07.位运算
 
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-
 
 #### 08.链表
-
-| 序号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
-| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
