@@ -18,7 +18,7 @@
     - [05.栈和队列](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#05%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97)
     - [06.图](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#06%E5%9B%BE)
     - [07.位运算](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#07%E4%BD%8D%E8%BF%90%E7%AE%97)
-	- [08.链表]()
+	- [08.链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#08%E9%93%BE%E8%A1%A8)
 - 基础算法
   - [找出在数组 B 中而不在数组 A 中的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_01_InB_ArrayAndNotInA_Array/Solution.java)
   - [冒泡排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_02_BubbleSort/Solution.java)
