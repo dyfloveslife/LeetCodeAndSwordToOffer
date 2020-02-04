@@ -156,8 +156,8 @@
 
 | 题号/# | 英文题目/English Title  | 中文题目/Chinese Title  |   题解/Solution | 难度/Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
-|   167    | [Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/) | [两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
-|   633    | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/) | [平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers/description/) | [Java](https://dyfloveslife.github.io/) |      Easy       |
+|   167    | [Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/) | [两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/) | [Java]([//dyfloveslife.github.iohttps:/](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_167_TwoSumII/Solution.java)) |      Easy       |
+|   633    | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/) | [平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_633_SumOfSquare/Solution.java) |      Easy       |
 
 #### 02.动态规划 
 
