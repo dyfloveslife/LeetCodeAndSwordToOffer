@@ -158,6 +158,9 @@
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   167    | [Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/) | [两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_167_TwoSumII/Solution.java) |      Easy       |
 |   633    | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/) | [平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_633_SumOfSquare/Solution.java) |      Easy       |
+|   345    | [Reverse Vowels of a String](https://leetcode.com/problems/reverse-vowels-of-a-string/description/) | [反转字符串中的元音字母](https://leetcode-cn.com/problems/reverse-vowels-of-a-string/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_345_ReverseVowelsOfAString/Solution.java) |      Easy       |
+|   680    | [Valid Palindrome II](https://leetcode.com/problems/valid-palindrome-ii/description/) | [验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_680_ValidPalindromeII/Solution.java) |      Easy       |
+
 
 #### 02.动态规划 
 
