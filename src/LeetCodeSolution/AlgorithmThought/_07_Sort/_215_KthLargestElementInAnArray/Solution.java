@@ -84,24 +84,6 @@ public class Solution {
         return j;
     }
 
-    // 实现的功能是：
-    public static int[] partition2(int[] arr, int low, int high) {
-        int less = low - 1;
-        int more = high;
-
-        while (low < more) {
-            if (arr[low] < arr[high]) {
-                swap(arr, ++less, low++);
-            } else if (arr[low] > arr[high]) {
-                swap(arr, --more, low);
-            } else {
-                low++;
-            }
-        }
-        swap(arr, more, high);
-        return new int[]{less + 1, more};
-    }
-
     public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
