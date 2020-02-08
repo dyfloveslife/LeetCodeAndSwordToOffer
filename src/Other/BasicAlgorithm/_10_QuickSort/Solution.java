@@ -42,7 +42,7 @@ public class Solution {
     private static void quickSortCore(int[] arr, int left, int right) {
         if (left < right) {
             // 随机快排
-            swap(arr, left + (int) Math.random() * (right - left + 1), right);
+            swap(arr, left + (int) (Math.random() * (right - left + 1)), right);
 
             int[] p = partition(arr, left, right);
             quickSortCore(arr, left, p[0] - 1);
@@ -55,13 +55,17 @@ public class Solution {
     // p[0] 代表等于 x 的左边界，p[1] 代表等于 x 的右边界
     private static int[] partition(int[] arr, int left, int right) {
         int less = left - 1;
+        // 这里将 大于区域的范围 直接定位到 right
         int more = right;
 
         while (left < more) {
+            // 小于 num 的情况
             if (arr[left] < arr[right]) {
                 swap(arr, ++less, left++);
+                // 大于 num 的情况，此时 left 需要留在原地，继续考察与 num 的大小关系
             } else if (arr[left] > arr[right]) {
                 swap(arr, --more, left);
+                // 等于 num 的情况
             } else {
                 left++;
             }
@@ -78,5 +82,13 @@ public class Solution {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 2, 1, 5, 6, 4};
+        quickSort(arr);
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
     }
 }
