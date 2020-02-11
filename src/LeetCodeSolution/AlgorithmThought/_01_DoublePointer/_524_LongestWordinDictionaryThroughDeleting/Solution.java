@@ -42,9 +42,13 @@ public class Solution {
         return res;
     }
 
+    // 判断 target 是不是 s 的子序列
     public static boolean isSequence(String s, String target) {
         int i = 0;
         int j = 0;
+
+        // 总体的思想和分配饼干那题类似，即如果当前相等，则两个指针同时往后移动，
+        // 如果不相等，则 target 往后移动，再进行判断是否相等
         while (i < s.length() && j < target.length()) {
             // 如果字符相等，则需要将 target 中的索引后移
             if (s.charAt(i) == target.charAt(j)) {
