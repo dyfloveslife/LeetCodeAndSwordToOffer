@@ -28,5 +28,4 @@ public class ArrayPartition {
 		int i = arrayPairSum(arr);
 		System.out.println(i);
 	}
-
 }
