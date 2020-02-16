@@ -8,8 +8,10 @@ package SwordToOfferSolution._42_GreatestSumOfSubarrays;
  * 求所有子数组的和的最大值。要求时间复杂度为 O(n)。
  *
  * 思路一：
- * 遍历数组，如果遇到负值（说明已构不成最大和），则将该值舍弃，否则将该值进行累加；
- * 若当前的累加和比最大和要大的话，则更新最大和。
+ * 1. 首先对数组进行遍历，当前的最大连续的子数组的最大和记为 curSum，最终的最大和记为 maxSum；
+ * 2. 如果 curSum > 0 ，说明 curSum 对结果有增益，则将 curSum 进行保留，并加上当前遍历的元素；
+ * 3. 如果 curSum <= 0，说明 curSum 对结果没有增益，需要舍弃，则将 curSum 直接更新为当前遍历的元素；
+ * 4. 每次比较 curSum 和 maxSum 的大小，将两者中最大的赋值给 maxSum 并返回。
  *
  * 思路二：DP
  * 1. 定义数组元素的含义：用 dp[i] 表示以第 i 个数字结尾的子数组的最大和；
@@ -33,11 +35,13 @@ public class Solution {
         int curSum = 0;
         int maxSum = Integer.MIN_VALUE;
         for (int i = 0; i < array.length; i++) {
-            if (curSum <= 0) {
-                curSum = array[i];
-            } else {
+            // 对结果有增益
+            if (curSum > 0) {
                 curSum += array[i];
+            } else {
+                curSum = array[i];
             }
+            // 可简写为： maxSum = Math.max(curSum, maxSum);
             if (curSum > maxSum) {
                 maxSum = curSum;
             }
