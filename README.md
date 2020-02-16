@@ -25,7 +25,7 @@
   - [选择排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_03_SelectionSort/Solution.java)
   - [插入排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_04_InsertionSort/Solution.java)
   - [介绍递归](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_05_Recursive/Solution.java)
-  - [归并排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_06_MergeSort/Soluion.java)
+  - [归并排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_06_MergeSort/Solution.java)
   - [小和问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_07_SmallSum/Solution.java)
   - [数组划分问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_08_ArrayDivision/Solution.java)
   - [荷兰国旗问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_09_NetherlandsFlag/Solution.java)
@@ -188,6 +188,9 @@
 
 #### 04.二分查找
 
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   69    | [Sqrt(x)](https://leetcode.com/problems/sqrtx/) | [x 的平方根](https://leetcode-cn.com/problems/sqrtx/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_69_Sqrt_x/Solution.java) |      Easy       |
 
 #### 05.分治
 

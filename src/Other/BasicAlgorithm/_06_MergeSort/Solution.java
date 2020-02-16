@@ -14,7 +14,7 @@ import java.util.Arrays;
  * 空间复杂度：O(N)
  * 稳定
  */
-public class Soluion {
+public class Solution {
     public static void mergeSort(int[] arr) {
         if (arr == null || arr.length < 2) {
             return;
