@@ -191,6 +191,9 @@
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   69    | [Sqrt(x)](https://leetcode.com/problems/sqrtx/) | [x 的平方根](https://leetcode-cn.com/problems/sqrtx/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_69_Sqrt_x/Solution.java) |      Easy       |
+|   278    | [First Bad Version](https://leetcode.com/problems/first-bad-version/) | [第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_278_FirstBadVersion/Solution.java) |      Easy       |
+|   540    | [Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/) | [有序数组中的单一元素](https://leetcode-cn.com/problems/single-element-in-a-sorted-array/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_540_SingleElementInASortedArray/Solution.java) |      Medium       |
+|   744    | [Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/) | [寻找比目标字母大的最小字母](https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_744_FindSmallestLetterGreaterThanTarget/Solution.java) |      Easy       |
 
 #### 05.分治
 
