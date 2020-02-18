@@ -8,9 +8,34 @@ package SwordToOfferSolution._11_MinNumberInRotatedArray;
  * 输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。
  * 例如数组 {3, 4, 5, 1, 2} 为 {1, 2, 3, 4, 5} 的一个旋转，该数组的最小值为 1。
  *
+ * 思路：
+ * 1. 直接使用二分法进行查找；
+ * 2. 拿 nums[middle] 和 nums[right] 进行比较：
+ *    2.1) 如果 nums[middle] <= nums[right]，说明 middle 和 right - 1 之内的所有的元素都比 right 小，
+ *         则此最小的元素有可能在 nums[middle] 位置上，也有可能在 nums[middle] 的左边，所以需要将 right 定位到 middle 的位置；
+ *    2.2) 如果 nums[middle] > nums[right]，说明最小的元素在 middle 的右侧，
+ *         因此需要将 left 置为 middle + 1。
  */
 public class Solution {
-    public int minNumberInRotateArray(int[] array) {
+    public static int minNumberInRotateArray1(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int middle = left + ((right - left) >> 1);
+            if (nums[middle] <= nums[right]) {
+                right = middle;
+            } else {
+                left = middle + 1;
+            }
+        }
+        return nums[left];
+    }
+
+    public static int minNumberInRotateArray(int[] array) {
         if (array.length <= 0) {
             return 0;
         }
@@ -39,7 +64,7 @@ public class Solution {
         return array[indexMid];
     }
 
-    private int minInOrder(int[] array, int index1, int index2) {
+    private static int minInOrder(int[] array, int index1, int index2) {
         int res = array[index1];
         for (int i = index1 + 1; i < index2; i++) {
             if (array[i] < res) {
@@ -47,5 +72,12 @@ public class Solution {
             }
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        int[] arr1 = {4, 5, 6, 7, 0, 1, 2};
+        int[] arr2 = {3, 4, 5, 1, 2};
+
+        System.out.println(minNumberInRotateArray(arr2));
     }
 }
