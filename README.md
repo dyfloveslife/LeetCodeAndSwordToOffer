@@ -64,6 +64,10 @@
   - [数组中的数累加起来等于目标值](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_44_IsAimValueInArray/Solution.java)
 - 进阶算法
   - [KMP](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_01_KMP/Solution.java)
+  - [KMP 例子 1](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_02_KMP_ShortestContainTwiceOriginalString/Solution.java)
+  - [KMP 例子 2](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_03_KMP_T1SubtreeEqualsT2/Solution.java)
+  - [Manacher](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_04_Manacher/Solution.java)
+  - [Manacher 例子](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_05_Manacher_ShortestEnd/Solution.java)
 
 # 剑指Offer
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
