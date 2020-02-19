@@ -63,6 +63,7 @@
   - [矩阵中的最小路径和](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_43_MinPathInMatrix/Solution.java)
   - [数组中的数累加起来等于目标值](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_44_IsAimValueInArray/Solution.java)
 - 进阶算法
+  - [KMP](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_01_KMP/Solution.java)
 
 # 剑指Offer
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
