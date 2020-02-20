@@ -68,6 +68,9 @@
   - [KMP 例子 2](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_03_KMP_T1SubtreeEqualsT2/Solution.java)
   - [Manacher](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_04_Manacher/Solution.java)
   - [Manacher 例子](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_05_Manacher_ShortestEnd/Solution.java)
+  - [BFPRT](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_06_BFPRT/Solution.java)
+  - [生成窗口最大值数组](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_07_MaxWindow/Solution.java)
+  - [最大值减去最小值小于等于 num 的子数组数量](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_08_AllLessNumSubArray/Solution.java)
 
 # 剑指Offer
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
