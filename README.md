@@ -20,57 +20,70 @@
     - [07.位运算](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#07%E4%BD%8D%E8%BF%90%E7%AE%97)
 	- [08.链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#08%E9%93%BE%E8%A1%A8)
 - 基础算法
-  - [找出在数组 B 中而不在数组 A 中的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_01_InB_ArrayAndNotInA_Array/Solution.java)
-  - [冒泡排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_02_BubbleSort/Solution.java)
-  - [选择排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_03_SelectionSort/Solution.java)
-  - [插入排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_04_InsertionSort/Solution.java)
-  - [介绍递归](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_05_Recursive/Solution.java)
-  - [归并排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_06_MergeSort/Solution.java)
-  - [小和问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_07_SmallSum/Solution.java)
-  - [数组划分问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_08_ArrayDivision/Solution.java)
-  - [荷兰国旗问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_09_NetherlandsFlag/Solution.java)
-  - [快速排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_10_QuickSort/Solution.java)
-  - [堆排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_11_HeapSort/Solution.java)
-  - [桶排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_12_BucketSort/Solution.java)
-  - [用数组实现固定的栈](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_13_ArrayStack/Solution.java)
-  - [用数组实现固定的队列](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_14_ArrayQueue/Solution.java)
-  - [栈与队列相互实现](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_16_StackAndQueueConvert/Solution.java)
-  - [顺时针打印矩阵](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_17_PrintMatrixSpiralOrder/Solution.java)
-  - [将正方形顺时针旋转 90°](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_18_RotateMatrix/Solution.java)
-  - [反转单向链表和双向链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_19_ReverseList/Solution.java)
-  - [之字形打印矩阵](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_20_ZigZagPrintMatrix/Solution.java)
-  - [在排好序的矩阵中找到指定的数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_21_FindNumInSortedMatrix/Solution.java)
-  - [判断一个链表是否是回文结构](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_22_IsPalindromeList/Solution.java)
-  - [根据给定的值划分单向链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_23_SmallerEqualBiggerInList/Solution.java)
-  - [两个单链表相交的一系列问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_25_FindFirstIntersectNode/Solution.java)
-  - [二叉树的先序、中序、后序遍历（递归与非递归）](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_26_PreInPosTraversal/Solution.java)
-  - [判断一棵树是否是二叉搜索树](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_27_IsBinarySearchTree/Solution.java)
-  - [判断一棵树是否是完全二叉树](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_28_IsCompleteBinaryTree/Solution.java)
-  - [求完全二叉树节点的个数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_29_CompleteBinaryTreeNodeNumber/Solution.java)
-  - [哈希表的基本使用](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_30_HashMap/Solution.java)
-  - [实现 RandomPool](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_31_RandomPool/Solution.java)
-  - [并查集的查找与合并操作](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_32_UnionFind/Solution.java)
-  - [岛问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_33_Islands/Solution.java)
-  - [前缀树](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_34_TrieTree/Solution.java)
-  - [字典序最小的字符串](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_35_LowestLexicography/Solution.java)
-  - [分割金条的最小代价](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_36_LessMoney/Solution.java)
-  - [项目的最大钱数](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_37_MaximizedCapital/Solution.java)
-  - [最多的宣讲场次](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_38_BestArrange/Solution.java)
-  - [求 n 的阶乘](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_39_Factorial/Solution.java)
-  - [汉诺塔问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_40_TowerOfHanoi/Solution.java)
-  - [打印一个字符串的全部子序列，包括空字符串](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_41_PrintAllSubsquences/Solution.java)
-  - [母牛生崽问题](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_42_CowNumber/Solution.java)
-  - [矩阵中的最小路径和](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_43_MinPathInMatrix/Solution.java)
-  - [数组中的数累加起来等于目标值](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_44_IsAimValueInArray/Solution.java)
 - 进阶算法
-  - [KMP](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_01_KMP/Solution.java)
-  - [KMP 例子 1](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_02_KMP_ShortestContainTwiceOriginalString/Solution.java)
-  - [KMP 例子 2](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_03_KMP_T1SubtreeEqualsT2/Solution.java)
-  - [Manacher](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_04_Manacher/Solution.java)
-  - [Manacher 例子](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_05_Manacher_ShortestEnd/Solution.java)
-  - [BFPRT](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_06_BFPRT/Solution.java)
-  - [生成窗口最大值数组](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_07_MaxWindow/Solution.java)
-  - [最大值减去最小值小于等于 num 的子数组数量](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_08_AllLessNumSubArray/Solution.java)
+
+# 基础算法
+[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
+
+| # | English Title      | Chinese Title         |                                                                     Solution                                                                     |
+| :----: | --------------------------- | ------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------: |
+|   1    | InB_ArrayAndNotInA_Array      | 找出在数组 B 中而不在数组 A 中的数               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_01_InB_ArrayAndNotInA_Array/Solution.java)     |
+|   2    | BubbleSort      | 冒泡排序               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_02_BubbleSort/Solution.java)     |
+|   3    | SelectionSort      | 选择排序               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_03_SelectionSort/Solution.java)     |
+|   4    | InsertionSort      | 插入排序               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_04_InsertionSort/Solution.java)     |
+|   5    | Recursive      | 递归               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_05_Recursive/Solution.java)     |
+|   6    | MergeSort      | 归并排序               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_06_MergeSort/Solution.java)     |
+|   7    | SmallSum      | 小和问题               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_07_SmallSum/Solution.java)     |
+|   8    | ArrayDivision  |      数组划分问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_08_ArrayDivision/Solution.java)  |
+|   9    | NetherlandsFlag  |      荷兰国旗问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_09_NetherlandsFlag/Solution.java)  |
+|   10    | QuickSort  |      快速排序  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_10_QuickSort/Solution.java)  |
+|   11    | HeapSort  |      堆排序  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_11_HeapSort/Solution.java)  |
+|   12   | BucketSort  |      桶排序  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_12_BucketSort/Solution.java)  |
+|   13    | ArrayStack  |      用数组实现固定的栈  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_13_ArrayStack/Solution.java)  |
+|   14   | ArrayQueue  |      用数组实现固定的队列  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_14_ArrayQueue/Solution.java)  |
+|   16    | StackAndQueueConvert  |      栈与队列相互实现  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_16_StackAndQueueConvert/Solution.java)  |
+|   17   | PrintMatrixSpiralOrder  |      顺时针打印矩阵  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_17_PrintMatrixSpiralOrder/Solution.java)  |
+|   18    | RotateMatrix  |      将正方形顺时针旋转 90°  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_18_RotateMatrix/Solution.java)  |
+|   19    | ReverseList  |      反转单向链表和双向链表  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_19_ReverseList/Solution.java)  |
+|   20    | ZigZagPrintMatrix  |      之字形打印矩阵  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_20_ZigZagPrintMatrix/Solution.java)  |
+|   21    | FindNumInSortedMatrix  |      在排好序的矩阵中找到指定的数  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_21_FindNumInSortedMatrix/Solution.java)  |
+|   22   | IsPalindromeList  |      判断一个链表是否是回文结构  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_22_IsPalindromeList/Solution.java)  |
+|   23   | SmallerEqualBiggerInList  |      根据给定的值划分单向链表  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_23_SmallerEqualBiggerInList/Solution.java)  |
+|   25   | FindFirstIntersectNode  |      两个单链表相交的一系列问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_25_FindFirstIntersectNode/Solution.java)  |
+|   26   | PreInPosTraversal  |      二叉树的先序、中序、后序遍历（递归与非递归）  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_26_PreInPosTraversal/Solution.java)  |
+|   27   | IsBinarySearchTree  |      判断一棵树是否是二叉搜索树  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_27_IsBinarySearchTree/Solution.java)  |
+|   28   | IsCompleteBinaryTree  |      判断一棵树是否是完全二叉树  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_28_IsCompleteBinaryTree/Solution.java)  |
+|   29   | CompleteBinaryTreeNodeNumber  |      求完全二叉树节点的个数  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_29_CompleteBinaryTreeNodeNumber/Solution.java)  |
+|   30    | HashMap  |      哈希表的基本使用  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_30_HashMap/Solution.java)  |
+|   31   | RandomPool  |      实现 RandomPool  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_31_RandomPool/Solution.java)  |
+|   32   | UnionFind  |      并查集的查找与合并操作  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_32_UnionFind/Solution.java)  |
+|   33   | Islands  |      岛问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_33_Islands/Solution.java)  |
+|   34   | TrieTree  |      前缀树  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_34_TrieTree/Solution.java)  |
+|   35   | LowestLexicography  |      字典序最小的字符串  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_35_LowestLexicography/Solution.java)  |
+|   36   | LessMoney  |      分割金条的最小代价  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_36_LessMoney/Solution.java)  |
+|   37   | MaximizedCapital  |      项目的最大钱数  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_37_MaximizedCapital/Solution.java)  |
+|   38   | BestArrange|      最多的宣讲场次  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_38_BestArrange/Solution.java)  |
+|   39    | Factorial  |      求 n 的阶乘  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_39_Factorial/Solution.java)  |
+|   40    | TowerOfHanoi  |      汉诺塔问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_40_TowerOfHanoi/Solution.java)  |
+|   41   | PrintAllSubsquences  |      打印一个字符串的全部子序列  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_41_PrintAllSubsquences/Solution.java)  |
+|   42   | CowNumber  |      母牛生崽问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_42_CowNumber/Solution.java)  |
+|   43    | MinPathInMatrix  |      矩阵中的最小路径和  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_43_MinPathInMatrix/Solution.java)  |
+|   44   | IsAimValueInArray  |      数组中的数累加起来等于目标值  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_44_IsAimValueInArray/Solution.java)  |
+
+# 进阶算法
+[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
+
+| # | English Title      | Chinese Title         |                                                                     Solution                                                                     |
+| :----: | --------------------------- | ------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------: |
+|   1    | KMP      | 字符串匹配算法               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_01_KMP/Solution.java)     |
+|   2    | ShortestContainTwiceOriginalString      | 包含两次原始字符串的最短字符串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_02_KMP_ShortestContainTwiceOriginalString/Solution.java)     |
+|   3    | T1SubtreeEqualsT2      | 树中是否有一棵子树与给定的树对应               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_03_KMP_T1SubtreeEqualsT2/Solution.java)     |
+|   4    | Manacher      | 字符串的最长回文子串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_04_Manacher/Solution.java)     |
+|   5    | ShortestEnd      | 在字符串后添加字符变成回文串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_05_Manacher_ShortestEnd/Solution.java)     |
+|   6    | BFPRT      | 在字符串后添加字符变成回文串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_06_BFPRT/Solution.java)     |
+|   7    | MaxWindow      | 生成窗口最大值数组               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_07_MaxWindow/Solution.java)     |
+|   8    | AllLessNumSubArray      | 最大值减去最小值小于等于 num 的子数组数量               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_08_AllLessNumSubArray/Solution.java)     |
+
 
 # 剑指Offer
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
