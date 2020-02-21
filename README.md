@@ -83,6 +83,8 @@
 |   6    | BFPRT      | 在字符串后添加字符变成回文串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_06_BFPRT/Solution.java)     |
 |   7    | MaxWindow      | 生成窗口最大值数组               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_07_MaxWindow/Solution.java)     |
 |   8    | AllLessNumSubArray      | 最大值减去最小值小于等于 num 的子数组数量               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_08_AllLessNumSubArray/Solution.java)     |
+|   9    | GetMaxTree      | 得到满足条件的最大二叉树               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_09_GetMaxTree/Solution.java)     |
+|   10    | MaxRecSize      | 求最大子矩阵的大小               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_10_MaxRecSize/Solution.java)     |
 
 
 # 剑指Offer
