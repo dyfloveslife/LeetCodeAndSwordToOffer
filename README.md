@@ -85,6 +85,10 @@
 |   8    | AllLessNumSubArray      | 最大值减去最小值小于等于 num 的子数组数量               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_08_AllLessNumSubArray/Solution.java)     |
 |   9    | GetMaxTree      | 得到满足条件的最大二叉树               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_09_GetMaxTree/Solution.java)     |
 |   10    | MaxRecSize      | 求最大子矩阵的大小               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_10_MaxRecSize/Solution.java)     |
+|   11    | MountainsAndFalme      | 可见的山峰对的数量               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_11_MountainsAndFalme/Solution.java)     |
+|   12    | MorrisTraversal    | Morris 前中后遍历               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_12_MorrisTraversal/Solution.java)     |
+|   13    | BuildingOutline    |天际线问题               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_13_BuildingOutline/Solution.java)     |
+|   14    | LongestSumSubArrayLength    |累加和等于 k 的最长子数组的长度               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_14_LongestSumSubArrayLength/Solution.java)     |
 
 
 # 剑指Offer
