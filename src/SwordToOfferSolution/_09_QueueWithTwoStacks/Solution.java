@@ -10,7 +10,7 @@ import java.util.Stack;
  *
  * 思路：
  * 1. 如果 stackPush 决定要把元素往 stackPop 里送的话，那么要一次性的送全部送完；
- * 2. 如果 stackPop 里面有东西，则 stackStack 一定不要送。
+ * 2. 如果 stackPop 里面有东西，则 stackPush 一定不要送。
  */
 public class Solution {
     Stack<Integer> stackPush = new Stack<>();

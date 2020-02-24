@@ -15,11 +15,10 @@ public class Solution {
 
     public static class ListNode {
         int val;
-        ListNode next = null;
+        ListNode next;
 
         ListNode(int val) {
             this.val = val;
-            this.next = null;
         }
     }
 
@@ -48,6 +47,49 @@ public class Solution {
         }
         return list_Recursively;
     }
+
+
+    // 使用栈
+    public static int[] reversePrint(ListNode head) {
+        if (head == null) {
+            return new int[0];
+        }
+
+        int count = 0;
+        Stack<Integer> stack = new Stack<>();
+        while (head != null) {
+            stack.push(head.val);
+            count++;
+            head = head.next;
+        }
+
+        int[] res = new int[count];
+        int pos = 0;
+        while (!stack.isEmpty()) {
+            res[pos++] = stack.pop();
+        }
+        return res;
+    }
+
+    // 使用递归
+    static ArrayList<Integer> list = new ArrayList<>();
+    public static int[] reversePrint2(ListNode head) {
+        reverse(head);
+        int[] res = new int[list.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
+    public static void reverse(ListNode head){
+        if (head == null) {
+            return ;
+        }
+        reverse(head.next);
+        head = head.next;
+    }
+
 
     public static void main(String[] args) {
         ListNode listNode = new ListNode(0);

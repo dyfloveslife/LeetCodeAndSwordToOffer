@@ -89,6 +89,10 @@
 |   12    | MorrisTraversal    | Morris 前中后遍历               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_12_MorrisTraversal/Solution.java)     |
 |   13    | BuildingOutline    |天际线问题               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_13_BuildingOutline/Solution.java)     |
 |   14    | LongestSumSubArrayLength    |累加和等于 k 的最长子数组的长度               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_14_LongestSumSubArrayLength/Solution.java)     |
+|   15    | MostEOR    |数组中的异或和为 0 的最多划分               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_15_MostEOR/Solution.java)     |
+|   16    | BiggestSubBSFInTree    |构建最大搜索二叉子树               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_16_BiggestSubBSFInTree/Solution.java)     |
+|   17    | MaxDistanceInTree    |二叉树上的最远距离               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_17_MaxDistanceInTree/Solution.java)     |
+|   18    | MaxHappy    |最大的活跃值               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_18_MaxHappy/Solution.java)     |
 
 
 # 剑指Offer

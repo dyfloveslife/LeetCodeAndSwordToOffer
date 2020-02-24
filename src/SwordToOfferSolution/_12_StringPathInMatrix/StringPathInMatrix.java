@@ -14,8 +14,54 @@ package SwordToOfferSolution._12_StringPathInMatrix;
  * C F C S
  * J D E H
  *
- * 实现一：
+ * 思路：
+ * 1. 深度优先遍历(DFS) + 剪枝；
+ *    剪枝：遇到这条路不可能和目标字符串匹配成功的时候，则立即返回；
+ * 2. 按照当前节点的下、上、右、左的顺序开始遍历：
+ *    下：如果元素已经访问过了，则返回 false；
+ *    上：如果元素越界，则返回 false；
+ *    右：如果匹配成功，则返回 true；
+ *    左：如果字符不匹配，则返回 false。
  */
+
+class Solution {
+    public static boolean exist(char[][] board, String str) {
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[0].length; j++) {
+                if (dfs(board, chars, i, j, 0)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    // k 表示当前目标字符在 str 中的索引
+    private static boolean dfs(char[][] board, char[] chars, int i, int j, int k) {
+        if (i < 0 || j < 0 || i >= board.length || j >= board[0].length || board[i][j] != chars[k]) {
+            return false;
+        }
+
+        // 如果当前遍历的字符已经到达了 chars 的末尾，则说明结束了
+        if (k == chars.length - 1) {
+            return true;
+        }
+        char c = board[i][j];
+        // 代表此元素已访问过，防止之后搜索时重复访问
+        board[i][j] = '#';
+        boolean res = dfs(board, chars, i + 1, j, k + 1) // 下
+                || dfs(board, chars, i - 1, j, k + 1)    // 上
+                || dfs(board, chars, i, j + 1, k + 1)    // 右
+                || dfs(board, chars, i, j - 1, k + 1);   // 左
+        // 还原当前矩阵元素
+        board[i][j] = c;
+        return res;
+    }
+}
+
+
+// 实现一
 public class StringPathInMatrix {
     public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
         // 1.设置一个标志位，初始值为 false 表示未走过
@@ -72,7 +118,7 @@ public class StringPathInMatrix {
  * 如果四个位置都没有找到，则返回false，并将当前位置重新改为false，然后路径-1，因为当前位置不是正确的路径，
  * 因为路径-1，所以回到上一位置，重新寻找。
  */
-class Solution {
+class Solution2 {
     public boolean hasPath(char[][] matrix, String str) {
         if (matrix == null || str == null) {
             return false;
@@ -115,5 +161,14 @@ class Solution {
             }
         }
         return flag;
+    }
+
+    public static void main(String[] args) {
+        char[][] arr = {
+                {'a', 'b', 'c', 'e'},
+                {'s', 'f', 'c', 's'},
+                {'a', 'd', 'e', 'e'}
+        };
+        System.out.println(Solution.exist(arr, "bfce"));
     }
 }
