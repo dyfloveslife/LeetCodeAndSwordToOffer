@@ -1,4 +1,4 @@
-package Other.AdvancedAlgorithm._14_LongestSumSubArrayLength;
+package Other.AdvancedAlgorithm._14_01_LongestSumSubArrayLength;
 
 import java.util.HashMap;
 
