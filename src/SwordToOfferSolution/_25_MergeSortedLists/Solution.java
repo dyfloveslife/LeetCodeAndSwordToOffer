@@ -27,6 +27,35 @@ public class Solution {
         }
     }
 
+    public ListNode mergetList1(ListNode head1, ListNode head2) {
+        if (head1 == null) {
+            return head2;
+        }
+        if (head2 == null) {
+            return head1;
+        }
+
+        // 使用一个额外的节点，方便找到链表的头
+        // 在头节点的前面
+        ListNode preHead = new ListNode(-1);
+        ListNode pre = preHead;
+
+        while (head1 != null && head2 != null) {
+            if (head1.val < head2.val) {
+                pre.next = head1;
+                head1 = head1.next;
+            } else {
+                pre.next = head2;
+                head2 = head2.next;
+            }
+            pre = pre.next;
+        }
+        // 假如其中一个链表已经遍历完了，而另一个没有遍历完
+        // 则需要确定 pre.next 所指向的节点
+        pre.next = (head1 == null) ? head2 : head1;
+        return preHead.next;
+    }
+
     public ListNode mergeList(ListNode head1, ListNode head2) {
         if (head1 == null) {
             return head2;

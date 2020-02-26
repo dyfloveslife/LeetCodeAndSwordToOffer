@@ -11,6 +11,15 @@ package Other.AdvancedAlgorithm._22_RegularExpressionMatch;
  */
 public class Solution {
 
+    public static boolean match(String s, String p) {
+        if (s == null || p == null) {
+            return false;
+        }
+        char[] str = s.toCharArray();
+        char[] exp = p.toCharArray();
+        return process(str, exp, 0, 0);
+    }
+
     // 暴力递归
     public static boolean process(char[] str, char[] exp, int i, int j) {
         if (j == exp.length) {
@@ -25,7 +34,7 @@ public class Solution {
         }
 
         // exp 的 j+1 位置不仅有字符，而且是 *
-        while (i != str.length && (str[i] == exp[j] || exp[j] == '*')) {
+        while (i != str.length && (str[i] == exp[j] || exp[j] == '.')) {
             if (process(str, exp, i, j + 2)) {
                 return true;
             }
@@ -37,16 +46,18 @@ public class Solution {
     public static void main(String[] args) {
         String str1 = "mississippi";
         String exp1 = "mis*is*p*.";
-        System.out.println(process(str1.toCharArray(), exp1.toCharArray(), 0, 0));
+        System.out.println(match(str1, exp1));
 
         String str2 = "aab";
         String exp2 = "c*a*b";
-        System.out.println(process(str2.toCharArray(), exp2.toCharArray(), 0, 0));
+        System.out.println(match(str2, exp2));
 
-        String str3 = "aa";
-        String exp3 = "a";
-        System.out.println(process(str3.toCharArray(), exp3.toCharArray(), 0, 0));
+        String str3 = "ab";
+        String exp3 = ".*";
+        System.out.println(match(str3, exp3));
 
-
+        String str4 = "";
+        String exp4 = ".*";
+        System.out.println(match(str4, exp4));
     }
 }

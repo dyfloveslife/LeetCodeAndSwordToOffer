@@ -1,13 +1,31 @@
 package SwordToOfferSolution._17_Print1ToMaxOfNDigits;
 
+import java.util.Arrays;
+
 /*
  * 打印从 1 到最大的 n 位数
  *
  * 题目描述：
  * 输入数字 n，按顺序打印出从 1 最大的 n 位十进制数。比如输入 3，则打印出 1、2、3 一直到最大的 3 位数即 999。
  *
+ * 思路：
+ * 将 1~pow(10, n)-1 问题转化为求 0~9 在 n 个位置上的全排列。
  */
 public class Solution {
+
+    public static int[] printNumbers(int n) {
+        if (n < 1) {
+            return null;
+        }
+
+        int max = (int) Math.pow(10, n);
+        int[] res = new int[max - 1];
+        for (int i = 1; i <= max - 1; i++) {
+            res[i - 1] = i;
+        }
+        return res;
+    }
+
     // 方法一
     private static void print1ToMaxOfNDigits_Solution1(int n) {
         if (n <= 0) {
@@ -110,6 +128,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        print1ToMaxOfNDigits_Solution2(2);
+//        print1ToMaxOfNDigits_Solution2(2);
+        System.out.println(Arrays.toString(printNumbers(3)));
     }
 }

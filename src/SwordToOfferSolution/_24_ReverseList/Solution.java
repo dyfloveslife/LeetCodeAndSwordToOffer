@@ -7,7 +7,10 @@ package SwordToOfferSolution._24_ReverseList;
  * 定义一个函数，输入一个链表的头结点，反转该链表并输出反转后链表的头结点。
  *
  * 思路：
- * 递归实现
+ * 1. 在某个链表调整指针的过程中，需要将当前节点的前一个节点和后一个节点进行保存，
+ *    因为，如果不保存后一个节点的话，则当前节点会和后面的链表断开；
+ * 2. 而反转后的链表的头节点就是原始链表中 next 为 null 的节点；
+ * 3. 请画图进行理解。
  */
 
 public class Solution {
@@ -18,6 +21,22 @@ public class Solution {
         ListNode(int val) {
             this.val = val;
         }
+    }
+
+    public static ListNode reverseList1(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode pre = null;
+        ListNode cur = head;
+        while (cur != null) {
+            ListNode temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
     }
 
     private static ListNode reverseList(ListNode head) {
@@ -50,9 +69,9 @@ public class Solution {
             if (nextNode == null) {
                 reversedHead = curNode;
             }
-            // 翻转操作（注意：curNode.next 表示当前节点的指针域，节点有数据域和指针域）
+            // 反转操作
             curNode.next = preNode;
-            // 后移操作，继续翻转下一个节点
+            // 都进行后移操作
             preNode = curNode;
             curNode = nextNode;
         }
