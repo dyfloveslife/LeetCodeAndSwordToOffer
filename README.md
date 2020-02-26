@@ -95,6 +95,10 @@
 |   16    | BiggestSubBSFInTree    |构建最大搜索二叉子树               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_16_BiggestSubBSFInTree/Solution.java)     |
 |   17    | MaxDistanceInTree    |二叉树上的最远距离               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_17_MaxDistanceInTree/Solution.java)     |
 |   18    | MaxHappy    |最大的活跃值               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_18_MaxHappy/Solution.java)     |
+|   19    | LRU    |最近最少使用               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_19_LRU/Solution.java)     |
+|   20    | MaxEOR    |子数组的最大异或和               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_20_MaxEOR/Solution.java)     |
+|   21    | MaxCoinsWayAmount    |最多的换钱方法               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_21_MaxCoinsWayAmount/Solution.java)     |
+|   22    | RegularExpressionMatch    |正则匹配问题               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_22_RegularExpressionMatch/Solution.java)     |
 
 
 # 剑指Offer
