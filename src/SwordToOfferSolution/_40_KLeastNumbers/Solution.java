@@ -86,7 +86,7 @@ public class Solution {
     }
 
     // 方法二
-    private ArrayList<Integer> getLeastNumbers2(int[] nums, int k) {
+    private static ArrayList<Integer> getLeastNumbers2(int[] nums, int k) {
         ArrayList<Integer> res = new ArrayList<>();
         if (nums == null || k > nums.length || k <= 0) {
             return res;
@@ -107,12 +107,18 @@ public class Solution {
                 maxHeap.offer(nums[i]);
                 // 如果当前数字比容器中的最大值要小的话，则用该数字替换已有的最大值
             } else if (nums[i] < maxHeap.peek()) {
-                Integer temp = maxHeap.poll();
-                temp = null;
+                maxHeap.poll();
                 maxHeap.offer(nums[i]);
             }
         // 将 maxHeap 中的元素全部添加到 res 中
         res.addAll(maxHeap);
         return res;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {3, 2, 1};
+        int[] arr1 = {0, 1, 2, 1};
+        System.out.println(getLeastNumbers2(arr, 2));
+        System.out.println(getLeastNumbers2(arr1, 1));
     }
 }
