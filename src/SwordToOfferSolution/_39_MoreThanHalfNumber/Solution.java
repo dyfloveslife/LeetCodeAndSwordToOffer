@@ -15,9 +15,9 @@ package SwordToOfferSolution._39_MoreThanHalfNumber;
  * 5. 最后需要判断 res 的出现次数是不是大于数组长度的一半。
  */
 public class Solution {
-    private int moreThanHalfNumber(int[] arr) {
+    public static int moreThanHalfNumber(int[] arr) {
         if (arr == null || arr.length == 0) {
-            return 0;
+            return -1;
         }
 
         int res = arr[0];
@@ -33,14 +33,11 @@ public class Solution {
                 times--;
             }
         }
+        return res;
+    }
 
-        // 判断 res 出现次数是否大于数组长度的一半
-        int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == res) {
-                count++;
-            }
-        }
-        return (count > arr.length / 2) ? res : 0;
+    public static void main(String[] args) {
+        int[] arr = {2, 2, 1, 1, 1, 2, 2};
+        System.out.println(moreThanHalfNumber(arr));
     }
 }
