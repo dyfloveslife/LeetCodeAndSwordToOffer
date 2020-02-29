@@ -18,7 +18,7 @@ package SwordToOfferSolution._36_ConvertBinarySearchTree;
 
 public class Solution {
     class TreeNode {
-        int val = 0;
+        int val;
         TreeNode left = null;
         TreeNode right = null;
 
