@@ -26,26 +26,26 @@ import java.util.HashMap;
  */
 
 public class Solution {
-    class RandomListNode {
-        int label = 0;
-        RandomListNode next = null;
-        RandomListNode random = null;
+    class Node {
+        int val;
+        Node next = null;
+        Node random = null;
 
-        RandomListNode(int label) {
-            this.label = label;
+        Node(int val) {
+            this.val = val;
         }
     }
 
     // 方法一：使用额外空间：哈希表
-    public RandomListNode clone1(RandomListNode pHead) {
-        HashMap<RandomListNode, RandomListNode> map = new HashMap<>();
-        RandomListNode cur = pHead;
+    public Node clone1(Node head) {
+        HashMap<Node, Node> map = new HashMap<>();
+        Node cur = head;
         // 在复制节点的同时将 每个节点 以及 每个节点对应的拷贝节点 存储到哈希表中
         while (cur != null) {
-            map.put(cur, new RandomListNode(cur.label));
+            map.put(cur, new Node(cur.val));
             cur = cur.next;
         }
-        cur = pHead;
+        cur = head;
         // 指定拷贝后链表中每个节点的 next 和 random
         while (cur != null) {
             // 当前节点的拷贝节点的 next 指针，指向的是 当前节点的下一个节点的拷贝节点
@@ -55,48 +55,54 @@ public class Solution {
             cur = cur.next;
         }
         // 返回的是原链表头节点的拷贝节点
-        return map.get(pHead);
+        return map.get(head);
     }
 
     // 方法二：将每个节点的拷贝节点放在其节点之后，类似于 A->A'->B->B'
-    public RandomListNode clone2(RandomListNode pHead) {
-        if (pHead == null) {
+    public Node clone2(Node head) {
+        if (head == null) {
             return null;
         }
 
         // 复制链表的同时，将复制后的节点放到原节点之后，只关心 next，不关系 random
-        RandomListNode cur = pHead;
-        RandomListNode next = null;
+        Node cur = head;
+        Node temp = null;
+        // 这里其实是在链表 1->2 的中间插入 1 的拷贝节点，从而变成 1->1'->2
+        // temp 用于保存节点 2，防止链表断裂
         while (cur != null) {
-            next = cur.next;
+            temp = cur.next;
             // 原节点指向复制后的节点
-            cur.next = new RandomListNode(cur.label);
+            cur.next = new Node(cur.val);
             // 复制后的节点指向下一个新的节点
-            cur.next.next = next;
+            cur.next.next = temp;
             // cur 移动到该新的节点
-            cur = next;
+            cur = temp;
         }
+
         // 设置每个节点的 random 指针
-        cur = pHead;
-        RandomListNode curCopy = null;
+        cur = head;
+        Node curCopy = null;
         while (cur != null) {
-            next = cur.next.next;
+            temp = cur.next.next;
             curCopy = cur.next;
-            curCopy.random = cur.random != null ? cur.random.next : null;
-            cur = next;
+            curCopy.random = (cur.random != null) ? cur.random.next : null;
+            cur = temp;
         }
-        //不能设置为 cur.next，因为 cur 是变化的，而 head 是不变的
-        RandomListNode res = pHead.next;
+        // 不能设置为 cur.next，因为 cur 是变化的，而 head 是不变的
+        // 返回的是头节点的 next，也就是 1->1'->2->2'->null 中的 1'
+        // 先记录一下最终要返回的头节点
+        Node res = head.next;
+
         // 将两个链表进行分离
-        cur = pHead;
+        cur = head;
         while (cur != null) {
-            next = cur.next.next;
+            temp = cur.next.next;
             curCopy = cur.next;
             // 先连接原链表
-            cur.next = next;
+            cur.next = temp;
             // 再连接拷贝链表
-            curCopy.next = next != null ? next.next : null;
-            cur = next;
+            curCopy.next = (temp != null) ? temp.next : null;
+            cur = temp;
         }
         return res;
     }
