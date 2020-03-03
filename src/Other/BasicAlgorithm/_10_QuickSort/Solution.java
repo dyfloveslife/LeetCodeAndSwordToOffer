@@ -86,8 +86,9 @@ public class Solution {
 
     public static void main(String[] args) {
         int[] arr = {3, 2, 1, 5, 6, 4};
-        quickSort(arr);
-        for (int i : arr) {
+        int[] arr2 = {1, 2, 3, 2, 5, 6};
+        quickSort(arr2);
+        for (int i : arr2) {
             System.out.print(i + " ");
         }
     }

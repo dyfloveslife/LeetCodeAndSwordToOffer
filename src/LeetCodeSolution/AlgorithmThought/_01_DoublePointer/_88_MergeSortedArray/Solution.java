@@ -30,7 +30,12 @@ public class Solution {
             nums1[p--] = (nums1[p1] < nums2[p2]) ? nums2[p2--] : nums1[p1--];
         }
         // 从原数组 nums2 的 0 位置开始到 p2+1 位置结束，复制给目标数组从 0 位置开始的 num1
-        System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
+        // System.arraycopy(nums2, 0, nums1, 0, p2 + 1);
+
+        // 如果 nums2 中还有剩余的话，则直接复制给 nums1 对应的位置
+        while (p2 >= 0) {
+            nums1[p--] = nums2[p2--];
+        }
     }
 
     public static void main(String[] args) {
