@@ -7,7 +7,7 @@ package SwordToOfferSolution._42_GreatestSumOfSubarrays;
  * 输入一个整型数组，数组里有正数也有负数。数组中一个或连续的多个整数组成一个子数组。
  * 求所有子数组的和的最大值。要求时间复杂度为 O(n)。
  *
- * 思路一：
+ * 思路一：贪心
  * 1. 首先对数组进行遍历，当前的最大连续的子数组的最大和记为 curSum，最终的最大和记为 maxSum；
  * 2. 如果 curSum > 0 ，说明 curSum 对结果有增益，则将 curSum 进行保留，并加上当前遍历的元素；
  * 3. 如果 curSum <= 0，说明 curSum 对结果没有增益，需要舍弃，则将 curSum 直接更新为当前遍历的元素；
