@@ -1,6 +1,5 @@
 package SwordToOfferSolution._41_01_StreamMedian;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /*
@@ -12,47 +11,42 @@ import java.util.PriorityQueue;
  * 如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
  *
  * 思路：
- * 1. 将整个数据分成两部分，左部分从左到右逐渐增大并存入大顶堆，右部分从左到右逐渐增大并存入小顶堆，即大顶堆中所有的数都小于小顶堆中的数；
- * 2. 若数据量为偶数，则大顶堆的堆顶和小顶堆的堆顶之和的平均值就是中位数；若数据量为奇数，则小顶堆的堆顶就是中位数；
- * 3. 为了保证数据平均分配到两个堆中，即两堆中数据的数量之差不能超过 1，即保持平衡状态；
- * 4. 如果规定数据量是偶数的时候将新数据插入到小顶堆，否则插入到大顶堆，但如果新插入的数比大顶堆中的一些数要小呢？
- * 可以先将这个新的数据插入到大顶堆，然后将大顶堆中的堆顶插入到小顶堆，这样就能保持左半部分一直小于右半部分了。
- * 5. 如果数据总数是偶数的话，则先将新数据插入到大顶堆中，然后再将大顶堆中的堆顶加入到小顶堆中；
- * 6. 如果数据总数是奇数的话，则先将新数据插入到小顶堆中，然后再将小顶堆中的堆顶加入到大顶堆中。
+ * 1. 使用大根堆存储数据流中较小的 n/2 个元素，其中堆顶为这 n/2 个元素的最大值；
+ * 2. 使用小根堆存储数据流中较大的 n/2 个元素，其中堆顶为这 n/2 个元素的最小值；
+ * 3. 让初始值进大根堆，如果两个堆合起来的元素个数是奇数，则小根堆要拿出堆顶元素给大根堆，
+ *    目的是为了在奇数个元素中，直接返回大根堆的堆顶。
+ * 4. 如果数据流中的元素个数是偶数个，则需要将大根堆的堆顶和小根堆的堆顶共同取出，然后再取平均值。
  */
 public class Solution {
-    // 默认是 小顶堆
-    private PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-    // 实现 大顶堆
-    private PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            return o2.compareTo(o1);
-        }
-    });
-    // 记录数据的数量是奇数个还是偶数个
-    private int count = 0;
-    // 插入从数据流中读出来的数据
-    private void insert(Integer num) {
-        // 数据总量为偶数
-        if ((count & 1) == 0) {
-            maxHeap.offer(num);
-            int max = maxHeap.poll();
-            minHeap.offer(max);
-        } else {    // 数据总量是奇数
-            minHeap.offer(num);
-            int min = minHeap.poll();
-            maxHeap.offer(min);
-        }
-        count++;
-    }
 
-    // 得到已有所有数据的中位数
-    private Double getMedian() {
-        if ((count & 1) == 0) {
-            return new Double(maxHeap.peek() + minHeap.peek()) / 2;
-        } else {
-            return new Double(minHeap.peek());
+    class MedianFinder {
+        private int count;
+        private PriorityQueue<Integer> minHeap;
+        private PriorityQueue<Integer> maxHeap;
+
+        public MedianFinder() {
+            count = 0;
+            minHeap = new PriorityQueue<>();
+            maxHeap = new PriorityQueue<>((o1, o2) -> (o2 - o1));
+        }
+
+        public void addNum(int num) {
+            count += 1;
+            maxHeap.offer(num);
+            minHeap.offer(maxHeap.poll());
+            // 如果两个堆中的元素之和为奇数，则小根堆需要弹出元素放进大根堆
+            // 让大根堆始终比小根堆多一个元素
+            if (count % 2 == 1) {
+                maxHeap.offer(minHeap.poll());
+            }
+        }
+
+        public double findMedian() {
+            if (count % 2 == 0) {
+                return (double) (maxHeap.peek() + minHeap.peek()) / 2;
+            } else {
+                return (double) maxHeap.peek();
+            }
         }
     }
 }

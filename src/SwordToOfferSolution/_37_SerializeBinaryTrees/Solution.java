@@ -22,9 +22,9 @@ import java.util.Queue;
 
 public class Solution {
     class TreeNode {
-        int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
+        int val;
+        TreeNode left;
+        TreeNode right;
 
         TreeNode(int val) {
             this.val = val;
@@ -32,38 +32,44 @@ public class Solution {
     }
 
     // 序列化：使用先序遍历，将二叉树序列化成字符串
-    private String serialize(TreeNode root) {
+    public String serialize(TreeNode root) {
+        StringBuilder sb = mySerialize(root, new StringBuilder());
+        return sb.toString();
+    }
+
+    public StringBuilder mySerialize(TreeNode root, StringBuilder sb) {
         if (root == null) {
-            return "#_";
+            sb.append("#_");
+            return null;
         }
 
-        String res = root.val + "_";
-        res += serialize(root.left);
-        res += serialize(root.right);
-        return res;
+        sb.append(root.val).append("_");
+        mySerialize(root.left, sb);
+        mySerialize(root.right, sb);
+        return sb;
     }
 
     // 反序列化：将字符串逐个添加到队列中
-    private TreeNode deserialize(String str) {
+    public TreeNode deserialize(String str) {
         String[] values = str.split("_");
         Queue<String> queue = new LinkedList<>();
-        for (int i = 0; i < values.length; i++) {
-            queue.offer(values[i]);
+        for (String value : values) {
+            queue.offer(value);
         }
-        return reconPreOrder(queue);
+        return myDeserialize(queue);
     }
 
     // 反序列化：每次从队列中弹出一个值进行判断
     // 使用先序遍历
-    private TreeNode reconPreOrder(Queue<String> queue) {
+    public TreeNode myDeserialize(Queue<String> queue) {
         String value = queue.poll();
         if (value.equals("#")) {
             return null;
         }
 
         TreeNode root = new TreeNode(Integer.valueOf(value));
-        root.left = reconPreOrder(queue);
-        root.right = reconPreOrder(queue);
+        root.left = myDeserialize(queue);
+        root.right = myDeserialize(queue);
         return root;
     }
 }

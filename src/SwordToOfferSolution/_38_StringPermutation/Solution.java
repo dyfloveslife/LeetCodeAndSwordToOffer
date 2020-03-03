@@ -1,7 +1,7 @@
 package SwordToOfferSolution._38_StringPermutation;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import javax.swing.text.StyledEditorKit;
+import java.util.*;
 
 /*
  * 字符串的排列 https://i.loli.net/2019/11/25/6qRl5XMgOAUcfmZ.png
@@ -17,7 +17,39 @@ import java.util.Collections;
  * 4. 在递归过程中，还需要考虑重复的排序结果，即：如果当前排序结果在之前已排序结果中没有出现的话，则将其加入到整个的结果集中。
  */
 public class Solution {
-    private ArrayList<String> permutation(String str) {
+
+    public static String[] permutation(String s) {
+        Set<String> ans = new TreeSet<>();
+        char[] chars = s.toCharArray();
+
+        permutationCore(ans, chars, 0);
+
+        String[] res = new String[ans.size()];
+        int index = 0;
+        for (String str : ans) {
+            res[index++] = str;
+        }
+        return res;
+    }
+
+    public static void permutationCore(Set<String> ans, char[] chars, int begin) {
+        if (begin == chars.length - 1) {
+            ans.add(String.valueOf(chars));
+            return;
+        }
+
+        for (int i = begin; i < chars.length; i++) {
+            if (i != begin && (chars[i] == chars[i - 1] || chars[i] == chars[begin])) {
+                continue;
+            }
+            swap(chars, i, begin);
+            permutationCore(ans, chars, begin + 1);
+            swap(chars, i, begin);
+        }
+    }
+
+    // 之前的方法（超时）
+    private ArrayList<String> permutation1(String str) {
         ArrayList<String> res = new ArrayList<>();
         if (str.length() == 0) {
             return res;
@@ -47,7 +79,7 @@ public class Solution {
         }
     }
 
-    private void swap(char[] ch, int i, int j) {
+    public static void swap(char[] ch, int i, int j) {
         char temp = ch[i];
         ch[i] = ch[j];
         ch[j] = temp;
@@ -55,8 +87,6 @@ public class Solution {
 
     public static void main(String[] args) {
         String str = "abc";
-        Solution s = new Solution();
-        ArrayList<String> list = s.permutation(str);
-        System.out.println(list);
+        System.out.println(Arrays.toString(permutation(str)));
     }
 }
