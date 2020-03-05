@@ -80,7 +80,7 @@
 |   3    | T1SubtreeEqualsT2      | 树中是否有一棵子树与给定的树对应               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_03_KMP_T1SubtreeEqualsT2/Solution.java)     |
 |   4    | Manacher      | 字符串的最长回文子串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_04_Manacher/Solution.java)     |
 |   5    | ShortestEnd      | 在字符串后添加字符变成回文串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_05_Manacher_ShortestEnd/Solution.java)     |
-|   6    | BFPRT      | 在字符串后添加字符变成回文串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_06_BFPRT/Solution.java)     |
+|   6    | BFPRT      | 找到前 K 小的数或前 K 大的数               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_06_BFPRT/Solution.java)     |
 |   7    | MaxWindow      | 生成窗口最大值数组               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_07_MaxWindow/Solution.java)     |
 |   8    | AllLessNumSubArray      | 最大值减去最小值小于等于 num 的子数组数量               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_08_AllLessNumSubArray/Solution.java)     |
 |   9    | GetMaxTree      | 得到满足条件的最大二叉树               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_09_GetMaxTree/Solution.java)     |
