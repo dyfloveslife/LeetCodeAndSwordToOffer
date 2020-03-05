@@ -12,7 +12,7 @@ package SwordToOfferSolution._44_DigitsInSequence;
  * https://dyfloveslife.github.io/2019/11/29/offer-DigitsInSequence/
  */
 public class Solution {
-    public int digitsInSequence(int arr[], int n) {
+    public static int digitsInSequence(int[] arr, int n) {
         if (n < 0) {
             return -1;
         }
@@ -36,8 +36,6 @@ public class Solution {
 
     public static void main(String[] args) {
         int[] arr = {0, 10, 190, 2890, 38890, 488890, 5888890, 68888890, 788888890};
-        Solution solution = new Solution();
-        int i = solution.digitsInSequence(arr, 1001);
-        System.out.println(i);
+        System.out.println(digitsInSequence(arr, 11));
     }
 }

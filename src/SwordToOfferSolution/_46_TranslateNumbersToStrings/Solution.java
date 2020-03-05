@@ -22,11 +22,11 @@ import java.util.HashMap;
  */
 public class Solution {
     // 方法一
-    public int getTranslationCount1(String s) {
+    public static int getTranslationCount1(String s) {
         return getResult1(s, 0);
     }
 
-    private int getResult1(String s, int start) {
+    private static int getResult1(String s, int start) {
         // 如果到了最后一个字符，则只有一种翻译方式
         if (start == s.length()) {
             return 1;
@@ -52,12 +52,12 @@ public class Solution {
 
 
     // 方法二
-    public int getTranslationCount2(String s) {
+    public static int getTranslationCount2(String s) {
         HashMap<Integer, Integer> map = new HashMap<>();
         return getResult2(s, 0, map);
     }
 
-    private int getResult2(String s, int start, HashMap<Integer, Integer> map) {
+    private static int getResult2(String s, int start, HashMap<Integer, Integer> map) {
         if (start == s.length()) {
             return 1;
         }
@@ -86,7 +86,7 @@ public class Solution {
     }
 
     // 方法三
-    public int getTranslationCount3(String s) {
+    public static int getTranslationCount3(String s) {
         int length = s.length();
         int[] dp = new int[length + 1];
         // 从后往前开始
@@ -110,5 +110,29 @@ public class Solution {
             dp[i] = ans1 + ans2;
         }
         return dp[0];
+    }
+
+    public static int getTranslationCount4(int num) {
+        String str = String.valueOf(num);
+        int len = str.length();
+        int[] dp = new int[len + 1];
+        dp[0] = 1;
+        dp[1] = 1;
+        for (int i = 1; i < len; i++) {
+            if (str.charAt(i - 1) == '0' || str.substring(i - 1, i + 1).compareTo("25") > 0) {
+                dp[i + 1] = dp[i];
+            } else {
+                dp[i + 1] = dp[i] + dp[i - 1];
+            }
+        }
+        return dp[len];
+    }
+
+    public static void main(String[] args) {
+        String str = "12258";
+        System.out.println(getTranslationCount1(str));
+        System.out.println(getTranslationCount2(str));
+        System.out.println(getTranslationCount3(str));
+        System.out.println(getTranslationCount4(12258));
     }
 }

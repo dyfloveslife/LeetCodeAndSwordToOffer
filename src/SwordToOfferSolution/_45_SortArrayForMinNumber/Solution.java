@@ -1,7 +1,6 @@
 package SwordToOfferSolution._45_SortArrayForMinNumber;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Comparator;
 
 /*
@@ -17,29 +16,29 @@ import java.util.Comparator;
  * 3. 注意在拼接的时候，由于 "" 的位置不同，则会产生不同的效果。
  */
 public class Solution {
-    public String printMinNumber(int[] nums) {
-        int length = nums.length;
-        if (nums == null || length < 0) {
+    public static String printMinNumber(int[] nums) {
+        if (nums == null || nums.length < 0) {
             return "";
         }
 
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < length; i++) {
-            list.add(nums[i]);
+        String[] strNums = new String[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            strNums[i] = String.valueOf(nums[i]);
         }
-        Collections.sort(list, new Comparator<Integer>() {
-            @Override
-            public int compare(Integer str1, Integer str2) {
-                String s1 = str1 + "" + str2;
-                String s2 = str2 + "" + str1;
-                return s1.compareTo(s2);
-            }
-        });
-        String res = "";
-        for (Integer j : list) {
-            res += j;
+
+         Arrays.sort(strNums, (o1, o2) -> (o1 + o2).compareTo(o2 + o1));
+//        Arrays.sort(strNums, new Comparator<String>() {
+//            @Override
+//            public int compare(String o1, String o2) {
+//                return (o1 + o2).compareTo(o2 + o1);
+//            }
+//        });
+
+        StringBuilder sb = new StringBuilder();
+        for (String strNum : strNums) {
+            sb.append(strNum);
         }
-        return res;
+        return sb.toString();
     }
 
     public static void main(String[] args) {
@@ -47,5 +46,8 @@ public class Solution {
         String s2 = 123 + 123 + "";
         System.out.println(s1); // 123123
         System.out.println(s2); // 246
+
+        int[] arr = {3, 30, 34, 5, 9};
+        System.out.println(printMinNumber(arr));
     }
 }
