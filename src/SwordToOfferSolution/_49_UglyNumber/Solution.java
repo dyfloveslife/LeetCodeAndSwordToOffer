@@ -9,9 +9,18 @@ import java.util.ArrayList;
  * 我们把只包含因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 1500 个丑数。
  * 例如 6、8 都是丑数，但 14 不是，因为它包含因子 7。习惯上我们把 1 当做第一个丑数。
  *
- * 思路：
+ * 思路 1 用于判断一个数是否是丑数：
+ * 1. 根据丑数的定义，只包含因子 2、3 和 5，所以一个丑数就可以被定义为 2^i * 3^j * 5^k，即每个对应次方的乘积；
+ *    注意底数都是素数（质数）
+ * 2. while (num % factor == 0) num /= factor;
+ *    check num == 1
+ *    即每次将 num 除以因子，最后检查 num 是否等于 1，如果等于 1，则是丑数。
+ * 3. O(log2 n + log3 n + log5 n)
+ * 4. O(1)
+ *
+ * 思路 2：
  * 1. 比较用于乘 2 的最小的数、乘 3 的最小的数、乘 5 的最小的数即可；
- * 2. 每 次从队头中弹出最小的数，将该数加入到 丑数数组 中，然后用该数分别乘以 2、3、5，并将结果放入对应的队列中；
+ * 2. 每次从队头中弹出最小的数，将该数加入到丑数数组中，然后用该数分别乘以 2、3、5，并将结果放入对应的队列中；
  * 3. 如果队头的数相同，则都弹出。
  *
  * 丑数数组：1、2、3、4、5
@@ -19,8 +28,25 @@ import java.util.ArrayList;
  * 乘 3 的队列：6、9、12、15
  * 乘 5 的队列：10、15、20、25
  *             队头-------队尾
+ * https://www.nowcoder.com/questionTerminal/6aa9e04fc3794f68acf8778237ba065b?f=discussion
  */
 public class Solution {
+
+    // 判断一个数是否是丑数
+    public static boolean isUgly(int num) {
+        if (num == 0) {
+            return false;
+        }
+
+        int[] factors = {2, 3, 5};
+        for (int factor : factors) {
+            while (num % factor == 0) {
+                num /= factor;
+            }
+        }
+        return num == 1;
+    }
+
     public static int uglyNumber(int index) {
         if (index < 1) {
             return 0;
@@ -79,5 +105,7 @@ public class Solution {
 
     public static void main(String[] args) {
         System.out.println(uglyNumber(7));
+        System.out.println(isUgly(6));
+        System.out.println(isUgly(14));
     }
 }

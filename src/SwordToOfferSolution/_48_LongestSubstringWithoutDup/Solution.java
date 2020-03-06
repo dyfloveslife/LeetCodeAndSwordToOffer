@@ -1,6 +1,7 @@
 package SwordToOfferSolution._48_LongestSubstringWithoutDup;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 /*
  * 最长不含重复字符的子字符串
@@ -9,10 +10,37 @@ import java.util.Arrays;
  * 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
  * 假设字符串中只包含从 a 到 z 的字符。
  *
- * 思路：DP
+ * 思路 1：DP
  * https://dyfloveslife.github.io/2019/12/11/offer-longest-SubString-Without-Duplication/
+ *
+ * 思路 2：使用滑动窗口 + HashSet
  */
 public class Solution {
+
+    public static int longestSubstringWithoutDup0(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+
+        int left = 0;
+        int right = 0;
+        int max = 0;
+        HashSet<Character> set = new HashSet<>();
+
+        while (right < s.length()) {
+            if (!set.contains(s.charAt(right))) {
+               set.add(s.charAt(right));
+               right++;
+               max = Math.max(max, set.size());
+            } else {
+                set.remove(s.charAt(left));
+                left++;
+            }
+        }
+        return max;
+    }
+
+
     public static int longestSubstringWithoutDup1(String str) {
         if (str == null || str.length() < 1) {
             return 0;
@@ -42,7 +70,7 @@ public class Solution {
         return maxLen;
     }
 
-    public int longestSubstringWithoutDup2(String str) {
+    public static int longestSubstringWithoutDup2(String str) {
         if (str == null || str.length() <= 0) {
             return 0;
         }
@@ -72,7 +100,8 @@ public class Solution {
 
     public static void main(String[] args) {
         String str = "arabcacfr";
-        int i = longestSubstringWithoutDup1(str);
-        System.out.println(i);
+        System.out.println(longestSubstringWithoutDup0(str));
+        System.out.println(longestSubstringWithoutDup1(str));
+        System.out.println(longestSubstringWithoutDup2(str));
     }
 }
