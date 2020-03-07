@@ -55,6 +55,7 @@ public class Solution {
 
     public static void main(String[] args) {
         int[] arr = {2, 3, 4, 2, 6, 2, 5, 1};
-        System.out.println(maxInSlidingWindow(arr, 3));
+        int[] arr2 = {1, 3, -1, -3, 5, 3, 6, 7};
+        System.out.println(maxInSlidingWindow(arr2, 3));
     }
 }
