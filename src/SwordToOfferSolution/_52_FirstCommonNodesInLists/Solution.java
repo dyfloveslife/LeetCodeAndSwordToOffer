@@ -17,9 +17,11 @@ package SwordToOfferSolution._52_FirstCommonNodesInLists;
  * 1. 首先计算两个链表的长度之差为 d；
  * 2. 然后让短的链表先走 d 步，此时再让两个链表同时移动，在移动的过程中比较节点大小。
  *    如果相等，则找到了第一个公共节点。
+ * 3. 但需要注意的是，如果在相遇节点之前，两个链表中有相同的节点，则需要判断 longList != shortList，
+ *    即需要判断引用，而不是节点的值。
  * 优点：提高了空间效率
  *
- * 变态思路：
+ * 思路三：
  * 1. 设 A 的长度为 a + c，B 的长度为 b + c，其中 c 为尾部公共部分长度，可知 a + c + b = b + c + a；
  * 2. 当访问链表 A 的指针访问到链表尾部时，令它从链表 B 的头部重新开始访问链表 B；
  * 3. 同样地，当访问链表 B 的指针访问到链表尾部时，令它从链表 A 的头部重新开始访问链表 A；
@@ -36,6 +38,7 @@ public class Solution {
         }
     }
 
+    // 思路二
     public ListNode firstCommonNodesInLists(ListNode head1, ListNode head2) {
         if (head1 == null || head2 == null) {
             return null;
@@ -80,7 +83,7 @@ public class Solution {
         return len;
     }
 
-    // 变态思路
+    // 思路三
     public ListNode findFirstCommonNode2(ListNode pHead1, ListNode pHead2) {
         ListNode l1 = pHead1, l2 = pHead2;
         while (l1 != l2) {
