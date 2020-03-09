@@ -16,7 +16,68 @@ import java.util.Arrays;
  *    时的准确性。
  */
 public class Solution {
-    public static int[] searchRange(int[] nums, int target) {
+
+    public static int[] searchRange1(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return new int[]{-1, -1};
+        }
+
+        int[] res = {-1, -1};
+        int firstIndex = getFirst(nums, target, 0, nums.length - 1);
+        int lastIndex = getLast(nums, target, 0, nums.length - 1);
+        if (firstIndex > -1 && lastIndex > -1) {
+            res = new int[]{firstIndex, lastIndex};
+        }
+        return res;
+    }
+
+    private static int getFirst(int[] nums, int target, int left, int right) {
+        if (left > right) {
+            return -1;
+        }
+
+        int middleIndex = left + ((right - left) >> 1);
+        int middleData = nums[middleIndex];
+
+        if (middleData == target) {
+            if ((middleIndex > 0 && nums[middleIndex - 1] != target)
+                    || middleIndex == 0) {
+                return middleIndex;
+            } else {
+                right = middleIndex - 1;
+            }
+        } else if (middleData > target) {
+            right = middleIndex - 1;
+        } else if (middleData < target) {
+            left = middleIndex + 1;
+        }
+        return getFirst(nums, target, left, right);
+    }
+
+    private static int getLast(int[] nums, int target, int left, int right) {
+        if (left > right) {
+            return -1;
+        }
+
+        int middleIndex = left + ((right - left) >> 1);
+        int middleData = nums[middleIndex];
+
+        if (middleData == target) {
+            if ((middleIndex < right && nums[middleIndex + 1] != target)
+                    || middleIndex == right) {
+                return middleIndex;
+            } else {
+                left = middleIndex + 1;
+            }
+        } else if (middleData < target) {
+            left = middleIndex + 1;
+        } else if (middleData > target) {
+            right = middleIndex - 1;
+        }
+        return getLast(nums, target, left, right);
+    }
+
+    public static int[] searchRange2(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return new int[]{-1, -1};
         }
@@ -49,6 +110,6 @@ public class Solution {
         int[] arr2 = {5, 7, 7, 8, 8, 10};
         int[] arr3 = {1};
         int[] arr4 = {1, 3};
-        System.out.println(Arrays.toString(searchRange(arr4, 1)));
+        System.out.println(Arrays.toString(searchRange1(arr2, 8)));
     }
 }
