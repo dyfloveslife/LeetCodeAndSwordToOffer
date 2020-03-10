@@ -5,13 +5,131 @@ import java.util.HashMap;
 /*
  * Least Recently Used，最近最少使用，选择最近最久未使用的页面予以淘汰。
  *
- * 思路：
- * 1. 使用哈希表+双向链表；
+ * 思路 1：
+ * 1. 使用哈希表 + 双向链表；
  * 2. 在双向链表中，从尾部加入节点，头部是优先级低的，尾部是优先级高的；
  * 3. 对于 get(node) 操作，则直接将 node 移到尾部即可。
+ *
+ * 思路 2：
+ * 0. 自己实现的双端链表中，对于节点而言，其包含一个 key 和一个 value，其中，key 和 HashMap 中的 key 是对应的；
+ * 1. 还是使用 map + 双向链表；
+ * 2. 最近使用的放在队头，久未使用的放在队尾；
+ * 3. 在队头插入数据，删除的时候，将队尾久未使用的数据删除；
+ * 4. 每次 get 数据的时候，要把该数据提到队头；
+ * 5. 如果在容量满了的情况下，插入数据，则将队尾的数据删除，再将新的数据放进队头；
+ * 6. 如果要覆盖数据，则数据修改后，也要将其提到队头。
  */
 public class Solution {
 
+    // 思路 1
+    class Node {
+        // 每个节点都包含 key、value、前驱指针 prev、后继指针 next
+        int key;
+        int val;
+        Node next;
+        Node prev;
+
+        Node(int key, int val) {
+            this.key = key;
+            this.val = val;
+        }
+    }
+
+    class DoublyList {
+        // 双端链表的头尾虚节点
+        Node head;
+        Node tail;
+        int size;
+
+        DoublyList() {
+            head = new Node(0, 0);
+            tail = new Node(0, 0);
+            head.next = tail;
+            tail.prev = head;
+            size = 0;
+        }
+
+        // 在链表头部添加 x 节点
+        // 其实就是在 head 节点和第一个节点之间插入 x 节点
+        public void addFirst(Node x) {
+            // 注意：head 一开始是虚节点，将其设置为虚节点，便于操作
+            x.next = head.next;
+            x.prev = head;
+            head.next.prev = x;
+            head.next = x;
+            size++;
+        }
+
+        // 删除链表中的 x 节点
+        public void remove(Node x) {
+            x.prev.next = x.next;
+            x.next.prev = x.prev;
+            size--;
+        }
+
+        // 删除链表中最后一个节点，并返回该节点
+        public Node removeLast() {
+            if (tail.prev == head) {
+                return null;
+            }
+
+            // 注意：tail 是尾部的虚节点，真实的最后一个节点是 tail.prev
+            Node last = tail.prev;
+            remove(last);
+            return last;
+        }
+
+        // 返回链表的长度
+        public int size() {
+            return size;
+        }
+    }
+
+    class LRUCache {
+        private HashMap<Integer, Node> map;
+        private DoublyList cache;
+        private int cap;
+
+        public LRUCache(int cap) {
+            this.cap = cap;
+            map = new HashMap<>();
+            cache = new DoublyList();
+        }
+
+        public int get(int key) {
+            if (!map.containsKey(key)) {
+                return -1;
+            }
+
+            int val = map.get(key).val;
+            // 提到前面来
+            put(key, val);
+            return val;
+        }
+
+        public void put(int key, int val) {
+            Node x = new Node(key, val);
+
+            if (map.containsKey(key)) {
+                // 删除旧的，将新的节点插到头部
+                cache.remove(map.get(key));
+                cache.addFirst(x);
+                // 更新 map 中对应的数据
+                map.put(key, x);
+            } else {
+                if (cap == cache.size()) {
+                    // 在插入之前，如果容量满了，则删除最后一个元素
+                    Node last = cache.removeLast();
+                    map.remove(last.key);
+                }
+                // 将新节点插入到头部
+                cache.addFirst(x);
+                map.put(key, x);
+            }
+        }
+    }
+
+    /* 思路 2：
     // 定义双向链表的节点
     public static class Node<K, V> {
         K key;
@@ -153,4 +271,5 @@ public class Solution {
         System.out.println(myCache.get("d"));
         System.out.println(myCache.get("c"));
     }
+    */
 }
