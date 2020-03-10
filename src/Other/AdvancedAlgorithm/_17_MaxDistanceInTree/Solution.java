@@ -11,7 +11,9 @@ package Other.AdvancedAlgorithm._17_MaxDistanceInTree;
  * 1. 在计算最远距离的时候，不一定要经过树的根节点；
  * 2. 满足最远距离的条件是：以某个节点为根节点的子树的左右子树高度之和；
  * 3. 用 distance 表示以 root 为根节点的子树的最长路径，
- *    即从 root 到其左子树的最深节点的长度加上从 root 到其右子树的最深节点的长度。
+ *    即从 root 到其左子树的最深节点的长度加上从 root 到其右子树的最深节点的长度；
+ * 4. root 的最远距离 = root 左子树的高度 + root 右子树的高度
+ * 5. root 的高度 = max{root 左子树高度, root 右子树高度} + 1。
  */
 public class Solution {
 
@@ -40,7 +42,9 @@ public class Solution {
 
         int leftDepth = dfs(root.left);
         int rightDepth = dfs(root.right);
-        distance = Math.max(leftDepth + rightDepth, distance);
+        if (leftDepth + rightDepth > distance) {
+            distance = leftDepth + rightDepth;
+        }
         return Math.max(leftDepth, rightDepth) + 1;
     }
 
