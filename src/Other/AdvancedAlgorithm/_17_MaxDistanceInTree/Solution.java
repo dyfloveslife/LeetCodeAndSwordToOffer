@@ -3,22 +3,48 @@ package Other.AdvancedAlgorithm._17_MaxDistanceInTree;
 /*
  * 二叉树上的最远距离
  *
- * 思路：
+ * 思路 1：
  * 1. 求每个节点为头的整棵树的最大距离即可；
  * 2. 每个节点携带的信息有最大的距离和深度。
+ *
+ * 思路 2：
+ * 1. 在计算最远距离的时候，不一定要经过树的根节点；
+ * 2. 满足最远距离的条件是：以某个节点为根节点的子树的左右子树高度之和；
+ * 3. 用 distance 表示以 root 为根节点的子树的最长路径，
+ *    即从 root 到其左子树的最深节点的长度加上从 root 到其右子树的最深节点的长度。
  */
 public class Solution {
 
-    class Node {
+    class TreeNode {
         int val;
-        Node left;
-        Node right;
+        TreeNode left;
+        TreeNode right;
 
-        Node(int val) {
+        TreeNode(int val) {
             this.val = val;
         }
     }
 
+    int distance = 0;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        dfs(root);
+        return distance;
+    }
+
+    // 找出以 root 为根节点的二叉树的最大深度
+    public int dfs(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int leftDepth = dfs(root.left);
+        int rightDepth = dfs(root.right);
+        distance = Math.max(leftDepth + rightDepth, distance);
+        return Math.max(leftDepth, rightDepth) + 1;
+    }
+
+    // 思路 1
     class ReturnType {
         int maxDistance;
         int h;
@@ -29,12 +55,11 @@ public class Solution {
         }
     }
 
-    // 主函数
-    public int getMaxDistance(Node head) {
+    public int getMaxDistance(TreeNode head) {
         return process(head).maxDistance;
     }
 
-    public ReturnType process(Node head) {
+    public ReturnType process(TreeNode head) {
         if (head == null) {
             return new ReturnType(0, 0);
         }
