@@ -1,4 +1,6 @@
 # 目录
+- [基础算法](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95)
+- [进阶算法](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E8%BF%9B%E9%98%B6%E7%AE%97%E6%B3%95)
 - [剑指 Offer](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%89%91%E6%8C%87offer)
 - [LeetCode](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#leetcode)
   - [算法思想相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3%E7%9B%B8%E5%85%B3)
@@ -19,8 +21,6 @@
     - [06.图](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#06%E5%9B%BE)
     - [07.位运算](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#07%E4%BD%8D%E8%BF%90%E7%AE%97)
 	- [08.链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#08%E9%93%BE%E8%A1%A8)
-- [基础算法](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95)
-- [进阶算法](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E8%BF%9B%E9%98%B6%E7%AE%97%E6%B3%95)
 
 # 基础算法
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
