@@ -93,7 +93,7 @@ public class Solution {
         }
 
         Stack<TreeNode> stack = new Stack<>();
-        // head != null 是为了考虑中序遍历的最后一个节点
+        // head != null 表示在栈初始化的时候，先让 head 进去
         while (!stack.isEmpty() || head != null) {
             // 将当前节点的左边界全部入栈
             if (head != null) {
