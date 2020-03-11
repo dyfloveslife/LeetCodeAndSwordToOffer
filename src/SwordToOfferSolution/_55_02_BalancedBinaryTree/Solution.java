@@ -15,6 +15,9 @@ package SwordToOfferSolution._55_02_BalancedBinaryTree;
  * 2. 先判断当前节点的左子树是否平衡，并将高度记录下来，右子树也做相同的操作；
  * 3. 然后当前节点将收集到的信息进行判断，从而判断整棵树是否是平衡二叉树。
  *
+ * 思路 3：
+ * 与统计二叉树高度类似，只不过在返回之前判断左右子树的高度差即可。
+ *
  * 树型 DP
  */
 public class Solution {
@@ -31,21 +34,21 @@ public class Solution {
     // 方法一：
     // 在后序遍历到当前节点的时候，该节点的左右子树就已经遍历了
     // 从底往上遍历，每个节点只需要遍历一次
-    private boolean isBalanced = true;
+    private boolean isB = true;
 
     public boolean isBalanced(TreeNode root) {
         getDepth(root);
-        return isBalanced;
+        return isB;
     }
 
     private int getDepth(TreeNode root) {
-        if (root == null || !isBalanced) {
+        if (root == null || !isB) {
             return 0;
         }
         int leftDepth = getDepth(root.left);
         int rightDepth = getDepth(root.right);
         if (Math.abs(leftDepth - rightDepth) > 1) {
-            isBalanced = false;
+            isB = false;
         }
 
         return Math.max(leftDepth, rightDepth) + 1;

@@ -252,6 +252,12 @@
 
 #### 08.数学
 
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   136    | [SingleNumber](https://leetcode.com/problems/single-number/) | [只出现一次的数字](https://leetcode-cn.com/problems/single-number/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics._136_SingleNumber/Solution.java) |      Easy       |
+|   137    | [SingleNumber Ⅱ](https://leetcode.com/problems/single-number-ii/) | [只出现一次的数字 Ⅱ](https://leetcode-cn.com/problems/single-number-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics._137_SingleNumberII/Solution.java) |      Medium       |
+|   206    | [SingleNumber Ⅲ](https://leetcode.com/problems/single-number-iii/) | [只出现一次的数字 Ⅲ](https://leetcode-cn.com/problems/single-number-iii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics._206_SingleNumberIII/Solution.java) |      Medium       |
+
 
 ## 数据结构相关
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)

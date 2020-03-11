@@ -21,7 +21,7 @@ package SwordToOfferSolution._56_01_NumbersAppearOnce;
  *  1 ^ 1 = 1 + 1 = 0（不进位）
  */
 public class Solution {
-    public void findNumsAppearOnce(int[] arr, int nums1[], int nums2[]) {
+    public void findNumsAppearOnce(int[] arr, int[] nums1, int[] nums2) {
         int length = arr.length;
         if (arr == null || length < 2) {
             return;
