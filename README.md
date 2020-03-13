@@ -177,7 +177,7 @@
 |   61   | ContinousCards              | 扑克牌中的顺子                 |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_61_ContinousCards/Solution.java)         |
 |   62   | LastNumberInCircle          | 圆圈中最后剩下的数字           |       [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_62_LastNumberInCircle/Solution.java)       |
 |   63   | MaximalProfit               | 股票的最大利润                 |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_63_MaximalProfit/Solution.java)          |
-|   64   | Accumulate                  | 求 1+2+3+...+n                 |           [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_64_Accumulate/Soltuion.java)           |
+|   64   | Accumulate                  | 求 1+2+3+...+n                 |           [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_64_Accumulate/Solution.java)           |
 |   65   | AddTwoNumbers               | 不用加减乘除做加法             |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_65_AddTwoNumbers/Solution.java)          |
 |   66   | ConstuctArray               | 构建乘积数组                   |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_66_ConstuctArray/Solution.java)          |
 |   67   | StringToInt                 | 把字符串转换成整数             |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_67_StringToInt/Solution.java)           |

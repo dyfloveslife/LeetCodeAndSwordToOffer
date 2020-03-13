@@ -31,9 +31,9 @@ package SwordToOfferSolution._65_AddTwoNumbers;
 public class Solution {
     public static int add(int num1, int num2) {
         while (num2 != 0) {
-            // 相加而不进位
+            // 先进行异或操作，相当于不带进位的加法
             int sum = num1 ^ num2;
-            // 得到进位
+            // 进行与运算，再左移一位，相当于求出进位
             int carry = (num1 & num2) << 1;
             num1 = sum;
             num2 = carry;

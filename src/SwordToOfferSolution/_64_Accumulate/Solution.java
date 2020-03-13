@@ -14,13 +14,18 @@ package SwordToOfferSolution._64_Accumulate;
  *     关系运算符： < 和 >;
  *     逻辑运算符：&&、||、|、^、=
  * 2. 由于关键字的限制，这里使用短路运算符 &&;
- * 3. 如果前面的条件为假，则真个表达式的结果就是假，后面的条件就不进行判断了;
+ * 3. 如果前面的条件为假，则整个表达式的结果就是假，后面的条件就不进行判断了;
  * 4. n 直到 0 就返回结果。
  */
-public class Soltuion {
-    public int sum_Solution(int n) {
+public class Solution {
+    public static int sumNums(int n) {
         int sum = n;
-        boolean flag = (sum > 0) && ((sum += sum_Solution(--n)) > 0);
+        boolean flag = (sum > 0) && ((sum += sumNums(--n)) > 0);
         return sum;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sumNums(3));
+        System.out.println(sumNums(9));
     }
 }

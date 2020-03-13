@@ -1,5 +1,7 @@
 package SwordToOfferSolution._60_DicesProbability;
 
+import java.util.Arrays;
+
 /*
  * n 个骰子的点数
  *
@@ -7,7 +9,8 @@ package SwordToOfferSolution._60_DicesProbability;
  * 有 n 个骰子扔在地上，所有骰子面朝上的点数之和为 s，输入 n，打印 s 的所有可能值出现的概率。
  *
  * 分析：
- * n 个骰子的点数和最小是 n，最大是 6*n；将 1~n 个骰子的结果排列为一个二维数组 results[n][6 * n]，发现 results[i][j] 等于 results[i - 1][j - 1] 和其前 5 个数之和。
+ * n 个骰子的点数和最小是 n，最大是 6*n；将 1~n 个骰子的结果排列为一个二维数组 results[n][6 * n]，
+ * 发现 results[i][j] 等于 results[i - 1][j - 1] 和其前 5 个数之和。
  *
  * 思路：DP
  * 1. 该题的变量有骰子的个数 n 以及点数之和 s，现在需要求的就是每个点数出现的次数；
@@ -25,21 +28,18 @@ package SwordToOfferSolution._60_DicesProbability;
  * 6. 状态转移方程：dp[n][s]=sum(dp[n-1][s-m])，其中 1<=m<=6 && m < s。
  */
 public class Solution {
-    public static String[] printProbability(int n) {
+
+    public static double[] printProbability(int n) {
         if (n < 1) {
             return null;
         }
-        // n 个骰子所有点数的可能性
-        int total = (int)Math.pow(6, n);
-        // 存储结果
-        String[] res = new String[6 * n - n + 1];
 
         // 构造二维数组
         // dp[n][s] n 个骰子面朝上点数之和为 s 的次数
         int[][] dp = new int[n + 1][6 * n + 1];
         // 初始化
-        for (int x = 1; x <= 6; x++) {
-            dp[1][x] = 1;
+        for (int s = 1; s <= 6; s++) {
+            dp[1][s] = 1;
         }
 
         for (int i = 2; i <= n; i++) {
@@ -52,18 +52,17 @@ public class Solution {
             }
         }
 
+        // n 个骰子所有点数的可能性
+        double total = Math.pow(6, n);
+        double[] res = new double[5 * n + 1];
         // 统计结果
         for (int s = n; s <= 6 * n; s++) {
-            res[s - n] = dp[n][s] + "/" + total;
+            res[s - n] = ((double)dp[n][s]) / total;
         }
         return res;
     }
 
     public static void main(String[] args) {
-        String[] strings = printProbability(2);
-        System.out.println(strings.length);
-        for (String string : strings) {
-            System.out.print(string + " ");
-        }
+        System.out.println(Arrays.toString(printProbability(2)));
     }
 }

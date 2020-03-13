@@ -1,5 +1,7 @@
 package SwordToOfferSolution._66_ConstuctArray;
 
+import java.util.Arrays;
+
 /*
  * 构建乘积数组
  *
@@ -14,7 +16,7 @@ package SwordToOfferSolution._66_ConstuctArray;
  * 3. 例如计算 B[2]，左侧计算 (A[0] * A[1])，右侧计算 (A[n-1] * ... * A[3])。
  */
 public class Solution {
-    public int[] multiply(int[] A) {
+    public static int[] multiply(int[] A) {
         int len = A.length;
         int[] B = new int[len];
 
@@ -32,5 +34,10 @@ public class Solution {
             }
         }
         return B;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(Arrays.toString(multiply(arr)));
     }
 }

@@ -15,7 +15,7 @@ import java.util.Arrays;
  * 3. 如果数组中非 0 数字重复出现，即牌中存在对子，则该数组不是连续的。
  */
 public class Solution {
-    public static boolean isContinousCards(int[] arr) {
+    public static boolean isContinuesCards(int[] arr) {
         if (arr == null || arr.length < 5) {
             return false;
         }
@@ -42,14 +42,13 @@ public class Solution {
             numOfGap += arr[i + 1] - arr[i] - 1;
         }
 
-        if (numOfGap > numOfZero) {
-            return false;
-        }
-        return true;
+        return numOfGap <= numOfZero;
     }
 
     public static void main(String[] args) {
         int[] arr1 = {1, 3, 2, 6, 4};
-        System.out.println(isContinousCards(arr1));
+        int[] arr2 = {10, 11, 0, 12, 6};
+        System.out.println(isContinuesCards(arr1));
+        System.out.println(isContinuesCards(arr2));
     }
 }

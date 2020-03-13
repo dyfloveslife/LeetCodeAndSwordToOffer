@@ -36,6 +36,16 @@ public class Solution {
         }
     }
 
+    // 简单做法
+    // f(n, m) = (f(n-1, m)+m)%n
+    public static int lastRemaining(int n, int m) {
+        int p = 0;
+        for (int i = 2; i <= n; i++) {
+            p = (p + m) % i;
+        }
+        return p;
+    }
+
     // 用链表模拟环
     public static Node lastRemaining_Solution(Node head, int m) {
         if (head == null || head.next == head || m < 1) {
@@ -91,5 +101,7 @@ public class Solution {
         printCircularList(head1);
         head1 = lastRemaining_Solution(head1, 3);
         printCircularList(head1);
+
+        System.out.println(lastRemaining(10, 17));
     }
 }
