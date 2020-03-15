@@ -1,5 +1,7 @@
 package SwordToOfferSolution._58_01_ReverseWordsInSentence;
 
+import javafx.beans.binding.StringBinding;
+
 /*
  * 翻转单词顺序
  *
@@ -17,8 +19,27 @@ package SwordToOfferSolution._58_01_ReverseWordsInSentence;
  * 6. 如果 end 到了最后或者遇到了空格，则翻转每个单词；
  * 7. 翻转完后要更新 begin 的位置，并且 end 继续向后移动；
  * 8. 直到最后一个单词翻转完后，再翻转整个句子。
+ * 9. 需要注意的是：
+ *      三个空格被 split(" ") 划分后会变成 ""；
+ *      这里应使用 equals 而不是 == 号。
  */
 public class Solution {
+    public static String reverseWords(String str) {
+        if (str == null || str.length() == 0) {
+            return "";
+        }
+
+        String[] strArr = str.split(" ");
+        StringBuilder sb = new StringBuilder();
+        // 从后往前遍历
+        for (int i = strArr.length - 1; i >= 0; i--) {
+            if (!strArr[i].equals("")) {
+                sb.append(strArr[i]).append(" ");
+            }
+        }
+        return sb.toString().trim();
+    }
+
     public static String reverseWordsInSentence(String str) {
         int len = str.length();
         if (str == null || len < 1) {
@@ -56,6 +77,8 @@ public class Solution {
 
     public static void main(String[] args) {
         String str = "I am a student.";
-        System.out.println(reverseWordsInSentence(str));
+        String str1 = "a good   example";
+        System.out.println(reverseWordsInSentence(str1));
+        System.out.println(reverseWords(str1));
     }
 }

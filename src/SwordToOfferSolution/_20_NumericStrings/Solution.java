@@ -18,17 +18,48 @@ package SwordToOfferSolution._20_NumericStrings;
  *	\\d ： 数字
  */
 public class Solution {
-    public boolean isNumeric(char[] str) {
-        if (str == null || str.length == 0) {
+    public static boolean isNumeric(String s) {
+        if (s == null || s.trim().length() == 0) {
             return false;
         }
+        s = s.trim();
+        int[] idx = {0};
+        boolean flag = judgeNumber(s, idx);
+        if (idx[0] != s.length() && s.charAt(idx[0]) == '.') {
+            idx[0]++;
+            //System.out.println(idx[0]);
+            flag = judgeUnsignedNumber(s, idx) || flag;
+        }
+        if (idx[0] != s.length() && (s.charAt(idx[0]) == 'e' || s.charAt(idx[0]) == 'E')) {
+            idx[0]++;
+            flag = flag && judgeNumber(s, idx);
+        }
+        return flag && idx[0] == s.length();
+    }
 
-        return new String(str).matches("[+-]?\\d*(\\.\\d+)?([eE][+-]?\\d+)?");
+    private static boolean judgeNumber(String s, int[] idx) {
+        if (idx[0] >= s.length()) {
+            return false;
+        }
+        if (s.charAt(idx[0]) == '+' || s.charAt(idx[0]) == '-') {
+            idx[0]++;
+        }
+        return judgeUnsignedNumber(s, idx);
+    }
+
+    private static boolean judgeUnsignedNumber(String s, int[] idx) {
+
+        int before = idx[0];
+        while (idx[0] < s.length() && s.charAt(idx[0]) <= '9' && s.charAt(idx[0]) >= '0') {
+            idx[0]++;
+        }
+        //System.out.println(before + ":" + idx[0]);
+        return idx[0] == before ? false : true;
     }
 
     public static void main(String[] args) {
-        Solution numericStrings = new Solution();
-        boolean b = numericStrings.isNumeric("123.45e+6".toCharArray());
-        System.out.println(b);
+        System.out.println(isNumeric("123.45e+6"));
+        System.out.println(isNumeric("e9"));
+        System.out.println(isNumeric("1 "));
     }
 }

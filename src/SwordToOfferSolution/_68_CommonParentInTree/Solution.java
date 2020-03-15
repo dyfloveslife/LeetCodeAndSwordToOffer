@@ -37,7 +37,7 @@ package SwordToOfferSolution._68_CommonParentInTree;
  *  6. 来到 11，11 不是 2 或 5，然后来到 9，9 也不符合，由于 9 没有孩子，所以节点 9 返回给 11 一个 null；
  *  7. 来到 11 的右子树 5，5 返回给 11 一个节点值，即 5。此时对于 11 来说，不是 2 和 5 的最低公共祖先，因为 11 的左边返回的是 null，而不是 2；
  *  8. 所以将不是 null 值的节点值 5 返回给节点 6；
- *  9. 此时 6 就得到了来自左侧非空值 2，以及右侧非空值 5，则 6 就是2 和 5 的最低公共祖先，然后节点 6 再将自身的节点值返回给 3；
+ *  9. 此时 6 就得到了来自左侧非空值 2，以及右侧非空值 5，则 6 就是 2 和 5 的最低公共祖先，然后节点 6 再将自身的节点值返回给 3；
  * 10. 对于 3 来说，虽然得到了来自左侧的 6，但是它现在还不知道我们发现了最低公共祖先，所以还需要继续访问 3 的右子树上的节点；
  * 11. 最终，节点 3 的右侧会得到一个 null。此时 3 左侧得到了一个非空值，右侧得到了一个空值，则 3 就知道了最低公共祖先一定在 3 的左侧；
  * 12. 这里是可以优化的，因为在节点 6 将值返回给节点 3 的时候，由于返回的值既不是 2 也不是 5，此时就可以终止查找，不用再判断节点 3 的右子树了，
@@ -69,10 +69,10 @@ public class Solution {
         }
     }
 
-    // 题目一
+    // 题目一（递归）
     public static TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
-            return root;
+            return null;
         }
 
         if (root.val > p.val && root.val > q.val) {
@@ -84,15 +84,35 @@ public class Solution {
         return root;
     }
 
+    // 题目一（迭代）
+    public static TreeNode lowestCommonAncestorIterator(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+
+        while (root != null) {
+            if (root.val > p.val && root.val > q.val) {
+                root = root.left;
+            } else if (root.val < p.val && root.val < q.val) {
+                root = root.right;
+            } else {
+                return root;
+            }
+        }
+        return null;
+    }
     // 题目二思路 3
     public static TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
             return null;
         }
+        // 如果当前节点 root 为 p 或 q 中的一个
+        // 则当前节点 root 就是最低公共祖先
         if (root == q || root == p) {
             return root;
         }
 
+        // left 和 right 将最终的结果给返回
         TreeNode left = lowestCommonAncestor2(root.left, p, q);
         TreeNode right = lowestCommonAncestor2(root.right, p, q);
         // 当前节点得到了来自左侧非空节点的值以及右侧非空节点的值
@@ -101,6 +121,8 @@ public class Solution {
             return root;
         }
         // 检查左子树或右子树是否是最低公共祖先
+        // 如果左子树不为空，则最低的公共祖先就来自左子树
+        // 如果右子树不为空，则最低的公共祖先就来自右子树
         return left != null ? left : right;
     }
 }
