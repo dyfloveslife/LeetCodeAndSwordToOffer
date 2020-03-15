@@ -48,7 +48,6 @@ public class Solution {
     }
 
     private static boolean judgeUnsignedNumber(String s, int[] idx) {
-
         int before = idx[0];
         while (idx[0] < s.length() && s.charAt(idx[0]) <= '9' && s.charAt(idx[0]) >= '0') {
             idx[0]++;
