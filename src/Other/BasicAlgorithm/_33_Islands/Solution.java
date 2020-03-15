@@ -43,39 +43,37 @@ import java.util.Queue;
  */
 public class Solution {
 
-    // dfs
+    // dfs（岛的数量）
     public static int countIsLands(int[][] matrix) {
         if (matrix == null || matrix[0] == null) {
             return 0;
         }
 
-        int rows = matrix.length;
-        int columns = matrix[0].length;
         int res = 0;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
                 if (matrix[i][j] == 1) {
                     res++;
-                    dfs(matrix, i, j, rows, columns);
+                    dfs(matrix, i, j);
                 }
             }
         }
         return res;
     }
 
-    public static void dfs(int[][] matrix, int i, int j, int rows, int columns) {
-        if (i < 0 || i >= rows || j < 0 || j >= columns || matrix[i][j] != 1) {
+    private static void dfs(int[][] matrix, int i, int j) {
+        if (i < 0 || i >= matrix.length || j < 0 || j >= matrix[0].length || matrix[i][j] == 0) {
             return;
         }
 
-        matrix[i][j] = 2;
-        dfs(matrix, i + 1, j, rows, columns);
-        dfs(matrix, i - 1, j, rows, columns);
-        dfs(matrix, i, j + 1, rows, columns);
-        dfs(matrix, i, j - 1, rows, columns);
+        matrix[i][j] = 0;
+        dfs(matrix, i + 1, j);
+        dfs(matrix, i - 1, j);
+        dfs(matrix, i, j + 1);
+        dfs(matrix, i, j - 1);
     }
 
-    // bfs
+    // bfs（岛的数量）
     public static int numsIslandsBFS(int[][] arr) {
         if (arr == null || arr[0] == null) {
             return 0;
@@ -93,7 +91,7 @@ public class Solution {
         return count;
     }
 
-    public static void bfs(int[][] arr, int i, int j) {
+    private static void bfs(int[][] arr, int i, int j) {
         Queue<int[]> queue = new LinkedList<>();
         queue.offer(new int[]{i, j});
         while (!queue.isEmpty()) {
@@ -110,6 +108,40 @@ public class Solution {
         }
     }
 
+
+    // 最大的岛面积（DFS）
+    public static int maxAreaOfIsland(int[][] grid) {
+        if (grid == null || grid[0].length == 0) {
+            return -1;
+        }
+
+        int res = 0;
+        int row = grid.length;
+        int col = grid[0].length;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (grid[i][j] == 1) {
+                    res = Math.max(res, dfsMaxArea(grid, i, j));
+                }
+            }
+        }
+        return res;
+    }
+
+    private static int dfsMaxArea(int[][] grid, int i, int j) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == 0) {
+            return 0;
+        }
+
+        // 开始的时候，岛的数量初始化为 1
+        int count = 1;
+        grid[i][j] = 0;
+        count += dfsMaxArea(grid, i + 1, j);
+        count += dfsMaxArea(grid, i - 1, j);
+        count += dfsMaxArea(grid, i, j + 1);
+        count += dfsMaxArea(grid, i, j - 1);
+        return count;
+    }
 
     public static void main(String[] args) {
         int[][] m1 = {
@@ -128,5 +160,6 @@ public class Solution {
                 {0, 0, 0, 0, 0},
         };
         System.out.println(numsIslandsBFS(m1));
+        System.out.println(maxAreaOfIsland(m1));
     }
 }
