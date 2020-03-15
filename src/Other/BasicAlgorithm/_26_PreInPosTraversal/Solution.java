@@ -1,6 +1,8 @@
 package Other.BasicAlgorithm._26_PreInPosTraversal;
 
-import java.util.Stack;
+import sun.reflect.generics.tree.Tree;
+
+import java.util.*;
 
 /*
  * 二叉树的前中后遍历（递归和非递归）
@@ -135,5 +137,93 @@ public class Solution {
         while (!s2.isEmpty()) {
             System.out.println(s2.pop().val);
         }
+    }
+
+    // 层次遍历（从顶到底）
+    public List<List<Integer>> levelOrderTopToBottom(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            List<Integer> list = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                root = queue.poll();
+                list.add(root.val);
+                if (root.left != null) {
+                    queue.offer(root.left);
+                }
+                if (root.right != null) {
+                    queue.offer(root.right);
+                }
+            }
+            res.add(list);
+        }
+        return res;
+    }
+
+    // 层次遍历（从底到顶）
+    public List<List<Integer>> levelOrderBottomToTop(TreeNode root) {
+        LinkedList<List<Integer>> res = new LinkedList<>();
+        if (root == null) {
+            return res;
+        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            List<Integer> list = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                root = queue.poll();
+                list.add(root.val);
+                if (root.left != null) {
+                    queue.offer(root.left);
+                }
+                if (root.right != null) {
+                    queue.offer(root.right);
+                }
+            }
+            // 在头部插入
+            res.addFirst(list);
+        }
+        return res;
+    }
+
+    // 从上到下，第一层从左到右，第二层从右到左
+    // 若根节点是第一层，则只需要将偶数层倒叙即可
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+
+        int level = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            level++;
+            List<Integer> list = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                root = queue.poll();
+                list.add(root.val);
+                if (root.left != null) {
+                    queue.offer(root.left);
+                }
+                if (root.right != null) {
+                    queue.offer(root.right);
+                }
+            }
+            // 如果当前是偶数层，则倒叙
+            if ((level & 1) == 0) {
+                Collections.reverse(list);
+            }
+            res.add(list);
+        }
+        return res;
     }
 }
