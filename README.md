@@ -239,6 +239,11 @@
 
 #### 06.搜索
 
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   279    | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) | [完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_279_PerfectSquares/Solution.java) |      Medium       |
+|   1091    | [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) | [二进制矩阵中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_1091_ShortestPathInBinaryMatrix/Solution.java) |      Medium       |
+
 
 #### 07.排序
 
