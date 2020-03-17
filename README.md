@@ -241,7 +241,10 @@
 
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   127    | [Word Ladder](https://leetcode.com/problems/word-ladder/) | [单词接龙](https://leetcode-cn.com/problems/word-ladder/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_127_WordLadder/Solution.java) |      Medium       |
+|   200    | [Number of Islands](https://leetcode.com/problems/number-of-islands/) | [岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_200_NumberOfIslands/Solution.java) |      Medium       |
 |   279    | [Perfect Squares](https://leetcode.com/problems/perfect-squares/) | [完全平方数](https://leetcode-cn.com/problems/perfect-squares/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_279_PerfectSquares/Solution.java) |      Medium       |
+|   695    | [Max Area of Island](https://leetcode.com/problems/max-area-of-island/) | [岛屿的最大面积](https://leetcode-cn.com/problems/max-area-of-island/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_695_MaxAreaOfIsland/Solution.java) |      Medium       |
 |   1091    | [Shortest Path in Binary Matrix](https://leetcode.com/problems/shortest-path-in-binary-matrix/) | [二进制矩阵中的最短路径](https://leetcode-cn.com/problems/shortest-path-in-binary-matrix/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_1091_ShortestPathInBinaryMatrix/Solution.java) |      Medium       |
 
 

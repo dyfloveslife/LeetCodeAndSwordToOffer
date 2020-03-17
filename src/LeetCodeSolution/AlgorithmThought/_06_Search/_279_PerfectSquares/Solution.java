@@ -36,7 +36,7 @@ public class Solution {
                 for (int j = 1; j * j + cur <= n; j++) {
                     int nextVal = j * j + cur;
                     // 如果这个完全平方数已经等于 n，则将结果返回
-                    if (nextVal ==  n) {
+                    if (nextVal == n) {
                         return res;
                     }
                     // 如果这个完全平方数小于 n，并且之前没有出现过，则将其添加到队列中
