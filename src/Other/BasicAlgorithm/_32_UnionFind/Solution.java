@@ -2,6 +2,7 @@ package Other.BasicAlgorithm._32_UnionFind;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Stack;
 
 /*
  * 并查集的使用
@@ -15,28 +16,33 @@ import java.util.List;
 public class Solution {
 
     class Node {
-
+        // whatever you like data type
+        // String or int or others...
     }
 
     public static class UnionFindSet {
         // kye 表示孩子节点，value 表示父节点
         public HashMap<Node, Node> fatherMap;
         // 某一个节点 node，它所在的集合一共有多少节点
+        // 这里的 node 其实表示的是代表节点，sizeMap 就是以代表节点为 key 的时候，
+        // 它所在的集合里一共有多少个节点
         public HashMap<Node, Integer> sizeMap;
-
-        public UnionFindSet() {
-            fatherMap = new HashMap<>();
-            sizeMap = new HashMap<>();
+        // 初始化的时候需要将所有的节点都给我
+        public UnionFindSet(List<Node> nodes) {
+            makeSets(nodes);
         }
 
         // 初始化操作
         private void makeSets(List<Node> nodes) {
-            fatherMap.clear();
-            sizeMap.clear();
+            fatherMap = new HashMap<>();
+            sizeMap = new HashMap<>();
+//            fatherMap.clear();
+//            sizeMap.clear();
             for (Node node : nodes) {
                 // 当只有一个节点的时候，当前节点指向自己
+                // 即 key(node) 节点的父节点是 value(node)
                 fatherMap.put(node, node);
-                // 当前节点的代表节点也是自己
+                // 初始化的时候，每一个当前节点的代表节点就是自己
                 sizeMap.put(node, 1);
             }
         }
@@ -44,12 +50,30 @@ public class Solution {
         // 返回某个节点的代表节点，同时执行打平操作
         // 找到代表节点之后，会将代表节点传递给每个节点，从而每个节点都指向代表节点，即实现了打平操作
         private Node findHead(Node node) {
+            Stack<Node> stack = new Stack<>();
+            Node cur = node;
+            Node parent = fatherMap.get(cur);
+            // 一直找到代表节点
+            while (cur != parent) {
+                stack.push(cur);
+                cur = parent;
+                parent = fatherMap.get(cur);
+            }
+            // 将每个节点打平
+            while (!stack.isEmpty()) {
+                fatherMap.put(stack.pop(), parent);
+            }
+            return parent;
+
+            /*
             Node father = fatherMap.get(node);
+            // 一直从当前节点 node 找到代表节点
             if (father != node) {
-                father = fatherMap.get(father);
+                father = findHead(father);
             }
             fatherMap.put(node, father);
             return father;
+            */
         }
 
         // 根据查找某两个节点的代表节点是不是同一个，来判断这两个节点是否属于同一集合
