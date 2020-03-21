@@ -269,6 +269,7 @@
 |   136    | [SingleNumber](https://leetcode.com/problems/single-number/) | [只出现一次的数字](https://leetcode-cn.com/problems/single-number/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_136_SingleNumber/Solution.java) |      Easy       |
 |   137    | [SingleNumber Ⅱ](https://leetcode.com/problems/single-number-ii/) | [只出现一次的数字 Ⅱ](https://leetcode-cn.com/problems/single-number-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_137_SingleNumberII/Solution.java) |      Medium       |
 |   206    | [SingleNumber Ⅲ](https://leetcode.com/problems/single-number-iii/) | [只出现一次的数字 Ⅲ](https://leetcode-cn.com/problems/single-number-iii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_206_SingleNumberIII/Solution.java) |      Medium       |
+|   365    | [Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/) | [水壶问题](https://leetcode-cn.com/problems/water-and-jug-problem/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_365_WaterAndJugProblem/Solution.java) |      Medium       |
 
 
 ## 数据结构相关
