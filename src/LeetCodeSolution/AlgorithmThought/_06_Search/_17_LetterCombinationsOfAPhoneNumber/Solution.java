@@ -19,7 +19,6 @@ import java.util.List;
  *    3.1) 首先拿出 2 中的 'a'，然后用 'a' 去与 'p' 组合，生成 "ap"；
  *    3.2) 然后还得再回到 2 中的 'a'，再用 'a' 去与 'q' 组合，生成 "aq"；
  *    3.3) 一直组合，一直回溯，直至结束。
- *
  */
 public class Solution {
 
