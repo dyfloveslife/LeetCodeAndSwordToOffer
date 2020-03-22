@@ -27,7 +27,6 @@ import java.util.List;
  * 1. 建立两个矩阵 Pacific（太平洋）和 Atlantic（大西洋），
  *    当 Atlantic[i][j] 和 Pacific[i][j] 同时为 true 时，表示当前位置 [i][j] 可以同时到达 Atlantic 和 Pacific；
  * 2. 从四个边界出发，如果能够到达的话，则说明当前位置的水可以流向对应的海洋。
- *
  */
 public class Solution {
 

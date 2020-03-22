@@ -23,9 +23,9 @@ import java.util.List;
 public class Solution {
 
     // 索引 0 和 1 不对应任何字符串
-    String[] keyboard = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+    private static String[] keyboard = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-    public List<String> letterCombinations(String digits) {
+    public static List<String> letterCombinations(String digits) {
 
         List<String> res = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
@@ -34,8 +34,8 @@ public class Solution {
         return res;
     }
 
-    private void dfs(String digits, int index, StringBuilder sb, List<String> res) {
-        // 如果已经来到了 digits 的末尾，则说明对于给定的字符串数字，已经遍历完了
+    private static void dfs(String digits, int index, StringBuilder sb, List<String> res) {
+        // 如果已经来到了 digits 的末尾，则说明对于给定的字符串数字已经遍历完了
         if (index == digits.length()) {
             res.add(sb.toString());
             return;
@@ -53,5 +53,9 @@ public class Solution {
             // 由于子过程给我的 sb 返回了 ap，所以需要将 p 删除
             sb.deleteCharAt(sb.length() - 1);
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println(letterCombinations("23"));
     }
 }
