@@ -47,6 +47,8 @@ public class Solution {
                 || dfs(board, i - 1, j, ch, index + 1)
                 || dfs(board, i, j + 1, ch, index + 1)
                 || dfs(board, i, j - 1, ch, index + 1);
+        // 由于涉及到回溯操作，因此需要再次将 [i][j] 位置设置为之前的字符
+        // 再从之前的字符开始找另一条路径
         board[i][j] = temp;
         return res;
     }
