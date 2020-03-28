@@ -11,7 +11,8 @@ import java.util.List;
  * candidates 中的数字可以无限制重复被选取。
  *
  * 思路：
- * 1.
+ * 1. 回溯+剪枝；
+ * 2. 注意进入下一层的条件，要求 剩余的值 target 要大于或等于当前值 candidates[i] 才可以；
  */
 public class Solution {
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {

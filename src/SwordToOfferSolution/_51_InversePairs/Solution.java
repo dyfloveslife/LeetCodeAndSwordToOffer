@@ -19,19 +19,18 @@ package SwordToOfferSolution._51_InversePairs;
  * 6. 总之，谁大就移动谁，然后将较大的数复制到 p3 所指向的最终结果数组中即可。
  */
 public class Solution {
-    public static int cnt;
+    int cnt;
 
-    public static int inversePairs(int[] arr) {
+    public int inversePairs(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0;
         }
-
         cnt = 0;
         inversePairsCoreMergeSort(arr, 0, arr.length - 1);
         return cnt;
     }
 
-    private static void inversePairsCoreMergeSort(int[] arr, int left, int right) {
+    private void inversePairsCoreMergeSort(int[] arr, int left, int right) {
         if (left == right) {
             return;
         }
@@ -42,7 +41,7 @@ public class Solution {
         merge(arr, left, middle, right);
     }
 
-    private static void merge(int[] arr, int left, int middle, int right) {
+    private void merge(int[] arr, int left, int middle, int right) {
         int[] help = new int[right - left + 1];
         int i = 0;
         int pos1 = left;
@@ -78,8 +77,10 @@ public class Solution {
         int[] arr = {7, 5, 6, 4};
         int[] arr1 = {1, 3, 2, 3, 1};
         int[] arr2 = {4, 5, 6, 7};
-        System.out.println(inversePairs(arr));
-        System.out.println(inversePairs(arr1));
-        System.out.println(inversePairs(arr2));
+
+        Solution solution = new Solution();
+        System.out.println(solution.inversePairs(arr));
+        System.out.println(solution.inversePairs(arr1));
+        System.out.println(solution.inversePairs(arr2));
     }
 }

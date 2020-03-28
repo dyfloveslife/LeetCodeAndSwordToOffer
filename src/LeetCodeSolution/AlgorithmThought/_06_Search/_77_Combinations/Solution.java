@@ -14,10 +14,10 @@ import java.util.List;
  * 2. 注意剪枝操作。
  */
 public class Solution {
-    public static List<List<Integer>> combine (int n, int k) {
+    public static List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> res = new ArrayList<>();
         if (n < 1 || k < 1) {
-            return  res;
+            return res;
         }
 
         List<Integer> path = new ArrayList<>();
@@ -29,6 +29,7 @@ public class Solution {
     public static void dfs(List<List<Integer>> res, List<Integer> path, int n, int k, int start) {
         // 来到了树的底部，则开始生成结果
         // 由于限制是 k 个数的组合
+        // 这里也可以 k == 0
         if (k == path.size()) {
             res.add(new ArrayList<>(path));
             return;
@@ -38,7 +39,7 @@ public class Solution {
         // 剪枝：n - (k - path.size()) + 1
         for (int i = start; i <= n; i++) {
             path.add(i);
-            // 注意是 i + 1
+            // 注意: i + 1
             dfs(res, path, n, k, i + 1);
             path.remove(path.size() - 1);
         }
