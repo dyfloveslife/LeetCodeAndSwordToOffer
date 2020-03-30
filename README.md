@@ -237,6 +237,11 @@
 
 #### 05.分治
 
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   95    | [Unique Binary Search Trees Ⅱ](https://leetcode.com/problems/unique-binary-search-trees-ii/) | [不同的二叉搜索树 Ⅱ](https://leetcode-cn.com/problems/unique-binary-search-trees-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_05_DivideAndConquer/_95_UniqueBinarySearchTreesII/Solution.java) |      Medium       |
+|   241    | [Different Ways to Add Parentheses](https://leetcode.com/problems/different-ways-to-add-parentheses/) | [为运算表达式设计优先级](https://leetcode-cn.com/problems/different-ways-to-add-parentheses/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_05_DivideAndConquer/_241_DifferentWaysToAddParentheses/Solution.java) |      Medium       |
+
 
 #### 06.搜索
 
@@ -253,6 +258,7 @@
 |   93    | [Word Search](https://leetcode.com/problems/word-search/) | [单词搜索](https://leetcode-cn.com/problems/word-search/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_79_WordSearch/Solution.java) |      Medium       |
 |   127    | [Word Ladder](https://leetcode.com/problems/word-ladder/) | [单词接龙](https://leetcode-cn.com/problems/word-ladder/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_127_WordLadder/Solution.java) |      Medium       |
 |   130    | [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/) | [被围绕的区域](https://leetcode-cn.com/problems/surrounded-regions/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_130_SurroundedRegions/Solution.java) |      Medium       |
+|   131    | [Palindrome Partitioning](https://leetcode.com/problems/palindrome-partitioning/description/) | [分割回文串](https://leetcode-cn.com/problems/palindrome-partitioning/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_131_PalindromePartitioning/Solution.java) |      Medium       |
 |   200    | [Number of Islands](https://leetcode.com/problems/number-of-islands/) | [岛屿数量](https://leetcode-cn.com/problems/number-of-islands/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_200_NumberOfIslands/Solution.java) |      Medium       |
 |   216    | [Combination Sum Ⅲ](https://leetcode.com/problems/combination-sum-iii/) | [组合总和 Ⅲ](https://leetcode-cn.com/problems/combination-sum-iii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_216_CombinationSumIII/Solution.java) |      Medium       |
 |   257    | [Binary Tree Paths](https://leetcode.com/problems/binary-tree-paths/) | [二叉树的所有路径](https://leetcode-cn.com/problems/binary-tree-paths/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Search/_257_BinaryTreePaths/Solution.java) |      Easy       |
