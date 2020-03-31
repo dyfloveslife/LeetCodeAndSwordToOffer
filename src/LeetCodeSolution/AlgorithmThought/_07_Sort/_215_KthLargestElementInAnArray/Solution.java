@@ -13,7 +13,7 @@ import java.util.PriorityQueue;
  * 思路：
  * 1. 排序：直接调用自带的排序方法将数组排好序后，返回数组的长度减去 k 即可。O(NlogN),O(1)
  * 2. 堆：使用小顶堆，不断的将数组中的数加入到堆中，但是如果堆的数量大于了 k，则需要弹出堆中元素，
- *        也就是说堆中的元素需要保证始终都是 k 个，然后等到遍历完所有的数之后，堆顶的元素就是第 k 个最大的元素。O(NlogK),O(K)
+ *        也就是说堆中的元素需要保证始终都是 k 个，然后等到遍历完所有的数之后，堆顶元素就是第 k 个最大的元素。O(NlogK),O(K)
  * 3. 快速选择算法：注意 partition 函数的作用。O(N),O(1)
  */
 public class Solution {
@@ -40,19 +40,19 @@ public class Solution {
     // 快速选择算法
     public static int findKthLargest3(int[] nums, int k) {
         k = nums.length - k;
-        int low = 0;
-        int high = nums.length - 1;
+        int left = 0;
+        int right = nums.length - 1;
 
-        while (low < high) {
-            int j = partition(nums, low, high);
+        while (left < right) {
+            int j = partition(nums, left, right);
             if (j == k) {
                 break;
             } else if (j < k) {
                 // 从右部分开始找
-                low = j + 1;
+                left = j + 1;
             } else {
                 // 从左部分开始找
-                high = j - 1;
+                right = j - 1;
             }
         }
         return nums[k];
@@ -60,17 +60,17 @@ public class Solution {
 
     // 此函数的作用是以数组中的第一个数作为基准，将小于等于该数的放在数组的左边，
     // 大于该数的放在数组的右边，最后返回该数在数组中的索引
-    public static int partition(int[] arr, int low, int high) {
-        int i = low;
-        // high 传过来的是数组的索引右界
-        int j = high + 1;
+    public static int partition(int[] arr, int left, int right) {
+        int i = left;
+        int j = right + 1;
+
         while (true) {
-            // arr[++i] < arr[low] 表示以索引为 low 位置的数 x 作为基准，向右一直找比 x 大的数才停，将 i 的位置确定下来
-            // i < h 表示索引 i 不能越右界
-            while (arr[++i] < arr[low] && i < high) ;
-            // arr[--j] > arr[low] 表示以索引为 low 位置的数 x 作为基准，向左一直找比 x 小的数才停，将 j 的位置确定下来
-            // j > l 表示 j 不能越左界
-            while (arr[--j] > arr[low] && j > low) ;
+            // arr[++i] < arr[left] 表示以索引为 left 位置的数 x 作为基准，向右一直找比 x 大的数才停，将 i 的位置确定下来
+            // i < right 表示索引 i 不能越右界
+            while (arr[++i] < arr[left] && i < right) ;
+            // arr[--j] > arr[left] 表示以索引为 left 位置的数 x 作为基准，向左一直找比 x 小的数才停，将 j 的位置确定下来
+            // j > left 表示 j 不能越左界
+            while (arr[--j] > arr[left] && j > left) ;
             // 如果 i 位于 j 的右边了，或者 j 位于 i 的左边了，则退出循环
             if (i >= j) {
                 break;
@@ -78,8 +78,8 @@ public class Solution {
             // 如果 i < j，则需要交换 i 和 j 所指向的元素
             swap(arr, i, j);
         }
-        // 将索引为 low 上的基准数与 j 交换，因为 j 上的数比 low 上的数要小
-        swap(arr, low, j);
+        // 将索引为 left 上的基准数与 j 交换，因为 j 上的数比 left 上的数要小
+        swap(arr, left, j);
         // 返回索引 j
         return j;
     }
@@ -96,7 +96,5 @@ public class Solution {
 
         int[] arr2 = {4, 2, 3, 1, 2, 3, 5, 5, 6};
         System.out.println(findKthLargest3(arr2, 4)); // 4
-
-        System.out.println(partition(arr1, 0, arr1.length - 1));
     }
 }

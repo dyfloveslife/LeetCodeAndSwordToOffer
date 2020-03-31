@@ -1,5 +1,8 @@
 package Other.BasicAlgorithm._10_QuickSort;
 
+import java.util.Arrays;
+import java.util.Random;
+
 /* 不稳定的排序算法：快选希堆
  *
  * 快速排序
@@ -31,18 +34,23 @@ package Other.BasicAlgorithm._10_QuickSort;
  * 如果断点每次都打在一遍，就像向左偏或向右偏的二叉树，则时间复杂度就是 O(N)。
  */
 public class Solution {
-    public static void quickSort(int[] arr) {
+    public int[] quickSort(int[] arr) {
         if (arr == null || arr.length < 2) {
-            return;
+            return new int[0];
         }
 
         quickSortCore(arr, 0, arr.length - 1);
+        return arr;
     }
 
-    private static void quickSortCore(int[] arr, int left, int right) {
+    private void quickSortCore(int[] arr, int left, int right) {
         if (left < right) {
             // 随机快排
-            swap(arr, left + (int) (Math.random() * (right - left + 1)), right);
+            Random random = new Random();
+            // 从数组中随机选择一个索引，将该索引上的数与数组中最后一个数进行交换
+            // int randomIndex = (int) (left + Math.random() * (right - left + 1));
+            int randomIndex = left + random.nextInt(right - left + 1);
+            swap(arr, randomIndex, right);
 
             int[] p = partition(arr, left, right);
             quickSortCore(arr, left, p[0] - 1);
@@ -53,7 +61,7 @@ public class Solution {
     // 荷兰国旗问题（稍微有些不同）
     // 该函数返回的是等于数组最后一个元素 x 的范围的左右边界
     // p[0] 代表等于 x 的左边界，p[1] 代表等于 x 的右边界
-    private static int[] partition(int[] arr, int left, int right) {
+    private int[] partition(int[] arr, int left, int right) {
         int less = left - 1;
         // 这里将 大于区域的范围 直接定位到 right
         int more = right;
@@ -78,18 +86,22 @@ public class Solution {
         return new int[]{less + 1, more};
     }
 
-    private static void swap(int[] arr, int i, int j) {
+    private void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 2, 1, 5, 6, 4};
+        int[] arr1 = {3, 2, 1, 5, 6, 4};
         int[] arr2 = {1, 2, 3, 2, 5, 6};
-        quickSort(arr2);
-        for (int i : arr2) {
-            System.out.print(i + " ");
-        }
+        int[] arr3 = {5, 2, 3, 1};
+        int[] arr4 = {5, 1, 1, 2, 0, 0};
+
+        Solution solution = new Solution();
+        System.out.println(Arrays.toString(solution.quickSort(arr1)));
+        System.out.println(Arrays.toString(solution.quickSort(arr2)));
+        System.out.println(Arrays.toString(solution.quickSort(arr3)));
+        System.out.println(Arrays.toString(solution.quickSort(arr4)));
     }
 }
