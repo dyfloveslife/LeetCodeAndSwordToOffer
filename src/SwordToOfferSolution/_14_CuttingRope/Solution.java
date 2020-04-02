@@ -31,39 +31,29 @@ public class Solution {
      * 0  1  2  3  4  5
      * 0  1  2  3 (4) (6)
      */
-    public static int cuttingRopeSolution1(int n) {
+    public int cuttingRopeSolution1(int n) {
         if (n < 2) {
             return 0;
         }
-        if (n == 2) {
-            return 1;
-        }
-        if (n == 3) {
-            return 2;
+        if (n == 2 || n == 3) {
+            return n - 1;
         }
 
-        int[] arr = new int[n + 1];
-        arr[0] = 0;
-        arr[1] = 1;
-        arr[2] = 2;
-        arr[3] = 2;
-        int res;
+        int[] dp = new int[n + 1];
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 2;
+        dp[3] = 3;
         for (int i = 4; i <= n; i++) {
-            int max = 0;
             for (int j = 1; j <= i / 2; j++) {
-                int num = arr[j] * arr[i - j];
-                if (max < num) {
-                    max = num;
-                }
-                arr[i] = max;
+                dp[i] = Math.max(dp[i], dp[j] * dp[i - j]);
             }
         }
-        res = arr[n];
-        return res;
+        return dp[n];
     }
 
     // 贪婪
-    public static int cuttingRopeSolution2(int n) {
+    public int cuttingRopeSolution2(int n) {
         if (n <= 3) {
             return n - 1;
         }
@@ -76,10 +66,15 @@ public class Solution {
         if (b == 1) {
             return (int) (Math.pow(3, a - 1) * 4);
         }
-        return (int) (Math.pow(3, 1) * 2);
+        return (int) (Math.pow(3, a) * 2);
     }
 
     public static void main(String[] args) {
-        System.out.println(cuttingRopeSolution2(10));
+        Solution solution = new Solution();
+        System.out.println(solution.cuttingRopeSolution1(10));
+        System.out.println(solution.cuttingRopeSolution2(10));
+        System.out.println("====");
+        System.out.println(solution.cuttingRopeSolution1(8));
+        System.out.println(solution.cuttingRopeSolution2(8));
     }
 }

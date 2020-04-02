@@ -19,7 +19,7 @@ package SwordToOfferSolution._67_StringToInt;
  * 6. 因为涉及下标访问，因此全程需要考虑数组下标是否越界的情况。
  */
 public class Solution {
-    public static int myAtoi(String str) {
+    public int myAtoi(String str) {
         int len = str.length();
 
         // 去掉前导空格
@@ -76,37 +76,73 @@ public class Solution {
         return res;
     }
 
-    public static int strToInt(String str) {
-        if (str == null || str.trim().length() == 0) {
+    public int strToInt(String str) {
+        if (str == null) {
             return 0;
         }
 
-        str = str.trim();
-        // 判断是否是负数
-        boolean isNegative = str.charAt(0) == '-';
         int res = 0;
-        for (int i = 0; i < str.length(); i++) {
-            // 取每一个字符逐一判断
-            char c = str.charAt(i);
-            // 如果第一个字符含有正号或负号
-            if (i == 0 && (c == '+' || c == '-')) {
-                continue;
+        boolean isNegative = false;
+        int i = 0;
+        int len = str.length();
+
+        // limit 用来判断整数是否溢出
+        int limit = -Integer.MAX_VALUE;
+        int mulitMin;
+        int digit;
+
+        if (len > 0) {
+            char firstChar = str.charAt(0);
+            // 可能是 '+' 或 '-'
+            if (firstChar < '0') {
+                if (firstChar == '-') {
+                    isNegative = true;
+                    // 在负号的条件下，判断溢出的值就变成了整数的最小负数了
+                    limit = Integer.MIN_VALUE;
+                } else if (firstChar != '+') {
+                    return 0;
+                }
+
+                if (len == 1) {
+                    return 0;
+                }
+                i++;
             }
-            // 非法输入
-            if (c < '0' || c > '9') {
-                return 0;
+            mulitMin = limit / 10;
+            while (i < len) {
+                digit = str.charAt(i++) - '0';
+                if (digit < 0 || digit > 9) {
+                    return 0;
+                }
+                // 判断溢出
+                if (res < mulitMin) {
+                    return 0;
+                }
+                res *= 10;
+                if (res < limit + digit) {
+                    return 0;
+                }
+                res -= digit;
             }
-            // 将 字符数字 转化成 数字
-            res = res * 10 + (c - '0');
+        } else {
+            return 0;
         }
-        return isNegative ? -res : res;
+        // res 一直是负数
+        return isNegative ? res : -res;
     }
 
     public static void main(String[] args) {
-        System.out.println(myAtoi("   42"));
-        System.out.println(myAtoi("   -42"));
-        System.out.println(myAtoi(" 42"));
-        System.out.println(myAtoi("4193 with words"));
-        System.out.println(myAtoi("words and 987"));
+        Solution solution = new Solution();
+        System.out.println(solution.myAtoi("   42"));
+        System.out.println(solution.myAtoi("   -42"));
+        System.out.println(solution.myAtoi(" 42"));
+        System.out.println(solution.myAtoi("4193 with words"));
+        System.out.println(solution.myAtoi("words and 987"));
+        System.out.println("=============");
+        System.out.println(solution.strToInt("1a23"));
+        System.out.println(solution.strToInt("-2147483648"));
+        System.out.println(solution.strToInt("-2147483649"));
+        System.out.println(solution.strToInt("2147483647"));
+        System.out.println(solution.strToInt("2147483649"));
     }
 }
