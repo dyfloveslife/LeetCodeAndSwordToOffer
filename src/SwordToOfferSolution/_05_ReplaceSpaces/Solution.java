@@ -15,7 +15,7 @@ package SwordToOfferSolution._05_ReplaceSpaces;
  *    最后将 StringBuffer 转化为 String  即可。
  */
 public class Solution {
-    public static String replaceSpaces1(String s) {
+    public String replaceSpaces1(String s) {
         if (s == null || s.length() == 0) {
             return "";
         }
@@ -32,13 +32,12 @@ public class Solution {
         return sb.toString();
     }
 
-    private static String replaceSpaces2(StringBuffer str) {
-        String str1 = str.toString();
-        if (str1.equals("")) {
-            return str1;
+    private String replaceSpaces2(String str) {
+        if (str.equals("")) {
+            return str;
         }
 
-        char[] strArray = str1.toCharArray();
+        char[] strArray = str.toCharArray();
         int i = 0;
         int lengthSpaces = 0;
         while (i < strArray.length) {
@@ -66,6 +65,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(replaceSpaces1("We are happy."));
+        Solution solution = new Solution();
+        System.out.println(solution.replaceSpaces1("    "));
+        System.out.println(solution.replaceSpaces1("We are happy."));
+        System.out.println(solution.replaceSpaces2("    "));
+        System.out.println(solution.replaceSpaces2("We are happy."));
     }
 }

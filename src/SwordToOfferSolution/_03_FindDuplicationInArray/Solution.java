@@ -1,5 +1,6 @@
 package SwordToOfferSolution._03_FindDuplicationInArray;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 /*
@@ -38,23 +39,40 @@ import java.util.HashSet;
  */
 public class Solution {
 
-    // 方法一
-    public static int duplicate1(int[] nums) {
+    // 方法一：HashMap
+    public int duplicate1(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1;
         }
 
-        HashSet<Integer> set = new HashSet<>();
-        for (int i = 0; i < nums.length; i++) {
-            if (!set.add(nums[i])) {
-                return nums[i];
+        // key 存储元素，value 存储该元素出现的次数
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int num : nums) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+            if (map.get(num) >= 2) {
+                return num;
             }
         }
         return -1;
     }
 
-    // 方法二
-    private static int duplicate2(int[] nums) {
+    // 方法二：HashSet
+    public int duplicate2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
+
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (!set.add(num)) {
+                return num;
+            }
+        }
+        return -1;
+    }
+
+    // 方法三：交换
+    public int duplicate3(int[] nums) {
         if (nums == null || nums.length <= 0) {
             return -1;
         }
@@ -70,14 +88,17 @@ public class Solution {
         return -1;
     }
 
-    public static void swap(int[] nums, int i, int j) {
+    public void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int arr[] = {2, 3, 1, 0, 2, 5};
-        System.out.println(duplicate1(arr));
+        System.out.println(solution.duplicate1(arr));
+        System.out.println(solution.duplicate2(arr));
+        System.out.println(solution.duplicate3(arr));
     }
 }

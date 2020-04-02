@@ -18,17 +18,19 @@ package SwordToOfferSolution._04_FindInPartiallySortedMatrix;
  *    如果左下角的元素等于 target，则直接返回 true。
  */
 public class Solution {
-    private static boolean find(int[][] arr, int target) {
-        if (arr.length == 0 || arr[0].length == 0) {
+    private boolean find(int[][] matrix, int target) {
+        if (matrix.length == 0 || matrix[0].length == 0) {
             return false;
         }
 
-        int row = arr.length - 1;
+        // start from (row, col)
+        int row = matrix.length - 1;
         int col = 0;
-        while (row >= 0 && col < arr[0].length) {
-            if (arr[row][col] > target) {
+
+        while (row >= 0 && col < matrix[0].length) {
+            if (matrix[row][col] > target) {
                 row--;
-            } else if (arr[row][col] < target) {
+            } else if (matrix[row][col] < target) {
                 col++;
             } else {
                 return true;
@@ -38,7 +40,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[][] arr = {
+        int[][] matrix = {
                 {1, 4, 7, 11, 15},
                 {2, 5, 8, 12, 19},
                 {3, 6, 9, 16, 22},
@@ -46,6 +48,9 @@ public class Solution {
                 {18, 21, 23, 26, 30}
         };
 
-        System.out.println(find(arr, 8));
+        Solution solution = new Solution();
+        System.out.println(solution.find(matrix, 5));
+        System.out.println(solution.find(matrix, 8));
+        System.out.println(solution.find(matrix, 20));
     }
 }

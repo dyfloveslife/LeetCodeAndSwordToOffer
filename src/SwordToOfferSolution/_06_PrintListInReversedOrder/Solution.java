@@ -22,13 +22,35 @@ public class Solution {
         }
     }
 
+    // 不使用栈，不使用递归
+    public int[] reversePrint1(ListNode head) {
+        if (head == null) {
+            return new int[0];
+        }
+
+        ListNode node = head;
+        int count = 0;
+        while (node != null) {
+            count++;
+            node = node.next;
+        }
+
+        int[] res = new int[count];
+        node = head;
+        for (int i = count - 1; i >= 0; i--) {
+            res[i] = node.val;
+            node = node.next;
+        }
+        return res;
+    }
+
     // 非递归实现
-    private static ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+    private static ArrayList<Integer> printListFromTailToHead(ListNode head) {
         Stack<Integer> stack = new Stack<>();
         ArrayList<Integer> list = new ArrayList<>();
-        while (listNode != null) {
-            stack.push(listNode.val);
-            listNode = listNode.next;
+        while (head != null) {
+            stack.push(head.val);
+            head = head.next;
         }
         while (!stack.isEmpty()) {
             //出栈的时候需要放在 list 中
@@ -40,10 +62,10 @@ public class Solution {
     // 递归实现
     private static ArrayList<Integer> list_Recursively = new ArrayList<>();
 
-    private static ArrayList<Integer> printListFromTailToHead_Recursively(ListNode listNode) {
-        if (listNode != null) {
-            printListFromTailToHead_Recursively(listNode.next);
-            list_Recursively.add(listNode.val);
+    private static ArrayList<Integer> printListFromTailToHead_Recursively(ListNode head) {
+        if (head != null) {
+            printListFromTailToHead_Recursively(head.next);
+            list_Recursively.add(head.val);
         }
         return list_Recursively;
     }
@@ -73,6 +95,7 @@ public class Solution {
 
     // 使用递归
     static ArrayList<Integer> list = new ArrayList<>();
+
     public static int[] reversePrint2(ListNode head) {
         reverse(head);
         int[] res = new int[list.size()];
@@ -82,9 +105,9 @@ public class Solution {
         return res;
     }
 
-    public static void reverse(ListNode head){
+    public static void reverse(ListNode head) {
         if (head == null) {
-            return ;
+            return;
         }
         reverse(head.next);
         head = head.next;
