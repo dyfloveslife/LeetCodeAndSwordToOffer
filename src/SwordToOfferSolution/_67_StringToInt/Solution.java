@@ -19,62 +19,48 @@ package SwordToOfferSolution._67_StringToInt;
  * 6. 因为涉及下标访问，因此全程需要考虑数组下标是否越界的情况。
  */
 public class Solution {
-    public int myAtoi(String str) {
-        int len = str.length();
 
-        // 去掉前导空格
-        // index 会来到第一个不是空格的字符
+    public int myAtoi(String str) {
+        char[] chars = str.toCharArray();
+        int len = chars.length;
         int index = 0;
-        while (index < len) {
-            if (str.charAt(index) != ' ') {
-                break;
-            }
+        // 去掉前导空格
+        while (index < len && chars[index] == ' ') {
             index++;
         }
-
-        // 如果 str 都是空格，则返回 0
+        // 去掉前导空格以后，就到末尾了
         if (index == len) {
             return 0;
         }
 
-        // 能走到这里，说明 index 所指的就是 str 中第一个不是空格的字符
-        // 第 1 个字符如果是符号，则判断合法性，并记录正负
-        int sign = 1;
-        char firstChar = str.charAt(index);
-        if (firstChar == '+') {
+        boolean isNegative = false;
+        if (chars[index] == '-') {
+            isNegative = true;
             index++;
-            sign = 1;
-        } else if (firstChar == '-') {
+        } else if (chars[index] == '+') {
             index++;
-            sign = -1;
+            // 如果当前的字符不是数字的话，则返回 0
+        } else if (!Character.isDigit(chars[index])) {
+            return 0;
         }
 
-        // 能够来到这里说明，已经越过空格和正负号了
         int res = 0;
-        while (index < len) {
-            char curChar = str.charAt(index);
-            // 合法性判断
-            if (curChar < '0' || curChar > '9') {
-                break;
+        while (index < len && Character.isDigit(chars[index])) {
+            int digit = chars[index] - '0';
+            // 本来应该是 res * 10 + digit > Integer.MAX_VALUE，
+            // 但 *10 和 +digit 操作都有可能越界，所以将其移到右边
+            if (res > (Integer.MAX_VALUE - digit) / 10) {
+                // 如果 res 超出了整数所表示的最大范围，则需要判断 res 是超出了正数的最大范围还是超出了负数的最大范围
+                return isNegative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
             }
-
-            // 环境只能存储 32 位大小的有符号整数，因此，需要提前判断乘以 10 以后是否越界
-            if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && (curChar - '0') > Integer.MAX_VALUE % 10)) {
-                return Integer.MAX_VALUE;
-            }
-            if (res < Integer.MIN_VALUE / 10 || (res == Integer.MIN_VALUE / 10 && (curChar - '0') > -(Integer.MIN_VALUE % 10))) {
-                return Integer.MIN_VALUE;
-            }
-
-            // 每一步都把符号位乘进去
-            // 字符 0 的十进制数是 48
-            // 字符 1 的十进制数是 49
-            // 字符 2 的十进制数是 50
-            res = res * 10 + sign * (curChar - '0');
+            // 这里每次乘以 10 是因为后面需要添加 digit 的原因，
+            // 因为每次总是需要给 digit 空出“个位”给它
+            res = res * 10 + digit;
             index++;
         }
-        return res;
+        return isNegative ? -res : res;
     }
+
 
     public int strToInt(String str) {
         if (str == null) {
