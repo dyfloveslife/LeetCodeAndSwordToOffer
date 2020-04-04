@@ -15,21 +15,26 @@ package SwordToOfferSolution._12_StringPathInMatrix;
  * J D E H
  *
  * 思路：
- * 1. 深度优先遍历(DFS) + 剪枝；
+ * 1. DNS + 回溯；
  *    剪枝：遇到这条路不可能和目标字符串匹配成功的时候，则立即返回；
  * 2. 按照当前节点的下、上、右、左的顺序开始遍历：
- *    下：如果元素已经访问过了，则返回 false；
- *    上：如果元素越界，则返回 false；
- *    右：如果匹配成功，则返回 true；
- *    左：如果字符不匹配，则返回 false。
+ *    2.1) 如果元素已经访问过了，则返回 false；
+ *    2.2) 如果元素越界，则返回 false；
+ *    2.3) 如果字符不匹配，则返回 false；
+ *    2.4) 如果匹配成功，则返回 true。
  */
-
 class Solution {
-    public static boolean exist(char[][] board, String str) {
-        char[] chars = str.toCharArray();
+    public boolean exist(char[][] board, String word) {
+        if (board == null || board.length == 0 || board[0].length == 0 || word == null || word.length() == 0) {
+            return false;
+        }
+
+        char[] chars = word.toCharArray();
+        boolean[][] visited = new boolean[board.length][board[0].length];
+
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                if (dfs(board, chars, i, j, 0)) {
+                if (dfs(board, chars, visited, i, j, 0)) {
                     return true;
                 }
             }
@@ -37,138 +42,46 @@ class Solution {
         return false;
     }
 
-    // k 表示当前目标字符在 str 中的索引
-    private static boolean dfs(char[][] board, char[] chars, int i, int j, int k) {
-        if (i < 0 || j < 0 || i >= board.length || j >= board[0].length || board[i][j] != chars[k]) {
+    // index 表示当前目标字符在 word 中的索引
+    private static boolean dfs(char[][] board, char[] chars, boolean[][] visited, int i, int j, int index) {
+        if (i < 0 || j < 0 || i >= board.length || j >= board[0].length
+                || board[i][j] != chars[index] || visited[i][j]) {
             return false;
         }
 
         // 如果当前遍历的字符已经到达了 chars 的末尾，则说明结束了
-        if (k == chars.length - 1) {
+        if (index == chars.length - 1) {
             return true;
         }
-        char c = board[i][j];
-        // 代表此元素已访问过，防止之后搜索时重复访问
-        board[i][j] = '#';
-        boolean res = dfs(board, chars, i + 1, j, k + 1) // 下
-                || dfs(board, chars, i - 1, j, k + 1)    // 上
-                || dfs(board, chars, i, j + 1, k + 1)    // 右
-                || dfs(board, chars, i, j - 1, k + 1);   // 左
-        // 还原当前矩阵元素
-        board[i][j] = c;
+
+        // 标记成已经访问过
+        visited[i][j] = true;
+
+        boolean res = dfs(board, chars, visited, i + 1, j, index + 1)
+                || dfs(board, chars, visited, i - 1, j, index + 1)
+                || dfs(board, chars, visited, i, j + 1, index + 1)
+                || dfs(board, chars, visited, i, j - 1, index + 1);
+        // 回溯
+        visited[i][j] = false;
         return res;
-    }
-}
-
-
-// 实现一
-public class StringPathInMatrix {
-    public boolean hasPath(char[] matrix, int rows, int cols, char[] str) {
-        // 1.设置一个标志位，初始值为 false 表示未走过
-        boolean[] flag = new boolean[matrix.length];
-        // 2.遍历数组，找到第一个与 str 字符串的第一个字符相匹配的矩阵元素，并进入 hasPathCore()
-        for (int row = 0; row < rows; row++) {
-            for (int col = 0; col < cols; col++) {
-                if (hasPathCore(matrix, row, col, rows, cols, flag, str, 0)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    // 参数分别表示：初始的字符矩阵、索引行坐标 row、索引列坐标 col、矩阵的行数、矩阵的列数、
-    // 标志位数组、待判断的字符串、待判断字符串中字符的位置 k（传过来的是0，即先判断字符串的第一个字符）
-    private boolean hasPathCore(char[] matrix, int row, int col, int rows, int cols, boolean[] flag, char[] str, int k) {
-        // 3.根据 row 和 col 计算匹配第一个元素在字符数组中的位置
-        int index = row * cols + col;
-        // 4.递归终止的条件: 越界、在字符矩阵中找到的字符不等于待判定字符串 str 中的字符、已经走过的字符
-        if (row < 0 || col < 0 || row >= rows || col >= cols || matrix[index] != str[k] || flag[index] == true) {
-            return false;
-        }
-        // 5.待判断字符串中字符的位置 k 已经到达 str 的末尾了，说明之前的都应匹配成功了，则返回 true
-        if (k == str.length - 1) {
-            return true;
-        }
-        // 6.要走的第一个位置为 true，说明已经走过了
-        flag[index] = true;
-        // 7.回溯递归寻找周围四个格子是否符合条件，要是找到了的话就 k+1
-        //	只要有一个格子符合条件，就继续再找这个符合条件的格子的四周是否存在符
-        //	合条件的格子，直到 k 到达末尾或者不满足递归条件就停止
-        if (hasPathCore(matrix, row - 1, col, rows, cols, flag, str, k + 1) ||
-                hasPathCore(matrix, row + 1, col, rows, cols, flag, str, k + 1) ||
-                hasPathCore(matrix, row, col - 1, rows, cols, flag, str, k + 1) ||
-                hasPathCore(matrix, row, col + 1, rows, cols, flag, str, k + 1)) {
-            return true;
-        }
-        // 8.走到这说明该路不通，则回溯，再找其他的路
-        flag[index] = false;
-        return true;
-    }
-
-}
-
-/*
- * 实现二：
- * 创建一个辅助数组来确定每个位置是否是字符串中的字符，如果是，则为true，如果不是，则为false，初始数组都为false；
- * 创建一个变量来储存当前路径的长度，当长度和字符串一样时，说明已经完成了，直接返回true；
- *
- * 先遍历矩阵，找到和字符串第一个字符相同的字符，作为路径的开始；
- * 如果相等，则矩阵路径+1，并将当前位置置为true，然后对当前位置的上下左右四个位置进行遍历，找寻路径的下一个位置，
- * 如果四个位置都没有找到，则返回false，并将当前位置重新改为false，然后路径-1，因为当前位置不是正确的路径，
- * 因为路径-1，所以回到上一位置，重新寻找。
- */
-class Solution2 {
-    public boolean hasPath(char[][] matrix, String str) {
-        if (matrix == null || str == null) {
-            return false;
-        }
-
-        int rows = matrix.length;
-        if (rows == 0) {
-            return false;
-        }
-
-        int cols = matrix[0].length;
-        int pathLength = 0;
-        boolean[][] visited = new boolean[rows][cols];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (hasPathCore(matrix, rows, cols, i, j, str, pathLength, visited)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    private boolean hasPathCore(char[][] matrix, int rows, int cols, int i, int j, String str, int pathLength, boolean[][] visited) {
-        boolean flag = false;
-        if (i >= 0 && i < rows && j >= 0 && j < cols && !visited[i][j] && matrix[i][j] == str.charAt(pathLength)) {
-            pathLength++;
-            visited[i][j] = true;
-            if (pathLength == str.length()) {
-                return true;
-            }
-            flag = hasPathCore(matrix, rows, cols, i + 1, j, str, pathLength, visited)
-                    || hasPathCore(matrix, rows, cols, i, j + 1, str, pathLength, visited)
-                    || hasPathCore(matrix, rows, cols, i - 1, j, str, pathLength, visited)
-                    || hasPathCore(matrix, rows, cols, i, j - 1, str, pathLength, visited);
-            if (!flag) {
-                // 回溯
-                pathLength--;
-                visited[i][j] = false;
-            }
-        }
-        return flag;
     }
 
     public static void main(String[] args) {
-        char[][] arr = {
+        String word1 = "abce";
+        String word2 = "abccee";
+        String word3 = "fcces";
+        String word4 = "fccse";
+        char[][] board = {
                 {'a', 'b', 'c', 'e'},
                 {'s', 'f', 'c', 's'},
                 {'a', 'd', 'e', 'e'}
         };
-        System.out.println(Solution.exist(arr, "bfce"));
+
+        Solution solution = new Solution();
+
+        System.out.println(solution.exist(board, word1));
+        System.out.println(solution.exist(board, word2));
+        System.out.println(solution.exist(board, word3));
+        System.out.println(solution.exist(board, word4));
     }
 }

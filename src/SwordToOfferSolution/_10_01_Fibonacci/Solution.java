@@ -1,4 +1,4 @@
-package SwordToOfferSolution._10_Fibonacci;
+package SwordToOfferSolution._10_01_Fibonacci;
 
 /*
  * 斐波那契数列
@@ -8,17 +8,17 @@ package SwordToOfferSolution._10_Fibonacci;
  *
  * 思路：
  * 1. 递归；
- * 2. 带有备忘录的递归；
- * 3. 递归改 DP。
+ * 2. 带有备忘录的 DP 数组迭代；
+ * 3. DP。
  */
 public class Solution {
     // 递归
-    public static int fib1(int n) {
+    public int fib1(int n) {
         return n < 2 ? n : fib1(n - 1) + fib1(n - 2);
     }
 
-    // 备忘录递归
-    public static int fib2(int n) {
+    // DP 数组迭代
+    public int fib2(int n) {
         if (n < 2) {
             return n;
         }
@@ -26,6 +26,7 @@ public class Solution {
         int[] dp = new int[n + 1];
         dp[0] = 0;
         dp[1] = 1;
+        // 注意 i 的取值范围，画图理解
         for (int i = 2; i <= n; i++) {
             dp[i] = dp[i - 1] + dp[i - 2];
         }
@@ -33,27 +34,32 @@ public class Solution {
         return dp[n];
     }
 
-    // DP!!!
+    // DP
     // 由于之前备忘录递归使用了大小为 N 的数组，所以空间复杂度为 O(N)
     // 但是发现，第 i 项只和第 i-1 项以及第 i-2 项有关，
     // 所以这里只是用三个变量，将空间复杂度降到 O(1)
-    public static int fib3(int n) {
+    public int fib3(int n) {
         if (n < 2) {
             return n;
         }
 
-        int pre2 = 0;
-        int pre1 = 1;
-        int sum = 0;
+        int res = 0;
+        int prepre = 0;
+        int pre = 1;
+
         for (int i = 2; i <= n; i++) {
-            sum = pre2 + pre1;
-            pre2 = pre1;
-            pre1 = sum;
+            res = pre + prepre;
+            prepre  = pre;
+            pre = res;
         }
-        return sum;
+        return res;
     }
 
     public static void main(String[] args) {
-        System.out.println(fib3(1));
+        Solution solution = new Solution();
+
+        System.out.println(solution.fib1(45));
+        System.out.println(solution.fib2(45));
+        System.out.println(solution.fib3(45));
     }
 }

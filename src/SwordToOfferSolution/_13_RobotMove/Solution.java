@@ -9,53 +9,44 @@ package SwordToOfferSolution._13_RobotMove;
  * 请问该机器人能够到达多少个格子？
  *
  * 思路：
- * 1. 使用 dfs 或者 bfs，但这里建议使用 bfs，因为在数据量比较大的时候，dfs 有可能造成栈溢出；
+ * 1. 使用 dfs 或者 bfs，建议使用 bfs，因为在数据量比较大的时候，dfs 有可能造成栈溢出；
  * 2. dfs 用栈，bfs 用队列；
  * 3. 从 (0, 0) 开始，每次扩展符合条件的之前没有扩到的格子；
+ * 4. 注意参数的范围：
+ *    1 <= n,m <= 100
+ *    0 <= k <= 20
  */
 public class Solution {
-    public static int movingCount(int threshold, int rows, int cols) {
-        if (threshold < 0 || rows < 0 || cols < 0) {
+    // DFS
+    public int movingCount(int m, int n, int k) {
+        if (m < 1 || n < 1 || k < 0) {
             return 0;
         }
 
-        boolean[][] visited = new boolean[rows][cols];
-        int count = movingCountCore(threshold, rows, cols, 0, 0, visited);
+        boolean[][] visited = new boolean[m][n];
+        return dfs(m, n, k, 0, 0, visited);
+    }
+
+    public int dfs(int m, int n, int k, int i, int j, boolean[][] visited) {
+        if (i < 0 || i >= m || j < 0 || j >= n || visited[i][j] || getSum(i, j) > k) {
+            return 0;
+        }
+
+        visited[i][j] = true;
+        // 注意: (0, 0) 位置就算是 1 个
+        int count = 1;
+        count += dfs(m, n, k, i - 1, j, visited)
+                + dfs(m, n, k, i + 1, j, visited)
+                + dfs(m, n, k, i, j - 1, visited)
+                + dfs(m, n, k, i, j + 1, visited);
         return count;
     }
 
-    private static int movingCountCore(int threshold, int rows, int cols, int row, int col, boolean[][] visited) {
-        int count = 0;
-        if (check(threshold, rows, cols, row, col, visited)) {
-            // 能进来说明当前格子符合条件，则将其置为 true，指明访问过了
-            visited[row][col] = true;
-            count = 1 + movingCountCore(threshold, rows, cols, row - 1, col, visited)
-                    + movingCountCore(threshold, rows, cols, row + 1, col, visited)
-                    + movingCountCore(threshold, rows, cols, row, col - 1, visited)
-                    + movingCountCore(threshold, rows, cols, row, col + 1, visited);
-        }
-        return count;
+    private int getSum(int i, int j) {
+        return getDigitSum(i) + getDigitSum(j);
     }
 
-    // 检查机器人能否进入 (row, col) 的方格
-    // 能进入下一个格子的条件是：
-    // 1) 格子坐标数位之和不大于 threshold
-    // 2) 从坐标 (0, 0) 通过上下左右移动可以到达当前格子
-    private static boolean check(int threshold, int rows, int cols, int row, int col, boolean[][] visited) {
-        if (row >= 0 && row < rows && col >= 0 && col < cols
-                && getDigitSum(row, col) <= threshold
-                && !visited[row][col]) {
-            return true;
-        }
-        return false;
-    }
-
-    public static int getDigitSum(int i, int j) {
-        return getX(i) + getX(j);
-    }
-
-    // 计算数位之和
-    private static int getX(int num) {
+    private int getDigitSum(int num) {
         int sum = 0;
         while (num > 0) {
             sum += num % 10;
@@ -65,6 +56,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(movingCount(1, 2,3));
+        Solution solution = new Solution();
+
+        System.out.println(solution.movingCount(2, 3, 1));
+        System.out.println(solution.movingCount(3, 1, 0));
     }
 }
