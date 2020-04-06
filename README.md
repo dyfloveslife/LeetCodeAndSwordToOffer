@@ -209,6 +209,10 @@
 
 #### 02.动态规划 
 
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   72    | [Edit Distance](https://leetcode.com/problems/edit-distance/) | [编辑距离](https://leetcode-cn.com/problems/edit-distance/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_72_EditDistance/Solution.java) |      Hard       |
+
 
 #### 03.贪心
 
