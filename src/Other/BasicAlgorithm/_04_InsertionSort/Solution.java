@@ -28,8 +28,10 @@ public class Solution {
         // 外层 for 循环就是说：0~i-1 已经排好序了，那么当前的 i 应该如何排序
         for (int i = 1; i < nums.length; i++) {
             // nums[j] > nums[j + 1] 每次向前比较
-            for (int j = i - 1; j >= 0 && nums[j] > nums[j + 1]; j--) {
-                swap(nums, j, j + 1);
+            for (int j = i - 1; j >= 0; j--) {
+                if (nums[j] > nums[j + 1]) {
+                    swap(nums, j, j + 1);
+                }
             }
         }
 

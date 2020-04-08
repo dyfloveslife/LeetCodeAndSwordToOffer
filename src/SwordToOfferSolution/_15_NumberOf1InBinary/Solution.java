@@ -14,6 +14,7 @@ package SwordToOfferSolution._15_NumberOf1InBinary;
 public class Solution {
     public int numberOf1(int n) {
         int count = 0;
+        // 注意这里的 n 是不等于 0
         while (n != 0) {
             n &= (n - 1);
             count++;

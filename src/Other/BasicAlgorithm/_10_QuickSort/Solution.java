@@ -34,45 +34,45 @@ import java.util.Random;
  * 如果断点每次都打在一遍，就像向左偏或向右偏的二叉树，则时间复杂度就是 O(N)。
  */
 public class Solution {
-    public int[] quickSort(int[] arr) {
-        if (arr == null || arr.length < 2) {
+    public int[] quickSort(int[] nums) {
+        if (nums == null || nums.length < 2) {
             return new int[0];
         }
 
-        quickSortCore(arr, 0, arr.length - 1);
-        return arr;
+        quickSortCore(nums, 0, nums.length - 1);
+        return nums;
     }
 
-    private void quickSortCore(int[] arr, int left, int right) {
+    private void quickSortCore(int[] nums, int left, int right) {
         if (left < right) {
             // 随机快排
             Random random = new Random();
             // 从数组中随机选择一个索引，将该索引上的数与数组中最后一个数进行交换
             // int randomIndex = (int) (left + Math.random() * (right - left + 1));
             int randomIndex = left + random.nextInt(right - left + 1);
-            swap(arr, randomIndex, right);
+            swap(nums, randomIndex, right);
 
-            int[] p = partition(arr, left, right);
-            quickSortCore(arr, left, p[0] - 1);
-            quickSortCore(arr, p[1] + 1, right);
+            int[] p = partition(nums, left, right);
+            quickSortCore(nums, left, p[0] - 1);
+            quickSortCore(nums, p[1] + 1, right);
         }
     }
 
     // 荷兰国旗问题（稍微有些不同）
     // 该函数返回的是等于数组最后一个元素 x 的范围的左右边界
     // p[0] 代表等于 x 的左边界，p[1] 代表等于 x 的右边界
-    private int[] partition(int[] arr, int left, int right) {
+    private int[] partition(int[] nums, int left, int right) {
         int less = left - 1;
         // 这里将 大于区域的范围 直接定位到 right
         int more = right;
 
         while (left < more) {
             // 小于 num 的情况
-            if (arr[left] < arr[right]) {
-                swap(arr, ++less, left++);
+            if (nums[left] < nums[right]) {
+                swap(nums, ++less, left++);
                 // 大于 num 的情况，此时 left 需要留在原地，继续考察与 num 的大小关系
-            } else if (arr[left] > arr[right]) {
-                swap(arr, --more, left);
+            } else if (nums[left] > nums[right]) {
+                swap(nums, --more, left);
                 // 等于 num 的情况
             } else {
                 left++;
@@ -82,14 +82,14 @@ public class Solution {
         // 需要将最后一个 x 的位置与 大于 x 区域的第一个数交换，这样就实现了小于 x 的在左边，
         // 等于 x 的在中间，大于 x 的在右边
         // 也就是说 x 一开始就不参与遍历，最后通过 swap 让其归位
-        swap(arr, more, right);
+        swap(nums, more, right);
         return new int[]{less + 1, more};
     }
 
-    private void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 
     public static void main(String[] args) {
