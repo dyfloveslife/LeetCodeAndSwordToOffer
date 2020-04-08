@@ -20,7 +20,7 @@ package SwordToOfferSolution._14_CuttingRope;
  * 3. 如果余数留下的是 2，则不再拆分，因为如果将 2 再拆分成 1 和 1，则 1*1 就比 2 小了;
  * 4. 当 n 小于等于 3 时，按照上面的分析，可以直接保留原数字，但题目要求 m≥1，即最少必须拆分 1 次，
  *    因此必须拆分一个 1，即返回 n-1；
- * 5. 求 n 除以 3 的整数部分 a 和 余数部分 b；
+ * 5. 求 n 除以 3 的整数部分得到 a，以及余数部分得到 b；
  *    5.1) 如果 b == 0，则直接返回 3 的 a 次方；
  *    5.2) 如果 b == 1，则需要将一个 1+3 转换为 2+2，此时返回 3^(a-1) * 4；
  *    5.3) 如果 b == 2，则返回 3^a * 2。
@@ -52,7 +52,7 @@ public class Solution {
         return dp[n];
     }
 
-    // 贪婪
+    // 数学公式推导
     public int cuttingRopeSolution2(int n) {
         if (n <= 3) {
             return n - 1;
@@ -69,12 +69,32 @@ public class Solution {
         return (int) (Math.pow(3, a) * 2);
     }
 
+    // 贪心
+    public int cuttingRopeSolution3(int n) {
+        if (n <= 3) {
+            return n - 1;
+        }
+
+        int res = 1;
+        while (n > 4) {
+            res *= 3;
+            n -= 3;
+        }
+        return res * n;
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
+        System.out.println(solution.cuttingRopeSolution1(4));
+        System.out.println(solution.cuttingRopeSolution1(8));
         System.out.println(solution.cuttingRopeSolution1(10));
+        System.out.println("====");
+        System.out.println(solution.cuttingRopeSolution2(4));
+        System.out.println(solution.cuttingRopeSolution2(8));
         System.out.println(solution.cuttingRopeSolution2(10));
         System.out.println("====");
-        System.out.println(solution.cuttingRopeSolution1(8));
-        System.out.println(solution.cuttingRopeSolution2(8));
+        System.out.println(solution.cuttingRopeSolution3(4));
+        System.out.println(solution.cuttingRopeSolution3(8));
+        System.out.println(solution.cuttingRopeSolution3(10));
     }
 }
