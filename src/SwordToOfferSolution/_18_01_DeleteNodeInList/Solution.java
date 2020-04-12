@@ -6,38 +6,41 @@ package SwordToOfferSolution._18_01_DeleteNodeInList;
  * 题目描述：
  * 给定单向链表的头指针和一个结点指针，定义一个函数在 O(1) 时间删除该结点。
  *
+ * 思路：
+ * 1. 如果链表有头节点的话，则可以在头节点之前再新建一个节点，最后直接返回该节点的 next 即可；
+ * 2. 在处理的时候，如果当前节点的下一个节点的值等于被删除节点的值，则需要将当前节点的 next 指针指向
+ *    被删除节点的下一个节点即可。
  */
 public class Solution {
-    public static class ListNode {
+    class ListNode {
         int val;
-        ListNode next = null;
+        ListNode next;
 
         ListNode(int val) {
             this.val = val;
-            this.next = null;
         }
     }
 
-    public void inO1DeleteNodeInList(ListNode head, ListNode toBeDeleted) {
-        if (head == null || toBeDeleted == null) {
-            return;
+    public ListNode deleteNode(ListNode head, int target) {
+        if (head == null) {
+            return null;
         }
 
-        // 要删除的节点不是尾节点
-        if (toBeDeleted.next != null) {
-            ListNode p = toBeDeleted.next;
-            toBeDeleted.val = p.val;
-            toBeDeleted.next = p.next;
-            // 链表只有一个节点，要删除的节点是头节点或尾节点
-        } else if (head == toBeDeleted) {
-            head = null;
-            // 链表中有多个节点，删除尾节点
-        } else {
-            ListNode cur = head;
-            while (cur.next != toBeDeleted) {
-                cur = cur.next;
-            }
-            cur.next = null;
+        if (head.val == target) {
+            return head.next;
         }
+        // 在头节点之前新建一个节点
+        ListNode preNode = new ListNode(-1);
+        preNode.next = head;
+
+        ListNode curNode = head;
+        while (curNode.next != null) {
+            if (curNode.next.val == target) {
+                curNode.next = curNode.next.next;
+            } else {
+                curNode = curNode.next;
+            }
+        }
+        return preNode.next;
     }
 }

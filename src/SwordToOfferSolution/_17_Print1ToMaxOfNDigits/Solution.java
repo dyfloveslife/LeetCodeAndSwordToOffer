@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class Solution {
 
-    public static int[] printNumbers(int n) {
+    public int[] printNumbers(int n) {
         if (n < 1) {
             return null;
         }
@@ -27,7 +27,7 @@ public class Solution {
     }
 
     // 方法一
-    private static void print1ToMaxOfNDigits_Solution1(int n) {
+    private void print1ToMaxOfNDigits_Solution1(int n) {
         if (n <= 0) {
             return;
         }
@@ -43,7 +43,7 @@ public class Solution {
         }
     }
 
-    private static boolean increment(char[] arr) {
+    private boolean increment(char[] arr) {
         if (arr == null || arr.length == 0) {
             return false;
         }
@@ -77,7 +77,7 @@ public class Solution {
     }
 
     // 方法二
-    private static void print1ToMaxOfNDigits_Solution2(int n) {
+    private void print1ToMaxOfNDigits_Solution2(int n) {
         if (n <= 0) {
             return;
         }
@@ -92,7 +92,7 @@ public class Solution {
         }
     }
 
-    private static void print1ToMaxOfDigitsRecursively(char[] nums, int length, int index) {
+    private void print1ToMaxOfDigitsRecursively(char[] nums, int length, int index) {
         if (nums == null) {
             return;
         }
@@ -110,7 +110,7 @@ public class Solution {
     }
 
     // 通用的打印输出方法
-    private static void printNumber(char[] arr) {
+    private void printNumber(char[] arr) {
         if (arr == null) {
             return;
         }
@@ -128,7 +128,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-//        print1ToMaxOfNDigits_Solution2(2);
-        System.out.println(Arrays.toString(printNumbers(3)));
+        Solution solution = new Solution();
+
+        System.out.println(Arrays.toString(solution.printNumbers(2)));
+        solution.print1ToMaxOfNDigits_Solution1(2);
+        solution.print1ToMaxOfNDigits_Solution2(2);
     }
 }

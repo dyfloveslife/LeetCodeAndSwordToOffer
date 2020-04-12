@@ -18,7 +18,7 @@ package SwordToOfferSolution._20_NumericStrings;
  *	\\d ： 数字
  */
 public class Solution {
-    public static boolean isNumeric(String s) {
+    public boolean isNumeric(String s) {
         if (s == null || s.trim().length() == 0) {
             return false;
         }
@@ -37,7 +37,7 @@ public class Solution {
         return flag && idx[0] == s.length();
     }
 
-    private static boolean judgeNumber(String s, int[] idx) {
+    private boolean judgeNumber(String s, int[] idx) {
         if (idx[0] >= s.length()) {
             return false;
         }
@@ -47,7 +47,7 @@ public class Solution {
         return judgeUnsignedNumber(s, idx);
     }
 
-    private static boolean judgeUnsignedNumber(String s, int[] idx) {
+    private boolean judgeUnsignedNumber(String s, int[] idx) {
         int before = idx[0];
         while (idx[0] < s.length() && s.charAt(idx[0]) <= '9' && s.charAt(idx[0]) >= '0') {
             idx[0]++;
@@ -57,8 +57,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(isNumeric("123.45e+6"));
-        System.out.println(isNumeric("e9"));
-        System.out.println(isNumeric("1 "));
+        Solution solution = new Solution();
+
+        System.out.println(solution.isNumeric("123.45e+6"));
+        System.out.println(solution.isNumeric("e9"));
+        System.out.println(solution.isNumeric("1 "));
     }
 }

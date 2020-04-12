@@ -128,6 +128,7 @@
 |   17   | Print1ToMaxOfNDigits        | 打印从 1 到最大的 n 位数       |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_17_Print1ToMaxOfNDigits/Solution.java)      |
 | 18_01  | DeleteNodeInList            | 在 O(1) 时间内删除链表节点     |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_18_01_DeleteNodeInList/Solution.java)       |
 | 18_02  | DeleteDuplicatedNode        | 删除链表中重复的结点           |    [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_18_02_DeleteDuplicatedNode/Solution.java)     |
+| 18_03  | DeleteDuplicatedNodeⅡ        | 删除链表中重复的结点Ⅱ           |    [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_18_03_DeleteDuplicatedNodeII/Solution.java)     |
 |   19   | RegularExpressionsMatching  | 正则表达式匹配                 |   [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_19_RegularExpressionsMatching/Solution.java)   |
 |   20   | NumericStrings              | 表示数值的字符串               |         [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_20_NumericStrings/Solution.java)         |
 |   21   | ReorderArray                | 调整数组顺序使奇数位于偶数前面 |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_21_ReorderArray/Solution.java)          |
