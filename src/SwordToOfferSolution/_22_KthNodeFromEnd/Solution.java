@@ -13,7 +13,7 @@ package SwordToOfferSolution._22_KthNodeFromEnd;
  */
 class ListNode {
     int val;
-    ListNode next = null;
+    ListNode next;
 
     ListNode(int val) {
         this.val = val;
@@ -21,6 +21,31 @@ class ListNode {
 }
 
 public class Solution {
+
+    public ListNode getKthFromEnd(ListNode head, int k) {
+        if (head == null || k == 0) {
+            return null;
+        }
+
+        // 先让快指针走 k 步
+        ListNode fast = head;
+        while (k-- > 0 && fast != null) {
+            fast = fast.next;
+        }
+
+        // 然后再让快满指针一起走
+        ListNode cur = head;
+        while (cur != null && fast != null) {
+            cur = cur.next;
+            fast = fast.next;
+            if (fast == null) {
+                return cur;
+            }
+        }
+        return cur;
+    }
+
+
     public ListNode findKthToTail(ListNode head, int k) {
         if (head == null || k == 0) {
             return null;

@@ -7,18 +7,13 @@ package SwordToOfferSolution._26_SubstructureInTree;
  * 输入两棵二叉树 A 和 B，判断 B 是不是 A 的子结构。
  *
  * 思路：
- * 1. 注意 null 的条件，HasSubTree 中，如果两棵树都不为空才进行判断，
- *    DoesTree1HasTree2 中，如果 Tree2 为空，则说明第二棵树遍历完了，即匹配成功；
- * 2. tree1 为空有两种情况:
- *   1) 如果 tree1 为空且 tree2 不为空，说明不匹配；
- *   2) 如果 tree1 为空，tree2 为空，说明匹配。
- *
- * 3. 实现两个函数，isSubStructure() 和 helper()
- *    3.1) isSubStructure() 用于递归遍历树 1 中的所有节点，并判断当前节点是否与树 2 中的根节点相同，
- *         相同则调用 help() 进一步判断；
- *    3.2) help() 用于检查树 2 中是否与树 1 的一个子树拥有相同的结构和节点值。
+ * 1. 既然是需要判断 B 树是否是 A 树的子结构，则需要在 A 树中找到 B 树的根节点，用 B 树的根节点与 A 树的根节点比较：
+ *    1.1) 如果不相等：
+ *         则需要再次将 B 树的根节点与 A 树根节点的左右子树进行比较，此过程可以使用递归进行操作。
+ *         但需要注意的是，如果 B 树本来就是空，则它就不是 A 树的子结构。
+ *    1.2) 如果相等：
+ *         则就需要一一比较两个子结构所对应的每个节点是否是相同的。这里也可以使用递归操作。
  */
-
 public class Solution {
     class TreeNode {
         int val;
@@ -30,97 +25,37 @@ public class Solution {
         }
     }
 
-    // 简介实现
-    public boolean isSubstructure1(TreeNode A, TreeNode B) {
-        if (A == null || B == null) {
-            return false;
-        }
-
-        return dfs(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);
-    }
-
-    public boolean dfs(TreeNode A, TreeNode B) {
-        if (B == null) {
-            return true;
-        }
-        if (A == null) {
-            return false;
-        }
-        return (A.val == B.val) && dfs(A.left, B.left) && dfs(A.right, B.right);
-    }
-
-
-    // 实现一
     public boolean isSubStructure(TreeNode A, TreeNode B) {
-        if (A == null && B == null) {
-            return true;
-        }
-        // 如果树 A或树 B其中有一个为空，则根据约定，空树不是任意一个树的子结构
+        // 题目规定：如果 B 树为空的话，则它不是任意一棵树的子结构
         if (A == null || B == null) {
             return false;
         }
 
-        boolean res = false;
-        // 在树 A 中找到了树 B 的根节点时，进入 help 函数进行校验
-        if (A.val == B.val) {
-            res = helper(A, B);
+        if (isPartSame(A, B)) {
+            return true;
+        } else {
+            return isSubStructure(A.left, B) || isSubStructure(A.right, B);
         }
-        // 如果 res == false，说明树 B 的根节点不在树 A 的树顶中，则进入 A 的左子树进行查询
-        if (!res) {
-            res = isSubStructure(A.left, B);
-        }
-        // 如果 res == false，说明树 B 的根节点不在树 A 的树顶和左子树中，则进入 A 的右子树进行查询
-        if (!res) {
-            res = isSubStructure(A.right, B);
-        }
-
-        return res;
     }
 
-    public boolean helper(TreeNode A, TreeNode B) {
-        // 如果 B 为空了，则说明 B 已经遍历完了
+    // 现在 B 树的根节点已经在 A 树中找到了，
+    // 下一步就是需要对每个节点进行一一的比较了
+    public boolean isPartSame(TreeNode A, TreeNode B) {
+        // 注意：整个 B 树是 A 树中某个子树的一部分，
+        // 因此，如果当前 B 树节点为 null，则说明比到头了
+        // 由于 B 树有可能比 A 树的某棵子树大，因此如果 B 树的某个节点已经为空了，则说明比较完了
         if (B == null) {
             return true;
         }
+        // 如果 A 树中的某个子树的节点为空，则说明 B 树与该部分的节点不匹配
         if (A == null) {
             return false;
         }
 
-        if (A.val != B.val) {
+        if (A.val == B.val) {
+            return isPartSame(A.left, B.left) && isPartSame(A.right, B.right);
+        } else {
             return false;
         }
-        // 分别检查 A 和 B 的左右子树
-        return helper(A.left, B.left) && helper(A.right, B.right);
-    }
-
-    // 实现二
-    public boolean hasSubtree(TreeNode root1, TreeNode root2) {
-        boolean res = false;
-        if (root1 != null && root2 != null) {
-            if (root1.val == root2.val) {
-                res = DoseTree1HasTree2(root1, root2);
-            }
-            if (!res) {
-                res = hasSubtree(root1.left, root2);
-            }
-            if (!res) {
-                res = hasSubtree(root1.right, root2);
-            }
-        }
-        return res;
-    }
-
-    private boolean DoseTree1HasTree2(TreeNode root1, TreeNode root2) {
-        // 说明树 2 已经遍历完，则返回 true
-        if (root2 == null) {
-            return true;
-        }
-        if (root1 == null) {
-            return false;
-        }
-        if (root1.val != root2.val) {
-            return false;
-        }
-        return DoseTree1HasTree2(root1.left, root2.left) && DoseTree1HasTree2(root1.right, root2.right);
     }
 }

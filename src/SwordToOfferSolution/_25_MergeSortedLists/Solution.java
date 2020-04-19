@@ -16,11 +16,10 @@ package SwordToOfferSolution._25_MergeSortedLists;
  *    最后如果其中一个链表多出来的话，要全部加入到新建链表的最后。
  * 2. 递归实现。
  */
-
 public class Solution {
     class ListNode {
         int val;
-        ListNode next = null;
+        ListNode next;
 
         ListNode(int val) {
             this.val = val;
@@ -53,9 +52,12 @@ public class Solution {
         // 假如其中一个链表已经遍历完了，而另一个没有遍历完
         // 则需要确定 pre.next 所指向的节点
         pre.next = (head1 == null) ? head2 : head1;
+        // 最后返回的是整个链表的头节点，但这里需要返回的是 preHead 的下一个节点
+        //
         return preHead.next;
     }
 
+    // 递归
     public ListNode mergeList(ListNode head1, ListNode head2) {
         if (head1 == null) {
             return head2;
