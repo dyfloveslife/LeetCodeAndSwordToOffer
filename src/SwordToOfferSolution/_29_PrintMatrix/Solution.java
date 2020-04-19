@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class Solution {
 
-    public static int[] spiralOrder(int[][] matrix) {
+    public int[] spiralOrder(int[][] matrix) {
         int left_row = 0;
         int left_col = 0;
         int right_row = matrix.length - 1;
@@ -36,27 +36,27 @@ public class Solution {
                 }
                 // 多行多列情况（注意以哪个为基准）
             } else {
-                int curRow = left_row;
-                int curCol = left_col;
+                int cur_row = left_row;
+                int cur_col = left_col;
                 // 从左到右
-                while (curCol != right_col) {
-                    res[index++] = matrix[left_row][curCol];
-                    curCol++;
+                while (cur_col != right_col) {
+                    res[index++] = matrix[left_row][cur_col];
+                    cur_col++;
                 }
                 // 从上到下
-                while (curRow != right_row) {
-                    res[index++] = matrix[curRow][right_col];
-                    curRow++;
+                while (cur_row != right_row) {
+                    res[index++] = matrix[cur_row][right_col];
+                    cur_row++;
                 }
                 // 从右到左
-                while (curCol != left_col) {
-                    res[index++] = matrix[right_row][curCol];
-                    curCol--;
+                while (cur_col != left_col) {
+                    res[index++] = matrix[right_row][cur_col];
+                    cur_col--;
                 }
                 // 从下到上
-                while (curRow != left_row) {
-                    res[index++] = matrix[curRow][left_col];
-                    curRow--;
+                while (cur_row != left_row) {
+                    res[index++] = matrix[cur_row][left_col];
+                    cur_row--;
                 }
             }
             left_row++;
@@ -65,11 +65,6 @@ public class Solution {
             right_col--;
         }
         return res;
-    }
-
-
-    public static void printEdge(int[][] matrix, int left_row, int left_col, int right_row, int right_col) {
-
     }
 
     // 之前的方法
@@ -117,11 +112,13 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[][] arr = {
                 {1, 2, 3, 4},
                 {5, 6, 7, 8},
                 {9, 10, 11, 12}
         };
-        System.out.println(Arrays.toString(spiralOrder(arr)));
+
+        System.out.println(Arrays.toString(solution.spiralOrder(arr)));
     }
 }

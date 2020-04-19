@@ -7,10 +7,11 @@ package SwordToOfferSolution._28_SymmetricalBinaryTree;
  * 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
  *
  * 思路：
- * 1. 可以使用前序遍历和前序对称遍历的输出是否相同来解决；
- * 2. 对于二叉树节点值都相同的情况，可以将 null 值也算进比较的范围里。
- *
- *             root1                        root2
+ * 1. 二叉树要满足对称，则需要以下是三个条件，对于当前任意两个对称的节点：
+ *    1.1) 这两个对称的节点的值相同；
+ *    1.2) 左节点的左孩子等于右节点的右孩子，即 root1.left == root2.right；
+ *    1.3) 左节点的右孩子等于右节点的左孩子，即 root1.right == root2.left。
+ *             root1                          root2
  *             /     \                       /     \
  *     root1.left  root1.right      root2.left  root2.right
  */
@@ -25,28 +26,25 @@ public class Solution {
         }
     }
 
-    boolean isSymmetrical(TreeNode root) {
+    public boolean isSymmetrical(TreeNode root) {
         if (root == null) {
             return true;
         }
-        return isSymmetricalCore(root.left, root.right);
+        return process(root.left, root.right);
     }
 
-    private boolean isSymmetricalCore(TreeNode root1, TreeNode root2) {
-        // 如果两个根节点都是空
+    public boolean process(TreeNode root1, TreeNode root2) {
         if (root1 == null && root2 == null) {
             return true;
         }
-        // 其中一个节点不为空
         if (root1 == null || root2 == null) {
             return false;
         }
-        // 不满足对称的条件，则返回 false
+
         if (root1.val != root2.val) {
             return false;
         }
-        // 递归检查对称位置
-        return isSymmetricalCore(root1.left, root2.right)
-                && isSymmetricalCore(root1.right, root2.left);
+
+        return process(root1.left, root2.right) && process(root1.right, root2.left);
     }
 }
