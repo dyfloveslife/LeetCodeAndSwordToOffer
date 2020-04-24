@@ -13,21 +13,21 @@ package SwordToOfferSolution._51_InversePairs;
  * 2. 左部分直到划分为长度为 2 的子数组，然后再划分为长度为 1 的子数组，比较两个数的大小；
  *      如果左边大于右边，则构成一个逆序对，并进行合并、排序；否则不构成逆序对。
  * 3. 等到最终要准备合并为一个整体数组的时候，用 p1、p2、p3 指针分别指向左部分子数组的最后一个数、右部分子数组的最后一个数以及最终结果数组的最后一个数；
- * 4. 如果 p1 > p2，则将 p1 加入到最终的结果数组中，此时统计 p2 指向的数与其前面一共有多少数，有多少数就有几对逆序对，
+ * 4. 如果 p1 > p2，则将 p1 加入到最终的结果数组中，此时统计 p2 指向的数与其前面一共有多少数，有多少个数就有几对逆序对，
  *      因为 p1 指向的数都要比 p2 指向的子数组中的数要大，并且 p1 指针左移，p3 也要左移；
  * 5. 如果 p1 < p2，则说明没有逆序对，此时将 p2 所指的数加入到 p3 的位置即可；
  * 6. 总之，谁大就移动谁，然后将较大的数复制到 p3 所指向的最终结果数组中即可。
  */
 public class Solution {
-    int cnt;
+    int res;
 
     public int inversePairs(int[] arr) {
         if (arr == null || arr.length == 0) {
             return 0;
         }
-        cnt = 0;
+        res = 0;
         inversePairsCoreMergeSort(arr, 0, arr.length - 1);
-        return cnt;
+        return res;
     }
 
     private void inversePairsCoreMergeSort(int[] arr, int left, int right) {
@@ -55,9 +55,10 @@ public class Solution {
                 // 统计逆序对的数量
                 // 如果第一个子数组中数字大于第二个子数组中的数字，则构成逆序对，
                 // 并且逆序对的数目等于第二个子数组中剩余数字的个数
-                // arr[pos1] > arr[pos2]，从 a[pos1] 开始到 a[middle] 必定都是大于这个 a[pos2] 的，因为此时分治的两边已经是各自有序了
-                cnt += middle - pos1 + 1;
-//                cnt %= 1000000007;
+                // arr[pos1] > arr[pos2]，从 a[pos1] 开始到 a[middle] 必定都是大于这个 a[pos2] 的，
+                // 因为此时分治的两边已经是各自有序了
+                res += (middle - pos1 + 1);
+                // res %= 1000000007;
             }
         }
 
@@ -67,7 +68,7 @@ public class Solution {
         while (pos2 <= right) {
             help[i++] = arr[pos2++];
         }
-        // 这里也可以复用变量 i
+
         for (int j = 0; j < help.length; j++) {
             arr[left + j] = help[j];
         }
