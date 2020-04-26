@@ -326,3 +326,8 @@
 
 
 #### 08.链表
+
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   21    | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_21_MergeTwoSortedLists/Solution.java) |      Easy       |
+|   23    | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | [合并 K 个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_23_MergekSortedLists/Solution.java) |      Hard       |

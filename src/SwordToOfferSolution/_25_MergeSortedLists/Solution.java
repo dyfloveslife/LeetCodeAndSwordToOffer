@@ -36,25 +36,25 @@ public class Solution {
 
         // 使用一个额外的节点，方便找到链表的头
         // 在头节点的前面
-        ListNode preHead = new ListNode(-1);
-        ListNode pre = preHead;
+        ListNode dummy = new ListNode(-1);
+        ListNode cur = dummy;
 
         while (head1 != null && head2 != null) {
             if (head1.val < head2.val) {
-                pre.next = head1;
+                cur.next = head1;
                 head1 = head1.next;
             } else {
-                pre.next = head2;
+                cur.next = head2;
                 head2 = head2.next;
             }
-            pre = pre.next;
+            cur = cur.next;
         }
         // 假如其中一个链表已经遍历完了，而另一个没有遍历完
-        // 则需要确定 pre.next 所指向的节点
-        pre.next = (head1 == null) ? head2 : head1;
-        // 最后返回的是整个链表的头节点，但这里需要返回的是 preHead 的下一个节点
+        // 则需要确定 cur.next 所指向的节点
+        cur.next = (head1 == null) ? head2 : head1;
+        // 最后返回的是整个链表的头节点，但这里需要返回的是 dummy 的下一个节点
         //
-        return preHead.next;
+        return dummy.next;
     }
 
     // 递归
@@ -66,7 +66,7 @@ public class Solution {
             return head1;
         }
 
-        ListNode mergedHead = null;
+        ListNode mergedHead;
         if (head1.val < head2.val) {
             mergedHead = head1;
             mergedHead.next = mergeList(head1.next, head2);
