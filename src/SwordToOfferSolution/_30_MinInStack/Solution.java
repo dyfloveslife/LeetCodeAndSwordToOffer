@@ -18,33 +18,41 @@ import java.util.Stack;
  * 4. 弹出的时候，两个栈的栈顶都同时弹出。
  */
 public class Solution {
-    private Stack<Integer> dataStack = new Stack<>();
-    private Stack<Integer> minStack = new Stack<>();
 
-    public void push(int newNum) {
-        dataStack.push(newNum);
-        // 如果辅助栈为空，或者新加入的元素比辅助栈的栈顶小，则将新加入的元素入辅助栈
-        if (minStack.isEmpty() || newNum < minStack.peek()) {
-            minStack.push(newNum);
+    class MainStack {
+
+        Stack<Integer> stack1;
+        Stack<Integer> stack2;
+
+        public MainStack() {
+            stack1 = new Stack<>();
+            stack2 = new Stack<>();
+        }
+
+        public void push(int x) {
+            stack1.push(x);
+            // 如果辅助栈为空，或者新加入的元素比辅助栈的栈顶小，则将新加入的元素入辅助栈
+            if (stack2.isEmpty() || x < stack2.peek()) {
+                stack2.push(x);
             // 如果新加入的元素比辅助栈的栈顶大，则将辅助栈的栈顶再次加入到辅助栈里面
-        } else {
-            minStack.push(minStack.peek());
+            } else {
+                stack2.push(stack2.peek());
+            }
         }
-    }
 
-    public void pop() {
-        if (!dataStack.isEmpty() && !minStack.isEmpty()) {
-            dataStack.pop();
-            minStack.pop();
+        public void pop() {
+            if (!stack1.isEmpty() && !stack2.isEmpty()) {
+                stack1.pop();
+                stack2.pop();
+            }
         }
-    }
 
-    public int top() {
-        return dataStack.peek();
-    }
+        public int top() {
+            return stack1.peek();
+        }
 
-    public int min() {
-        return minStack.peek();
+        public int min() {
+            return stack2.peek();
+        }
     }
 }
-
