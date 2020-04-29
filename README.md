@@ -246,6 +246,7 @@
 |   278    | [First Bad Version](https://leetcode.com/problems/first-bad-version/) | [第一个错误的版本](https://leetcode-cn.com/problems/first-bad-version/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_278_FirstBadVersion/Solution.java) |      Easy       |
 |   540    | [Single Element in a Sorted Array](https://leetcode.com/problems/single-element-in-a-sorted-array/) | [有序数组中的单一元素](https://leetcode-cn.com/problems/single-element-in-a-sorted-array/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_540_SingleElementInASortedArray/Solution.java) |      Medium       |
 |   744    | [Find Smallest Letter Greater Than Target](https://leetcode.com/problems/find-smallest-letter-greater-than-target/) | [寻找比目标字母大的最小字母](https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_744_FindSmallestLetterGreaterThanTarget/Solution.java) |      Easy       |
+|   1095    | [Find in Mountain Array](https://leetcode.com/problems/find-in-mountain-array/) | [山脉数组中查找目标值](https://leetcode-cn.com/problems/find-in-mountain-array/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_BinarySearch/_1095_FindInMountainArray/Solution.java) |      Hard       |
 
 #### 05.分治
 
