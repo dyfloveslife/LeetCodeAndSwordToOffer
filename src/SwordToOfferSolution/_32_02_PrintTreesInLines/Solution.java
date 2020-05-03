@@ -2,6 +2,7 @@ package SwordToOfferSolution._32_02_PrintTreesInLines;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /*
@@ -10,46 +11,44 @@ import java.util.Queue;
  * 题目描述：
  * 从上到下按层打印二叉树，同一层的结点按从左到右的顺序打印，每一层打印到一行。
  *
+ * 思路：
+ * 1. 该题和上一道题的整体思路是一样的，也是使用 BFS 实现；
+ * 2. 只不过在遍历当前队列中的元素之前，需要在每一层创建一个 ArrayList；
+ * 3. 最后再将每个 ArrayList 添加到最终的结果 list 中进行返回。
  */
-
 public class Solution {
     class TreeNode {
-        int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
+        int val;
+        TreeNode left;
+        TreeNode right;
 
         TreeNode(int val) {
             this.val = val;
-
         }
     }
 
-    public ArrayList<ArrayList<Integer>> printTreesInLines(TreeNode root) {
-        // 存放结果
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-        Queue<TreeNode> queue = new LinkedList<>();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
         if (root == null) {
             return res;
         }
+
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
-            // 存放每行列表
-            ArrayList<Integer> list = new ArrayList<>();
-            int count = queue.size();
-            while (count-- > 0) {
+            int size = queue.size();
+            List<Integer> list = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                // 对应某节点只有一个孩子或没有孩子的情况
-                if (node == null) {
-                    continue;
-                }
                 list.add(node.val);
-                queue.offer(node.left);
-                queue.offer(node.right);
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
             }
-            // 每遍历完一行，就将该行加入到 res 中
-            if (list.size() != 0) {
-                res.add(list);
-            }
+            res.add(list);
         }
         return res;
     }

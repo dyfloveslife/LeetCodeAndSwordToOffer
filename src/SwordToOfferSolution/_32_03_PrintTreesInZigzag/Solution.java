@@ -9,95 +9,90 @@ import java.util.*;
  * 请实现一个函数按照之字形顺序打印二叉树，
  * 即第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，第三行再按照从左到右的顺序打印，其他行以此类推。
  *
- * 思路：
+ * 思路一：栈
  * 1. 使用两个栈，对于二叉树中的奇数行，由于是从左到右打印的，所以存入到栈 1 中；
  * 2. 对于偶数行，由于是从右到左打印的，所以存入栈 2 中。
+ *
+ * 思路二：双端队列
+ * 1. 假设根节点为第一行，将奇数行所在节点添加到队列头部，而偶数行所在节点添加到队列尾部；
+ * 2. 这里使用结果集 (res.size() % 2) 来判断当前节点属于奇数行还是偶数行；
+ * 3. 格外注意 addLast() 和 addFirst() 的使用。
+ *
+ * 思路三：反转 list
+ * 1. 使用 Collections.reverse(list) 将奇数行中的元素进行反转。
  */
-
 public class Solution {
     class TreeNode {
-        int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
+        int val;
+        TreeNode left;
+        TreeNode right;
 
         TreeNode(int val) {
             this.val = val;
         }
     }
 
-    // 方法一：使用两个栈实现
-    public ArrayList<ArrayList<Integer>> printTreesInZigzag1(TreeNode root) {
-        int layer = 1;
-        // 存放结果
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-        // 用于存放奇数行和偶数行的节点
-        Stack<TreeNode> stackOdd = new Stack<>();
-        Stack<TreeNode> stackEven = new Stack<>();
-        stackOdd.push(root);
-        while (!stackOdd.isEmpty() || !stackEven.isEmpty()) {
-            // 奇数层
-            if (layer % 2 != 0) {
-                ArrayList<Integer> list = new ArrayList<>();
-                while (!stackOdd.isEmpty()) {
-                    TreeNode node = stackOdd.pop();
-                    if (node != null) {
-                        list.add(node.val);
-                        stackEven.push(node.left);
-                        stackEven.push(node.right);
-                    }
+    // 双端队列
+    public List<List<Integer>> levelOrder1(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            // 双端队列
+            LinkedList<Integer> list = new LinkedList<>();
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                // 将偶数行的每个元素都添加到队列的头部
+                if (res.size() % 2 == 0) {
+                    list.addLast(node.val);
+                    // 将奇数行的每个元素添加到队列的尾部
+                } else {
+                    list.addFirst(node.val);
                 }
-                if (!list.isEmpty()) {
-                    res.add(list);
-                    layer++;
-                    System.out.println();
+                if (node.left != null) {
+                    queue.offer(node.left);
                 }
-            }
-            // 偶数层
-            else {
-                ArrayList<Integer> list = new ArrayList<>();
-                while (!stackEven.isEmpty()) {
-                    TreeNode node = stackEven.pop();
-                    if (node != null) {
-                        list.add(node.val);
-                        stackOdd.push(node.right);
-                        stackOdd.push(node.left);
-                    }
-                }
-                if (!list.isEmpty()) {
-                    res.add(list);
-                    layer++;
-                    System.out.println();
+                if (node.right != null) {
+                    queue.offer(node.right);
                 }
             }
+            res.add(list);
         }
         return res;
     }
 
-    // 用队列实现，只不过是在 分行打印 的基础上将每次的 list 进行翻转后再加入到 res 中
-    public ArrayList<ArrayList<Integer>> printTreesInZigzag2(TreeNode root) {
-        boolean reverse = false;
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+    // 反转
+    public List<List<Integer>> levelOrder2(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
+
         while (!queue.isEmpty()) {
-            ArrayList<Integer> list = new ArrayList<>();
-            int count = queue.size();
-            while (count-- > 0) {
+            int size = queue.size();
+            List<Integer> list = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
-                if (node == null) {
-                    continue;
-                }
                 list.add(node.val);
-                queue.offer(node.left);
-                queue.offer(node.right);
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
             }
-            if (reverse) {
+            if (res.size() % 2 == 1) {
                 Collections.reverse(list);
             }
-            reverse = !reverse;
-            if (list.size() == 0) {
-                res.add(list);
-            }
+            res.add(list);
         }
         return res;
     }
