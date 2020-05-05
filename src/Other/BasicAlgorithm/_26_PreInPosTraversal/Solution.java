@@ -32,46 +32,46 @@ public class Solution {
     }
 
     // 先序遍历(递归)
-    public void preOrderRecursion(TreeNode head) {
-        if (head == null) {
+    public void preOrderRecursion(TreeNode root) {
+        if (root == null) {
             return;
         }
 
-        System.out.println(head.val);
-        preOrderRecursion(head.left);
-        preOrderRecursion(head.right);
+        System.out.println(root.val);
+        preOrderRecursion(root.left);
+        preOrderRecursion(root.right);
     }
 
     // 中序遍历(递归)
-    public void inOrderRecursion(TreeNode head) {
-        if (head == null) {
+    public void inOrderRecursion(TreeNode root) {
+        if (root == null) {
             return;
         }
 
-        inOrderRecursion(head.left);
-        System.out.println(head.val);
-        inOrderRecursion(head.right);
+        inOrderRecursion(root.left);
+        System.out.println(root.val);
+        inOrderRecursion(root.right);
     }
 
     // 后序遍历(递归)
-    public void postOrderRecursion(TreeNode head) {
-        if (head == null) {
+    public void postOrderRecursion(TreeNode root) {
+        if (root == null) {
             return;
         }
 
-        postOrderRecursion(head.left);
-        postOrderRecursion(head.right);
-        System.out.println(head.val);
+        postOrderRecursion(root.left);
+        postOrderRecursion(root.right);
+        System.out.println(root.val);
     }
 
     // 先序遍历(非递归)
-    public void preOrderNoRecursion(TreeNode head) {
-        if (head == null) {
+    public void preOrderNoRecursion(TreeNode root) {
+        if (root == null) {
             return;
         }
 
         Stack<TreeNode> stack = new Stack<>();
-        stack.push(head);
+        stack.push(root);
         while (!stack.isEmpty()) {
             // 当前节点在入栈的时候，先让右孩子入栈，再让左孩子入栈
             // 出栈的时候，就是先出左孩子，后出右孩子
@@ -89,24 +89,34 @@ public class Solution {
     // 中序遍历(非递归)
     // 对于当前节点来说，如果当前节点不为空，则会把它的左边界全都入栈，一压压一溜
     // 如果当前节点为空，那么就开始出栈吧，然后再来到当前节点的右孩子
-    public void inOrderNoRecursion(TreeNode head) {
-        if (head == null) {
+    public void inOrderNoRecursion1(TreeNode root) {
+        if (root == null) {
             return;
         }
 
         Stack<TreeNode> stack = new Stack<>();
-        // head != null 表示在栈初始化的时候，先让 head 进去
-        while (!stack.isEmpty() || head != null) {
+        // root != null 表示在栈初始化的时候，先让 root 进去
+        while (!stack.isEmpty() || root != null) {
+            /*
+            // 这里也可以使用 while，只要当前节点不为空，则不断的来到当前节点的左孩子的位置
+             while (root != null) {
+                stack.push(root);
+                root = root.left;
+             }
+             root = stack.pop();
+             System.out.println(root.val);
+             root = root.right;
+             */
             // 将当前节点的左边界全部入栈
-            if (head != null) {
-                stack.push(head);
-                head = head.left;
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
                 // 能进入 else，说明 while 满足的条件是 !stack.isEmpty()，并且当前节点为 null
                 // 则从栈中弹出一个节点，然后打印输出，最后再来到当前节点的右侧
             } else {
-                head = stack.pop();
-                System.out.println(head.val);
-                head = head.right;
+                root = stack.pop();
+                System.out.println(root.val);
+                root = root.right;
             }
         }
     }
@@ -115,22 +125,22 @@ public class Solution {
     // 之前的先序遍历是 中左右，即先压右孩子，再压左孩子；
     // 则可以通过先压左孩子，再压右孩子，变成 中右左；
     // 最后再将要输出的节点放到一个栈中，从而逆序输出后序的 左右中。
-    public void postOrderNoRecursion(TreeNode head) {
-        if (head == null) {
+    public void postOrderNoRecursion(TreeNode root) {
+        if (root == null) {
             return;
         }
         Stack<TreeNode> s1 = new Stack<>();
         Stack<TreeNode> s2 = new Stack<>();
-        s1.push(head);
+        s1.push(root);
         while (!s1.isEmpty()) {
-            head = s1.pop();
+            root = s1.pop();
             // 本来应该打印输出的，但这里将其存入到另外一个栈中
-            s2.push(head);
-            if (head.left != null) {
-                s1.push(head.left);
+            s2.push(root);
+            if (root.left != null) {
+                s1.push(root.left);
             }
-            if (head.right != null) {
-                s1.push(head.right);
+            if (root.right != null) {
+                s1.push(root.right);
             }
         }
         // 最后再单独打印辅助栈即可
