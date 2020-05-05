@@ -218,6 +218,7 @@
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   53    | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_53_MaximumSubarray/Solution.java) |      Easy       |
 |   72    | [Edit Distance](https://leetcode.com/problems/edit-distance/) | [编辑距离](https://leetcode-cn.com/problems/edit-distance/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_72_EditDistance/Solution.java) |      Hard       |
+|   300    | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) | [最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_300_LongestIncreasingSubsequence/Solution.java) |      Medium       |
 
 
 #### 03.贪心
