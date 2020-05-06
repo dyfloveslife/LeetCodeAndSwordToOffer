@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
- * 全排列 Ⅱ
+ * 全排列Ⅱ
  *
  * 题目描述：
  * 给定一个可包含重复数字的序列，返回所有不重复的全排列。

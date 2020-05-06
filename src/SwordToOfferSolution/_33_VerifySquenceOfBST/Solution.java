@@ -10,13 +10,15 @@ import java.util.LinkedList;
  * 输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。如果是则返回 true，否则返回 false。
  * 假设输入的数组的任意两个数字都互不相同。
  *
- * 思路 1：
- * 1. 后序遍历序列中，最后一个值是 根节点；
- * 2. 遍历除去根节点的序列，找到第一个大于 根节点 的位置，则该位置左侧全部为小于 根节点 的节点，右侧全部为大于 根节点 的节点；
- * 3. 遍历右子树，如果有小于 根节点 的节点，直接返回 false；
+ * 思路 1：递归
+ * 1. 后序遍历序列中，最后一个值是根节点；
+ * 2. 遍历除去根节点的序列，从左到右找到第一个大于根节点的位置，
+ *    则该位置左侧全部为小于根节点的节点，
+ *    右侧全部（除了数组最后一个位置）为大于根节点的节点；
+ * 3. 遍历右侧，如果有小于根节点的节点，说明不符合二叉搜索树的定义，因此直接返回 false；
  * 4. 分别递归判断左右子树是否是二叉搜索树。
  *
- * 思路 2：
+ * 思路 2：单调栈
  *                 10
  *                /  \
  *               6    14
@@ -29,56 +31,66 @@ import java.util.LinkedList;
  * 5. 采取同样的方法，将左子树的根节点入栈，重复上面的操作即可。
  */
 public class Solution {
-    public boolean verifyPostorder(int[] postorder) {
-        if (postorder == null) {
+    // 单调栈
+    public boolean verifyPostorder1(int[] postOrder) {
+        if (postOrder == null) {
             return false;
         }
 
         Deque<Integer> stack = new LinkedList<>();
         int pre = Integer.MAX_VALUE;
-        for (int i = postorder.length - 1; i >= 0; i--) {
+        for (int i = postOrder.length - 1; i >= 0; i--) {
             // 左子树的元素必须小于单调栈中栈顶(peek)的元素，否则就不满足二叉树
-            if (postorder[i] > pre) {
+            if (postOrder[i] > pre) {
                 return false;
             }
-            while (!stack.isEmpty() && postorder[i] < stack.peek()) {
+            while (!stack.isEmpty() && postOrder[i] < stack.peek()) {
                 pre = stack.pop();
             }
-            stack.push(postorder[i]);
+            stack.push(postOrder[i]);
         }
         return true;
     }
 
-
-    public boolean VerifySquenceOfBST(int[] sequence) {
-        if (sequence == null || sequence.length == 0) {
+    // 递归
+    public boolean verifyPostorder2(int[] postOrder) {
+        if (postOrder == null || postOrder.length == 0) {
             return false;
         }
 
-        return verify(sequence, 0, sequence.length - 1);
+        return verify(postOrder, 0, postOrder.length - 1);
     }
 
-    public boolean verify(int[] sequence, int start, int end) {
+    private boolean verify(int[] postOrder, int start, int end) {
         // 递归结束的条件
         //if (end - start <= 1)
         if (start >= end) {
             return true;
         }
 
-        // 得到 根节点 的值
-        int rootVal = sequence[end];
+        // 得到根节点的值
+        int rootVal = postOrder[end];
         int curIndex = start;
-        // 找到第一个大于 根节点 的位置
+        // 找到第一个大于根节点的位置
         // curIndex < end：满足索引从小到大的原则
-        // sequence[curIndex] < root：满足 根节点 的值要比 根节点左子树上的值 要大的原则
-        while (curIndex < end && sequence[curIndex] < rootVal) {
+        // postOrder[curIndex] < root：满足根节点的值要比根节点左子树上的值要大的原则
+        while (curIndex < end && postOrder[curIndex] < rootVal) {
             curIndex++;
         }
         // 遍历根节点右子树上的值
-        for (int i = curIndex; i < end; i++)
-            if (sequence[i] < rootVal) {
+        for (int i = curIndex; i < end; i++) {
+            if (postOrder[i] < rootVal) {
                 return false;
             }
-        return verify(sequence, start, curIndex - 1) && verify(sequence, curIndex, end - 1);
+        }
+        return verify(postOrder, start, curIndex - 1) && verify(postOrder, curIndex, end - 1);
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[] postOrder = {1, 2, 5, 10, 6, 9, 4, 3};
+
+        System.out.println(solution.verifyPostorder1(postOrder));
+        System.out.println(solution.verifyPostorder2(postOrder));
     }
 }
