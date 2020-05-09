@@ -8,54 +8,58 @@ package SwordToOfferSolution._36_ConvertBinarySearchTree;
  * 要求不能创建任何新的结点，只能调整树中结点指针的指向。
  *
  * 思路：
- * 1. 将左子树构造成双链表，并返回链表头节点；
- * 2. 新增一个全局变量记录左子树的最后一个节点；
- * 3. 如果左子树链表不为空的话，将当前 root 追加到左子树链表；
- * 4. 将右子树构造成双链表，并返回链表头节点；
- * 5. 如果右子树链表不为空的话，将该链表追加到 root 节点之后；
- * 6. 根据左子树链表是否为空确定返回的节点。
+ * 1. 需要考虑以下三个要素：
+ *    1.1) 排序链表：可使用中序遍历的方式得到从小到大的节点；
+ *    2.2) 双向链表：在构建相邻节点之间的关系时，假设当前节点为 cur，前驱节点为 pre，则应满足：
+ *                   pre.right = cur, cur.left = pre；
+ *    3.3) 循环链表：假设链表的头尾节点分别为 head 和 tail，则应满足 head.left = tail, tail.right = head。
+ * 2. 整体思路就是：使用中序遍历访问树的每个节点 cur，并在访问每个节点时构建 cur 和前驱节点 pre 的引用指向，
+ * 3. 中序遍历完成后再构建头节点和尾节点的指向。
  */
-
 public class Solution {
-    class TreeNode {
+    class Node {
         int val;
-        TreeNode left = null;
-        TreeNode right = null;
+        Node left;
+        Node right;
 
-        TreeNode(int val) {
+        Node(int val) {
             this.val = val;
         }
     }
 
-    // 用于记录左子树的最后一个节点
-    private TreeNode leftLast = null;
+    // pre 用于记录当前节点的前驱节点
+    // head 用于记录二叉搜索树最左下角的节点，即最小值
+    public Node pre, head;
 
-    public TreeNode Convert(TreeNode root) {
+    public Node treeToDoublyList(Node root) {
         if (root == null) {
             return null;
         }
-        if (root.left == null && root.right == null) {
-            leftLast = root;
-            return root;
+
+        // 构建双向链表
+        dfs(root);
+        // 通过 dfs 已经将双向链表构建好了，现在需要构建首尾节点
+        head.left = pre;
+        pre.right = head;
+        return head;
+    }
+
+    private void dfs(Node cur) {
+        if (cur == null) {
+            return;
         }
 
-        // 将 左子树 转换成双向链表，并返回头节点
-        TreeNode leftNode = Convert(root.left);
-        // 如果左子树的头节点不为空，则将根节点加到左链表的最后
-        if (leftNode != null) {
-            leftLast.right = root;
-            root.left = leftLast;
+        dfs(cur.left);
+        // 如果当前节点的前驱为空，则说明当前节点就是头节点，即二叉搜索树的最小值，
+        // 因此将其设置为头节点
+        if (pre == null) {
+            head = cur;
+            // 如果前驱节点不为空，则需要将当前节点和前驱节点连接起来
+        } else {
+            pre.right = cur;
+            cur.left = pre;
         }
-        // 如果根节点只包含左子树的话，则根节点就是链表的最后一个节点
-        leftLast = root;
-        // 将 右子树 转换成双向链表，并返回头节点
-        TreeNode rightNode = Convert(root.right);
-        // 如果右子树的头节点不为空，则将根节点添加到右链表的开头
-        if (rightNode != null) {
-            rightNode.left = root;
-            root.right = rightNode;
-        }
-        // 如果根节点有左子树，则返回左子树的头节点；否则返回根节点
-        return leftNode != null ? leftNode : root;
+        pre = cur;
+        dfs(cur.right);
     }
 }
