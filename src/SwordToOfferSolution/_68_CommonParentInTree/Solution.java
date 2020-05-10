@@ -57,6 +57,11 @@ package SwordToOfferSolution._68_CommonParentInTree;
  *  3. 首先还是从节点 3 开始，由于左侧没有 8 和 7，所以节点 3 的左侧最终会得到一个 null；
  *  4. 然后来到节点 3 的右孩子 8，由于 8 是输入节点 8 和 7 当中的 8，所以节点 3 的右侧会得到一个值，即 8；
  *  5. 此时节点 3 得到了来自左侧的 null，以及右侧的非空值 8，所以这就意味着节点 8 是 8 和 7 的最低公共祖先。
+ *
+ * 对题目二的总结：
+ * 1. 通过递归对二叉树进行后序遍历，当遇到节点 p 和 q 时返回。从底至顶回溯，当节点 p 和 q 在 root 的异侧时，
+ *    节点 root 即为最近公共祖先，则向上返回 root。
+ * 2. 具体流程：https://i.loli.net/2020/05/10/hVgcGXwqMBojNRE.png
  */
 public class Solution {
     class TreeNode {
@@ -101,6 +106,7 @@ public class Solution {
         }
         return null;
     }
+
     // 题目二思路 3
     public static TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
@@ -124,5 +130,25 @@ public class Solution {
         // 如果左子树不为空，则最低的公共祖先就来自左子树
         // 如果右子树不为空，则最低的公共祖先就来自右子树
         return left != null ? left : right;
+    }
+
+    public static TreeNode lowestCommonAncestor3(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null) {
+            return null;
+        }
+
+        if (root == p || root == q) {
+            return root;
+        }
+
+        TreeNode left = lowestCommonAncestor3(root, p, q);
+        TreeNode right = lowestCommonAncestor3(root, p, q);
+        if (left == null) {
+            return right;
+        }
+        if (right == null) {
+            return left;
+        }
+        return root;
     }
 }
