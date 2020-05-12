@@ -1,6 +1,9 @@
 package SwordToOfferSolution._38_StringPermutation;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /*
  * 字符串的排列 https://i.loli.net/2019/11/25/6qRl5XMgOAUcfmZ.png
@@ -9,7 +12,10 @@ import java.util.*;
  * 输入一个字符串，打印出该字符串中字符的所有排列。
  * 例如输入字符串 abc，则打印出由字符 a、b、c 所能排列出来的所有字符串 abc、acb、bac、bca、cab 和 cba。
  *
- * 思路：递归
+ * 思路一：
+ * 1. DFS + 回溯。
+ *
+ * 思路二：交换元素位置
  * 1. 遍历出所有可能出现在第一个位置的字符，即将第一个字符依次和后面的字符交换；
  * 2. 固定第一个字符，将后面的字符进行排列。
  * 3. 这时对于后面的字符来说，重复步骤 1、2 即可。
@@ -17,38 +23,49 @@ import java.util.*;
  */
 public class Solution {
 
-    public static String[] permutation(String s) {
-        Set<String> ans = new TreeSet<>();
-        char[] chars = s.toCharArray();
-
-        permutationCore(ans, chars, 0);
-
-        String[] res = new String[ans.size()];
-        int index = 0;
-        for (String str : ans) {
-            res[index++] = str;
+    public String[] permutation1(String s) {
+        int len = s.length();
+        if (len == 0) {
+            return new String[0];
         }
-        return res;
+
+        char[] chars = s.toCharArray();
+        // 由于输出的结果不能含有重复的，因此排序是为了去重方便
+        Arrays.sort(chars);
+
+        StringBuilder path = new StringBuilder();
+        boolean[] visited = new boolean[len];
+
+        List<String> res = new ArrayList<>();
+        // 0 表示当前递归的深度
+        dfs(chars, len, 0, visited, path, res);
+        return res.toArray(new String[0]);
     }
 
-    public static void permutationCore(Set<String> ans, char[] chars, int begin) {
-        if (begin == chars.length - 1) {
-            ans.add(String.valueOf(chars));
+    private void dfs(char[] chars, int len, int depth, boolean[] visited, StringBuilder path, List<String> res) {
+        if (depth == len) {
+            res.add(path.toString());
             return;
         }
+        for (int i = 0; i < len; i++) {
+            if (!visited[i]) {
+                // 剪枝
+                if (i > 0 && chars[i] == chars[i - 1] && !visited[i - 1]) {
+                    continue;
+                }
+                visited[i] = true;
+                path.append(chars[i]);
 
-        for (int i = begin; i < chars.length; i++) {
-            if (i != begin && (chars[i] == chars[i - 1] || chars[i] == chars[begin])) {
-                continue;
+                dfs(chars, len, depth + 1, visited, path, res);
+
+                path.deleteCharAt(path.length() - 1);
+                visited[i] = false;
             }
-            swap(chars, i, begin);
-            permutationCore(ans, chars, begin + 1);
-            swap(chars, i, begin);
         }
     }
 
-    // 之前的方法（超时）
-    private ArrayList<String> permutation1(String str) {
+    // 思路二（超时）
+    private ArrayList<String> permutation2(String str) {
         ArrayList<String> res = new ArrayList<>();
         if (str.length() == 0) {
             return res;
@@ -85,7 +102,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        String str = "abc";
-        System.out.println(Arrays.toString(permutation(str)));
+        Solution solution = new Solution();
+
+        System.out.println(Arrays.toString(solution.permutation1("abc")));
+        System.out.println(Arrays.toString(solution.permutation1("aab")));
     }
 }
