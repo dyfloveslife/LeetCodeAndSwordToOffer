@@ -12,12 +12,19 @@ package SwordToOfferSolution._43_NumberOf1Between1AndN;
  * https://dyfloveslife.github.io/2019/11/28/offer-NumberOf1Between1AndN/
  */
 public class Solution {
-    public int numberOf1Between1AndN_Solution(int n) {
+    public int countDigitOne(int n) {
         int res = 0;
-        for (int m = 1; m <= n; m *= 10) {
-            int a = n / m, b = n % m;
+        for (long m = 1; m <= n; m *= 10) {
+            long a = n / m, b = n % m;
             res += (a + 8) / 10 * m + (a % 10 == 1 ? b + 1 : 0);
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        System.out.println(solution.countDigitOne(12));
+        System.out.println(solution.countDigitOne(13));
     }
 }

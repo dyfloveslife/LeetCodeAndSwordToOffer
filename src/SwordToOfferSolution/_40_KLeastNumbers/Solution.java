@@ -1,6 +1,7 @@
 package SwordToOfferSolution._40_KLeastNumbers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -22,11 +23,11 @@ import java.util.PriorityQueue;
  * 3. 如果容器中已有的数字小于 k 个的话，则直接将当前数字放入到容器中；
  * 4. 如果当前数字比容器中的最大值要小的话，则用该数字替换已有的最大值；
  * 5. 如果当前数字比容器中的最大值要大的话，则该数字不可能是最小 k 个整数之一，则将其舍去；
- * 时间复杂度：插入删除操作 O(log k)，最坏情况是 n 次，则总的时间复杂度是 O(nlog k)。
+ * 6. 时间复杂度：插入删除操作 O(log k)，最坏情况是 n 次，则总的时间复杂度是 O(nlog k)。
  */
 public class Solution {
     // 方法一
-    private ArrayList<Integer> getLeastNumbers(int[] nums, int k) {
+    public ArrayList<Integer> getLeastNumbers(int[] nums, int k) {
         ArrayList<Integer> res = new ArrayList<>();
         if (nums == null || k > nums.length || k <= 0) {
             return res;
@@ -86,39 +87,52 @@ public class Solution {
     }
 
     // 方法二
-    private static ArrayList<Integer> getLeastNumbers2(int[] nums, int k) {
-        ArrayList<Integer> res = new ArrayList<>();
+    public int[] getLeastNumbers2(int[] nums, int k) {
         if (nums == null || k > nums.length || k <= 0) {
-            return res;
+            return new int[0];
         }
 
         // 设置大顶堆
+        // PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> (o2 - o1));
+
         // 若 o2 > o1，则返回正数；若 o2 < o1，则返回负数；否则返回 0
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, new Comparator<Integer>() {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
             // 默认是小顶堆，如果要实现大顶堆，则需要翻转默认的排序器
             @Override
             public int compare(Integer o1, Integer o2) {
                 return o2.compareTo(o1);
             }
         });
+
         // 如果容器中已有的数字小于 k 个的话，则直接将当前数字放入到容器中
-        for (int i = 0; i < nums.length; i++)
+        for (int i = 0; i < nums.length; i++) {
             if (maxHeap.size() < k) {
                 maxHeap.offer(nums[i]);
-                // 如果当前数字比容器中的最大值要小的话，则用该数字替换已有的最大值
-            } else if (nums[i] < maxHeap.peek()) {
+                // 注意需要 continue
+                continue;
+            }
+            if (nums[i] < maxHeap.peek()) {
                 maxHeap.poll();
                 maxHeap.offer(nums[i]);
             }
-        // 将 maxHeap 中的元素全部添加到 res 中
-        res.addAll(maxHeap);
+        }
+
+        int[] res = new int[maxHeap.size()];
+        for (int i = 0; i < res.length; i++) {
+            res[i] = maxHeap.poll();
+        }
         return res;
     }
 
     public static void main(String[] args) {
-        int[] arr = {3, 2, 1};
-        int[] arr1 = {0, 1, 2, 1};
-        System.out.println(getLeastNumbers2(arr, 2));
-        System.out.println(getLeastNumbers2(arr1, 1));
+        Solution solution = new Solution();
+        int[] nums1 = {3, 2, 1};
+        int[] nums2 = {0, 1, 2, 1};
+
+        System.out.println(solution.getLeastNumbers(nums1, 2));
+        System.out.println(solution.getLeastNumbers(nums2, 1));
+
+        System.out.println(Arrays.toString(solution.getLeastNumbers2(nums1, 2)));
+        System.out.println(Arrays.toString(solution.getLeastNumbers2(nums2, 1)));
     }
 }
