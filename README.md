@@ -100,6 +100,7 @@
 |   20    | MaxEOR    |子数组的最大异或和               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_20_MaxEOR/Solution.java)     |
 |   21    | MaxCoinsWayAmount    |最多的换钱方法               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_21_MaxCoinsWayAmount/Solution.java)     |
 |   22    | RegularExpressionMatch    |正则匹配问题               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_22_RegularExpressionMatch/Solution.java)     |
+|   23    | RotateString|旋转字符串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_23_RotateString/Solution.java)     |
 
 
 # 剑指Offer
@@ -346,3 +347,4 @@
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   21    | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_21_MergeTwoSortedLists/Solution.java) |      Easy       |
 |   23    | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | [合并 K 个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_23_MergekSortedLists/Solution.java) |      Hard       |
+|   25    | [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | [K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_25_ReverseNodesInkGroup/Solution.java) |      Hard       |
