@@ -338,6 +338,11 @@
 
 #### 06.图
 
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   207    | [Course Schedule](https://leetcode.com/problems/course-schedule/) | [课程表](https://leetcode-cn.com/problems/course-schedule/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Graph/_207_CourseScheduleI/Solution.java) |      Medium       |
+|   210    | [Course Schedule Ⅱ](https://leetcode.com/problems/course-schedule-ii/) | [课程表Ⅱ](https://leetcode-cn.com/problems/course-schedule-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Graph/_210_CourseScheduleII/Solution.java) |      Medium       |
+
 
 #### 07.位运算
 
