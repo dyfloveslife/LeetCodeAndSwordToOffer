@@ -8,11 +8,14 @@ package SwordToOfferSolution._44_DigitsInSequence;
  * 在这个序列中，第 5 位（从 0 开始计数）是 5，第 13 位是 1，第 19 位是 4 等等。
  * 请写一个函数求任意位对应的数字。
  *
- * 思路：
+ * 思路一：
  * https://dyfloveslife.github.io/2019/11/29/offer-DigitsInSequence/
+ *
+ * 思路二：
+ * 详见：https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_400_NthDigit/Solution.java
  */
 public class Solution {
-    public static int digitsInSequence(int[] arr, int n) {
+    public int digitsInSequence(int[] arr, int n) {
         if (n < 0) {
             return -1;
         }
@@ -35,7 +38,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] arr = {0, 10, 190, 2890, 38890, 488890, 5888890, 68888890, 788888890};
-        System.out.println(digitsInSequence(arr, 11));
+
+        System.out.println(solution.digitsInSequence(arr, 11));
     }
 }

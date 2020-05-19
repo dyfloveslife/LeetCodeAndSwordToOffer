@@ -314,6 +314,7 @@
 |   206    | [SingleNumber Ⅲ](https://leetcode.com/problems/single-number-iii/) | [只出现一次的数字 Ⅲ](https://leetcode-cn.com/problems/single-number-iii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_206_SingleNumberIII/Solution.java) |      Medium       |
 |   233    | [Number of Digit One](https://leetcode.com/problems/number-of-digit-one/) | [数字 1 的个数](https://leetcode-cn.com/problems/number-of-digit-one/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_233_NumberOfDigitOne/Solution.java) |      Hard       |
 |   365    | [Water and Jug Problem](https://leetcode.com/problems/water-and-jug-problem/) | [水壶问题](https://leetcode-cn.com/problems/water-and-jug-problem/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_365_WaterAndJugProblem/Solution.java) |      Medium       |
+|   400    | [Nth Digit](https://leetcode.com/problems/nth-digit/) | [第 N 个数字](https://leetcode-cn.com/problems/nth-digit/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_400_NthDigit/Solution.java) |      Hard       |
 
 
 ## 数据结构相关
