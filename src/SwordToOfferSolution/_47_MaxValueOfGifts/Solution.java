@@ -9,7 +9,7 @@ package SwordToOfferSolution._47_MaxValueOfGifts;
  * 给定一个棋盘及其上面的礼物，请计算你最多能拿到多少价值的礼物？
  *
  * 思路：经典 DP 问题
- * 1. 当前节点的最大总价值 = max(上面节点的最大总价值 +　左边节点的最大总价值) + 当前节点最大总价值；
+ * 1. 当前节点的最大总价值 = max(上面节点的最大总价值 + 左边节点的最大总价值) + 当前节点最大总价值；
  * 2. 第一行和第一列都要进行初始化。
  */
 public class Solution {
@@ -18,14 +18,16 @@ public class Solution {
             return 0;
         }
 
-        int n = values.length;
-        int[][] dp = new int[n][n];
-        // 初始化（0, 0）点
+        int m = values.length;
+        int n = values[0].length;
+        int[][] dp = new int[m][n];
         dp[0][0] = values[0][0];
-        // 初始化第一行和第一列
+
+        for (int i = 1; i < m; i++) {
+            dp[i][0] = dp[i - 1][0] + values[i][0];
+        }
         for (int i = 1; i < n; i++) {
             dp[0][i] = dp[0][i - 1] + values[0][i];
-            dp[i][0] = dp[i - 1][0] + values[i][0];
         }
         for (int i = 1; i < n; i++) {
             for (int j = 1; j < n; j++) {
@@ -37,19 +39,27 @@ public class Solution {
 
     // 优化后
     public int getMost2(int[][] values) {
-        int rows = values.length;
-        int columns = values[0].length;
-        if (values == null || rows == 0 || columns == 0) {
+        if (values == null || values.length == 0 || values[0].length == 0) {
             return 0;
         }
 
-        int[] dp = new int[columns];
-        for (int[] value : values) {
-            dp[0] += value[0];
-            for (int i = 1; i < columns; i++) {
-                dp[i] = Math.max(dp[i], dp[i - 1]) + value[i];
+        int m = values.length;
+        int n = values[0].length;
+
+        int[] dp = new int[n + 1];
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                dp[j] = Math.max(dp[j], dp[j - 1]) + values[i - 1][j - 1];
             }
         }
-        return dp[columns - 1];
+        return dp[n];
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+
+        System.out.println(solution.getMost1(grid));
+        System.out.println(solution.getMost2(grid));
     }
 }

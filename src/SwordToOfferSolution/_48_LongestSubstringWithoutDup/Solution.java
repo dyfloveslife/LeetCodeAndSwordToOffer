@@ -17,7 +17,7 @@ import java.util.HashSet;
  */
 public class Solution {
 
-    public static int longestSubstringWithoutDup0(String s) {
+    public int longestSubstringWithoutDup0(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
@@ -29,9 +29,9 @@ public class Solution {
 
         while (right < s.length()) {
             if (!set.contains(s.charAt(right))) {
-               set.add(s.charAt(right));
-               right++;
-               max = Math.max(max, set.size());
+                set.add(s.charAt(right));
+                right++;
+                max = Math.max(max, set.size());
             } else {
                 set.remove(s.charAt(left));
                 left++;
@@ -40,8 +40,7 @@ public class Solution {
         return max;
     }
 
-
-    public static int longestSubstringWithoutDup1(String str) {
+    public int longestSubstringWithoutDup1(String str) {
         if (str == null || str.length() < 1) {
             return 0;
         }
@@ -70,7 +69,7 @@ public class Solution {
         return maxLen;
     }
 
-    public static int longestSubstringWithoutDup2(String str) {
+    public int longestSubstringWithoutDup2(String str) {
         if (str == null || str.length() <= 0) {
             return 0;
         }
@@ -99,9 +98,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         String str = "arabcacfr";
-        System.out.println(longestSubstringWithoutDup0(str));
-        System.out.println(longestSubstringWithoutDup1(str));
-        System.out.println(longestSubstringWithoutDup2(str));
+
+        System.out.println(solution.longestSubstringWithoutDup0(str));
+        System.out.println(solution.longestSubstringWithoutDup1(str));
+        System.out.println(solution.longestSubstringWithoutDup2(str));
     }
 }

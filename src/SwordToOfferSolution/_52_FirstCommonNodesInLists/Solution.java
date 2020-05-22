@@ -84,11 +84,15 @@ public class Solution {
     }
 
     // 思路三
-    public ListNode findFirstCommonNode2(ListNode pHead1, ListNode pHead2) {
-        ListNode l1 = pHead1, l2 = pHead2;
+    public ListNode findFirstCommonNode2(ListNode head1, ListNode head2) {
+        if (head1 == null || head2 == null) {
+            return null;
+        }
+
+        ListNode l1 = head1, l2 = head2;
         while (l1 != l2) {
-            l1 = (l1 == null) ? pHead2 : l1.next;
-            l2 = (l2 == null) ? pHead1 : l2.next;
+            l1 = (l1 == null) ? head2 : l1.next;
+            l2 = (l2 == null) ? head1 : l2.next;
         }
         return l1;
     }

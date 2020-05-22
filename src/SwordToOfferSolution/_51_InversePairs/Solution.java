@@ -21,41 +21,42 @@ package SwordToOfferSolution._51_InversePairs;
 public class Solution {
     int res;
 
-    public int inversePairs(int[] arr) {
-        if (arr == null || arr.length == 0) {
+    public int reversePairs(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
+
         res = 0;
-        inversePairsCoreMergeSort(arr, 0, arr.length - 1);
+        inversePairsCoreMergeSort(nums, 0, nums.length - 1);
         return res;
     }
 
-    private void inversePairsCoreMergeSort(int[] arr, int left, int right) {
+    private void inversePairsCoreMergeSort(int[] nums, int left, int right) {
         if (left == right) {
             return;
         }
 
         int middle = left + ((right - left) >> 1);
-        inversePairsCoreMergeSort(arr, left, middle);
-        inversePairsCoreMergeSort(arr, middle + 1, right);
-        merge(arr, left, middle, right);
+        inversePairsCoreMergeSort(nums, left, middle);
+        inversePairsCoreMergeSort(nums, middle + 1, right);
+        merge(nums, left, middle, right);
     }
 
-    private void merge(int[] arr, int left, int middle, int right) {
+    private void merge(int[] nums, int left, int middle, int right) {
         int[] help = new int[right - left + 1];
-        int i = 0;
+        int index = 0;
         int pos1 = left;
         int pos2 = middle + 1;
 
         while (pos1 <= middle && pos2 <= right) {
-            if (arr[pos1] <= arr[pos2]) {
-                help[i++] = arr[pos1++];
-            } else if (arr[pos1] > arr[pos2]) {
-                help[i++] = arr[pos2++];
+            if (nums[pos1] <= nums[pos2]) {
+                help[index++] = nums[pos1++];
+            } else if (nums[pos1] > nums[pos2]) {
+                help[index++] = nums[pos2++];
                 // 统计逆序对的数量
                 // 如果第一个子数组中数字大于第二个子数组中的数字，则构成逆序对，
                 // 并且逆序对的数目等于第二个子数组中剩余数字的个数
-                // arr[pos1] > arr[pos2]，从 a[pos1] 开始到 a[middle] 必定都是大于这个 a[pos2] 的，
+                // nums[pos1] > nums[pos2]，从 a[pos1] 开始到 a[middle] 必定都是大于这个 a[pos2] 的，
                 // 因为此时分治的两边已经是各自有序了
                 res += (middle - pos1 + 1);
                 // res %= 1000000007;
@@ -63,25 +64,25 @@ public class Solution {
         }
 
         while (pos1 <= middle) {
-            help[i++] = arr[pos1++];
+            help[index++] = nums[pos1++];
         }
         while (pos2 <= right) {
-            help[i++] = arr[pos2++];
+            help[index++] = nums[pos2++];
         }
 
         for (int j = 0; j < help.length; j++) {
-            arr[left + j] = help[j];
+            nums[left + j] = help[j];
         }
     }
 
     public static void main(String[] args) {
-        int[] arr = {7, 5, 6, 4};
-        int[] arr1 = {1, 3, 2, 3, 1};
-        int[] arr2 = {4, 5, 6, 7};
-
         Solution solution = new Solution();
-        System.out.println(solution.inversePairs(arr));
-        System.out.println(solution.inversePairs(arr1));
-        System.out.println(solution.inversePairs(arr2));
+        int[] nums1 = {7, 5, 6, 4};
+        int[] nums2 = {1, 3, 2, 3, 1};
+        int[] nums3 = {4, 5, 6, 7};
+
+        System.out.println(solution.reversePairs(nums1));
+        System.out.println(solution.reversePairs(nums2));
+        System.out.println(solution.reversePairs(nums3));
     }
 }

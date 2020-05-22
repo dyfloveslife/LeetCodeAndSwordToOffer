@@ -33,7 +33,7 @@ import java.util.ArrayList;
 public class Solution {
 
     // 判断一个数是否是丑数
-    public static boolean isUgly(int num) {
+    public boolean isUgly(int num) {
         if (num == 0) {
             return false;
         }
@@ -47,7 +47,7 @@ public class Solution {
         return num == 1;
     }
 
-    public static int uglyNumber(int index) {
+    public int uglyNumber(int index) {
         if (index < 1) {
             return 0;
         }
@@ -76,36 +76,40 @@ public class Solution {
         return list.get(list.size() - 1);
     }
 
-    public static int uglyNumber2(int n) {
+    public int uglyNumber2(int n) {
         if (n < 7) {
             return n;
         }
 
-        int[] arr = new int[n];
+        int[] dp = new int[n];
         int i2 = 0, i3 = 0, i5 = 0;
-        arr[0] = 1;
+        dp[0] = 1;
 
         for (int i = 1; i < n; i++) {
-            int m2 = arr[i2] * 2;
-            int m3 = arr[i3] * 3;
-            int m5 = arr[i5] * 5;
-            arr[i] = Math.min(m2, Math.min(m3, m5));
-            if (arr[i] == m2) {
+            int m2 = dp[i2] * 2;
+            int m3 = dp[i3] * 3;
+            int m5 = dp[i5] * 5;
+            dp[i] = Math.min(m2, Math.min(m3, m5));
+
+            if (dp[i] == m2) {
                 i2++;
             }
-            if (arr[i] == m3) {
+            if (dp[i] == m3) {
                 i3++;
             }
-            if (arr[i] == m5) {
+            if (dp[i] == m5) {
                 i5++;
             }
         }
-        return arr[n - 1];
+        return dp[n - 1];
     }
 
     public static void main(String[] args) {
-        System.out.println(uglyNumber(7));
-        System.out.println(isUgly(6));
-        System.out.println(isUgly(14));
+        Solution solution = new Solution();
+
+        System.out.println(solution.isUgly(6));
+        System.out.println(solution.isUgly(14));
+        System.out.println(solution.uglyNumber(7));
+        System.out.println(solution.uglyNumber2(10));
     }
 }

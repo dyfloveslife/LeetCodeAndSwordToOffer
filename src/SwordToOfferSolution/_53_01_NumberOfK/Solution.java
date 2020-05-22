@@ -24,78 +24,81 @@ package SwordToOfferSolution._53_01_NumberOfK;
  *             如果中间数字的后面一个数字是 k，则还要在右侧继续寻找。
  */
 public class Solution {
-    public static int getNumberOfK(int[] arr, int k) {
-        if (arr == null || arr.length < 1) {
+    public int search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
 
-        // 保存结果
-        int res = 0;
-
-        int firstIndex = getFirstK(arr, k, 0, arr.length - 1);
-        int lastIndex = getLastK(arr, k, 0, arr.length - 1);
-        if (firstIndex > -1 && lastIndex > -1) {
-            res = lastIndex - firstIndex + 1;
+        int firstPosition = getFirstPosition(nums, target);
+        if (firstPosition == -1) {
+            return 0;
         }
-        return res;
+
+        // 程序在执行到 getLastPosition() 方法之前，由于执行了 getFirstPosition() 方法，
+        // 因此，说明 target 一定在 nums 中，所以不必再判断一次
+        int lastPosition = getLastPosition(nums, target);
+        return lastPosition - firstPosition + 1;
     }
 
-    // 得到第一次出现的位置
-    private static int getFirstK(int[] arr, int k, int left, int right) {
-        if (left > right) {
-            return -1;
-        }
+    private int getFirstPosition(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
 
-        int middleIndex = left + ((right - left) >> 1);
-        int middleData = arr[middleIndex];
+        while (left < right) {
 
-        if (middleData == k) {
-            // 注意不要越界
-            // 如果中间数字的前面一个数不是 target，
-            // 则中间的这个数就是第一个等于 target 的数
-            // 或者在 middleData == k 的前提下，middleIndex 来到了数组中第一个位置
-            if ((middleIndex > 0 && arr[middleIndex - 1] != k) || middleIndex == 0) {
-                return middleIndex;
-            } else {
-                right = middleIndex - 1;
+            int middle = (left + right + 1) >>> 1;
+
+            // 由于该函数想要得到等于 target 的第一个数的位置，
+            // 因此，当 target 比中间的数大的时候，说明 middle 以及 middle 的左侧都比 target 小，
+            // 则 left 就直接来到 middle + 1 的位置
+            if (nums[middle] < target) {
+                left = middle + 1;
+            } else if (nums[middle] == target) {
+                // middle 可能是第一个等于 target 的元素位置，但 middle 的右侧肯定不是第一个等于 target 的
+                right = middle;
+            } else if (nums[middle] > target) {
+                // 说明 middle 以及以后的都不是第一个等于 target 元素的位置
+                right = middle - 1;
             }
-        } else if (middleData > k) {
-            right = middleIndex - 1;
-        } else if (middleData < k) {
-            left = middleIndex + 1;
         }
-        return getFirstK(arr, k, left, right);
+
+        if (nums[left] == target) {
+            return left;
+        }
+
+        return -1;
     }
 
+    private int getLastPosition(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
 
-    // 得到最后一次出现的位置
-    private static int getLastK(int[] arr, int k, int left, int right) {
-        if (left > right) {
-            return -1;
-        }
+        while (left < right) {
 
-        int middleIndex = left + ((right - left) >> 1);
-        int middleData = arr[middleIndex];
+            int middle = (left + right + 1) >>> 1;
 
-        if (middleData == k) {
-            // 注意不要越界
-            if ((middleIndex < right && arr[middleIndex + 1] != k)
-                    || middleIndex == right) {
-                return middleIndex;
-            } else {
-                left = middleIndex + 1;
+            // 由于该函数想要得到等于 target 的最后一个数的位置，
+            // 因此 target 大于 nums[middle] 说明需要在 middle+1 及以后的位置开始找
+            if (nums[middle] < target) {
+                left = middle + 1;
+            } else if (nums[middle] == target) {
+                // 说明 middle 可能是最后一个等于 target 的位置，
+                // 但 middle 左侧不是需要找的位置，因为我要找的是最后一个位置，那么 middle 左侧的就不需要管了
+                left = middle;
+            } else if (nums[middle] > target) {
+                // 说明 middle 以及 middle 以后的都不是我要找的数
+                right = middle - 1;
             }
-        } else if (middleIndex > k) {
-            right = middleIndex - 1;
-        } else if (middleIndex < k) {
-            left = middleIndex + 1;
         }
-        return getLastK(arr, k, left, right);
+        return left;
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 3, 3, 3, 4, 5};
-        int[] arr1 = {5, 7, 7, 8, 8, 10};
-        System.out.println(getNumberOfK(arr1, 6));
+        Solution solution = new Solution();
+        int[] nums1 = {1, 2, 3, 3, 3, 3, 4, 5};
+        int[] nums2 = {5, 7, 7, 8, 8, 10};
+
+        System.out.println(solution.search(nums1, 3));
+        System.out.println(solution.search(nums2, 3));
     }
 }
