@@ -1,7 +1,6 @@
 package SwordToOfferSolution._45_SortArrayForMinNumber;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /*
  * 把数组排成最小的数
@@ -16,18 +15,18 @@ import java.util.Comparator;
  * 3. 注意在拼接的时候，由于 "" 的位置不同，则会产生不同的效果。
  */
 public class Solution {
-    public static String printMinNumber(int[] nums) {
+    public String minNumber(int[] nums) {
         if (nums == null || nums.length < 0) {
             return "";
         }
 
-        String[] strNums = new String[nums.length];
+        String[] str = new String[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            strNums[i] = String.valueOf(nums[i]);
+            str[i] = String.valueOf(nums[i]);
         }
 
-         Arrays.sort(strNums, (o1, o2) -> (o1 + o2).compareTo(o2 + o1));
-//        Arrays.sort(strNums, new Comparator<String>() {
+         Arrays.sort(str, (o1, o2) -> (o1 + o2).compareTo(o2 + o1));
+//        Arrays.sort(str, new Comparator<String>() {
 //            @Override
 //            public int compare(String o1, String o2) {
 //                return (o1 + o2).compareTo(o2 + o1);
@@ -35,19 +34,21 @@ public class Solution {
 //        });
 
         StringBuilder sb = new StringBuilder();
-        for (String strNum : strNums) {
-            sb.append(strNum);
+        for (String s : str) {
+            sb.append(s);
         }
         return sb.toString();
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[] nums = {3, 30, 34, 5, 9};
+        
+        System.out.println(solution.minNumber(nums));
+
         String s1 = 123 + "" + 123;
         String s2 = 123 + 123 + "";
         System.out.println(s1); // 123123
         System.out.println(s2); // 246
-
-        int[] arr = {3, 30, 34, 5, 9};
-        System.out.println(printMinNumber(arr));
     }
 }

@@ -16,17 +16,23 @@ import java.util.HashMap;
  * 思路2：带有备忘录的递归
  * 将结果保存下来，如果有需要的话直接拿来用就可以了。
  *
- * 思路3: DP
- * 采用自底向上的方式，dp[i] 表示字符串 s[i, s.len-1] 从 i 开始到结尾的字符串的所有的解码方式。
- * 如果 s[i] 和 s[i+1] 组成的数字小于 26，则 dp[i] = dp[i+1] + dp[i+2]。
+ * 思路3：DP
+ * 1. 状态定义：dp[i] 表示以 i 所对应的数字为结果的翻译方案数量；
+ * 2. 如果 i-1 和 i 所对应的两位数字可以进行翻译：
+ *    则 dp[i] = dp[i - 2] + dp[i - 1]，i 之前的两个数的范围在 1~25 之间；
+ *    否则，dp[i] = dp[i - 1]。
+ * 3. 在翻译的时候需要注意，如果 i-1 对应的数字是 0，则无法被翻译，例如 01、03；
+ * 4. 边界 dp[0]=dp[1]=1；
+ * 5. 但这道题的 dp 思想和爬楼梯是一样的，爬楼梯时每次可以爬一层或两层，求有多少种不同的方法到达楼顶；
+ * 6. 而这道题换成了，每次可以选择一个数字或两个数字，用来合成一个字符，求可以合成多少种字符串。
  */
 public class Solution {
     // 方法一
-    public static int getTranslationCount1(String s) {
+    public int getTranslationCount1(String s) {
         return getResult1(s, 0);
     }
 
-    private static int getResult1(String s, int start) {
+    private int getResult1(String s, int start) {
         // 如果到了最后一个字符，则只有一种翻译方式
         if (start == s.length()) {
             return 1;
@@ -52,12 +58,12 @@ public class Solution {
 
 
     // 方法二
-    public static int getTranslationCount2(String s) {
+    public int getTranslationCount2(String s) {
         HashMap<Integer, Integer> map = new HashMap<>();
         return getResult2(s, 0, map);
     }
 
-    private static int getResult2(String s, int start, HashMap<Integer, Integer> map) {
+    private int getResult2(String s, int start, HashMap<Integer, Integer> map) {
         if (start == s.length()) {
             return 1;
         }
@@ -85,17 +91,16 @@ public class Solution {
         return ans1 + ans2;
     }
 
-    // 方法三
-    public static int getTranslationCount3(String s) {
-        int length = s.length();
-        int[] dp = new int[length + 1];
+    public int getTranslationCount3(String s) {
+        int len = s.length();
+        int[] dp = new int[len + 1];
         // 从后往前开始
-        dp[length] = 1;
+        dp[len] = 1;
         // 最后一个数字不等于 0 就初始化为 1
-        if (s.charAt(length - 1) != '0') {
-            dp[length - 1] = 1;
+        if (s.charAt(len - 1) != '0') {
+            dp[len - 1] = 1;
         }
-        for (int i = length - 2; i >= 0; i--) {
+        for (int i = len - 2; i >= 0; i--) {
             // 如果遇到 0 的话，就直接跳过
             if (s.charAt(i) == '0') {
                 continue;
@@ -112,8 +117,9 @@ public class Solution {
         return dp[0];
     }
 
-    public static int getTranslationCount4(int num) {
-        String str = String.valueOf(num);
+    // 思路三：DP
+    public int getTranslationCount4(String s) {
+        String str = String.valueOf(s);
         int len = str.length();
         int[] dp = new int[len + 1];
         dp[0] = 1;
@@ -129,10 +135,12 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         String str = "12258";
-        System.out.println(getTranslationCount1(str));
-        System.out.println(getTranslationCount2(str));
-        System.out.println(getTranslationCount3(str));
-        System.out.println(getTranslationCount4(12258));
+
+        System.out.println(solution.getTranslationCount1(str));
+        System.out.println(solution.getTranslationCount2(str));
+        System.out.println(solution.getTranslationCount3(str));
+        System.out.println(solution.getTranslationCount4(str));
     }
 }

@@ -329,6 +329,7 @@
 
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   106    | [Construct Binary Tree from Inorder and Postorder Traversal](https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | [从中序与后序遍历序列构造二叉树](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_03_Tree/_106_ConstructBinaryTreeFromInorderAndPostorderTraversal/Solution.java) |      Medium       |
 |   572    | [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) | [另一个树的子树](https://leetcode-cn.com/problems/subtree-of-another-tree/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_03_Tree/_572_SubtreeOfAnotherTree/Solution.java) |      Easy       |
 
 
