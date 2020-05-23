@@ -20,8 +20,8 @@ import java.util.Queue;
 public class Solution {
     class TreeNode {
         int val;
-        TreeNode left = null;
-        TreeNode right = null;
+        TreeNode left;
+        TreeNode right;
 
         TreeNode(int val) {
             this.val = val;

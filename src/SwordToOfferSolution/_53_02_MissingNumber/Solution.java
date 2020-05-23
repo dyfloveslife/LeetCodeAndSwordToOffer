@@ -19,24 +19,25 @@ package SwordToOfferSolution._53_02_MissingNumber;
  *    4.1) 如果中间元素的值和下标相等，则只需要查找右部分元素即可（因为左侧的元素都是对应位置相等的）；
  *    4.2) 如果中间元素的值和下标不相等，并且前一个元素和它（指的是这前一个元素）的下标相等，则说明找到了这个缺失的数；
  *    4.3) 如果中间元素的值和下标不相等，并且前一个元素和它（指的是这前一个元素）的下标也不相等，则需要在左部分的数组中查即可；
- * 5. 当所有的数都满足 arr[i] = i 的时候，缺失的就是 i。
+ * 5. 当所有的数都满足 nums[i] = i 的时候，缺失的就是 i。
  */
 public class Solution {
 
-    public static int missingNumber(int[] arr) {
-        if (arr == null || arr.length == 0) {
+    public int missingNumber(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return -1;
         }
 
         int left = 0;
-        int right = arr.length;
-        while (left < right) {
+        int right = nums.length - 1;
+
+        while (left <= right) {
             int mid = left + ((right - left) >> 1);
-            if (arr[mid] != mid) {
-                right = mid;
+            if (nums[mid] != mid) {
+                right = mid - 1;
                 // 相等的话，left 需要来到 mid + 1 位置，而不是 mid 位置，
                 // 因为 mid 位置已经相等了，所以下一步需要直接判断 mid + 1 位置上的数
-            } else if (arr[mid] == mid) {
+            } else if (nums[mid] == mid) {
                 left = mid + 1;
             }
         }
@@ -44,18 +45,18 @@ public class Solution {
     }
 
 
-    public static int findMissingNumber2(int[] arr) {
-        if (arr == null || arr.length < 1) {
+    public int missingNumber2(int[] nums) {
+        if (nums == null || nums.length < 1) {
             return -1;
         }
 
         int left = 0;
-        int right = arr.length - 1;
+        int right = nums.length - 1;
 
         while (left <= right) {
             int middle = left + ((right - left) >> 1);
-            if (arr[middle] != middle) {
-                if (middle == 0 || arr[middle - 1] == middle - 1) {
+            if (nums[middle] != middle) {
+                if (middle == 0 || nums[middle - 1] == middle - 1) {
                     return middle;
                 } else {
                     right = middle - 1;
@@ -64,9 +65,9 @@ public class Solution {
                 left = middle + 1;
             }
         }
-        // 当所有的数都满足 arr[i] = i 的时候，缺失的就是 i
-        if (left == arr.length) {
-            return arr.length;
+        // 当所有的数都满足 nums[i] = i 的时候，缺失的就是 i
+        if (left == nums.length) {
+            return nums.length;
         }
         // 无效的输入，比如数组不是按要求排序的，
         // 或者有数字不在 0 到 n - 1 范围之内
@@ -74,11 +75,22 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {0, 1, 2, 3, 4};
-        int[] arr2 = {0, 1, 3};
-        int[] arr3 = {0, 1, 2, 3, 4, 5, 6, 7, 9};
-        System.out.println(missingNumber(arr1));
-        System.out.println(missingNumber(arr2));
-        System.out.println(missingNumber(arr3));
+        Solution solution = new Solution();
+        
+        int[] nums1 = {0, 1, 2, 3, 4};
+        int[] nums2 = {0, 1, 3};
+        int[] nums3 = {0, 1, 2, 3, 4, 5, 6, 7, 9};
+        int[] nums4 = {0};
+        
+        System.out.println(solution.missingNumber(nums1));
+        System.out.println(solution.missingNumber(nums2));
+        System.out.println(solution.missingNumber(nums3));
+        System.out.println(solution.missingNumber(nums4));
+        System.out.println("==");
+
+        System.out.println(solution.missingNumber2(nums1));
+        System.out.println(solution.missingNumber2(nums2));
+        System.out.println(solution.missingNumber2(nums3));
+        System.out.println(solution.missingNumber2(nums4));
     }
 }

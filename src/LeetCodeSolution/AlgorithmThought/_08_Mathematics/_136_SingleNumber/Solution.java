@@ -9,23 +9,26 @@ package LeetCodeSolution.AlgorithmThought._08_Mathematics._136_SingleNumber;
  *
  * 思路:
  * 1. 一个数与自己进行异或的结果是 0；
- * 2. 一个数与 0 进行异或的结果是该数；
+ * 2. 一个数与 0 进行异或的结果是该数。
  */
 public class Solution {
-    public static int singleNumber(int[] nums) {
+    public int singleNumber(int[] nums) {
         if (nums == null || nums.length == 0) {
             return -1;
         }
 
         int res = 0;
-        for (int i : nums) {
-            res = res ^ i;
+        for (int num : nums) {
+            res = res ^ num;
         }
+
         return res;
     }
 
     public static void main(String[] args) {
-        int[] arr = {4, 1, 2, 1, 2};
-        System.out.println(singleNumber(arr));
+        Solution solution = new Solution();
+        int[] nums = {4, 1, 2, 1, 2};
+
+        System.out.println(solution.singleNumber(nums));
     }
 }

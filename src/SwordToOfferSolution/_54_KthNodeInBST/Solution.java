@@ -1,5 +1,7 @@
 package SwordToOfferSolution._54_KthNodeInBST;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /*
@@ -17,13 +19,37 @@ import java.util.Stack;
 public class Solution {
     class TreeNode {
         int val;
-        TreeNode left = null;
-        TreeNode right = null;
+        TreeNode left;
+        TreeNode right;
 
         TreeNode(int val) {
             this.val = val;
         }
     }
+
+    // LeetCode 中 AC 的题解
+    public int kthLargest0(TreeNode root, int k) {
+        if (root == null) {
+            return 0;
+        }
+
+        List<Integer> list = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+
+        while (!stack.isEmpty() || root != null) {
+            if (root != null) {
+                stack.push(root);
+                root = root.left;
+            } else {
+                root = stack.pop();
+                list.add(root.val);
+                root = root.right;
+            }
+        }
+
+        return list.get(list.size() - k);
+    }
+
 
     // 从大到小的第 k 个数，也就是第 k 大的节点
     // 所以使用右-根-左，根据 k 的值直接返回第 k 大的节点
@@ -57,6 +83,7 @@ public class Solution {
 
         int num = 0;
         Stack<TreeNode> stack = new Stack<>();
+
         while (!stack.isEmpty() || root != null) {
             if (root != null) {
                 stack.push(root);

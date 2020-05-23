@@ -23,8 +23,8 @@ package SwordToOfferSolution._55_02_BalancedBinaryTree;
 public class Solution {
     class TreeNode {
         int val;
-        TreeNode left = null;
-        TreeNode right = null;
+        TreeNode left;
+        TreeNode right;
 
         TreeNode(int val) {
             this.val = val;
@@ -54,7 +54,7 @@ public class Solution {
         return Math.max(leftDepth, rightDepth) + 1;
     }
 
-    // 方法二：
+    // 方法二：双层递归
     // 在求二叉树深度的基础上，求出左右子树的深度，
     // 缺点是一个节点会被重复遍历多次
     public boolean isBalanced2(TreeNode root) {
@@ -90,7 +90,6 @@ public class Solution {
         }
     }
 
-    // 主方法
     public static boolean isB(TreeNode head) {
         return process(head).isB;
     }
@@ -112,5 +111,29 @@ public class Solution {
             return new ReturnData(false, 0);
         }
         return new ReturnData(true, Math.max(leftData.h, rightData.h) + 1);
+    }
+
+    // 后序遍历+剪枝
+    // 也就是自底向上，由于后序遍历是左右根，因此当遍历完左右子树的时候，就从底至顶返回子树深度，
+    // 若判定某子树不是平衡树则“剪枝”，直接向上返回
+    // 如果 root 左右子树的深度差大于 2，则返回 -1，表示不是平衡树
+    // 如果 root 左右子树的深度差小于等于 1，则当前子树的深度就是左右子树深度的最大值加 1
+    public boolean isBalanced3(TreeNode root) {
+        return recur(root) != -1;
+    }
+
+    private int recur(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        int leftDepth = recur(root.left);
+        if (leftDepth == -1) {
+            return -1;
+        }
+        int rightDepth = recur(root.right);
+        if (rightDepth == -1) {
+            return -1;
+        }
+        return Math.abs(leftDepth - rightDepth) < 2 ? Math.max(leftDepth, rightDepth) + 1 : -1;
     }
 }

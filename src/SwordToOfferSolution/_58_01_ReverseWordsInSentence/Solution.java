@@ -1,7 +1,5 @@
 package SwordToOfferSolution._58_01_ReverseWordsInSentence;
 
-import javafx.beans.binding.StringBinding;
-
 /*
  * 翻转单词顺序
  *
@@ -10,7 +8,7 @@ import javafx.beans.binding.StringBinding;
  * 为简单起见，标点符号和普通字母一样处理。
  * 例如输入字符串 "I am a student. "，则输出 "student. a am I"。
  *
- * 思路：
+ * 思路一：
  * 1. 不能使用额外的辅助空间；
  * 2. 先翻转整个句子，然后再翻转每个单词；
  * 3. 翻转单词的时候，根据空格来确定每个单词的起始位置;
@@ -22,16 +20,20 @@ import javafx.beans.binding.StringBinding;
  * 9. 需要注意的是：
  *      三个空格被 split(" ") 划分后会变成 ""；
  *      这里应使用 equals 而不是 == 号。
+ *
+ * 思路二：双指针
+ * 1. 倒序遍历字符串 str，记录单词的左右索引边界 i、j；
+ * 2. 确定好每个单词的边界后，将其添加到 StringBuilder 中；
+ * 3. 最后拼接单词成为字符串，再返回。
  */
 public class Solution {
-    public static String reverseWords(String str) {
+    public String reverseWords(String str) {
         if (str == null || str.length() == 0) {
             return "";
         }
 
         String[] strArr = str.split(" ");
         StringBuilder sb = new StringBuilder();
-        // 从后往前遍历
         for (int i = strArr.length - 1; i >= 0; i--) {
             if (!strArr[i].equals("")) {
                 sb.append(strArr[i]).append(" ");
@@ -40,45 +42,43 @@ public class Solution {
         return sb.toString().trim();
     }
 
-    public static String reverseWordsInSentence(String str) {
-        int len = str.length();
-        if (str == null || len < 1) {
+    public String reverseWords2(String str) {
+        if (str == null || str.length() == 0) {
             return "";
         }
 
-        char[] chars = str.toCharArray();
-        int begin = 0;
-        int end = 0;
-        while (end <= len) {
-            // 翻转每个单词，翻转完后更新 begin 的位置，然后 end 继续后移
-            if (end == len || chars[end] == ' ') {
-                reverse(chars, begin, end - 1);
-                begin = end + 1;
+        StringBuilder sb = new StringBuilder();
+        str = str.trim();
+        int j = str.length() - 1;
+        int i = j;
+
+        while (i >= 0) {
+            // 搜索首个空格
+            while (i >= 0 && str.charAt(i) != ' ') {
+                i--;
             }
-            end++;
+            sb.append(str.substring(i + 1, j + 1) + " ");
+            // 跳过单词间的空格
+            while (i >= 0 && str.charAt(i) == ' ') {
+                i--;
+            }
+            // j 此时就指向了下一个单词的词尾
+            j = i;
         }
-        // 翻转整个句子
-        reverse(chars, 0, len - 1);
-        return new String(chars);
-    }
 
-    private static void reverse(char[] chars, int i, int j) {
-        while (i < j) {
-            // 对单词中的每个字符进行交换，i 不断右移，j 不断左移
-            swap(chars, i++, j--);
-        }
-    }
-
-    private static void swap(char[] chars, int i, int j) {
-        char temp = chars[i];
-        chars[i] = chars[j];
-        chars[j] = temp;
+        return sb.toString().trim();
     }
 
     public static void main(String[] args) {
-        String str = "I am a student.";
-        String str1 = "a good   example";
-        System.out.println(reverseWordsInSentence(str1));
-        System.out.println(reverseWords(str1));
+        Solution solution = new Solution();
+        String str1 = "I am a student.";
+        String str2 = "a good   example";
+
+        System.out.println(solution.reverseWords(str1));
+        System.out.println(solution.reverseWords(str2));
+        System.out.println("===============");
+
+        System.out.println(solution.reverseWords2(str1));
+        System.out.println(solution.reverseWords2(str2));
     }
 }

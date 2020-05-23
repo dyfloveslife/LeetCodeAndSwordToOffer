@@ -1,5 +1,7 @@
 package SwordToOfferSolution._56_01_NumbersAppearOnce;
 
+import java.util.Arrays;
+
 /*
  * 数组中只出现一次的两个数字
  *
@@ -21,50 +23,35 @@ package SwordToOfferSolution._56_01_NumbersAppearOnce;
  *  1 ^ 1 = 1 + 1 = 0（不进位）
  */
 public class Solution {
-    public void findNumsAppearOnce(int[] arr, int[] nums1, int[] nums2) {
-        int length = arr.length;
-        if (arr == null || length < 2) {
-            return;
+    // 重要的是如何将这两个不同的数划分在各自的组中
+    public int[] singleNumbers(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return new int[]{-1, -1};
         }
 
-        int resultXOR = 0;
-        // 从整个数组中得到异或结果
-        for (int i = 0; i < length; i++) {
-            resultXOR ^= arr[i];
+        int res = 0;
+        for (int num : nums) {
+            res ^= num;
         }
 
-        int indexOf1 = findFirstBitIs1(resultXOR);
-        for (int j = 0; j < length; j++) {
-            if (isBit1(arr[j], indexOf1)) {
-                nums1[0] ^= arr[j];
+        res = Integer.highestOneBit(res);
+
+        int[] ans = {0, 0};
+        for (int num : nums) {
+            if ((res & num) == 0) {
+                ans[0] ^= num;
             } else {
-                nums2[0] ^= arr[j];
+                ans[1] ^= num;
             }
         }
-    }
 
-    // 找到 resultXOR 中从右往左第一位是 1 的索引
-    private int findFirstBitIs1(int resultXOR) {
-        int index = 0;
-        // 如果 resultXOR 从右到左第 0 个位置就是 1 的话，则不进循环，直接返回 index = 0
-        // 通过移位操作，每次判断 resultXOR 的都是第 0 位
-        // (resultXOR & 1) == 0 说明 resultXOR 第 0 位为 0
-        while ((resultXOR & 1) == 0 && (index < 32)) {
-            resultXOR >>= 1;
-            index++;
-        }
-        return index;
-    }
-
-    // 判断数字 target 从右往左的第 index 位是不是 1
-    private boolean isBit1(int target, int index) {
-        // 由于数字 target 在从右到左的第 index 位上的数是 1 还是 0，这里需要做判断
-        // 先将 target 往右移动 index 位，然后再判断是不是 1
-        // 如果是 1，则进 nums1[0] 数组，否则进 nums2[0] 数组
-        return ((target >> index) & 1) == 1;
+        return ans;
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[] nums = {1, 2, 10, 4, 1, 4, 3, 3};
 
+        System.out.println(Arrays.toString(solution.singleNumbers(nums)));
     }
 }

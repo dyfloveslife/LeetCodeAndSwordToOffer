@@ -2,6 +2,7 @@ package SwordToOfferSolution._57_02_ContinuousSquenceWithSum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /*
  * 和为 s 的连续正数序列
@@ -14,27 +15,28 @@ import java.util.Arrays;
  * 1. 使用两个指针 left 和 right：
  *    1.1) 如果从 left 到 right 的序列的和大于 s，则可以从序列中去掉较小的值，即增大 left 的值；
  *    1.2) 如果从 left 到 right 的序列的和小于 s，则可以从序列中增加较大的值，即增大 right 的值，让这个序列包含更多的数；
+ *    1.3) 如果从 left 到 right 的序列的和等于 s，那么我们就找到了一组结果，此时需要记录下来；
+ *         然后再从 left+1 的地方开始找下一组，因此，left 需要向右移动。
  * 2. 注意在求序列和的时候，由于公差是 1，所以可以直接用求和公式：n*(a1+an)/2。
  */
 public class Solution {
-    public static int[][] findContinuousSequence1(int target) {
-        if (target < 3) {
-            return new int[0][0];
-        }
+    public int[][] findContinuousSequence(int target) {
 
         int left = 1;
         int right = 2;
 
-        ArrayList<int[]> res = new ArrayList<>();
+        List<int[]> res = new ArrayList<>();
+
         while (left < right) {
             int curSum = (right - left + 1) * (left + right) >> 1;
             if (curSum == target) {
-                int[] arr = new int[right - left + 1];
-                int j = left;
-                for (int i = 0; i < arr.length; i++) {
-                    arr[i] = j++;
+                int[] nums = new int[right - left + 1];
+                int i = left;
+                for (int j = 0; j < nums.length; j++) {
+                    nums[j] = i++;
                 }
-                res.add(arr);
+                res.add(nums);
+                // 向右移动 left，继续收集下一组满足要求的序列
                 left++;
             } else if (curSum < target) {
                 right++;
@@ -46,35 +48,9 @@ public class Solution {
         return res.toArray(new int[0][]);
     }
 
-
-    public static ArrayList<ArrayList<Integer>> findContinuousSequence(int sum) {
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-        if (sum < 3) {
-            return res;
-        }
-
-        int left = 1;
-        int right = 2;
-        while (left < right) {
-            int curSum = (right - left + 1) * (left + right) >> 1;
-            if (curSum == sum) {
-                ArrayList<Integer> list = new ArrayList<>();
-                for (int i = left; i <= right; i++) {
-                    list.add(i);
-                }
-                res.add(list);
-                left++;
-            } else if (curSum < sum) {
-                right++;
-            } else {
-                left++;
-            }
-        }
-        return res;
-    }
-
-
     public static void main(String[] args) {
-        System.out.println(Arrays.deepToString(findContinuousSequence1(9)));
+        Solution solution = new Solution();
+
+        System.out.println(Arrays.deepToString(solution.findContinuousSequence(9)));
     }
 }

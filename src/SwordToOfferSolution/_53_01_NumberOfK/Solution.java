@@ -22,6 +22,9 @@ package SwordToOfferSolution._53_01_NumberOfK;
  *         如果中间的数等于 k，还得判断这个数字是不是最后一个 k：
  *             如果中间数字的后面一个数字不是 k，则说明当前中间的数字就是最后一个 k；
  *             如果中间数字的后面一个数字是 k，则还要在右侧继续寻找。
+ * 3. 取 middle 的时候，里面的加 1 是为了避免死循环，
+ *    在待搜索区间只要有 2 个元素的时候，mid = (left + right) >>> 1 只能取到左边那个元素，
+ *    如果此时边界设置是 left = mid ，区间分不开，因此要改变下取整的行为，在括号里加 1 变成上取整。
  */
 public class Solution {
     public int search(int[] nums, int target) {
@@ -45,8 +48,7 @@ public class Solution {
         int right = nums.length - 1;
 
         while (left < right) {
-
-            int middle = (left + right + 1) >>> 1;
+            int middle = left + ((right - left) >> 1);
 
             // 由于该函数想要得到等于 target 的第一个数的位置，
             // 因此，当 target 比中间的数大的时候，说明 middle 以及 middle 的左侧都比 target 小，
@@ -74,8 +76,9 @@ public class Solution {
         int right = nums.length - 1;
 
         while (left < right) {
-
-            int middle = (left + right + 1) >>> 1;
+            // 由于边界 middle = left，并且最后返回的是 left，
+            // 因此在取中间数的时候，需要加 1，避免死循环
+            int middle = 1 + left + ((right - left) >> 1);
 
             // 由于该函数想要得到等于 target 的最后一个数的位置，
             // 因此 target 大于 nums[middle] 说明需要在 middle+1 及以后的位置开始找
@@ -97,8 +100,10 @@ public class Solution {
         Solution solution = new Solution();
         int[] nums1 = {1, 2, 3, 3, 3, 3, 4, 5};
         int[] nums2 = {5, 7, 7, 8, 8, 10};
+        int[] nums3 = {2, 2};
 
         System.out.println(solution.search(nums1, 3));
         System.out.println(solution.search(nums2, 3));
+        System.out.println(solution.search(nums3, 3));
     }
 }

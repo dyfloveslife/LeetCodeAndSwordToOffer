@@ -14,7 +14,18 @@ package SwordToOfferSolution._58_02_LeftRotateString;
  * 3. 然后将整个字符串进行翻转。
  */
 public class Solution {
-    public static String leftRotateString(String str, int n) {
+
+    public String reverseLeftWords(String s, int n) {
+        if (s == null || s.length() == 0) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(s.substring(n, s.length())).append(s.substring(0, n));
+
+        return sb.toString();
+    }
+
+    public String leftRotateString(String str, int n) {
         if (str == null || str.length() < 1) {
             return "";
         }
@@ -32,20 +43,23 @@ public class Solution {
         return new String(chars);
     }
 
-    private static void reverse(char[] chars, int i, int j) {
+    private void reverse(char[] chars, int i, int j) {
         while (i < j) {
             swap(chars, i++, j--);
         }
     }
 
-    private static void swap(char[] chars, int i, int j) {
+    private void swap(char[] chars, int i, int j) {
         char temp = chars[i];
         chars[i] = chars[j];
         chars[j] = temp;
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         String str = "abcdefg";
-        System.out.println(leftRotateString(str, 8));
+
+        System.out.println(solution.reverseLeftWords(str, 3));
+        System.out.println(solution.leftRotateString(str, 2));
     }
 }

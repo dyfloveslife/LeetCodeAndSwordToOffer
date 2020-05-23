@@ -1,6 +1,6 @@
-package SwordToOfferSolution._59_MaxInSlidingWindow;
+package SwordToOfferSolution._59_01_MaxInSlidingWindow;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 /*
@@ -22,40 +22,46 @@ import java.util.LinkedList;
  * 7. 对于减数逻辑，如果 L 往右移动，则检查双端队列中队头元素的索引过没过期，如果过期了，则从头部弹出。
  */
 public class Solution {
-    public static ArrayList<Integer> maxInSlidingWindow(int[] arr, int size) {
-        ArrayList<Integer> res = new ArrayList<>();
-        if (arr == null || arr.length < 1 || arr.length < size || size < 1) {
-            return res;
+    public int[] maxInSlidingWindow(int[] nums, int k) {
+        if (nums == null || nums.length < 1 || nums.length < k || k < 1) {
+            return new int[0];
         }
 
+        int index = 0;
+        int[] res = new int[nums.length - k + 1];
+
         // 双端队列存的是索引
-        LinkedList<Integer> qmax = new LinkedList<>();
-        for (int i = 0; i < arr.length; i++) {
-            // 当双端队列为空，并且双端队列尾部的元素比当前元素小或相等的话，则尾部的元素弹出
-            while (!qmax.isEmpty() && arr[qmax.peekLast()] <= arr[i]) {
-                qmax.pollLast();
+        LinkedList<Integer> queue = new LinkedList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            // 当双端队列为空，并且双端队列尾部的元素比当前元素小或相等的话，则尾部的元素全部弹出
+            while (!queue.isEmpty() && nums[queue.peekLast()] <= nums[i]) {
+                queue.pollLast();
             }
             // 弹完之后，就将当前元素的索引从队尾加入到双端队列中
-            qmax.addLast(i);
+            queue.offerLast(i);
             // 如果窗口在开始的时候没有完全形成，则不会有任何一个下标弹出
-            // 如果 i - size，即当前索引减去窗口大小所得的值等于头部的值，则说明过期了
-            if (qmax.peekFirst() == i - size) {
-                qmax.pollFirst();
+            // 如果 i - k，即当前索引减去窗口大小所得的值等于头部的值，则说明过期了
+            if (queue.peekFirst() == (i - k)) {
+                queue.pollFirst();
             }
             // 判断窗口形成了没
             // 如果满足 if 的话，说明窗口已经形成了，则开始收集窗口内的最大值
             // 从索引 2 开始才形成窗口
-            if (i >= size - 1) {
+            if (i >= (k - 1)) {
                 // 每次窗口的最大值就是队头元素的索引所对应的值
-                res.add(arr[qmax.peekFirst()]);
+                res[index++] = nums[queue.peekFirst()];
             }
         }
         return res;
     }
 
     public static void main(String[] args) {
-        int[] arr = {2, 3, 4, 2, 6, 2, 5, 1};
-        int[] arr2 = {1, 3, -1, -3, 5, 3, 6, 7};
-        System.out.println(maxInSlidingWindow(arr2, 3));
+        Solution solution = new Solution();
+        int[] nums1 = {1, 3, -1, -3, 5, 3, 6, 7};
+        int[] nums2 = {1, -1};
+
+        System.out.println(Arrays.toString(solution.maxInSlidingWindow(nums1, 3)));
+        System.out.println(Arrays.toString(solution.maxInSlidingWindow(nums2, 1)));
     }
 }
