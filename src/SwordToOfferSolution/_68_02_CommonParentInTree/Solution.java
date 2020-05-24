@@ -13,6 +13,7 @@ package SwordToOfferSolution._68_02_CommonParentInTree;
  *    1.1) p 和 q 在 node 的子树中，且分别位于 node 的两侧；
  *    1.2) p = node，且 q 在 node 的左子树或右子树中；
  *    1.3) q = node，且 p 在 node 的左子树或右子树中；
+ * 2. 结合“最近的公共祖先”和后序遍历的概念，即可解决该题。
  *
  * 思路 1：
  *  1. 从根节点开始一直找到输入的两个节点，这需要经过两条路径；
