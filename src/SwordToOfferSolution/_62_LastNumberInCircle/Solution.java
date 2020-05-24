@@ -3,6 +3,7 @@ package SwordToOfferSolution._62_LastNumberInCircle;
 /*
  * 圆圈中最后剩下的数字
  * 详见：https://dyfloveslife.github.io/2019/12/27/offer-Josephus/
+ * 清晰的解释：https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solution/huan-ge-jiao-du-ju-li-jie-jue-yue-se-fu-huan-by-as/
  *
  * 题目描述：
  * 0, 1, …, n-1 这 n 个数字排成一个圆圈，从数字 0 开始每次从这个圆圈里删除第 m 个数字。
@@ -36,18 +37,20 @@ public class Solution {
         }
     }
 
-    // 简单做法
+    // 找规律
     // f(n, m) = (f(n-1, m)+m)%n
-    public static int lastRemaining(int n, int m) {
-        int p = 0;
+    public int lastRemaining(int n, int m) {
+        // 最终活下来的那个人的初始位置
+        int pos = 0;
         for (int i = 2; i <= n; i++) {
-            p = (p + m) % i;
+            pos = (pos + m) % i;
         }
-        return p;
+
+        return pos;
     }
 
     // 用链表模拟环
-    public static Node lastRemaining_Solution(Node head, int m) {
+    public Node lastRemaining_Solution(Node head, int m) {
         if (head == null || head.next == head || m < 1) {
             return head;
         }
@@ -71,37 +74,39 @@ public class Solution {
         return head;
     }
 
-    private static int getLive(int i, int m) {
+    private int getLive(int i, int m) {
         if (i == 1) {
             return 1;
         }
-        return (getLive(i - 1, m) + m -  1) % i + 1;
+        return (getLive(i - 1, m) + m - 1) % i + 1;
     }
 
-    public static void printCircularList(Node head) {
+    public void printCircularList(Node head) {
         if (head == null) {
             return;
         }
         System.out.print("Circular List: " + head.val + " ");
         Node cur = head.next;
         while (cur != head) {
-            System.out.print(cur.val+ " ");
+            System.out.print(cur.val + " ");
             cur = cur.next;
         }
         System.out.println("-> " + head.val);
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         Node head1 = new Node(1);
         head1.next = new Node(2);
         head1.next.next = new Node(3);
         head1.next.next.next = new Node(4);
         head1.next.next.next.next = new Node(5);
         head1.next.next.next.next.next = head1;
-        printCircularList(head1);
-        head1 = lastRemaining_Solution(head1, 3);
-        printCircularList(head1);
+        solution.printCircularList(head1);
+        head1 = solution.lastRemaining_Solution(head1, 3);
+        solution.printCircularList(head1);
 
-        System.out.println(lastRemaining(10, 17));
+        System.out.println(solution.lastRemaining(5, 3));
+        System.out.println(solution.lastRemaining(10, 17));
     }
 }

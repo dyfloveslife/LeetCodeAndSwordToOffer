@@ -16,28 +16,29 @@ import java.util.Arrays;
  * 3. 例如计算 B[2]，左侧计算 (A[0] * A[1])，右侧计算 (A[n-1] * ... * A[3])。
  */
 public class Solution {
-    public static int[] multiply(int[] A) {
+
+    public int[] multiply(int[] A) {
         int len = A.length;
         int[] B = new int[len];
 
-        if (len != 0) {
-            B[0] = 1;
-            // 计算下三角形
-            for (int i = 1; i < len; i++) {
-                B[i] = B[i - 1] * A[i - 1];
-            }
-            int temp = 1;
-            // 计算上三角形
-            for (int j = len - 2; j >= 0; j--) {
-                temp *= A[j + 1];
-                B[j] *= temp;
-            }
+        B[0] = 1;
+        // 计算下三角形
+        for (int i = 1; i < len; i++) {
+            B[i] = B[i - 1] * A[i - 1];
+        }
+        int temp = 1;
+        // 计算上三角形
+        for (int j = len - 2; j >= 0; j--) {
+            temp *= A[j + 1];
+            B[j] *= temp;
         }
         return B;
     }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4, 5};
-        System.out.println(Arrays.toString(multiply(arr)));
+        Solution solution = new Solution();
+        int[] A = {1, 2, 3, 4, 5};
+
+        System.out.println(Arrays.toString(solution.multiply(A)));
     }
 }

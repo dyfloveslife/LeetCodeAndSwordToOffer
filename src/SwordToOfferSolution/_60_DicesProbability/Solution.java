@@ -23,13 +23,18 @@ import java.util.Arrays;
  *    (n-1,s-5)：投掷出了 5；
  *    (n-1,s-6)：投掷出了 6；
  * 4. 即在 n-1 的基础上，再增加一个骰子所出现的点数和为 s 的结果只有如下 6 种：
- *    dp(n,s)=dp(n-1,s-1)+dp(n-1,s-2)+dp(n-1,s-3)+dp(n-1,s-4)+dp(n-1,s-5)+dp(n-1,s-6)
+ *    dp(n,s)=dp(n-1,s-1)
+ *           +dp(n-1,s-2)
+ *           +dp(n-1,s-3)
+ *           +dp(n-1,s-4)
+ *           +dp(n-1,s-5)
+ *           +dp(n-1,s-6)
  * 5. 当投掷一个骰子的时候，满足 dp(1,1)=dp(1,2)=dp(1,3)=dp(1,4)=dp(1,5)=dp(1,6)=1，即每个点数都出现了 1 次；
  * 6. 状态转移方程：dp[n][s]=sum(dp[n-1][s-m])，其中 1<=m<=6 && m < s。
  */
 public class Solution {
 
-    public static double[] printProbability(int n) {
+    public double[] printProbability(int n) {
         if (n < 1) {
             return null;
         }
@@ -38,6 +43,7 @@ public class Solution {
         // dp[n][s] n 个骰子面朝上点数之和为 s 的次数
         int[][] dp = new int[n + 1][6 * n + 1];
         // 初始化
+        // 投一个骰子所能出现的情况
         for (int s = 1; s <= 6; s++) {
             dp[1][s] = 1;
         }
@@ -63,6 +69,8 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(printProbability(2)));
+        Solution solution = new Solution();
+
+        System.out.println(Arrays.toString(solution.printProbability(2)));
     }
 }

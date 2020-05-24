@@ -18,6 +18,8 @@ package SwordToOfferSolution._65_AddTwoNumbers;
  * 3. 对于二进制的加法来说，由于 0+0=0，1+1=0，0+1=1，1+0=1，所以这相当于进行了 异或 操作；
  * 4. 对于 0+0=0，0+1=1，1+0=1 来说都不会产生进位，而产生进位的只有 1+1=0，在这里可以将两个数字先做 与 运算，然后再向左移动一位；
  * 5. 最后将这两步得到的结果进行相加即可，直到不产生进位为止。
+ * 6. 总体来说，两个数的非进位的和等于对这两个数进行异或运算，进位就相当于对这两个数进行与运算，然后再左移一位;
+ * 7. 需要注意的是，如果含有负数，由于计算机采用补码的方式进行运算，因此需要先将负数的补码求出，再进行计算。
  *
  * 不使用新变量，交换两个变量的值：
  *  1）a = a + b;
@@ -29,29 +31,34 @@ package SwordToOfferSolution._65_AddTwoNumbers;
  *     a = a ^ b;
  */
 public class Solution {
-    public static int add(int num1, int num2) {
-        while (num2 != 0) {
+    public int add(int a, int b) {
+        while (b != 0) {
             // 先进行异或操作，相当于不带进位的加法
-            int sum = num1 ^ num2;
+            int sum = a ^ b;
             // 进行与运算，再左移一位，相当于求出进位
-            int carry = (num1 & num2) << 1;
-            num1 = sum;
-            num2 = carry;
+            int carry = (a & b) << 1;
+            a = sum;
+            b = carry;
         }
-        return num1;
+        return a;
     }
 
     // 递归版
-    public static int add2(int num1, int num2) {
-        if (num2 == 0) {
-            return num1;
+    public int add2(int a, int b) {
+        if (a == 0) {
+            return b;
+        }
+        if (b == 0) {
+            return a;
         }
 
-        return add2(num1 ^ num2, (num1 & num2) << 1);
+        return add2(a ^ b, (a & b) << 1);
     }
 
     public static void main(String[] args) {
-        System.out.println(add(5, 17));
-        System.out.println(add2(5, 17));
+        Solution solution = new Solution();
+
+        System.out.println(solution.add(5, 17));
+        System.out.println(solution.add2(5, 17));
     }
 }

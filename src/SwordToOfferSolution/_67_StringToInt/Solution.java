@@ -24,6 +24,7 @@ public class Solution {
         char[] chars = str.toCharArray();
         int len = chars.length;
         int index = 0;
+
         // 去掉前导空格
         while (index < len && chars[index] == ' ') {
             index++;
@@ -46,9 +47,10 @@ public class Solution {
 
         int res = 0;
         while (index < len && Character.isDigit(chars[index])) {
+            // 得到当前 index 所指向的这个数字，也就是将数字字符转换成数字，直接用 ASCII 码减去 '0' 即可
             int digit = chars[index] - '0';
             // 本来应该是 res * 10 + digit > Integer.MAX_VALUE，
-            // 但 *10 和 +digit 操作都有可能越界，所以将其移到右边
+            // 但 *10 和 +digit 操作都有可能越界，所以将 digit 移到右边
             if (res > (Integer.MAX_VALUE - digit) / 10) {
                 // 如果 res 超出了整数所表示的最大范围，则需要判断 res 是超出了正数的最大范围还是超出了负数的最大范围
                 return isNegative ? Integer.MIN_VALUE : Integer.MAX_VALUE;
@@ -119,12 +121,14 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
+
         System.out.println(solution.myAtoi("   42"));
         System.out.println(solution.myAtoi("   -42"));
         System.out.println(solution.myAtoi(" 42"));
         System.out.println(solution.myAtoi("4193 with words"));
         System.out.println(solution.myAtoi("words and 987"));
         System.out.println("=============");
+
         System.out.println(solution.strToInt("1a23"));
         System.out.println(solution.strToInt("-2147483648"));
         System.out.println(solution.strToInt("-2147483649"));

@@ -1,28 +1,31 @@
-package SwordToOfferSolution._68_CommonParentInTree;
+package SwordToOfferSolution._68_02_CommonParentInTree;
 
 /*
- * 树中两个结点的最低公共祖先
+ * 二叉树的最近公共祖先
  *
  * 题目描述：
- * 题目一：在二叉搜索树（查找树）中（左边小于根，右边大于根），输入两个树结点，求它们的最低公共祖先。
- * 题目二：在普通的二叉树中，输入两个树结点，求它们的最低公共祖先。
+ * 给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
  *
- * 题目一思路：
- *  1. 对于二叉搜索树，如果当前节点的值比两个输入的节点大，则继续在当前节点的左侧寻找最低公共祖先；
- *  2. 如果当前节点的值比两个输入的节点小，则在当前节点的右侧寻找最低公共祖先。
+ * 思路 0：（重要）
+ * 0. 设节点 root 为节点 p、q 的某公共祖先，若其左子节点 root.left 和右子节点 root.right 都不是 p、q 的公共祖先，
+ *    则称 root 是 “最近的公共祖先”；
+ * 1. 如果 node 是 p 和 q 的最近公共祖先，则只可能是以下情况之一：
+ *    1.1) p 和 q 在 node 的子树中，且分别位于 node 的两侧；
+ *    1.2) p = node，且 q 在 node 的左子树或右子树中；
+ *    1.3) q = node，且 p 在 node 的左子树或右子树中；
  *
- * 题目二思路 1：
+ * 思路 1：
  *  1. 从根节点开始一直找到输入的两个节点，这需要经过两条路径；
  *  2. 可以将这两条路径中对应的值进行比较，如果相等，则后移指针再次进行比较；
- *  3. 假如再比较的过程中发现值不相同，则前一个相同的值就是这俩输入节点的最低公共祖先。
+ *  3. 假如在比较的过程中发现值不相同，则前一个相同的值就是这俩输入节点的最低公共祖先。
  *  4. 缺点：需要额外的辅助空间。
  *
- * 题目二思路 2：
+ * 思路 2：
  *  1. 如果每个节点都有指向父节点的指针的话，则该问题就可以转化为求两个链表的第一个公共节点；
  *  2. 假设输入的两个节点分别为 F 和 H，则 F 所在的链表为 F->D->B->A，H 所在的链表为 H->E->B->A;
  *  3. 则这两个节点的第一个公共节点就是它们的最低公共祖先。
  *
- * 题目二思路 3：（下面 3 个例子都是围绕这种方法进行说明的）
+ * 思路 3：（下面 3 个例子都是围绕这种方法进行说明的）
  *  1. 从根节点开始遍历，在访问到当前节点的时候，需要将当前节点的值返回给父节点；
  *  2. 在遍历的时候，如果某个节点得到了来自左子树的非空值以及来自右子树的非空值的话，则该节点就是最低公共祖先；
  *  3. 然后再将节点的值返回给父节点。
@@ -58,7 +61,7 @@ package SwordToOfferSolution._68_CommonParentInTree;
  *  4. 然后来到节点 3 的右孩子 8，由于 8 是输入节点 8 和 7 当中的 8，所以节点 3 的右侧会得到一个值，即 8；
  *  5. 此时节点 3 得到了来自左侧的 null，以及右侧的非空值 8，所以这就意味着节点 8 是 8 和 7 的最低公共祖先。
  *
- * 对题目二的总结：
+ * 总结：
  * 1. 通过递归对二叉树进行后序遍历，当遇到节点 p 和 q 时返回。从底至顶回溯，当节点 p 和 q 在 root 的异侧时，
  *    节点 root 即为最近公共祖先，则向上返回 root。
  * 2. 具体流程：https://i.loli.net/2020/05/10/hVgcGXwqMBojNRE.png
@@ -74,41 +77,7 @@ public class Solution {
         }
     }
 
-    // 题目一（递归）
-    public static TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null) {
-            return null;
-        }
-
-        if (root.val > p.val && root.val > q.val) {
-            return lowestCommonAncestor1(root.left, p, q);
-        }
-        if (root.val < p.val && root.val < q.val) {
-            return lowestCommonAncestor1(root.right, p, q);
-        }
-        return root;
-    }
-
-    // 题目一（迭代）
-    public static TreeNode lowestCommonAncestorIterator(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null) {
-            return null;
-        }
-
-        while (root != null) {
-            if (root.val > p.val && root.val > q.val) {
-                root = root.left;
-            } else if (root.val < p.val && root.val < q.val) {
-                root = root.right;
-            } else {
-                return root;
-            }
-        }
-        return null;
-    }
-
-    // 题目二思路 3
-    public static TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
             return null;
         }
@@ -119,8 +88,8 @@ public class Solution {
         }
 
         // left 和 right 将最终的结果给返回
-        TreeNode left = lowestCommonAncestor2(root.left, p, q);
-        TreeNode right = lowestCommonAncestor2(root.right, p, q);
+        TreeNode left = lowestCommonAncestor1(root.left, p, q);
+        TreeNode right = lowestCommonAncestor1(root.right, p, q);
         // 当前节点得到了来自左侧非空节点的值以及右侧非空节点的值
         // 此时当前节点就是最低公共祖先
         if (left != null && right != null) {
@@ -132,7 +101,7 @@ public class Solution {
         return left != null ? left : right;
     }
 
-    public static TreeNode lowestCommonAncestor3(TreeNode root, TreeNode p, TreeNode q) {
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null) {
             return null;
         }
@@ -141,8 +110,8 @@ public class Solution {
             return root;
         }
 
-        TreeNode left = lowestCommonAncestor3(root, p, q);
-        TreeNode right = lowestCommonAncestor3(root, p, q);
+        TreeNode left = lowestCommonAncestor2(root.left, p, q);
+        TreeNode right = lowestCommonAncestor2(root.right, p, q);
         if (left == null) {
             return right;
         }

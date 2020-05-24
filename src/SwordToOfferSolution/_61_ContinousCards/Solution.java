@@ -15,40 +15,43 @@ import java.util.Arrays;
  * 3. 如果数组中非 0 数字重复出现，即牌中存在对子，则该数组不是连续的。
  */
 public class Solution {
-    public static boolean isContinuesCards(int[] arr) {
-        if (arr == null || arr.length < 5) {
+    public boolean isContinuesCards(int[] nums) {
+        if (nums == null || nums.length < 5) {
             return false;
         }
         // 将数组排序
-        Arrays.sort(arr);
+        Arrays.sort(nums);
 
         // 统计数组中 0 的个数
-        int numOfZero = 0;
+        int zero = 0;
         // 相邻数字之间的空缺总数
-        int numOfGap = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] == 0) {
-                numOfZero++;
-                // 结束当前循环，继续下次循环
+        int gap = 0;
+
+        // i 不能到达 nums.length-1 的位置，为了防止越界
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 0) {
+                zero++;
                 continue;
             }
             // 若存在对子，则直接返回
-            if (arr[i] == arr[i + 1]) {
+            if (nums[i] == nums[i + 1]) {
                 return false;
             }
             // 统计相邻数字之间的空缺总数
             // 若 2 和 4 相邻，则它们之间的空缺数：4 - 2 - 1 = 1
             // 若 2 和 5 相邻，则它们之间的空缺数：5 - 2 - 1 = 2
-            numOfGap += arr[i + 1] - arr[i] - 1;
+            gap += nums[i + 1] - nums[i] - 1;
         }
 
-        return numOfGap <= numOfZero;
+        return gap <= zero;
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] arr1 = {1, 3, 2, 6, 4};
         int[] arr2 = {10, 11, 0, 12, 6};
-        System.out.println(isContinuesCards(arr1));
-        System.out.println(isContinuesCards(arr2));
+
+        System.out.println(solution.isContinuesCards(arr1));
+        System.out.println(solution.isContinuesCards(arr2));
     }
 }
