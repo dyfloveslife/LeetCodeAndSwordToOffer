@@ -13,7 +13,7 @@ import java.util.HashMap;
  * 思路 2：
  * 0. 自己实现的双端链表中，对于节点而言，其包含一个 key 和一个 value，其中，key 和 HashMap 中的 key 是对应的；
  * 1. 还是使用 map + 双向链表；
- * 2. 最近使用的放在队头，久未使用的放在队尾；
+ * 2. 最近使用的放在队头，很久未使用的放在队尾；
  * 3. 在队头插入数据，删除的时候，将队尾久未使用的数据删除；
  * 4. 每次 get 数据的时候，要把该数据提到队头；
  * 5. 如果在容量满了的情况下，插入数据，则将队尾的数据删除，再将新的数据放进队头；
@@ -49,26 +49,27 @@ public class Solution {
             size = 0;
         }
 
-        // 在链表头部添加 x 节点
-        // 其实就是在 head 节点和第一个节点之间插入 x 节点
-        public void addFirst(Node x) {
+        // 在链表头部添加 node 节点
+        // 其实就是在 head 节点和第一个节点之间插入 node 节点
+        public void addFirst(Node node) {
             // 注意：head 一开始是虚节点，将其设置为虚节点，便于操作
-            x.next = head.next;
-            x.prev = head;
-            head.next.prev = x;
-            head.next = x;
+            node.next = head.next;
+            node.prev = head;
+            head.next.prev = node;
+            head.next = node;
             size++;
         }
 
-        // 删除链表中的 x 节点
-        public void remove(Node x) {
-            x.prev.next = x.next;
-            x.next.prev = x.prev;
+        // 删除链表中的 node 节点
+        public void remove(Node node) {
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
             size--;
         }
 
         // 删除链表中最后一个节点，并返回该节点
         public Node removeLast() {
+            // 如果只有头尾指针，则没有可以删除的节点
             if (tail.prev == head) {
                 return null;
             }
@@ -80,20 +81,20 @@ public class Solution {
         }
 
         // 返回链表的长度
-        public int size() {
+        public int getSize() {
             return size;
         }
     }
 
     class LRUCache {
         private HashMap<Integer, Node> map;
-        private DoublyList cache;
+        private DoublyList doublyList;
         private int cap;
 
         public LRUCache(int cap) {
             this.cap = cap;
             map = new HashMap<>();
-            cache = new DoublyList();
+            doublyList = new DoublyList();
         }
 
         public int get(int key) {
@@ -101,30 +102,31 @@ public class Solution {
                 return -1;
             }
 
-            int val = map.get(key).val;
+            int value = map.get(key).val;
             // 提到前面来
-            put(key, val);
-            return val;
+            put(key, value);
+            return value;
         }
 
-        public void put(int key, int val) {
-            Node x = new Node(key, val);
+        // 注意：在每次修改节点后，同时也需要跟新 map 中 key 对应的 value
+        public void put(int key, int value) {
+            Node node = new Node(key, value);
 
             if (map.containsKey(key)) {
                 // 删除旧的，将新的节点插到头部
-                cache.remove(map.get(key));
-                cache.addFirst(x);
+                doublyList.remove(map.get(key));
+                doublyList.addFirst(node);
                 // 更新 map 中对应的数据
-                map.put(key, x);
+                map.put(key, node);
             } else {
-                if (cap == cache.size()) {
+                if (cap == doublyList.getSize()) {
                     // 在插入之前，如果容量满了，则删除最后一个元素
-                    Node last = cache.removeLast();
+                    Node last = doublyList.removeLast();
                     map.remove(last.key);
                 }
                 // 将新节点插入到头部
-                cache.addFirst(x);
-                map.put(key, x);
+                doublyList.addFirst(node);
+                map.put(key, node);
             }
         }
     }
