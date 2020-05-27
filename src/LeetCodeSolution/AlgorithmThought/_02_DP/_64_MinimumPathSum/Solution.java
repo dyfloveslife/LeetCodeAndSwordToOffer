@@ -42,6 +42,7 @@ public class Solution {
         return dp[m - 1][n - 1];
     }
 
+    // 在原数组中修改
     public int minPathSum2(int[][] grid) {
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
             return 0;
