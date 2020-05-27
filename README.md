@@ -222,6 +222,7 @@
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   53    | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_53_MaximumSubarray/Solution.java) |      Easy       |
+|   62    | [UniquePaths](https://leetcode.com/problems/unique-paths/) | [不同路径](https://leetcode-cn.com/problems/unique-paths/) | [Java](https://leetcode-cn.com/problems/unique-paths/) |      Medium       |
 |   64    | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | [最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_64_MinimumPathSum/Solution.java) |      Medium       |
 |   70    | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_70_ClimbingStairs/Solution.java) |      Easy       |
 |   72    | [Edit Distance](https://leetcode.com/problems/edit-distance/) | [编辑距离](https://leetcode-cn.com/problems/edit-distance/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_72_EditDistance/Solution.java) |      Hard       |
@@ -229,6 +230,7 @@
 |   152    | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | [乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_152_MaximumProductSubarray/Solution.java) |      Medium       |
 |   213    | [House RobberⅡ](https://leetcode.com/problems/house-robber-ii/) | [打家劫舍Ⅱ](https://leetcode-cn.com/problems/house-robber-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_213_HouseRobberII/Solution.java) |      Medium       |
 |   300    | [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) | [最长上升子序列](https://leetcode-cn.com/problems/longest-increasing-subsequence/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_300_LongestIncreasingSubsequence/Solution.java) |      Medium       |
+|   303    | [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/) | [区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_303_RangeSumQueryImmutable/Solution.java) |      Easy       |
 |   377    | [Combination Sum Ⅳ](https://leetcode.com/problems/combination-sum-iv/) | [组合总和 Ⅳ](https://leetcode-cn.com/problems/combination-sum-iv/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_377_Combination_SumIV/Solution.java) |      Medium       |
 |   509    | [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_509_FibonacciNumber/Solution.java) |      Easy       |
 
@@ -344,6 +346,12 @@
 
 
 #### 04.哈希表
+
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   560    | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | [和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_HashTable/_560_SubarraySumEqualsK/Solution.java) |      Medium       |
+|   974    | [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/) | [和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_HashTable/_974_SubarraySumsDivisibleByK/Solution.java) |      Medium       |
+
 
 
 #### 05.栈和队列
