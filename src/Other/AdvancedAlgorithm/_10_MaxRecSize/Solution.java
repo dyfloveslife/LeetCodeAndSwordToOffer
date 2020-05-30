@@ -18,7 +18,7 @@ import java.util.Stack;
  * 将每一行看成直方图，使用直方图的方法进行处理。
  */
 public class Solution {
-    public static int maxRecSize(int[][] matrix) {
+    public int maxRecSize(int[][] matrix) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return 0;
         }
@@ -30,7 +30,7 @@ public class Solution {
             for (int j = 0; j < matrix[0].length; j++) {
                 // 当前遍历到的值如果是 1，则直 接加上上一次的 1
                 // 如果是 0，则直接变成 0
-                height[j] = matrix[i][j] == 0 ? 0 : height[j] + 1;
+                height[j] = (matrix[i][j] == 0) ? 0 : height[j] + 1;
             }
             maxArea = Math.max(maxRecFromBottom(height), maxArea);
         }
@@ -39,7 +39,7 @@ public class Solution {
 
     // LeetCode-84
     // 柱状图中最大的矩形
-    public static int maxRecFromBottom(int[] height) {
+    public int maxRecFromBottom(int[] height) {
         if (height == null || height.length == 0) {
             return 0;
         }
@@ -73,10 +73,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        int[][] arr = {
-                {1, 0, 1, 1},
-                {1, 1, 1, 1},
-                {1, 1, 1, 0}};
-        System.out.println(maxRecSize(arr)); // 6
+        Solution solution = new Solution();
+        int[][] arr = {{1, 0, 1, 1}, {1, 1, 1, 1}, {1, 1, 1, 0}};
+
+        System.out.println(solution.maxRecSize(arr)); // 6
     }
 }

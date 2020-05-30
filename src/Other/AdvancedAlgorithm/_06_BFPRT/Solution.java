@@ -13,7 +13,7 @@ import java.util.Arrays;
  */
 public class Solution {
 
-    public static int[] getMinKNumsByBFPRT(int[] arr, int k) {
+    public int[] getMinKNumsByBFPRT(int[] arr, int k) {
         if (k < 1 || k > arr.length) {
             return arr;
         }
@@ -32,12 +32,12 @@ public class Solution {
         return res;
     }
 
-    private static int getMinKthByBFPRT(int[] arr, int k) {
+    private int getMinKthByBFPRT(int[] arr, int k) {
         int[] copyArr = copyArray(arr);
         return bfprt(copyArr, 0, copyArr.length - 1, k - 1);
     }
 
-    private static int[] copyArray(int[] arr) {
+    private int[] copyArray(int[] arr) {
         int[] res = new int[arr.length];
         for (int i = 0; i != arr.length; i++) {
             res[i] = arr[i];
@@ -47,7 +47,7 @@ public class Solution {
 
     // BFPRT 算法主逻辑
     // 在 begin 和 end 范围内求第 i 小的数
-    private static int bfprt(int[] arr, int begin, int end, int i) {
+    private int bfprt(int[] arr, int begin, int end, int i) {
         if (begin == end) {
             return arr[begin];
         }
@@ -68,7 +68,7 @@ public class Solution {
 
     }
 
-    private static int medianOfMedians(int[] arr, int begin, int end) {
+    private int medianOfMedians(int[] arr, int begin, int end) {
         int num = end - begin + 1;
         // 每 5 个数是一组，最后不满 5 个数的用 offset 补齐
         int offset = num % 5 == 0 ? 0 : 1;
@@ -84,7 +84,7 @@ public class Solution {
 
 
     // 返回等于 pivotValue 的中间区域的两个下标构成的数组
-    private static int[] partition(int[] arr, int begin, int end, int pivotValue) {
+    private int[] partition(int[] arr, int begin, int end, int pivotValue) {
         int less = begin - 1;
         int more = end + 1;
         int cur = begin;
@@ -104,14 +104,14 @@ public class Solution {
     }
 
 
-    private static int getMedian(int[] arr, int begin, int end) {
+    private int getMedian(int[] arr, int begin, int end) {
         insertionSort(arr, begin, end);
         int sum = end + begin;
         int mid = (sum / 2) + (sum % 2);
         return arr[mid];
     }
 
-    private static void insertionSort(int[] arr, int begin, int end) {
+    private void insertionSort(int[] arr, int begin, int end) {
         for (int i = begin + 1; i != end + 1; i++) {
             for (int j = i; j != begin; j--) {
                 if (arr[j - 1] > arr[j]) {
@@ -123,14 +123,16 @@ public class Solution {
         }
     }
 
-    private static void swap(int[] arr, int i, int j) {
+    private void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] arr = {6, 9, 1, 3, 1, 2};
-        System.out.println(Arrays.toString(getMinKNumsByBFPRT(arr, 4)));
+
+        System.out.println(Arrays.toString(solution.getMinKNumsByBFPRT(arr, 4)));
     }
 }

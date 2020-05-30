@@ -14,7 +14,7 @@ package Other.AdvancedAlgorithm._02_KMP_ShortestContainTwiceOriginalString;
  * 使用 KMP 算法，只不过在 next 数组中再多求一位即可。
  */
 public class Solution {
-    public static String answer(String s) {
+    public String answer(String s) {
         if (s == null || s.length() == 0) {
             return "";
         }
@@ -31,7 +31,7 @@ public class Solution {
         return s + s.substring(endNext);
     }
 
-    public static int endNextLength(char[] chars) {
+    public int endNextLength(char[] chars) {
         int[] next = new int[chars.length + 1];
         next[0] = -1;
         next[1] = 0;
@@ -50,10 +50,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         String s1 = "abcdabcd";
-        System.out.println(answer(s1));
-
         String s2 = "abracadabra";
-        System.out.println(answer(s2));
+
+        System.out.println(solution.answer(s1));
+        System.out.println(solution.answer(s2));
     }
 }

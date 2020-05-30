@@ -6,7 +6,7 @@ package Other.AdvancedAlgorithm._05_Manacher_ShortestEnd;
  * 例如，输入字符串 abcd123321，输出 dcba，因为只需要在输入的字符串后面添加上 dcba 就可以满足题意。
  */
 public class Solution {
-    public static char[] manacherString(String s) {
+    public char[] manacherString(String s) {
         char[] chars = s.toCharArray();
         char[] res = new char[s.length() * 2 + 1];
         int C = 0;
@@ -16,7 +16,7 @@ public class Solution {
         return res;
     }
 
-    public static String shortestEnd(String s) {
+    public String shortestEnd(String s) {
         if (s == null || s.length() == 0) {
             return null;
         }
@@ -53,7 +53,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         String s = "abcd123321";
-        System.out.println(shortestEnd(s));
+
+        System.out.println(solution.shortestEnd(s));
     }
 }

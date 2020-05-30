@@ -9,7 +9,7 @@ package Other.AdvancedAlgorithm._01_KMP;
  * 3. 注意求 next 数组的方法。
  */
 public class Solution {
-    public static int getIndexOf(String s, String m) {
+    public int getIndexOf(String s, String m) {
         if (s == null || m == null || s.length() < 1 || s.length() < m.length()) {
             return -1;
         }
@@ -36,7 +36,7 @@ public class Solution {
         return i2 == str2.length ? i1 - i2 : -1;
     }
 
-    private static int[] getNextArray(char[] str2) {
+    private int[] getNextArray(char[] str2) {
         if (str2.length == 1) {
             return new int[]{-1};
         }
@@ -64,8 +64,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         String str1 = "BBCABCDABABCDABCDABDE";
         String str2 = "ABCDABD";
-        System.out.println(getIndexOf(str1, str2));
+
+        System.out.println(solution.getIndexOf(str1, str2));
     }
 }

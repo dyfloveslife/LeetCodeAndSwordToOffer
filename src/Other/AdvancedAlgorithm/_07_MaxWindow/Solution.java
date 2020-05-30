@@ -16,7 +16,7 @@ import java.util.LinkedList;
  */
 public class Solution {
 
-    public static int[] getMaxWindow(int[] arr, int w) {
+    public int[] getMaxWindow(int[] arr, int w) {
         if (arr == null || arr.length == 0 || w < 1 || arr.length < w) {
             return null;
         }
@@ -45,7 +45,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] arr = {4, 3, 5, 4, 3, 3, 6, 7};
-        System.out.println(Arrays.toString(getMaxWindow(arr, 3)));
+
+        System.out.println(Arrays.toString(solution.getMaxWindow(arr, 3)));
     }
 }
