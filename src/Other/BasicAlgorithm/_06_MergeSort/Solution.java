@@ -68,11 +68,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] nums1 = {3, 5, 1, 7, -10, 4, 6, 12, 1};
         int[] nums2 = {5, 2, 3, 1};
         int[] nums3 = {5, 1, 1, 2, 0, 0};
 
-        Solution solution = new Solution();
         System.out.println(Arrays.toString(solution.mergeSort(nums1)));
         System.out.println(Arrays.toString(solution.mergeSort(nums2)));
         System.out.println(Arrays.toString(solution.mergeSort(nums3)));

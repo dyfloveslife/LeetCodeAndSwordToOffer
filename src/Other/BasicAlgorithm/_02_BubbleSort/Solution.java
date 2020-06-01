@@ -57,10 +57,10 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] arr1 = {1, 2, 3, 0, 6, 1, 3, 5};
         int[] arr2 = {5, 1, 1, 2, 0, 0};
 
-        Solution solution = new Solution();
         System.out.println(Arrays.toString(solution.bubbleSort(arr1)));
         System.out.println(Arrays.toString(solution.bubbleSort(arr2)));
     }

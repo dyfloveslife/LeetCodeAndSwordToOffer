@@ -48,12 +48,12 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] arr1 = {3, 2, 1, 5, 6, 4};
         int[] arr2 = {1, 2, 3, 2, 5, 6};
         int[] arr3 = {5, 2, 3, 1};
         int[] arr4 = {5, 1, 1, 2, 0, 0};
 
-        Solution solution = new Solution();
         System.out.println(Arrays.toString(solution.selectSort(arr1)));
         System.out.println(Arrays.toString(solution.selectSort(arr2)));
         System.out.println(Arrays.toString(solution.selectSort(arr3)));
