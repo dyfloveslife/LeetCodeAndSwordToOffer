@@ -67,43 +67,43 @@ public class Solution {
     }
 
     // 从 0~(i-1) 位置已经构成大根堆了，现在需要把第 i 的位置上的元素加进去
-    private void heapInsert(int[] nums, int index) {
+    private void heapInsert(int[] nums, int i) {
         // 如果当前元素比父节点的元素大，则交换，
         // 然后当前元素的索引更新成原先父节点的索引
-        while (nums[index] > nums[(index - 1) / 2]) {
-            swap(nums, index, (index - 1) / 2);
-            // index 往上走，即来到父节点的索引位置，继续进入 while，再次判断
-            index = (index - 1) / 2;
+        while (nums[i] > nums[(i - 1) / 2]) {
+            swap(nums, i, (i - 1) / 2);
+            // i 往上走，即来到父节点的索引位置，继续进入 while，再次判断
+            i = (i - 1) / 2;
         }
     }
 
     // heapSize 表示堆中有多少个数，它可能和数组的个数是没有关系的，但一定不会比数组的个数大
-    // 此函数表示 0~heapSize-1 上已经形成了堆，由于 index 所指元素变小了，则开始进行堆化处理
-    // 即 index 所指的元素开始往下沉
-    public void heapify(int[] nums, int index, int heapSize) {
-        int left = index * 2 + 1;
+    // 此函数表示 0~heapSize-1 上已经形成了堆，由于 i 所指元素变小了，则开始进行堆化处理
+    // 即 i 所指的元素开始往下沉
+    public void heapify(int[] nums, int i, int heapSize) {
+        int left = i * 2 + 1;
         int right = left + 1;
 
-        // while 的条件说明：index 的左孩子也在堆中，没有越界
+        // while 的条件说明：i 的左孩子也在堆中，没有越界
         while (left < heapSize) {
             // 左右孩子选出较大的
-            // left + 1 表示 index 所指元素的右孩子
-            // left + 1 < heapSize 表示 index 所指元素的右孩子也不越界
-            // 如果右孩子越界，也就是 index 所指元素只有左孩子，即条件 left + 1 < heapSize 不成立，
-            // 则较大的那个数就是 index 所指元素的左孩子
+            // left + 1 表示 i 所指元素的右孩子
+            // left + 1 < heapSize 表示 i 所指元素的右孩子也不越界
+            // 如果右孩子越界，也就是 i 所指元素只有左孩子，即条件 left + 1 < heapSize 不成立，
+            // 则较大的那个数就是 i 所指元素的左孩子
             int largest = (left + 1 < heapSize) && (nums[left] < nums[left + 1]) ? left + 1: left;
-            // 从左右孩子中选出较大的之后，还得判断当前 index 所指元素的大小
-            largest = (nums[largest] > nums[index]) ? largest : index;
+            // 从左右孩子中选出较大的之后，还得判断当前 i 所指元素的大小
+            largest = (nums[largest] > nums[i]) ? largest : i;
             // 如果当前节点变了之后还是最大的，则就不往下沉了
             // 也就是当前节点和孩子之间的最大值还是当前节点，就不需要再往下沉了
-            if (largest == index) {
+            if (largest == i) {
                 break;
             }
-            // largest != index
-            // 也就是当前的 index 所指的元素，与其左右较大那个的孩子交换
-            swap(nums, largest, index);
-            index = largest;
-            left = index * 2 + 1;
+            // largest != i
+            // 也就是当前的 i 所指的元素，与其左右较大那个的孩子交换
+            swap(nums, largest, i);
+            i = largest;
+            left = i * 2 + 1;
         }
     }
 
@@ -114,13 +114,13 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] arr1 = {3, 2, 1, 5, 6, 4};
         int[] arr2 = {1, 2, 3, 2, 5, 6};
         int[] arr3 = {5, 2, 3, 1};
         int[] arr4 = {5, 1, 1, 2, 0, 0};
         int[] arr5 = {-4, 0, 7, 4, 9, -5, -1, 0, -7, -1};
 
-        Solution solution = new Solution();
         System.out.println(Arrays.toString(solution.heapSort(arr1)));
         System.out.println(Arrays.toString(solution.heapSort(arr2)));
         System.out.println(Arrays.toString(solution.heapSort(arr3)));
