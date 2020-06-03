@@ -239,6 +239,7 @@
 |   413    | [Arithmetic Slices](https://leetcode.com/problems/arithmetic-slices/description/) | [等差数列划分](https://leetcode-cn.com/problems/arithmetic-slices/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_413_ArithmeticSlices/Solution.java) |      Medium       |
 |   509    | [Fibonacci Number](https://leetcode.com/problems/fibonacci-number/) | [斐波那契数](https://leetcode-cn.com/problems/fibonacci-number/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_509_FibonacciNumber/Solution.java) |      Easy       |
 |   646    | [Maximum Length of Pair Chain](https://leetcode.com/problems/maximum-length-of-pair-chain/description/) | [最长数对链](https://leetcode-cn.com/problems/maximum-length-of-pair-chain/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_646_MaximumLengthOfPairChain/Solution.java) |      Medium       |
+|   1143    | [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/) | [最长公共子序列](https://leetcode-cn.com/problems/longest-common-subsequence/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_1143_LongestCommonSubsequence/Solution.java) |      Medium       |
 
 
 #### 03.贪心
