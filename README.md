@@ -227,6 +227,10 @@
 |   70    | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_70_ClimbingStairs/Solution.java) |      Easy       |
 |   72    | [Edit Distance](https://leetcode.com/problems/edit-distance/) | [编辑距离](https://leetcode-cn.com/problems/edit-distance/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_72_EditDistance/Solution.java) |      Hard       |
 |   91    | [Decode Ways](https://leetcode.com/problems/decode-ways/) | [解码方法](https://leetcode-cn.com/problems/decode-ways/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_91_DecodeWays/Solution.java) |      Medium       |
+|   121    | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_121_BestTimeToBuyAndSellStock/Solution.java) |      Easy       |
+|   122    | [Best Time to Buy and Sell StockⅡ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) | [买卖股票的最佳时机Ⅱ](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_122_BestTimeToBuyAndSellStockII/Solution.java) |      Easy       |
+|   123    | [Best Time to Buy and Sell StockⅢ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) | [买卖股票的最佳时机Ⅲ](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_123_BestTimeToBuyAndSellStockIII/Solution.java) |      Hard       |
+|   188    | [Best Time to Buy and Sell StockⅣ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iiii/) | [买卖股票的最佳时机Ⅳ](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iiii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_123_BestTimeToBuyAndSellStockIIII/Solution.java) |      Hard       |
 |   198    | [House Robber](https://leetcode.com/problems/house-robber/) | [打家劫舍](https://leetcode-cn.com/problems/house-robber/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_198_HouseRobber/Solution.java) |      Easy       |
 |   152    | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | [乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_152_MaximumProductSubarray/Solution.java) |      Medium       |
 |   213    | [House RobberⅡ](https://leetcode.com/problems/house-robber-ii/) | [打家劫舍Ⅱ](https://leetcode-cn.com/problems/house-robber-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_213_HouseRobberII/Solution.java) |      Medium       |
@@ -339,6 +343,11 @@
 ## 数据结构相关
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 #### 01.数组和矩阵
+
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   136    | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | [除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_ArrayAndMatrix/_238_ProductOfArrayExceptSelf/Solution.java) |      Medium       |
+
 
 
 #### 02.字符串
