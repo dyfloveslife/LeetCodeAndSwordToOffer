@@ -26,48 +26,48 @@ public class Solution {
         }
     }
 
-    public ListNode mergeTwoLists(ListNode head1, ListNode head2) {
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         // 如果其中一个链表为空，则直接返回另一个链表即可
-        if (head1 == null) {
-            return head2;
+        if (l1 == null) {
+            return l2;
         }
-        if (head2 == null) {
-            return head1;
+        if (l2 == null) {
+            return l1;
         }
 
         ListNode dummy = new ListNode(-1);
         ListNode cur = dummy;
 
-        while (head1 != null && head2 != null) {
-            if (head1.val <= head2.val) {
-                cur.next = head1;
-                head1 = head1.next;
+        while (l1 != null && l2 != null) {
+            if (l1.val <= l2.val) {
+                cur.next = l1;
+                l1 = l1.next;
             } else {
-                cur.next = head2;
-                head2 = head2.next;
+                cur.next = l2;
+                l2 = l2.next;
             }
             cur = cur.next;
         }
 
-        cur.next = (head1 == null) ? head2 : head1;
+        cur.next = (l1 == null) ? l2 : l1;
         return dummy.next;
     }
 
-    public ListNode mergeTwoLists2(ListNode head1, ListNode head2) {
-        if (head1 == null) {
-            return head2;
+    public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
         }
-        if (head2 == null) {
-            return head1;
+        if (l2 == null) {
+            return l1;
         }
 
         ListNode mergedHead;
-        if (head1.val <= head2.val) {
-            mergedHead = head1;
-            mergedHead.next = mergeTwoLists2(head1.next, head2);
+        if (l1.val <= l2.val) {
+            mergedHead = l1;
+            mergedHead.next = mergeTwoLists2(l1.next, l2);
         } else {
-            mergedHead = head2;
-            mergedHead.next = mergeTwoLists2(head1, head2.next);
+            mergedHead = l2;
+            mergedHead.next = mergeTwoLists2(l1, l2.next);
         }
         return mergedHead;
     }
