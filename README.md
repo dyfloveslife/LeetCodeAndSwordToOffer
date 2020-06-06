@@ -352,6 +352,11 @@
 
 #### 02.字符串
 
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   415    | [Add Strings](https://leetcode.com/problems/add-strings/) | [字符串相加](https://leetcode-cn.com/problems/add-strings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_String/_415_AddStrings/Solution.java) |      Easy       |
+
+
 
 #### 03.树
 
@@ -365,6 +370,7 @@
 
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   128    | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | [最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_HashTable/_128_LongestConsecutiveSequence/Solution.java) |      Hard       |
 |   560    | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | [和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_HashTable/_560_SubarraySumEqualsK/Solution.java) |      Medium       |
 |   974    | [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/) | [和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_04_HashTable/_974_SubarraySumsDivisibleByK/Solution.java) |      Medium       |
 
@@ -383,7 +389,7 @@
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   207    | [Course Schedule](https://leetcode.com/problems/course-schedule/) | [课程表](https://leetcode-cn.com/problems/course-schedule/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Graph/_207_CourseScheduleI/Solution.java) |      Medium       |
-|   210    | [Course Schedule Ⅱ](https://leetcode.com/problems/course-schedule-ii/) | [课程表Ⅱ](https://leetcode-cn.com/problems/course-schedule-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Graph/_210_CourseScheduleII/Solution.java) |      Medium       |
+|   210    | [Course Schedule Ⅱ](https://leetcode.com/problems/course-schedule-ii/) | [课程表 Ⅱ](https://leetcode-cn.com/problems/course-schedule-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_06_Graph/_210_CourseScheduleII/Solution.java) |      Medium       |
 
 
 #### 07.位运算
@@ -393,10 +399,13 @@
 
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   2    | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) | [两数相加](https://leetcode-cn.com/problems/add-two-numbers/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_2_AddTwoNumbers/Solution.java) |      Medium       |
 |   19    | [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) | [删除链表的倒数第 N 个节点](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_19_RemoveNthNodeFromEndOfList/Solution.java) |      Medium       |
 |   21    | [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) | [合并两个有序链表](https://leetcode-cn.com/problems/merge-two-sorted-lists/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_21_MergeTwoSortedLists/Solution.java) |      Easy       |
 |   23    | [Merge k Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) | [合并 K 个排序链表](https://leetcode-cn.com/problems/merge-k-sorted-lists/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_23_MergekSortedLists/Solution.java) |      Hard       |
+|   24    | [Swap Nodes in Pairs](https://leetcode.com/problems/swap-nodes-in-pairs/) | [两两交换链表中的节点](https://leetcode-cn.com/problems/swap-nodes-in-pairs/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_24_SwapNodesInPairs/Solution.java) |      Medium       |
 |   25    | [Reverse Nodes in k-Group](https://leetcode.com/problems/reverse-nodes-in-k-group/) | [K 个一组翻转链表](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_25_ReverseNodesInkGroup/Solution.java) |      Hard       |
 |   83    | [Remove Duplicates from Sorted List](https://leetcode.com/problems/remove-duplicates-from-sorted-list/) | [删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_83_RemoveDuplicatesFromSortedList/Solution.java) |      Easy       |
 |   160    | [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/) | [相交链表](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_160_IntersectionOfTwoLinkedLists/Solution.java) |      Easy       |
 |   206    | [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) | [反转链表](https://leetcode-cn.com/problems/reverse-linked-list/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_206_ReverseLinkedList/Solution.java) |      Easy       |
+|   445    | [Add Two Numbers Ⅱ](https://leetcode.com/problems/add-two-numbers-ii/) | [两数相加 Ⅱ](https://leetcode-cn.com/problems/add-two-numbers-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_445_AddTwoNumbersII/Solution.java) |      Medium       |

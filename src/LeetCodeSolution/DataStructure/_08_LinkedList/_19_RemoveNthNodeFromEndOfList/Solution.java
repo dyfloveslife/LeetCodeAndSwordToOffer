@@ -65,6 +65,10 @@ public class Solution {
             fast = fast.next;
             n--;
         }
+
+        // 有两种情况 fast 为 null：
+        // 1) 如果链表长度和 n 相等，则删除的是头节点，因此需要返回头节点的下一个节点，即 head.next；
+        // 2) 如果链表中只有 1 个节点，并且 n=1，此时需要将该节点删除，然后返回空链表
         if (fast == null) {
             return head.next;
         }
@@ -77,5 +81,4 @@ public class Solution {
         slow.next = slow.next.next;
         return head;
     }
-
 }
