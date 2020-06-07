@@ -1,6 +1,5 @@
 package LeetCodeSolution.DataStructure._08_LinkedList._23_MergekSortedLists;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /*
@@ -17,7 +16,8 @@ import java.util.PriorityQueue;
  * 3. 后来想到的是可以将每个链表中的第一个节点放进小根堆，这样小根堆所占用的空间就是 K 个大小了，K 肯定是小于所有节点的数量；
  * 4. 因此空间复杂度为 O(K)，K 表示的是链表的数量；
  * 5. 而对于时间复杂度来说，在堆中比较每个元素的大小所花费的时间就是堆排序的时间，即 O(logK)，
- *    在堆中找到最小值的操作需要 O(1)，而总节点的数量是 n，所以总的时间复杂度为 O(nlogK)。
+ *    在堆中找到最小值的操作需要 O(1)，而总节点的数量是 n，所以总的时间复杂度为 O(nlogK)；
+ * 6. 需要注意的是：对于给定的 ListNode[]，可以直接通过 ListNode[0]、ListNode[1]、ListNode[2] 这样的方式获取到每个链表的头节点。
  *
  * 思路二：两两合并
  * 1. 类似于之前的一个题目：“合并两个有序链表”；
@@ -43,18 +43,12 @@ public class Solution {
         }
 
         // 定义小根堆
-        PriorityQueue<ListNode> qMin = new PriorityQueue<>(new Comparator<ListNode>() {
-            @Override
-            public int compare(ListNode o1, ListNode o2) {
-                return (o1.val < o2.val) ? -1 : 1;
-            }
-        });
+        PriorityQueue<ListNode> qMin = new PriorityQueue<>((o1, o2) -> (o1.val - o2.val));
 
         ListNode dummy = new ListNode(-1);
         ListNode cur = dummy;
 
-        // 实际上 curListHead 就是当前链表的头节点
-        // 因为只要知道了链表的头节点，我就能遍历出这个链表
+        // 将每个链表的头节点放进堆中
         for (ListNode curListHead : lists) {
             if (curListHead != null) {
                 qMin.offer(curListHead);
@@ -64,6 +58,7 @@ public class Solution {
         while (!qMin.isEmpty()) {
             cur.next = qMin.poll();
             cur = cur.next;
+            // 如果
             if (cur.next != null) {
                 qMin.offer(cur.next);
             }
@@ -80,6 +75,7 @@ public class Solution {
 
         ListNode head = lists[0];
         for (int i = 1; i < lists.length; i++) {
+            // 注意特判
             if (lists[i] != null) {
                 head = merge(head, lists[i]);
             }
@@ -87,20 +83,20 @@ public class Solution {
         return head;
     }
 
-    public ListNode merge (ListNode head1, ListNode head2) {
-        if (head1 == null) {
-            return head2;
+    private ListNode merge (ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
         }
-        if (head2 == null) {
-            return head1;
+        if (l2 == null) {
+            return l1;
         }
 
-        if (head1.val <= head2.val) {
-            head1.next = merge(head1.next, head2);
-            return head1;
+        if (l1.val <= l2.val) {
+            l1.next = merge(l1.next, l2);
+            return l1;
         } else {
-            head2.next = merge(head1, head2.next);
-            return head2;
+            l2.next = merge(l1, l2.next);
+            return l2;
         }
     }
 }
