@@ -50,6 +50,9 @@ public class Solution {
         }
 
         cur.next = (l1 == null) ? l2 : l1;
+        // 为什么返回 dummy 的 next？
+        // 因为 cur 引用指向的是 dummy 节点，通过连接以后，cur 的 next 会指向其它节点，
+        // 因此在第一次比较的时候，dummy 的 next 就指向了较小的那个节点
         return dummy.next;
     }
 
