@@ -122,7 +122,9 @@ public class Solution {
         String str = String.valueOf(s);
         int len = str.length();
         int[] dp = new int[len + 1];
+        // 什么都不翻译也是一种翻译方式
         dp[0] = 1;
+        // 翻译前 1 个数字的方法数
         dp[1] = 1;
         for (int i = 1; i < len; i++) {
             if (str.charAt(i - 1) == '0' || str.substring(i - 1, i + 1).compareTo("25") > 0) {
