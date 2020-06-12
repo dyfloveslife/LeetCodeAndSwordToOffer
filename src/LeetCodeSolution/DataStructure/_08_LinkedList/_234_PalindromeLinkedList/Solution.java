@@ -44,6 +44,9 @@ public class Solution {
         // 这里为了奇偶链表的统一，直接反转相同节点的下一个节点
         slow = reverseList(slow.next);
         ListNode cur = head;
+        // 对于偶数个节点来说，这两个链表的长度是一样的，
+        // 对于奇数个节点来首，反转后的链表少一个，
+        // 因此下面的 while 是以 slow 为标志进行循环的，这一点需要注意
         while (slow != null) {
             if (cur.val != slow.val) {
                 return false;
