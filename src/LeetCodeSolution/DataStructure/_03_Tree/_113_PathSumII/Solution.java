@@ -1,4 +1,4 @@
-package LeetCodeSolution.AlgorithmThought._06_Search._113_PathSumII;
+package LeetCodeSolution.DataStructure._03_Tree._113_PathSumII;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +10,8 @@ import java.util.List;
  * 给定一个二叉树和一个目标和，找到所有从根节点到叶子节点路径总和等于给定目标和的路径。
  *
  * 思路：
- * 1. 先序遍历二叉树，把结点加入路径；
- * 2. 在先序遍历中，记录从根节点到当前节点的路径：
- *    如果当前路径是从根节点到叶节点形成的路径并且各节点值的和等于目标值 sum，
- *    则将此路径加入到结果集中。
+ * 1. 可以使用 DFS，如果目标和已经为 0，并且已经到了叶节点了，则开始收集路径上的节点；
+ * 2. 否则继续递归当前节点的左右子树是否满足要求。
  */
 public class Solution {
     class TreeNode {
@@ -26,8 +24,8 @@ public class Solution {
         }
     }
 
-    List<List<Integer>> res = new ArrayList<>();
-    List<Integer> path = new ArrayList<>();
+    private List<List<Integer>> res = new ArrayList<>();
+    private List<Integer> path = new ArrayList<>();
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
         if (root == null) {
@@ -46,7 +44,7 @@ public class Solution {
         path.add(root.val);
         target -= root.val;
 
-        if (target == 0 && root.left == null && root.right == null) {
+        if (root.left == null && root.right == null && target == 0) {
             res.add(new ArrayList<>(path));
         }
         dfs(root.left, target);
