@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
- * 组合总和Ⅱ
+ * 组合总和 Ⅱ
  *
  * 题目描述：
  * 给定一个数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。

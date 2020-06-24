@@ -28,6 +28,7 @@ public class Solution {
         int[] res = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
+                // 开始结算
                 if (nums[j] > nums[i]) {
                     res[i] = j - i;
                     break;
