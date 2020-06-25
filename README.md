@@ -232,6 +232,7 @@
 |   121    | [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [买卖股票的最佳时机](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_121_BestTimeToBuyAndSellStock/Solution.java) |      Easy       |
 |   122    | [Best Time to Buy and Sell Stock Ⅱ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) | [买卖股票的最佳时机 Ⅱ](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_122_BestTimeToBuyAndSellStockII/Solution.java) |      Easy       |
 |   123    | [Best Time to Buy and Sell Stock Ⅲ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/) | [买卖股票的最佳时机 Ⅲ](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_123_BestTimeToBuyAndSellStockIII/Solution.java) |      Hard       |
+|   139    | [Word Break](https://leetcode.com/problems/word-break/) | [单词拆分](https://leetcode-cn.com/problems/word-break/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_139_WordBreak/Solution.java) |      Medium       |
 |   188    | [Best Time to Buy and Sell Stock Ⅳ](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iiii/) | [买卖股票的最佳时机 Ⅳ](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iiii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_123_BestTimeToBuyAndSellStockIIII/Solution.java) |      Hard       |
 |   198    | [House Robber](https://leetcode.com/problems/house-robber/) | [打家劫舍](https://leetcode-cn.com/problems/house-robber/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_198_HouseRobber/Solution.java) |      Easy       |
 |   152    | [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) | [乘积最大子数组](https://leetcode-cn.com/problems/maximum-product-subarray/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_152_MaximumProductSubarray/Solution.java) |      Medium       |
@@ -346,6 +347,7 @@
 
 ## 数据结构相关
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
+
 #### 01.数组和矩阵
 
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
@@ -407,6 +409,7 @@
 
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   1    | [Two Sum](https://leetcode.com/problems/two-sum/) | [两数之和](https://leetcode-cn.com/problems/two-sum/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_04_HashTable/_1_TwoSum/Solution.java) |      Easy       |
 |   128    | [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) | [最长连续序列](https://leetcode-cn.com/problems/longest-consecutive-sequence/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_04_HashTable/_128_LongestConsecutiveSequence/Solution.java) |      Hard       |
 |   560    | [Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/) | [和为 K 的子数组](https://leetcode-cn.com/problems/subarray-sum-equals-k/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_04_HashTable/_560_SubarraySumEqualsK/Solution.java) |      Medium       |
 |   974    | [Subarray Sums Divisible by K](https://leetcode.com/problems/subarray-sums-divisible-by-k/) | [和可被 K 整除的子数组](https://leetcode-cn.com/problems/subarray-sums-divisible-by-k/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_04_HashTable/_974_SubarraySumsDivisibleByK/Solution.java) |      Medium       |
