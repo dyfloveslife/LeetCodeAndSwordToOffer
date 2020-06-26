@@ -30,17 +30,17 @@ public class Solution {
             return head.next;
         }
         // 在头节点之前新建一个节点
-        ListNode preNode = new ListNode(-1);
-        preNode.next = head;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
+        ListNode cur = head;
 
-        ListNode curNode = head;
-        while (curNode.next != null) {
-            if (curNode.next.val == target) {
-                curNode.next = curNode.next.next;
+        while (cur.next != null) {
+            if (cur.next.val == target) {
+                cur.next = cur.next.next;
             } else {
-                curNode = curNode.next;
+                cur = cur.next;
             }
         }
-        return preNode.next;
+        return dummy.next;
     }
 }

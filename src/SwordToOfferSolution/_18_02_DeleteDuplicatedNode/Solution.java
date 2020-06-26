@@ -29,13 +29,13 @@ public class Solution {
             return head;
         }
 
-        // 定义一个虚拟节点 preHead，让其 next 指向链表的头节点
-        // 这个 preHead 保证不会被删掉，这种情况下就可以不用管头节点有可能被删掉的情况了
-        ListNode preHead = new ListNode(-1);
-        preHead.next = head;
+        // 定义一个虚拟节点 dummy，让其 next 指向链表的头节点
+        // 这个 dummy 保证不会被删掉，这种情况下就可以不用管头节点有可能被删掉的情况了
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
         
         // 指向上一个有效的节点
-        ListNode last = preHead;
+        ListNode pre = dummy;
         // 从头节点开始遍历
         ListNode cur = head;
         
@@ -46,15 +46,15 @@ public class Solution {
                     cur = cur.next;
                 }
                 // 1->2->3->3->4->4->5
-                // 此时的 last 指向的是第二个节点 2，而 cur 指向的是第四个节点 3
-                last.next = cur.next;
+                // 此时的 pre 指向的是第二个节点 2，而 cur 指向的是第四个节点 3
+                pre.next = cur.next;
                 cur = cur.next;
             } else {
                 // 如果当前节点的值和下一个节点的值不相等，则指针后移
-                last = cur;
+                pre = cur;
                 cur = cur.next;
             }
         }
-        return preHead.next;
+        return dummy.next;
     }
 }
