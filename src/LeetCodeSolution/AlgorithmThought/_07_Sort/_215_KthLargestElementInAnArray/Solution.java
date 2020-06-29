@@ -19,13 +19,13 @@ import java.util.PriorityQueue;
 public class Solution {
 
     // 排序
-    public static int findKthLargest1(int[] nums, int k) {
+    public int findKthLargest1(int[] nums, int k) {
         Arrays.sort(nums);
         return nums[nums.length - k];
     }
 
     // 堆
-    public static int findKthLargest2(int[] nums, int k) {
+    public int findKthLargest2(int[] nums, int k) {
         // 默认小顶堆
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int num : nums) {
@@ -38,7 +38,8 @@ public class Solution {
     }
 
     // 快速选择算法
-    public static int findKthLargest3(int[] nums, int k) {
+    public int findKthLargest3(int[] nums, int k) {
+        // 这里的 nums.length - k 操作，就是用来定位第 k 大的数的最终位置
         k = nums.length - k;
         int left = 0;
         int right = nums.length - 1;
@@ -47,6 +48,7 @@ public class Solution {
             int j = partition(nums, left, right);
             if (j == k) {
                 break;
+                // [...j....k...]
             } else if (j < k) {
                 // 从右部分开始找
                 left = j + 1;
@@ -60,7 +62,7 @@ public class Solution {
 
     // 此函数的作用是以数组中的第一个数作为基准，将小于等于该数的放在数组的左边，
     // 大于该数的放在数组的右边，最后返回该数在数组中的索引
-    public static int partition(int[] arr, int left, int right) {
+    private int partition(int[] arr, int left, int right) {
         int i = left;
         int j = right + 1;
 
@@ -84,17 +86,25 @@ public class Solution {
         return j;
     }
 
-    public static void swap(int[] arr, int i, int j) {
+    private void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
         int[] arr1 = {3, 2, 1, 5, 6, 4};
-        System.out.println(findKthLargest2(arr1, 2)); // 5
-
         int[] arr2 = {4, 2, 3, 1, 2, 3, 5, 5, 6};
-        System.out.println(findKthLargest3(arr2, 4)); // 4
+
+        System.out.println(solution.findKthLargest1(arr1, 2));
+        System.out.println(solution.findKthLargest2(arr1, 2));
+        System.out.println(solution.findKthLargest3(arr1, 2));
+        System.out.println("---");
+
+        System.out.println(solution.findKthLargest1(arr2, 4));
+        System.out.println(solution.findKthLargest2(arr2, 4));
+        System.out.println(solution.findKthLargest3(arr2, 4));
+
     }
 }
