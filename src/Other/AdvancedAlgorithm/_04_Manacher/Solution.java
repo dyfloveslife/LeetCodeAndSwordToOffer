@@ -1,7 +1,5 @@
 package Other.AdvancedAlgorithm._04_Manacher;
 
-import java.math.BigDecimal;
-
 /*
  * 最长回文子串
  *
@@ -10,7 +8,7 @@ import java.math.BigDecimal;
  *
  * 思路一：暴力
  * 1. 第一种的暴力写法应该挺容易想到，就是 i 从 0 到 s.length() 遍历，j 从 i 开始到 s.length() 结束；
- * 2. 也就是枚举所有的字符串，判断该字符串是否符合回文字符串，如果符合，将不断地跟新最大回文字符串的长度，直至结束；
+ * 2. 也就是枚举所有的字符串，判断该字符串是否符合回文字符串，如果符合，将不断地更新最大回文字符串的长度，直至结束；
  * 3. 记录的时候，只需要记录当前子串的起始位置和子串的长度，用于结果的返回。
  *
  * 思路二：DP
@@ -28,7 +26,7 @@ import java.math.BigDecimal;
  * 4. 只要一得到 dp[i][j] = true，就记录子串的长度和起始位置；
  * 5. 需要注意的是，总是需要先得到小的子串的回文判定，然后大的子串才能参考小的子串得到判定结果。
  *
- * 思路四：Manacher
+ * 思路三：Manacher
  * 1. 该算法解决的问题是：在一个字符串中找到最长的回文子串；
  * 2. 详见脑图。
  */
@@ -107,16 +105,6 @@ public class Solution {
     }
 
     // 思路三
-    public char[] manacherString(String s) {
-        char[] chars = s.toCharArray();
-        char[] res = new char[s.length() * 2 + 1];
-        int C = 0;
-        for (int i = 0; i != res.length; i++) {
-            res[i] = (i & 1) == 0 ? '#' : chars[C++];
-        }
-        return res;
-    }
-
     public int longestPalindrome3(String s) {
         if (s == null || s.length() == 0) {
             return 0;
@@ -131,7 +119,7 @@ public class Solution {
 
         for (int i = 0; i != charArr.length; i++) {
             // R > i 表示 R 在回文右边界的里面
-            // 2*C-i 表示关于 i 的对称点 i撇
+            // 2*C-i 表示关于 i 的对称点 i 撇
             pArr[i] = R > i ? Math.min(pArr[2 * C - i], R - i) : 1;
             // 不管哪种情况，都往右扩一下
             // 但对于情况二和情况三，则一定不会成立
@@ -151,6 +139,16 @@ public class Solution {
             max = Math.max(max, pArr[i]);
         }
         return max - 1;
+    }
+
+    private char[] manacherString(String s) {
+        char[] chars = s.toCharArray();
+        char[] res = new char[s.length() * 2 + 1];
+        int C = 0;
+        for (int i = 0; i != res.length; i++) {
+            res[i] = (i & 1) == 0 ? '#' : chars[C++];
+        }
+        return res;
     }
 
     public static void main(String[] args) {
