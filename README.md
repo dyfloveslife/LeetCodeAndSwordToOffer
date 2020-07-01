@@ -354,6 +354,9 @@
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   136    | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | [除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_238_ProductOfArrayExceptSelf/Solution.java) |      Medium       |
+|   283    | [Move Zeroes](https://leetcode.com/problems/move-zeroes/) | [移动零](https://leetcode-cn.com/problems/move-zeroes/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_283_MoveZeroes/Solution.java) |      Easy       |
+|   566    | [Reshape the Matrix](https://leetcode.com/problems/reshape-the-matrix/) | [重塑矩阵](https://leetcode-cn.com/problems/reshape-the-matrix/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_566_ReshapeTheMatrix/Solution.java) |      Easy       |
+|   718    | [Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/) | [最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_718_MaximumLengthOfRepeatedSubarray/Solution.java) |      Medium       |
 
 
 
@@ -362,12 +365,14 @@
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   5    | [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) | [最长回文子串](https://leetcode-cn.com/problems/longest-palindromic-substring/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_5_LongestPalindromicSubstring/Solution.java) |      Medium       |
+|   9    | [Palindrome Number](https://leetcode.com/problems/palindrome-number/) | [回文数](https://leetcode-cn.com/problems/palindrome-number/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_9_PalindromeNumber/Solution.java) |      Easy       |
 |   14    | [Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/) | [最长公共前缀](https://leetcode-cn.com/problems/longest-common-prefix/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_14_LongestCommonPrefix/Solution.java) |      Easy       |
 |   205    | [Isomorphic Strings](https://leetcode.com/problems/isomorphic-strings/) | [同构字符串](https://leetcode-cn.com/problems/isomorphic-strings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_205_IsomorphicStrings/Solution.java) |      Easy       |
 |   242    | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | [有效的字母异位词](https://leetcode-cn.com/problems/valid-anagram/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_242_ValidAnagram/Solution.java) |      Easy       |
 |   409    | [Longest Palindrome](https://leetcode.com/problems/longest-palindrome/) | [最长回文串](https://leetcode-cn.com/problems/longest-palindrome/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_409_LongestPalindrome/Solution.java) |      Easy       |
 |   415    | [Add Strings](https://leetcode.com/problems/add-strings/) | [字符串相加](https://leetcode-cn.com/problems/add-strings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_415_AddStrings/Solution.java) |      Easy       |
 |   647    | [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) | [回文子串](https://leetcode.com/problems/palindromic-substrings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_647_PalindromicSubstrings/Solution.java) |      Medium       |
+|   696    | [Count Binary Substrings](https://leetcode.com/problems/count-binary-substrings/) | [计数二进制子串](https://leetcode-cn.com/problems/count-binary-substrings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_696_CountBinarySubstrings/Solution.java) |      Easy       |
 
 
 
