@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /*
- * 课程表Ⅱ
+ * 课程表 Ⅱ
  *
  * 题目描述：
  * 现在你总共有 n 门课需要选，记为 0 到 n-1。
