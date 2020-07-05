@@ -18,12 +18,12 @@ import java.util.HashMap;
  * 3. 该题和剑指 Offer 中的某个题思想是一样的，都是通过交换数组中的元素，使得数组落在正确的位置上；
  * 4. 当然，还可以使用 map 存储当前元素以及当前元素出现的次数；
  * 5. 再次遍历数组，如果当前遍历到的元素存在于 map 中，则判断它出现的次数；
- *                 如果当前遍历到的元素不存在 map 中，则就是确实的元素。
+ *                 如果当前遍历到的元素不存在 map 中，则就是缺失的元素。
  */
 public class Solution {
-    public int[] findErrorNums(int[] nums) {
+    public int[] findErrorNums1(int[] nums) {
         if (nums == null || nums.length == 0) {
-            return new int[0];
+            return null;
         }
 
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -31,24 +31,52 @@ public class Solution {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
 
-        int dum = -1;
-        int miss = 1;
+        int[] res = new int[2];
         for (int i = 1; i <= nums.length; i++) {
             if (map.containsKey(i)) {
+                // 首先找到重复出现的整数
                 if (map.get(i) == 2) {
-                    dum = i;
+                    // 这里使用 i 的原因是：数组中的元素是在 1 到 n 范围内的
+                    res[0] = i;
                 }
             } else {
-                miss = i;
+                // 然后找到丢失的整数
+                res[1] = i;
             }
         }
-        return new int[]{dum, miss};
+        return res;
+    }
+
+    public int[] findErrorNums2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return null;
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            // 由于数字的范围是 1 到 n，而索引的范围是 0 到 n-1，因此格外注意
+            while (nums[i] != i + 1 && nums[nums[i] - 1] != nums[i]) {
+                swap(nums, i, nums[i] - 1);
+            }
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) {
+                return new int[]{nums[i], i + 1};
+            }
+        }
+        return null;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] nums = {1, 2, 2, 4};
 
-        System.out.println(Arrays.toString(solution.findErrorNums(nums)));
+        System.out.println(Arrays.toString(solution.findErrorNums1(nums)));
+        System.out.println(Arrays.toString(solution.findErrorNums2(nums)));
     }
 }

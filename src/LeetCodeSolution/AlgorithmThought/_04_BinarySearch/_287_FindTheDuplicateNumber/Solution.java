@@ -10,7 +10,7 @@ package LeetCodeSolution.AlgorithmThought._04_BinarySearch._287_FindTheDuplicate
  * 思路一：二分
  * 1. 抽屉原理：假设有 3 个苹果放入 2 个抽屉中，则必然有一个抽屉中有 2 个苹果；
  * 2. 即假如有 n+1 个元素放到 n 个集合中去，其中必定有一个集合里至少有两个元素；
- * 3. 在每次求得 middle 之后，就在统计整个数组中小于等于 middle 的元素，并将其计数，得到 count；
+ * 3. 在每次求得 middle 之后，就统计整个数组中小于等于 middle 的元素，并将其计数，得到 count；
  * 4. 如果 count 大于 middle，说明小于等于 middle 的元素在左半部分，否则在右半部分。
  *
  * 思路二：快慢指针
