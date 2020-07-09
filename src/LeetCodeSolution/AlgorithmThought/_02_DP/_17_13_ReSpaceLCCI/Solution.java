@@ -14,7 +14,7 @@ package LeetCodeSolution.AlgorithmThought._02_DP._17_13_ReSpaceLCCI;
  * 2. dp[i] 表示以索引 i 结尾的字符串，它之前最多能匹配单词的数量；
  * 3. 需要注意的是，最后需要返回的是未识别的字符数，也就是没有匹配成功的字符数；
  * 4. 以  S="leetCodeGood"，dict=["Leet","etc","code","go"]；
- * 5. 详细解释，参见博客：
+ * 5. 详细解释，参见博客：https://dyfloveslife.github.io/2020/07/09/alg-re-space-LCCI/
  */
 public class Solution {
     public int respace(String[] dictionary, String sentence) {
