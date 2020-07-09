@@ -224,6 +224,7 @@
 
 | # | English Title  | Chinese Title  |   Solution | Difficulty |
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   17.13    | [Re-Space LCCI](https://leetcode-cn.com/problems/re-space-lcci/) | [恢复空格](https://leetcode-cn.com/problems/re-space-lcci/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_17_13_ReSpaceLCCI/Solution.java) |      Medium       |
 |   53    | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | [最大子序和](https://leetcode-cn.com/problems/maximum-subarray/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_53_MaximumSubarray/Solution.java) |      Easy       |
 |   62    | [UniquePaths](https://leetcode.com/problems/unique-paths/) | [不同路径](https://leetcode-cn.com/problems/unique-paths/) | [Java](https://leetcode-cn.com/problems/unique-paths/) |      Medium       |
 |   64    | [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/) | [最小路径和](https://leetcode-cn.com/problems/minimum-path-sum/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_02_DP/_64_MinimumPathSum/Solution.java) |      Medium       |
