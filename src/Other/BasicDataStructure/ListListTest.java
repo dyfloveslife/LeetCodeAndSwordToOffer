@@ -1,6 +1,6 @@
 package Other.BasicDataStructure;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 /**
  * 单链表
@@ -153,7 +153,7 @@ public class ListListTest {
     }
 
 
-    @Test
+//    @Test
     public void deleteByKeyTest() {
         LikedList list = new LikedList();
         list.insertTail(6);
@@ -171,7 +171,7 @@ public class ListListTest {
         list.printList();
     }
 
-    @Test
+//    @Test
     public void deleteByOperationTest() {
         LikedList list = new LikedList();
         list.insertTail(6);
