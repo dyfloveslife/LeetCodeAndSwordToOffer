@@ -10,7 +10,7 @@ import java.util.List;
  * 数组 counts 有该性质：counts[i] 的值是 nums[i] 右侧小于 nums[i] 的元素的数量。
  *
  * 思路：
- * 1.12 
+ * 1.12
  */
 public class Solution {
     public List<Integer> countSmaller(int[] nums) {
