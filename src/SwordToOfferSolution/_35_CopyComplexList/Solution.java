@@ -15,7 +15,7 @@ import java.util.HashMap;
  * 3. 重复此操作后，就有了一个节点及其拷贝节点之间的关系；
  *
  * 关系确定了之后，如何确定拷贝节点的 next 与 random 的指针呢？
- * 1. 我们知道原链表 A 的 next 是 B，用 B 去查哈希表，得到 B'，所以 A' 的 random 就指向 B'；
+ * 1. 我们知道原链表 A 的 next 是 B，用 B 去查哈希表，得到 B'，所以 A' 的 next 就指向 B'；
  * 2. 原链表 A 的 random 是 C，用 C 去查哈希表，得到 C'，所以 A' 的 random 就指向 C'。
  * 重复以上操作即可。
  *
@@ -40,7 +40,7 @@ public class Solution {
     public Node clone1(Node head) {
         HashMap<Node, Node> map = new HashMap<>();
         Node cur = head;
-        // 在复制节点的同时将 每个节点 以及 每个节点对应的拷贝节点 存储到哈希表中
+        // 在复制节点的同时将每个节点以及每个节点对应的拷贝节点存储到哈希表中
         while (cur != null) {
             map.put(cur, new Node(cur.val));
             cur = cur.next;
