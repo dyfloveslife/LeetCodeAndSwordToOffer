@@ -32,14 +32,18 @@ public class Solution {
             if (i > 0) {
                 left = left * nums[i - 1];
             }
+            // 将乘积结果放到数组左侧对应的位置
             res[i] = left;
         }
 
         int right = 1;
+        // 为什么从后往前遍历呢？
+        // 因为前面的已经计算过了，如果从前往后的话，那么之前计算过的那些结果就不能使用了
         for (int i = nums.length - 1; i >= 0; i--) {
             if (i < nums.length - 1) {
                 right = right * nums[i + 1];
             }
+            // 将原来位置上已经乘得的结果，再与新得到的 right 值进行相乘
             res[i] *= right;
         }
         return res;
