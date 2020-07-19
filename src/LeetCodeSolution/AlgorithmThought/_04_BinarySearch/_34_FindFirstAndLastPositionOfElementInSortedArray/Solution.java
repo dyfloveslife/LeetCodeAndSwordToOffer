@@ -12,9 +12,8 @@ import java.util.Arrays;
  *
  * 思路：
  * 0. 与面试题 53-1 一样，也是采用二分的形式，只不过该题需要返回的是索引；
- * 1. 使用两次二分查找，第一次找到 target 的第一次出现的位置，第二次找 target+1 第一次出现的位置，以及再往前移动的位置；
- * 2. 在 findIndexOfTarget() 方法中，需要注意 right 的位置，设置成 nums.length 是为了找到 target 在 nums 中的后一个位置
- *    时的准确性。
+ * 1. 使用两次二分查找，第一次找到 target 的初始位置，第二次找 target 结束位置；
+ * 2. 再找结束位置时，需要将 middle 的位置再加 1，以方便查找。
  */
 public class Solution {
 
@@ -24,6 +23,7 @@ public class Solution {
         }
 
         int firstPosition = getFirstPosition(nums, target);
+        // 如果在找 target 时，本身就没有出现在数组中，则直接返回 [-1, -1] 即可
         if (firstPosition == -1) {
             return new int[]{-1, -1};
         }
@@ -57,6 +57,7 @@ public class Solution {
         int right = nums.length - 1;
 
         while (left < right) {
+            // 注意这里的加 1 操作
             int middle = 1 + left + ((right - left) >> 1);
             if (nums[middle] < target) {
                 left = middle + 1;
