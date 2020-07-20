@@ -378,6 +378,7 @@
 |   718    | [Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/) | [最长重复子数组](https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_718_MaximumLengthOfRepeatedSubarray/Solution.java) |      Medium       |
 |   766    | [Toeplitz Matrix](https://leetcode.com/problems/toeplitz-matrix/) | [托普利茨矩阵](https://leetcode-cn.com/problems/toeplitz-matrix/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_766_ToeplitzMatrix/Solution.java) |      Easy       |
 |   769    | [Max Chunks To Make Sorted](https://leetcode.com/problems/max-chunks-to-make-sorted/) | [最多能完成排序的块](https://leetcode-cn.com/problems/max-chunks-to-make-sorted/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_769_MaxChunksToMakeSorted/Solution.java) |      Medium       |
+|   1046    | [Last Stone Weight](https://leetcode.com/problems/last-stone-weight/) | [最后一块石头的重量](https://leetcode-cn.com/problems/last-stone-weight/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_1046_LastStoneWeight/Solution.java) |      Easy       |
 |   1049    | [Last Stone Weight Ⅱ](https://leetcode.com/problems/last-stone-weight-ii/) | [最后一块石头的重量 Ⅱ](https://leetcode-cn.com/problems/last-stone-weight-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_1049_LastStoneWeightII/Solution.java) |      Medium       |
 
 
@@ -397,6 +398,7 @@
 |   415    | [Add Strings](https://leetcode.com/problems/add-strings/) | [字符串相加](https://leetcode-cn.com/problems/add-strings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_415_AddStrings/Solution.java) |      Easy       |
 |   647    | [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) | [回文子串](https://leetcode.com/problems/palindromic-substrings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_647_PalindromicSubstrings/Solution.java) |      Medium       |
 |   696    | [Count Binary Substrings](https://leetcode.com/problems/count-binary-substrings/) | [计数二进制子串](https://leetcode-cn.com/problems/count-binary-substrings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_696_CountBinarySubstrings/Solution.java) |      Easy       |
+|   819    | [Most Common Word](https://leetcode.com/problems/most-common-word/) | [最常见的单词](https://leetcode-cn.com/problems/most-common-word/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_819_MostCommonWord/Solution.java) |      Easy       |
 
 
 
