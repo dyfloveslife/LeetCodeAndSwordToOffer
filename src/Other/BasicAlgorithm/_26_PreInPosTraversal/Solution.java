@@ -1,6 +1,6 @@
 package Other.BasicAlgorithm._26_PreInPosTraversal;
 
-import sun.reflect.generics.tree.Tree;
+import javafx.scene.media.VideoTrack;
 
 import java.util.*;
 
@@ -235,5 +235,35 @@ public class Solution {
             res.add(list);
         }
         return res;
+    }
+
+    // 层序遍历，不适用队列
+    public List<List<Integer>> levelOrderUsingDFS(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) {
+            return res;
+        }
+
+        dfs(1, root, res);
+        return res;
+    }
+
+    // 先序遍历：根-左-右
+    private void dfs(int depth, TreeNode root, List<List<Integer>> res) {
+        // 假设 res 是 [[1], [2, 3]]，depth 为 3，那么再差入一个空的 list
+        // 也就是说，我已经来到了第 3 行了，但是你才遍历到第 2 行，因此我就在第 3 行先插入一个空的 list 吧
+        if (depth > res.size()) {
+            res.add(new ArrayList<>());
+        }
+        // 假设 res 是 [[1], [2, 3], [4]]，depth 为 3，那么需要将新来的节点 99 插入到 4 的后面，
+        // 变成 [[1], [2, 3], [4, 99]]，因为节点 99 也是位于第 3 层的，所以也应该将 99 加入到第 3 个 list 中
+        // res.get(depth - 1) 的作用是拿到 [4] 这个 list
+        res.get(depth - 1).add(root.val);
+        if (root.left != null) {
+            dfs(depth + 1, root.left, res);
+        }
+        if (root.right != null) {
+            dfs(depth + 1, root.right, res);
+        }
     }
 }
