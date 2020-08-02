@@ -476,6 +476,7 @@
 |   232    | [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/) | [用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_05_StackAndQueue/_232_ImplementQueueUsingStacks/Solution.java) |      Easy       |
 |   503    | [Next Greater Element Ⅱ](https://leetcode.com/problems/next-greater-element-ii/) | [下一个更大元素 Ⅱ](https://leetcode-cn.com/problems/next-greater-element-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_05_StackAndQueue/_503_NextGreaterElementII/Solution.java) |      Medium       |
 |   739    | [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/) | [每日温度](https://leetcode-cn.com/problems/daily-temperatures/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_05_StackAndQueue/_739_DailyTemperatures/Solution.java) |      Medium       |
+|   1249    | [Minimum Remove to Make Valid Parentheses](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/) | [移除无效的括号](https://leetcode-cn.com/problems/minimum-remove-to-make-valid-parentheses/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_05_StackAndQueue/_1249_MinimumRemoveToMakeValidParentheses/Solution.java) |      Medium       |
 
 
 #### 06.图
