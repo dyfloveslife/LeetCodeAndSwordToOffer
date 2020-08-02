@@ -72,6 +72,7 @@
 |   44   | IsAimValueInArray  |      数组中的数累加起来等于目标值  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_44_IsAimValueInArray/Solution.java)  |
 |   45   | 0-1 Knapsack Problem  |      0-1 背包问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_45_0_1_KnapsackProblem/Solution.java)  |
 |   46   | 0-1 Knapsack Problem Optimizes  |      0-1 背包问题的优化  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_45_0_1_KnapsackProblemOptimizes/Solution.java)  |
+|   47   | Completeness Knapsack Problem  |      完全背包问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_46_Completeness_KnapsackProblem/Solution.java)  |
 
 # 进阶算法
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
