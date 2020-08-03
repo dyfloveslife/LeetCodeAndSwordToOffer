@@ -12,12 +12,15 @@ import java.util.HashMap;
  * 1. 使用 HashMap，用 key 保存前缀和，用 value 保存 key 所对应的前缀和的个数；
  * 2. 对于下标为 0 的元素，前缀和为 0，且个数为 1；
  * 3. 例如对于数组 [4, 5, 0, -2, -3, 1] 来说，每一位所对应的前缀和为：
- *                [0, 4, 9,  9,  7, 4, 5]
+ *             [0, 4, 9, 9,  7,  4, 5]
  * 4. 然后使用 map 的 key 存储前缀和，value 存储前缀和出现的次数；
  * 5. 例如，当前缀和为 0 的时候，出现了 1 次；
  * 6. 当前缀和为 4 的时候出现了 2 次；
  * 7. 当前缀和为 9 的时候出现了 2 次；
- * 8. 如果 preSum - k 在 map 中存在的话，则说明我能找到一组和为 k 的子数组。
+ * 8. 如果 preSum - k 在 map 中存在的话，则说明我能找到一组和为 k 的子数组；
+ * 9. 也就是说，前缀和 pre[i] 表示的是从 0 到 i 里所有元素的和，那么 pre[i] 可以通过 pre[i-1] 得到，即 pre[i] = nums[i] + pre[i-1]；
+ * 10.如果从 i 到 j 之间的子数组的和为 k，就可以转化成 pre[j]-pre[i-1]==k，移项可以得到 pre[i-1]=pre[j]-k；
+ * 11.
  */
 public class Solution {
     public int subarraySum(int[] nums, int k) {
@@ -28,6 +31,7 @@ public class Solution {
         int res = 0;
         int preSum = 0;
         HashMap<Integer, Integer> map = new HashMap<>();
+        // 这里首先进行此操作，是因为有可能 nums 中第一个元素就是 k
         map.put(0, 1);
 
         for (int num : nums) {
