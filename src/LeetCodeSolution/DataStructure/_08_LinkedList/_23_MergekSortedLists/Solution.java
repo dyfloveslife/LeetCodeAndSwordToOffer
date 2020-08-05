@@ -43,7 +43,8 @@ public class Solution {
         }
 
         // 定义小根堆
-        PriorityQueue<ListNode> qMin = new PriorityQueue<>((o1, o2) -> (o1.val - o2.val));
+        // 这里需要注意的是：由于泛型 ListNode 不能进行比较，因此需要使用节点的 val 进行声明成小根堆
+        PriorityQueue<ListNode> minHeap = new PriorityQueue<>((o1, o2) -> (o1.val - o2.val));
 
         ListNode dummy = new ListNode(-1);
         ListNode cur = dummy;
@@ -51,16 +52,19 @@ public class Solution {
         // 将每个链表的头节点放进堆中
         for (ListNode curListHead : lists) {
             if (curListHead != null) {
-                qMin.offer(curListHead);
+                minHeap.offer(curListHead);
             }
         }
 
-        while (!qMin.isEmpty()) {
-            cur.next = qMin.poll();
-            cur = cur.next;
-            // 如果
-            if (cur.next != null) {
-                qMin.offer(cur.next);
+        while (!minHeap.isEmpty()) {
+            ListNode node = minHeap.poll();
+            // 开始链接节点
+            cur.next = node;
+            // cur 后移
+            cur = node;
+            // 对于刚刚弹出的堆顶节点 node 来说，如果它还有后继节点，那么就将它的后继节点再加入堆中
+            if (node.next != null) {
+                minHeap.offer(node.next);
             }
         }
 
