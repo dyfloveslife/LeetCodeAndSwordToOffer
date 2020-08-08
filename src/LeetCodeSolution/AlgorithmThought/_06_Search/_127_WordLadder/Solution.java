@@ -19,7 +19,7 @@ import java.util.*;
  */
 public class Solution {
 
-    public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Set<String> set = new HashSet<>(wordList);
         Queue<String> queue = new LinkedList<>();
         queue.offer(beginWord);
@@ -38,16 +38,16 @@ public class Solution {
                 }
                 // 进行 BFS 搜索
                 // 假如 cur = hit，则 j 首先会来到字母 h，然后尝试将 h 换成从 a 到 z 中的某个字母
-                char[] charArr = cur.toCharArray();
+                char[] chars = cur.toCharArray();
                 for (int j = 0; j < cur.length(); j++) {
                     // temp 所指的字母就是 h
-                    char temp = charArr[j];
+                    char temp = chars[j];
                     // 搜索字母 h 可以改变的所有可能情况
                     for (char c = 'a'; c <= 'z'; c++) {
                         // 例如先将 h 替换成 a
-                        charArr[j] = c;
+                        chars[j] = c;
                         // 然后再组成一个新的字符串，即从原来的 hit 变成 ait
-                        String s = new String(charArr);
+                        String s = new String(chars);
                         // 如果发现 ait 在 wordList 中的话，则将搜索到的所有可能情况放到队列中
                         // 再将 ait 从 wordList 中去掉，避免下次重复添加
                         if (set.contains(s)) {
@@ -56,15 +56,18 @@ public class Solution {
                         }
                     }
                     // 当前位置已经从 a 到 z 搜索完了，然后再将当前字母进行还原过来
-                    charArr[j] = temp;
+                    chars[j] = temp;
                 }
             }
             level++;
         }
+        // 注意返回 0
         return 0;
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
+
         String beginWord = "hit";
         String endWord = "cog";
         List<String> wordList = new ArrayList<>();
@@ -75,6 +78,6 @@ public class Solution {
         wordList.add("lot");
         wordList.add("log");
         wordList.add("cog");
-        System.out.println(ladderLength(beginWord, endWord, wordList));
+        System.out.println(solution.ladderLength(beginWord, endWord, wordList));
     }
 }
