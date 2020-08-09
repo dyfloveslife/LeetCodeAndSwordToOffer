@@ -82,7 +82,6 @@ public class Solution {
     // 即 i 所指的元素开始往下沉
     public void heapify(int[] nums, int i, int heapSize) {
         int left = i * 2 + 1;
-        int right = left + 1;
 
         // while 的条件说明：i 的左孩子也在堆中，没有越界
         while (left < heapSize) {
