@@ -104,6 +104,7 @@
 |   21    | MaxCoinsWayAmount    |最多的换钱方法               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_21_MaxCoinsWayAmount/Solution.java)     |
 |   22    | RegularExpressionMatch    |正则匹配问题               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_22_RegularExpressionMatch/Solution.java)     |
 |   23    | RotateString|旋转字符串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_23_RotateString/Solution.java)     |
+|   24    | QueryBox|查询给定范围内的个数               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_24_QueryBox/Solution.java)     |
 
 
 # 剑指Offer
