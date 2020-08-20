@@ -106,6 +106,7 @@
 |   23    | RotateString|旋转字符串               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_23_RotateString/Solution.java)     |
 |   24    | QueryBox|查询给定范围内的个数               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_24_QueryBox/Solution.java)     |
 |   25    | ReversePair|求解符合要求的逆序数组               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_25_ReversePair/Solution.java)     |
+|   26    | changeString|整体交换字符串（同 23 题）               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_26_ChangeString/Solution.java)     |
 
 
 # 剑指Offer
