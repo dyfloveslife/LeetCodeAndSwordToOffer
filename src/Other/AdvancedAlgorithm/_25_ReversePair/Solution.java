@@ -1,7 +1,5 @@
 package Other.AdvancedAlgorithm._25_ReversePair;
 
-import javax.swing.*;
-import java.beans.PropertyEditor;
 import java.util.Arrays;
 
 /*
@@ -28,7 +26,6 @@ import java.util.Arrays;
  * 7. 对于其它的，2 个数一组、8 个数一组，也是同样的道理。
  * 8. 通过这种划分，进而查找逆序对数量的时候，如果将原数组中的元素进行逆序操作，结果是不会影响逆序对的数量的，但是会交换逆序对数量和升序对数量；
  * 9. https://i.loli.net/2020/08/20/QdKPvO7shDtLUGV.png
- * 10.
  */
 public class Solution {
     // 暴力的方法，也就是模拟求解过程
