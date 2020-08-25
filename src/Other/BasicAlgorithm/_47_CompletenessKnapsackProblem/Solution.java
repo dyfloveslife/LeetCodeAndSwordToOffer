@@ -1,4 +1,4 @@
-package Other.BasicAlgorithm._46_Completeness_KnapsackProblem;
+package Other.BasicAlgorithm._47_CompletenessKnapsackProblem;
 
 import java.util.Scanner;
 

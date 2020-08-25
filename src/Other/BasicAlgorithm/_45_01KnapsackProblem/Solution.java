@@ -1,4 +1,4 @@
-package Other.BasicAlgorithm._45_0_1_KnapsackProblem;
+package Other.BasicAlgorithm._45_01KnapsackProblem;
 
 import java.util.Scanner;
 
