@@ -16,7 +16,7 @@ package SwordToOfferSolution._14_CuttingRopeII;
  */
 public class Solution {
 
-    public int cuttingRope(int n) {
+    public int cuttingRope1(int n) {
         if (n <= 3) {
             return n - 1;
         }
@@ -30,10 +30,49 @@ public class Solution {
         return (int) (res * n % 1000000007);
     }
 
+    private static final int MOD = (int) 1e9 + 7;
+
+    public int cuttingRope2(int n) {
+        if (n <= 3) {
+            return n - 1;
+        }
+        int a = n % 3;
+        int b = n / 3;
+        if (a == 0) {
+            return (int) pow(3, b);
+        } else if (a == 1) {
+            return (int) ((pow(3, b - 1) * 4) % MOD);
+        } else {
+            return (int) ((pow(3, b) * 2) % MOD);
+        }
+    }
+
+    // 使用快速幂
+    public long pow(long base, int num) {
+        long res = 1;
+        while (num > 0) {
+            if ((num & 1) == 1) {
+                res *= base;
+                res %= MOD;
+            }
+            base *= base;
+            base %= MOD;
+            num >>= 1;
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.cuttingRope(3));
-        System.out.println(solution.cuttingRope(173767893));
-        System.out.println(solution.cuttingRope(1000000008));
+
+        System.out.println(solution.cuttingRope1(3));
+        System.out.println(solution.cuttingRope1(120));
+        System.out.println(solution.cuttingRope1(173767893));
+        System.out.println(solution.cuttingRope1(1000000008));
+        System.out.println("=====");
+        System.out.println(solution.cuttingRope2(3));
+        System.out.println(solution.cuttingRope2(120));
+        System.out.println(solution.cuttingRope2(173767893));
+        System.out.println(solution.cuttingRope2(1000000008));
     }
 }

@@ -26,11 +26,38 @@ package SwordToOfferSolution._14_CuttingRope;
  *    5.3) 如果 b == 2，则返回 3^a * 2。
  */
 public class Solution {
+    // 暴力递归
+    public int cuttingRopeSolution0(int n) {
+        if (n == 2) {
+            return 1;
+        }
+        int ans = -1;
+        for (int i = 1; i < n; i++) {
+            ans = Math.max(ans, Math.max(i * cuttingRopeSolution0(n - i), i * (n - i)));
+        }
+        return ans;
+    }
+
     /*
-     * 动态规划
+     * 动态规划，也就是从 F(2) 逐步迭代到 F(n)，自底向上的过程
      * 0  1  2  3  4  5
      * 0  1  2  3 (4) (6)
+     * dp[i] 表示长度为 i 的绳子的最大乘积；
+     * dp[i] = Math.max(dp[i], Math.max((i - j) * j), j * dp[i - j]))
+     * (i - j) * j 表示从 j 处剪一下，剪下来的部分是 i-j，然后 i-j 就不再剪了；
+     * j * dp[i - j]) 表示从 j 处剪一下，剪下来的部分是 i-j，然后 i-j 还要继续剪
      */
+    public int cuttingRopeSolution11(int n) {
+        int[] dp = new int[n + 1];
+        dp[2] = 1;
+        for (int i = 3; i <= n; i++) {
+            for (int j = 1; j < i; j++) {
+                dp[i] = Math.max(dp[i], Math.max((i - j) * j, j * dp[i - j]));
+            }
+        }
+        return dp[n];
+    }
+
     public int cuttingRopeSolution1(int n) {
         if (n < 2) {
             return 0;
@@ -83,11 +110,21 @@ public class Solution {
         return res * n;
     }
 
+
     public static void main(String[] args) {
         Solution solution = new Solution();
+
+        System.out.println(solution.cuttingRopeSolution0(4));
+        System.out.println(solution.cuttingRopeSolution0(8));
+        System.out.println(solution.cuttingRopeSolution0(10));
+        System.out.println("====");
         System.out.println(solution.cuttingRopeSolution1(4));
         System.out.println(solution.cuttingRopeSolution1(8));
         System.out.println(solution.cuttingRopeSolution1(10));
+        System.out.println("====");
+        System.out.println(solution.cuttingRopeSolution11(4));
+        System.out.println(solution.cuttingRopeSolution11(8));
+        System.out.println(solution.cuttingRopeSolution11(10));
         System.out.println("====");
         System.out.println(solution.cuttingRopeSolution2(4));
         System.out.println(solution.cuttingRopeSolution2(8));

@@ -24,8 +24,9 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
+
         System.out.println(solution.numberOf1(7));
-        System.out.println(solution.numberOf1(00000000000000000000000010000000));
+        System.out.println(solution.numberOf1(2097152));
         System.out.println(solution.numberOf1(00000000000000000000000000001011));
     }
 }
