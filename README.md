@@ -73,6 +73,7 @@
 |   45   | 0-1 Knapsack Problem  |      0-1 背包问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_45_01KnapsackProblem/Solution.java)  |
 |   46   | 0-1 Knapsack Problem Optimizes  |      0-1 背包问题的优化  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_46_01KnapsackProblemOptimizes/Solution.java)  |
 |   47   | Completeness Knapsack Problem  |      完全背包问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_47_CompletenessKnapsackProblem/Solution.java)  |
+|   48   | Shortest Path Problem  |      最短路径问题  |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_48_ShortestPathProblem/Solution.java)  |
 
 # 进阶算法
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
