@@ -9,18 +9,19 @@ package SwordToOfferSolution._22_KthNodeFromEnd;
  *
  * 思路：
  * 1. 使用双指针，快指针先走 k-1 步，然后两个指针再一起走；
- * 2. 等到快指针走到最后一个节点的时候，此时慢指针就是倒数第 k 个节点，将其返回即可。
+ * 2. 等到快指针走到最后一个节点的时候，此时慢指针就是倒数第 k 个节点，将其返回即可；
+ * 3. 对于给定的 k 来说，判断其是否合理也是很重要的，例如 k 大于链表长度的情况，需要进行额外的判断；
  */
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int val) {
-        this.val = val;
-    }
-}
-
 public class Solution {
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
 
     public ListNode getKthFromEnd(ListNode head, int k) {
         if (head == null || k == 0) {

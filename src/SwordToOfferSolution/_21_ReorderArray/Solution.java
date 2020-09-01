@@ -12,7 +12,8 @@ import java.util.Arrays;
  * 1. 使用双指针，left 从左向右寻找偶数，right 从右向左寻找奇数；
  * 2. 将 left 和 right 所指的元素进行交换；
  * 3. 直到 left 和 right 相遇位置；
- * 4. 也可以使用快慢指针，一个走两格，一个走一格。
+ * 4. 也可以使用快慢指针，快指针用于找到奇数，慢指针用于指向下一个奇数应当存放的位置；
+ * 5. 当快指针遇到奇数后，将它与慢指针交换即可。
  */
 public class Solution {
 
@@ -38,17 +39,19 @@ public class Solution {
             return new int[0];
         }
 
-        int start = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] % 2 == 1) {
-                swap(nums, i, start);
-                start++;
+        int slow = 0;
+        int fast = 0;
+        while (fast < nums.length) {
+            if ((nums[fast] & 1) == 1) {
+                swap(nums, slow, fast);
+                slow++;
             }
+            fast++;
         }
         return nums;
     }
 
-    public void swap(int[] nums, int i, int j) {
+    private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
         nums[j] = temp;
