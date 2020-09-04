@@ -15,11 +15,11 @@ import java.util.*;
  *
  * 思路二：双端队列
  * 1. 假设根节点为第一行，将奇数行所在节点添加到队列头部，而偶数行所在节点添加到队列尾部；
- * 2. 这里使用结果集 (res.size() % 2) 来判断当前节点属于奇数行还是偶数行；
+ * 2. 这里使用结果集 (ans.size() % 2) 来判断当前节点属于奇数行还是偶数行；
  * 3. 格外注意 addLast() 和 addFirst() 的使用。
  *
  * 思路三：反转 list
- * 1. 使用 Collections.reverse(list) 将奇数行中的元素进行反转。
+ * 使用 Collections.reverse(list) 将奇数行中的元素进行反转。
  */
 public class Solution {
     class TreeNode {
@@ -34,9 +34,9 @@ public class Solution {
 
     // 双端队列
     public List<List<Integer>> levelOrder1(TreeNode root) {
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (root == null) {
-            return res;
+            return ans;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
@@ -48,7 +48,7 @@ public class Solution {
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 // 将偶数行的每个元素都添加到队列的头部
-                if (res.size() % 2 == 0) {
+                if (ans.size() % 2 == 0) {
                     list.addLast(node.val);
                     // 将奇数行的每个元素添加到队列的尾部
                 } else {
@@ -61,16 +61,16 @@ public class Solution {
                     queue.offer(node.right);
                 }
             }
-            res.add(list);
+            ans.add(list);
         }
-        return res;
+        return ans;
     }
 
     // 反转
     public List<List<Integer>> levelOrder2(TreeNode root) {
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (root == null) {
-            return res;
+            return ans;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
@@ -89,11 +89,11 @@ public class Solution {
                     queue.offer(node.right);
                 }
             }
-            if (res.size() % 2 == 1) {
+            if (ans.size() % 2 == 1) {
                 Collections.reverse(list);
             }
-            res.add(list);
+            ans.add(list);
         }
-        return res;
+        return ans;
     }
 }
