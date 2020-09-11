@@ -16,9 +16,53 @@ package SwordToOfferSolution._20_NumericStrings;
  *	.   ： 任意字符
  *	\\. ： 转义后的 .
  *	\\d ： 数字
+ *
+ * 1. 以前的方法有些繁琐，并且也不是容易理解，下面换一种方法；
+ * 2. 将给定的字符串转换成字符数组，分别判断每个字符是否符合要求即可。
  */
 public class Solution {
-    public boolean isNumeric(String s) {
+    public boolean isNumeric2(String s) {
+        if (s == null || s.trim().length() == 0) {
+            return false;
+        }
+
+        s = s.trim();
+        // 是否遇到过数字、点、符号 e
+        boolean numSeen = false;
+        boolean dotSeen = false;
+        boolean eSeen = false;
+        char[] chars = s.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] >= '0' && chars[i] <= '9') {
+                numSeen = true;
+            } else if (chars[i] == '.') {
+                // . 之前不能出现 . 或 e
+                if (dotSeen || eSeen) {
+                    return false;
+                }
+                dotSeen = true;
+            } else if (chars[i] == 'e' || chars[i] == 'E') {
+                // e 之前不能出现 e，必须出现数字
+                if (eSeen || !numSeen) {
+                    return false;
+                }
+                eSeen = true;
+                // 重置 numSeen，确保 e 之后也能出现数字
+                numSeen = false;
+            } else if (chars[i] == '+' || chars[i] == '-') {
+                // 加号或者减号，只有出现在 0 位置，或者 e 后面的第一个位置，此时才是合法的
+                if (i != 0 && chars[i - 1] != 'e' && chars[i - 1] != 'E') {
+                    return false;
+                }
+            } else {
+                // 其它不合法字符
+                return false;
+            }
+        }
+        return numSeen;
+    }
+
+    public boolean isNumeric1(String s) {
         if (s == null || s.trim().length() == 0) {
             return false;
         }
@@ -56,11 +100,20 @@ public class Solution {
         return idx[0] == before ? false : true;
     }
 
+
     public static void main(String[] args) {
         Solution solution = new Solution();
 
-        System.out.println(solution.isNumeric("123.45e+6"));
-        System.out.println(solution.isNumeric("e9"));
-        System.out.println(solution.isNumeric("1 "));
+        System.out.println(solution.isNumeric1("123.45e+6"));
+        System.out.println(solution.isNumeric1("e9"));
+        System.out.println(solution.isNumeric1("1 "));
+        System.out.println(solution.isNumeric1("+100"));
+        System.out.println(solution.isNumeric1(". 1"));
+        System.out.println("===");
+        System.out.println(solution.isNumeric1("123.45e+6"));
+        System.out.println(solution.isNumeric1("e9"));
+        System.out.println(solution.isNumeric1("1 "));
+        System.out.println(solution.isNumeric2("+100"));
+        System.out.println(solution.isNumeric1(". 1"));
     }
 }

@@ -11,7 +11,7 @@ import java.util.Arrays;
  * 思路：
  * 1. 不申请额外空间，即找到哪四个点是一组，然后进行交换；
  * 2. 交换的时候先将左上角的点保存下来，然后分为如下几步：
- *    将左上角的点指向左下角的点，
+ *    将左上角的点指向左下角的点，（也就是将左下角的点赋值给左上角的点，以下同理）
  *    将左下角的点指向右下角的点，
  *    将右下角的点指向右上角的点，
  *    将右上角的点指向左上角的点。
@@ -32,6 +32,7 @@ public class Solution {
     }
 
     public void process(int[][] matrix, int lRow, int lCol, int rRow, int rCol) {
+        // 当然这里的 times 也可以用 rRow-lRow 得到
         int times = rCol - lCol;
         int temp = 0;
         for (int i = 0; i < times; i++) {

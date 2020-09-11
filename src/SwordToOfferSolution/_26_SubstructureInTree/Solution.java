@@ -38,8 +38,7 @@ public class Solution {
         }
     }
 
-    // 现在 B 树的根节点已经在 A 树中找到了，
-    // 下一步就是需要对每个节点进行一一的比较了
+    // 在树 A 中查找树 B 的根节点，同时判断是否具有相同的子结构
     public boolean isPartSame(TreeNode A, TreeNode B) {
         // 注意：整个 B 树是 A 树中某个子树的一部分，
         // 因此，如果当前 B 树节点为 null，则说明比到头了

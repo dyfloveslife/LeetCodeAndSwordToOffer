@@ -36,6 +36,8 @@ public class Solution {
             } else if (nums[middle] > nums[right]) {
                 left = middle + 1;
             } else {
+                // 来到这里，说明 nums[middle] 和 nums[right] 是相等的，此时无法判断需要向左边调整还是右边调整
+                // 因此，可以执行 right-- 缩小范围
                 right--;
             }
         }

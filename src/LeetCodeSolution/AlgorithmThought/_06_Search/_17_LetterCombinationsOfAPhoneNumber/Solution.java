@@ -25,8 +25,10 @@ public class Solution {
     // 索引 0 和 1 不对应任何字符串
     private static String[] keyboard = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
-    public static List<String> letterCombinations(String digits) {
-
+    public List<String> letterCombinations(String digits) {
+        if (digits == null || digits.length() == 0) {
+            return new ArrayList<>();
+        }
         List<String> res = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         // 0 表示从 digits 的第 0 个位置开始进行组合
@@ -34,19 +36,20 @@ public class Solution {
         return res;
     }
 
-    private static void dfs(String digits, int index, StringBuilder sb, List<String> res) {
+    private void dfs(String digits, int index, StringBuilder sb, List<String> res) {
         // 如果已经来到了 digits 的末尾，则说明对于给定的字符串数字已经遍历完了
         if (index == digits.length()) {
             res.add(sb.toString());
             return;
         }
         // 例如给定的 digits 是 "27"，则 letters 就表示字符串 "abc"
-        String letters = keyboard[digits.charAt(index) - '0'];
+        char c = digits.charAt(index);
+        String letters = keyboard[c - '0'];
         // 用 for 循环依次拿出 abc 中的每个字符，即 'a'、'b'、'c'
         for (int i = 0; i < letters.length(); i++) {
-            char c = letters.charAt(i);
+            char temp = letters.charAt(i);
             // 先将字符 'a' 添加进行 sb
-            sb.append(c);
+            sb.append(temp);
             // 然后再来到字符串数字 7 中对应的 "pqrs"，分别与 'a' 进行组合
             // index + 1 指向的是字符串数字 7
             dfs(digits, index + 1, sb, res);
@@ -56,6 +59,9 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(letterCombinations("23"));
+        Solution solution = new Solution();
+        String digits = "23";
+
+        System.out.println(solution.letterCombinations(digits));
     }
 }

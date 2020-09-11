@@ -40,7 +40,7 @@ public class Solution {
         for (int i = start; i <= n; i++) {
             path.add(i);
             // 注意: i + 1
-            dfs(res, path, n, k, i + 1);
+            dfs(res, path, n, k - 1, i + 1);
             path.remove(path.size() - 1);
         }
     }

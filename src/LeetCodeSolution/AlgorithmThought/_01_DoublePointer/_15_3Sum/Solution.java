@@ -33,10 +33,10 @@ public class Solution {
         Arrays.sort(nums);
 
         for (int i = 0; i < nums.length; i++) {
-            // 不符合题意
-            if (nums[i] > 0) {
-                break;
-            }
+            // 如果数组中只存在正数，则需要有如下的判断
+//            if (nums[i] > 0) {
+//                break;
+//            }
             // 去重
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;

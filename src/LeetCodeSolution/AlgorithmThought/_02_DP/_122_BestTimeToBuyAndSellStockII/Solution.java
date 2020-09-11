@@ -53,11 +53,36 @@ public class Solution {
         return dp[nums.length - 1][0];
     }
 
+    // 状态压缩
+    public int maxProfit3(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        // 持有的现金
+        int cash = 0;
+        // 持有的股票
+        int hold = -prices[0];
+
+        int preCash = cash;
+        int preHold = hold;
+        for (int i = 1; i < prices.length; i++) {
+            // 卖股票
+            cash = Math.max(preCash, preHold + prices[i]);
+            // 买股票
+            hold = Math.max(preHold, preCash - prices[i]);
+
+            preCash = cash;
+            preHold = hold;
+        }
+        return cash;
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] nums = {7, 1, 5, 3, 6, 4};
 
         System.out.println(solution.maxProfit1(nums));
         System.out.println(solution.maxProfit2(nums));
+        System.out.println(solution.maxProfit3(nums));
     }
 }

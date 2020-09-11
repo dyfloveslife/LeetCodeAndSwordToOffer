@@ -13,7 +13,7 @@ import java.util.Stack;
  *
  * 思路：
  * 1. 首先把入栈序列的第一个元素放入辅助栈中，这时判断栈顶元素和出栈序列的第一个元素是否相等。如果不等则继续压栈，
- * 直到相等后开始出栈；
+ *    直到相等后开始出栈；
  * 2. 出栈后再将出栈序列的位置往后移动一位，继续判断；
  * 3. 等到入栈序列都遍历完以后，如果出栈序列还有元素的话，则该出栈序列就不是该栈的弹出顺序。
  * 4. 由于 pushed 是 popped 的排列，因此无需考虑两个数组的长度不同或包含元素不同等问题。
@@ -51,6 +51,6 @@ public class Solution {
         int[] pushed = {1, 2, 3, 4, 5};
         int[] popped = {4, 5, 3, 1, 2};
 
-        System.out.println(solution.validateStackSequences(pushed, popped));
+        System.out.println(solution.validateStackSequences(pushed, popped)); // f
     }
 }

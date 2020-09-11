@@ -15,24 +15,34 @@ package LeetCodeSolution.AlgorithmThought._01_DoublePointer._680_ValidPalindrome
  */
 public class Solution {
 
-    public static boolean validPalindrome(String s) {
-        if (s == null || s.length() < 1) {
+    public boolean validPalindrome(String s) {
+        if (s == null) {
             return false;
         }
-
-        for (int left = 0, right = s.length() - 1; left < right; left++, right--) {
-            // 只要有不相等的字符，则“跳过”该字符，然后比较剩下的字符
-            if (s.charAt(left) != s.charAt(right)) {
-                return isPalindrome(s, left + 1, right) || isPalindrome(s, left, right - 1);
-            }
+        if (s.length() == 0) {
+            return true;
         }
-        return true;
+
+        int i = 0;
+        int j = s.length() - 1;
+        // while 循环的作用就是让 i 和 j 来到所指字符不同的位置
+        while (i < j && s.charAt(i) == s.charAt(j)) {
+            i++;
+            j--;
+        }
+        // 当 i 和 j 所指的字符不同时，则开始删掉某些字符，进一步判断是否满足回文串
+        if (isPalindrome(s, i + 1, j)) {
+            return true;
+        }
+        if (isPalindrome(s, i, j - 1)) {
+            return true;
+        }
+        return false;
     }
 
-
-    public static boolean isPalindrome(String s, int left, int right) {
-        while (left < right) {
-            if (s.charAt(left++) != s.charAt(right--)) {
+    private boolean isPalindrome(String s, int i, int j) {
+        while (i < j) {
+            if (s.charAt(i++) != s.charAt(j--)) {
                 return false;
             }
         }
@@ -40,7 +50,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        System.out.println(Solution.validPalindrome("deeee"));
-        System.out.println(Solution.validPalindrome("abca"));
+        Solution solution = new Solution();
+        String s1 = "deeee";
+        String s2 = "abca";
+
+        System.out.println(solution.validPalindrome(s1));
+        System.out.println(solution.validPalindrome(s2));
     }
 }

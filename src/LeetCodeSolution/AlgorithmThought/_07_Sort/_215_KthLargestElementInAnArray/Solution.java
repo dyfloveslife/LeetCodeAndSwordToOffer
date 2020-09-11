@@ -61,8 +61,11 @@ public class Solution {
     }
 
     // 此函数的作用是以数组中的第一个数作为基准，将小于等于该数的放在数组的左边，
-    // 大于该数的放在数组的右边，最后返回该数在数组中的索引
+    // 大于该数的放在数组的右边，最后返回该数在数组中的索引，
+    // 也就是说，经过一次 partition 之后，nums[j] 就会放置在它最终应该放置的位置，就已经排好序了
     private int partition(int[] arr, int left, int right) {
+        // 注意：由于指定以数组中的第一个元素作为基准，所以 i 来到 left 的位置，
+        // 也就是一开始索引为 0 的位置，然后在 while 循环中先对 i 进行 ++ 操作
         int i = left;
         int j = right + 1;
 

@@ -26,7 +26,7 @@ public class Solution {
         }
     }
 
-    public ListNode mergetList1(ListNode head1, ListNode head2) {
+    public ListNode mergeList1(ListNode head1, ListNode head2) {
         if (head1 == null) {
             return head2;
         }
@@ -53,7 +53,6 @@ public class Solution {
         // 则需要确定 cur.next 所指向的节点
         cur.next = (head1 == null) ? head2 : head1;
         // 最后返回的是整个链表的头节点，但这里需要返回的是 dummy 的下一个节点
-        //
         return dummy.next;
     }
 

@@ -58,11 +58,11 @@ public class Solution {
         // 我需要通过递归的方式，一直来到链表的最后一个节点，
         // 例如 1->2->3->4->5->null，通过递归以后，newHead 来到的是 5 的位置，
         // 也就是最后需要返回的节点
-        ListNode nex = head.next;
-        ListNode newHead = reverseList2(nex);
+        // 因为最后一个节点的 next 指针指向的是 null，因此栈空间会不断地弹栈
+        ListNode newHead = reverseList2(head.next);
         // 来到最后一个节点以后，开始改变节点的指向，
         // 此时 head 是 4，head 的下一个是 5，head 的下下一个是 null，
-        // head.next 表示 5 的 next 指针指向 4
+        // head.next 表示节点 5，而节点 5 的 next 指针指向 4，也就是当前的 head
         head.next.next = head;
         head.next = null;
         return newHead;

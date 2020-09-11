@@ -17,6 +17,8 @@ public class Solution {
         int i = num1.length() - 1;
         int j = num2.length() - 1;
         int carry = 0;
+        // 注意：这里使用 或 运算，因为 num1 和 num2 的长度不一定相等，
+        // 所以，只要其中有一个字符串还可以计算，那么就继续执行 while 循环语句
         while (i >= 0 || j >= 0) {
             // 取 i 或 j 所指位置上的数字
             int n1 = (i >= 0) ? num1.charAt(i--) - '0' : 0;

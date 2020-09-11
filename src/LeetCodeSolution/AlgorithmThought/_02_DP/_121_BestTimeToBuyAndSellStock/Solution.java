@@ -26,6 +26,8 @@ public class Solution {
         int res = 0;
         int min = Integer.MAX_VALUE;
         for (int num : nums) {
+            // 这个 if 就是找到当前的最小值，然后使用当前的值减去这个最小值，
+            // 从而不断更新 res，得到最终的答案
             if (num < min) {
                 min = num;
             }

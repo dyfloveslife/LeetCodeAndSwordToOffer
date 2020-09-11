@@ -5,6 +5,14 @@ import java.util.HashMap;
 /*
  * Least Recently Used，最近最少使用，选择最近最久未使用的页面予以淘汰。
  *
+ * 思路 0：
+ * 整体的思路是：将新的节点插入到双端链表的头部，头部的节点是优先级最高的，尾部的节点是优先级最低的，
+ * 每次 get 操作的时候，都将 get 到的节点提取到表头，因为使用到该节点了，所以需要更新一下它的优先级，
+ * 每次 put 的时候，如果是已经存在的节点，那么将该节点删除，然后将新的节点插入到表头，同时更新 map 中对应的数据
+ * 在进行 put 的时候，如果是不存在的节点，那么在插入之前，需要判断一下容量是否满了：
+ *     如果满了，则删除链表最后一个节点；
+ *     如果没满，则将新的节点插入到表头即可
+ *
  * 思路 1：
  * 1. 使用哈希表 + 双向链表；
  * 2. 在双向链表中，从尾部加入节点，头部是优先级低的，尾部是优先级高的；
@@ -112,22 +120,19 @@ public class Solution {
         public void put(int key, int value) {
             Node node = new Node(key, value);
 
+            // 如果已经包含了该节点，则将该节点删除，然后将新节点放到链表的表头，同时更新 map 中的映射关系
             if (map.containsKey(key)) {
-                // 删除旧的，将新的节点插到头部
                 doublyList.remove(map.get(key));
-                doublyList.addFirst(node);
-                // 更新 map 中对应的数据
-                map.put(key, node);
             } else {
+                // 在插入之前需要判断一下容量是否已满，如果已经满了的话，则删除最后一个节点，同时更新 map 的映射关系
                 if (cap == doublyList.getSize()) {
-                    // 在插入之前，如果容量满了，则删除最后一个元素
                     Node last = doublyList.removeLast();
                     map.remove(last.key);
                 }
-                // 将新节点插入到头部
-                doublyList.addFirst(node);
-                map.put(key, node);
             }
+            // 如果没有满，则将新的节点插入到表头，同时更新 map 的映射关系
+            doublyList.addFirst(node);
+            map.put(key, node);
         }
     }
 

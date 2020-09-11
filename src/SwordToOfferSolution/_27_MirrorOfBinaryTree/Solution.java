@@ -10,8 +10,10 @@ import java.util.Queue;
  * 请完成一个函数，输入一个二叉树，该函数输出它的镜像。
  *
  * 思路：
+ * 0. 使用递归的方式；
  * 1. 前序遍历树中的每个节点，如果遍历到的节点有子节点，则交换两个子节点；
  * 2. 当交换完所有非叶节点的左右子节点的时候，就可以得到二叉树的镜像。
+ * 3. 使用队列的方式， 套一个 BFS 的模板，然后在当前节点的左右孩子入队之前，交换当前出队节点的左右孩子。
  */
 public class Solution {
     class TreeNode {
@@ -24,7 +26,7 @@ public class Solution {
         }
     }
 
-    // 递归
+    // 递归，先序遍历
     public TreeNode mirrorTree(TreeNode root) {
         if (root == null) {
             return null;
@@ -35,15 +37,8 @@ public class Solution {
         root.left = root.right;
         root.right = temp;
 
-        // 递归得交换当前节点的左子树
-        if (root.left != null) {
-            mirrorTree(root.left);
-        }
-
-        // 递归得交换当前节点的右子树
-        if (root.right != null) {
-            mirrorTree(root.right);
-        }
+        mirrorTree(root.left);
+        mirrorTree(root.right);
         return root;
     }
 
@@ -61,9 +56,10 @@ public class Solution {
             for (int i = 0; i < size; i++) {
                 // 每次从队列中拿出一个节点，并交换该节点的左右孩子
                 TreeNode node = queue.poll();
-                TreeNode left = node.left;
+
+                TreeNode temp = node.left;
                 node.left = node.right;
-                node.left = left;
+                node.left = temp;
 
                 if (node.left != null) {
                     queue.offer(node.left);
@@ -73,7 +69,6 @@ public class Solution {
                 }
             }
         }
-        // 处理完之后返回根节点
         return root;
     }
 }

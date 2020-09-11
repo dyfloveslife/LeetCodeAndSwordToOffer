@@ -15,7 +15,6 @@ package LeetCodeSolution.AlgorithmThought._01_DoublePointer._11_ContainerWithMos
  * 2. 每次比较两个指针所指的元素大小（也就是比较高度），水的多少取决于短板的长度再乘以两个指针之间的距离。
  */
 public class Solution {
-
     public int maxArea(int[] height) {
         if (height == null || height.length < 2) {
             return 0;
@@ -40,6 +39,7 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] height = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+
         System.out.println(solution.maxArea(height));
     }
 }

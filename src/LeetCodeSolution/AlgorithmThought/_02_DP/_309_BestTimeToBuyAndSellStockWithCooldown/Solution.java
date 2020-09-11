@@ -25,7 +25,7 @@ package LeetCodeSolution.AlgorithmThought._02_DP._309_BestTimeToBuyAndSellStockW
  * 4. 对于当天持有股票 dp[i][1] 来说，也有两种情况：
  *    4.1) 当天本来没有股票的，然后我当天买了股票，此时当天就持有了股票，那么 dp[i][1]=dp[i-2][0]-price[i]；
  *         也就是说，我今天买了股票，然后一定是前一天就没有的，因为存在冷冻期，dp[i-2][0] 表示前天没有股票的利润，
- *         由于今天买了股票，因此需要将利润 price[i] 减掉；
+ *         由于今天买了股票，因此需要用利润减去股票价格 price[i]；
  *    4.2) 还有一种情况是，昨天就有的，那么今天肯定也不能买，因此今天的利润一定是昨天的利润，即 dp[i][1]=dp[i-1][1];
  * 5. 初始值 dp[0][0]=0，第一天，不持有股票，也没卖出股票，因此第一天的利润就是 0；
  * 6. 初始值 dp[0][1]=0-price[0]，第一天就持有股票，那么利润肯定是负值，因为是你自己花钱买的，因此就是负的。
@@ -46,10 +46,34 @@ public class Solution {
         return Math.max(dp[prices.length - 1][0], dp[prices.length - 1][1]);
     }
 
+    public int maxProfit2(int[] prices) {
+        if (prices == null || prices.length == 0) {
+            return 0;
+        }
+        int len = prices.length;
+        // 截至第 i 天，最后一个操作是卖时的最大收益
+        int[] sell = new int[len];
+        // 截至第 i 天，最后一个操作是买时的最大收益
+        int[] buy = new int[len];
+        // 截至第 i 天，最后一个操作是冷冻期时的最大收益
+        int[] cool = new int[len];
+        buy[0] = -prices[0];
+        for (int i = 1; i < len; i++) {
+            // 如果第 i 天是卖的话，那么就等于昨天的收益+今天卖出的股票
+            sell[i] = buy[i - 1] + prices[i];
+            // 如果第 i 天是买的话，那么如果第 i 天被冷冻，那么就等于昨天的收益
+            // 如果第 i 天是买的话，那么如果第 i 天没有被冷冻，那么就等于昨天的收益再减去今天买入的
+            buy[i] = Math.max(buy[i - 1], cool[i - 1] - prices[i]);
+            cool[i] = Math.max(sell[i - 1], cool[i - 1]);
+        }
+        return Math.max(sell[len - 1], cool[len - 1]);
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] prices = {1, 2, 3, 0, 2};
 
         System.out.println(solution.maxProfit(prices));
+        System.out.println(solution.maxProfit2(prices));
     }
 }

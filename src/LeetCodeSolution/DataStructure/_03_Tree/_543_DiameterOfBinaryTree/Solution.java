@@ -37,14 +37,15 @@ public class Solution {
     }
 
     private int dfs(TreeNode root) {
-        if (root.left == null && root.right == null) {
+        if (root == null) {
             return 0;
         }
 
-        int leftSize = (root.left == null) ? 0 : dfs(root.left) + 1;
-        int rightSize = (root.right == null) ? 0 : dfs(root.right) + 1;
+        int left = dfs(root.left);
+        int right = dfs(root.right);
+        res = Math.max(res, left + right);
 
-        res = Math.max(res, leftSize + rightSize);
-        return Math.max(leftSize, rightSize);
+        // 注意，这里让求的是【直径长度】，所以和边有关，因此需要加 1
+        return Math.max(left, right) + 1;
     }
 }

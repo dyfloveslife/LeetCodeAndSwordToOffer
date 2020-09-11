@@ -1,6 +1,6 @@
 package Other.BasicDataStructure;
 
-import org.junit.Test;
+//import org.junit.Test;
 
 /**
  * 双向链表
@@ -135,7 +135,7 @@ public class DoublyLinkedListTest {
     }
 
 
-    @Test
+//    @Test
     public void insertAtFrontTest() {
         DLL dll = new DLL();
         dll.insertAtTail(6);
@@ -148,7 +148,7 @@ public class DoublyLinkedListTest {
         dll.printDLL(dll.head);
     }
 
-    @Test
+//    @Test
     public void deleteNodeTest() {
         DLL dll = new DLL();
         dll.insertAtTail(6);

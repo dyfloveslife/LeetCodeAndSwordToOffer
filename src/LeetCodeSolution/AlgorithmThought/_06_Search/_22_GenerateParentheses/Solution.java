@@ -77,6 +77,7 @@ public class Solution {
      * @param right  右括号已经使用的数量
      */
     public void dfs2(List<String> res, int n, String curStr, int left, int right) {
+        // 递归结束的条件，如果左右括号使用的数量已经达到了 n，那么就需要收集结果了
         if (left == n && right == n) {
             res.add(curStr);
             return;
@@ -98,6 +99,7 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
+
         System.out.println(solution.generateParenthesis1(3));
         System.out.println(solution.generateParenthesis2(3));
     }

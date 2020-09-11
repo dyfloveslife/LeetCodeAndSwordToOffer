@@ -28,9 +28,9 @@ public class Solution {
     }
 
     public List<List<Integer>> levelOrder(TreeNode root) {
-        List<List<Integer>> res = new ArrayList<>();
+        List<List<Integer>> ans = new ArrayList<>();
         if (root == null) {
-            return res;
+            return ans;
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
@@ -48,8 +48,8 @@ public class Solution {
                     queue.offer(node.right);
                 }
             }
-            res.add(list);
+            ans.add(list);
         }
-        return res;
+        return ans;
     }
 }
