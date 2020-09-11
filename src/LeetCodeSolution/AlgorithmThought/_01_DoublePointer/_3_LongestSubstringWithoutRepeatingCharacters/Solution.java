@@ -11,10 +11,29 @@ import java.util.HashSet;
  * 思路：
  * 1. 使用 HashSet 和双指针；
  * 2. 需要注意的是，如果 set 中已经包含了 right 位置所指的字符，那么应该将 left 所指位置的字符从 set 中删除。
+ * 3. 当然，其中的 HashSet 可以使用数组进行代替，因为给定的字符串都是字母。
  */
 public class Solution {
 
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstring1(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        int[] map = new int[128];
+        int ans = 0;
+
+        for (int i = 0, j = 0; i < s.length(); ++i) {
+            map[s.charAt(i)]++;
+            while (map[s.charAt(i)] > 1) {
+                map[s.charAt(j)]--;
+                j++;
+            }
+            ans = Math.max(ans, i - j + 1);
+        }
+        return ans;
+    }
+
+    public int lengthOfLongestSubstring2(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
@@ -38,8 +57,14 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.lengthOfLongestSubstring("abcabcbb"));
-        System.out.println(solution.lengthOfLongestSubstring("bbbbb"));
-        System.out.println(solution.lengthOfLongestSubstring("pwwkew"));
+
+        System.out.println(solution.lengthOfLongestSubstring1("abcabcbb"));
+        System.out.println(solution.lengthOfLongestSubstring1("bbbbb"));
+        System.out.println(solution.lengthOfLongestSubstring1("pwwkew"));
+
+        System.out.println("--");
+        System.out.println(solution.lengthOfLongestSubstring2("abcabcbb"));
+        System.out.println(solution.lengthOfLongestSubstring2("bbbbb"));
+        System.out.println(solution.lengthOfLongestSubstring2("pwwkew"));
     }
 }
