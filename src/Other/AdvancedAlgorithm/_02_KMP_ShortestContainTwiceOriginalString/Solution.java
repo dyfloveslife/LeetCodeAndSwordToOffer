@@ -31,7 +31,7 @@ public class Solution {
         return s + s.substring(endNext);
     }
 
-    public int endNextLength(char[] chars) {
+    private int endNextLength(char[] chars) {
         int[] next = new int[chars.length + 1];
         next[0] = -1;
         next[1] = 0;
