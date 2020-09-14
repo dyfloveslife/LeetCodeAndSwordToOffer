@@ -108,6 +108,7 @@
 |   24    | QueryBox|查询给定范围内的个数               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_24_QueryBox/Solution.java)     |
 |   25    | ReversePair|求解符合要求的逆序数组               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_25_ReversePair/Solution.java)     |
 |   26    | changeString|整体交换字符串（同 23 题）               |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_26_ChangeString/Solution.java)     |
+|   27    | LongestSubstring|最长公共字串的长度         |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_27_LongestSubstring/Solution.java)     |
 
 
 # 剑指Offer
@@ -372,6 +373,7 @@
 | :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
 |   4    | [Median of Two Sorted Arrays](https://leetcode.com/problems/median-of-two-sorted-arrays/) | [寻找两个正序数组的中位数](https://leetcode-cn.com/problems/median-of-two-sorted-arrays/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_4_MedianOfTwoSortedArrays/Solution.java) |      Hard       |
 |   31    | [Next Permutation](https://leetcode.com/problems/next-permutation/) | [下一个排列](https://leetcode-cn.com/problems/next-permutation/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_31_NextPermutation/Solution.java) |      Medium       |
+|   41    | [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) | [缺失的第一个正数](https://leetcode-cn.com/problems/first-missing-positive/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_41_FirstMissingPositive/Solution.java) |      Hard       |
 |   56    | [Merge Intervals](https://leetcode.com/problems/merge-intervals/) | [合并区间](https://leetcode-cn.com/problems/merge-intervals/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_56_MergeIntervals/Solution.java) |      Medium       |
 |   74    | [Search a 2D Matrix](https://leetcode.com/problems/search-a-2d-matrix/) | [搜索二维矩阵](https://leetcode.com/problems/search-a-2d-matrix/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_74_SearchA2DMatrix/Solution.java) |      Medium       |
 |   136    | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | [除自身以外数组的乘积](https://leetcode-cn.com/problems/product-of-array-except-self/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_01_ArrayAndMatrix/_238_ProductOfArrayExceptSelf/Solution.java) |      Medium       |

@@ -8,7 +8,7 @@ package LeetCodeSolution.AlgorithmThought._02_DP._1143_LongestCommonSubsequence;
  *
  * 思路：
  * 1. DP；
- * 2. 定义 dp[i][j] 表示 s1 中 1~i 字符与 s2 中 1~j 字符的最长公共子序列；
+ * 2. 定义 dp[i][j] 表示 s1 中 1~i 字符与 s2 中 1~j 字符的最长公共子序列的长度；
  * 3. 之所以从 1 开始，是因为需要将 0 行和 0 列置为 0；
  *    例如 dp[0][3] 表示对于字符串 "" 和 "bab"，它们之间的最长公共子序列为 0；
  * 3. 如果 s1 中的 i 和 s2 中的 j 相等，则 dp[i][j] 就等于前一个字符的最长公共子序列再加上当前相等的这个 1，即 dp[i-1][j-1]+1；
