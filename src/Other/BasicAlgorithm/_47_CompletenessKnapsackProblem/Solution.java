@@ -12,8 +12,11 @@ public class Solution {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        // 物品数量
         int N = sc.nextInt();
+        // 背包容量
         int V = sc.nextInt();
+        // 第 i 个物品的体积和价值
         int[] v = new int[N + 1];
         int[] w = new int[N + 1];
         for (int i = 1; i <= N; i++) {
