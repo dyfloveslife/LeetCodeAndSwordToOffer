@@ -417,6 +417,7 @@
 |   696    | [Count Binary Substrings](https://leetcode.com/problems/count-binary-substrings/) | [计数二进制子串](https://leetcode-cn.com/problems/count-binary-substrings/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_696_CountBinarySubstrings/Solution.java) |      Easy       |
 |   767    | [Reorganize String](https://leetcode.com/problems/reorganize-string/) | [重构字符串](https://leetcode-cn.com/problems/reorganize-string/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_767_ReorganizeString/Solution.java) |      Medium       |
 |   819    | [Most Common Word](https://leetcode.com/problems/most-common-word/) | [最常见的单词](https://leetcode-cn.com/problems/most-common-word/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_819_MostCommonWord/Solution.java) |      Easy       |
+|   1541    | [Minimum Insertions to Balance a Parentheses String](https://leetcode.com/problems/minimum-insertions-to-balance-a-parentheses-string/) | [平衡括号字符串的最少插入次数](https://leetcode-cn.com/problems/minimum-insertions-to-balance-a-parentheses-string/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_02_String/_1541_MinimumInsertionsToBalanceAParenthesesString/Solution.java) |      Medium       |
 
 
 
