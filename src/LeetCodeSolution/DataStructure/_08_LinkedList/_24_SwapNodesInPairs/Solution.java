@@ -13,8 +13,9 @@ package LeetCodeSolution.DataStructure._08_LinkedList._24_SwapNodesInPairs;
  * 3. 然后创建一个引用 pre，让其指向 dummy；
  * 4. 在 pre 的后继节点以及后继的后继不为 null 的情况下，遍历链表；
  * 5. 创建每个节点的引用，然后交换两个节点的引用，最后再让 pre 的 next 指向两者之间的后者节点；
- * 6. 最后需要返回 dummy 节点的 next；
- * 7. 画图解决一切。
+ * 6. 也就是说 pre 需要来到 cur1 的位置，这点很重要；
+ * 7. 最后需要返回 dummy 节点的 next；
+ * 8. 画图解决一切。
  */
 public class Solution {
     class ListNode {
@@ -27,9 +28,7 @@ public class Solution {
     }
 
     public ListNode swapPairs(ListNode head) {
-        if (head == null) {
-            return null;
-        }
+        if (head == null) return null;
 
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
@@ -37,15 +36,15 @@ public class Solution {
         ListNode pre = dummy;
 
         while (pre.next != null && pre.next.next != null) {
-            ListNode l1 = pre.next;
-            ListNode l2 = pre.next.next;
-            ListNode nex = l2.next;
+            ListNode cur1 = pre.next;
+            ListNode cur2 = pre.next.next;
+            ListNode nex = cur2.next;
 
-            l1.next = nex;
-            l2.next = l1;
-            pre.next = l2;
+            cur1.next = nex;
+            cur2.next = cur1;
+            pre.next = cur2;
 
-            pre = nex;
+            pre = cur1;
         }
         return dummy.next;
     }
