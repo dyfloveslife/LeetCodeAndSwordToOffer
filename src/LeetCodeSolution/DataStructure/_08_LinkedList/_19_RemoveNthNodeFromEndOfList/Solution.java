@@ -13,7 +13,7 @@ package LeetCodeSolution.DataStructure._08_LinkedList._19_RemoveNthNodeFromEndOf
  * 4. 然后改变慢指针的 next 域即可。
  */
 public class Solution {
-    class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
