@@ -506,6 +506,9 @@
 
 #### 07.位运算
 
+| # | English Title  | Chinese Title  |   Solution | Difficulty |
+| :----: | ---------------------- | ----------------------- | :--------------: | :-------------: |
+|   1356    | [Sort Integers by The Number of 1 Bits](https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/) | [根据数字二进制下 1 的数目排序](https://leetcode-cn.com/problems/sort-integers-by-the-number-of-1-bits/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_07_BitManipulation/_1356_SortIntegersByTheNumberOf1Bits/Solution.java) |      Easy       |
 
 #### 08.链表
 
