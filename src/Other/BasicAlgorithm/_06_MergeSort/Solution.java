@@ -33,31 +33,31 @@ public class Solution {
             return;
         }
 
-        int middle = left + ((right - left) >> 1);
-        sortProcess(nums, left, middle);
-        sortProcess(nums, middle + 1, right);
-        merge(nums, left, middle, right);
+        int mid = left + ((right - left) >> 1);
+        sortProcess(nums, left, mid);
+        sortProcess(nums, mid + 1, right);
+        merge(nums, left, mid, right);
     }
 
     // 左部分和右部分都已经排好序了，现在需要整体合并再排序
-    private static void merge(int[] nums, int left, int middle, int right) {
+    private static void merge(int[] nums, int left, int mid, int right) {
         int[] help = new int[right - left + 1];
         
         // i 的作用就是在谁小填谁的时候，从 0 位置开始填
-        int i = 0;
-        // pos1 和 pos2 分别指向两个子数组的起始元素
-        int pos1 = left;
-        int pos2 = middle + 1;
+        int idx = 0;
+        // p1 和 p2 分别指向两个子数组的起始元素
+        int p1 = left;
+        int p2 = mid + 1;
         // 进行比较，谁小就将其填到 help 数组中
-        while (pos1 <= middle && pos2 <= right) {
-            help[i++] = nums[pos1] < nums[pos2] ? nums[pos1++] : nums[pos2++];
+        while (p1 <= mid && p2 <= right) {
+            help[idx++] = nums[p1] < nums[p2] ? nums[p1++] : nums[p2++];
         }
         // 对于划分后的两部分来说，如果其中一部分的指针到头了，则将另一回部分的数直接放到 help 中
-        while (pos1 <= middle) {
-            help[i++] = nums[pos1++];
+        while (p1 <= mid) {
+            help[idx++] = nums[p1++];
         }
-        while (pos2 <= right) {
-            help[i++] = nums[pos2++];
+        while (p2 <= right) {
+            help[idx++] = nums[p2++];
         }
         // 将 help 中的数拷贝到原数组中
         for (int j = 0; j < help.length; j++) {

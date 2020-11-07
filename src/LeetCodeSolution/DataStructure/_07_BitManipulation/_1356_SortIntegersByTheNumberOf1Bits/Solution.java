@@ -25,7 +25,7 @@ import java.util.List;
 public class Solution {
 
     // 方法一
-    public static int[] sortByBits1(int[] nums) {
+    public int[] sortByBits1(int[] nums) {
         if (nums == null || nums.length == 0) {
             return new int[0];
         }
@@ -62,7 +62,7 @@ public class Solution {
     }
 
     // 方法二
-    public static int[] sortByBits2(int[] nums) {
+    public int[] sortByBits2(int[] nums) {
         if (nums == null || nums.length == 0) {
             return new int[0];
         }
@@ -81,7 +81,7 @@ public class Solution {
     }
 
     // 统计 x 的二进制形式中 1 的个数
-    private static int getCountOfOne(int x) {
+    private int getCountOfOne(int x) {
         int ans = 0;
         while (x != 0) {
             x &= (x - 1);
@@ -91,9 +91,11 @@ public class Solution {
     }
 
     public static void main(String[] args) {
+        Solution solution = new Solution();
+
         int[] nums = {0, 1, 2, 3, 4, 5, 6, 7, 8};
 
-        System.out.println(Arrays.toString(sortByBits1(nums)));
-        System.out.println(Arrays.toString(sortByBits2(nums)));
+        System.out.println(Arrays.toString(solution.sortByBits1(nums)));
+        System.out.println(Arrays.toString(solution.sortByBits2(nums)));
     }
 }
