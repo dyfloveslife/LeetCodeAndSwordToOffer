@@ -1,7 +1,7 @@
 package LeetCodeSolution.AlgorithmThought._01_DoublePointer._167_TwoSumII;
 
 /*
- * 两数之和 II - 输入有序数组
+ * 两数之和Ⅱ- 输入有序数组
  *
  * 题目描述：
  * 给定一个已按照升序排列的有序数组，找到两个数使得它们相加之和等于目标数。

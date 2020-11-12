@@ -228,7 +228,7 @@
 |   524    | [Longest Word in Dictionary through Deleting](https://leetcode.com/problems/longest-word-in-dictionary-through-deleting/) | [通过删除字母匹配到字典里最长单词](https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_524_LongestWordinDictionaryThroughDeleting/Solution.java) |      Medium       |
 |   633    | [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/description/) | [平方数之和](https://leetcode-cn.com/problems/sum-of-square-numbers/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_633_SumOfSquare/Solution.java) |      Easy       |
 |   680    | [Valid Palindrome Ⅱ](https://leetcode.com/problems/valid-palindrome-ii/description/) | [验证回文字符串 Ⅱ](https://leetcode-cn.com/problems/valid-palindrome-ii/description/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_680_ValidPalindromeII/Solution.java) |     Easy       |
-
+|   922    | [Sort Array By Parity Ⅱ](https://leetcode.com/problems/sort-array-by-parity-ii/) | [按奇偶排序数组 Ⅱ](https://leetcode-cn.com/problems/sort-array-by-parity-ii/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_01_DoublePointer/_922_SortArrayByParityII/Solution.java) |     Easy       |
 
 #### 02.动态规划 
 
