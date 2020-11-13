@@ -22,24 +22,29 @@ public class Solution {
     }
 
     public ListNode oddEvenList(ListNode head) {
-        if (head == null) {
-            return null;
-        }
+        if (head == null) return null;
 
-        ListNode oddHead = head;
-        ListNode evenHead = head.next;
+        // 指针 oddHead 表示在节点编号为奇数的节点上进行移动
+        // 指针 evenHead 表示在节点编号为偶数的节点上进行移动
+        ListNode oddHead = head, evenHead = head.next;
+        // 程序最终会将给定的链表分成两个链表，一个奇数链表，一个偶数链表，
+        // 而 cur 表示偶数链表的头节点，我们最后需要将奇数链表的最后一个节点的 next 域指向 cur，
+        // 最终完成拼接
         ListNode cur = evenHead;
 
+        ListNode oddNext = null, evenNext = null;
         while (oddHead.next != null && oddHead.next.next != null && evenHead.next != null) {
-            ListNode oddNext = oddHead.next.next;
-            ListNode evenNext = evenHead.next.next;
-
+            // 防止链表断裂
+            oddNext = oddHead.next.next;
+            evenNext = evenHead.next.next;
+            // 修改节点的引用
             oddHead.next = oddNext;
             evenHead.next = evenNext;
-
+            // 来到下一个节点，继续处理
             oddHead = oddNext;
             evenHead = evenNext;
         }
+        // 最后，需要将奇数链表中最后一个节点的 next 域指向偶数节点的头节点
         oddHead.next = cur;
         return head;
     }
