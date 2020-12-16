@@ -542,3 +542,8 @@
 |   725    | [Split Linked List in Parts](https://leetcode.com/problems/split-linked-list-in-parts/) | [分隔链表](https://leetcode-cn.com/problems/split-linked-list-in-parts/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_725_SplitLinkedListInParts/Solution.java) |      Medium       |
 |   1019    | [Next Greater Node In Linked List](https://leetcode.com/problems/next-greater-node-in-linked-list/) | [链表中的下一个更大节点](https://leetcode-cn.com/problems/next-greater-node-in-linked-list/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_1019_NextGreaterNodeInLinkedList/Solution.java) |      Medium       |
 |   1171    | [Remove Zero Sum Consecutive Nodes from Linked List](https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/) | [从链表中删去总和值为零的连续节点](https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_1171_RemoveZeroSumConsecutiveNodesFromLinkedList/Solution.java) |      Medium       |
+
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/dyfloveslife/LeetCodeAndSwordToOffer.svg)](https://starchart.cc/dyfloveslife/LeetCodeAndSwordToOffer)
