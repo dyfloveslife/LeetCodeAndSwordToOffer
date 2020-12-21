@@ -544,6 +544,6 @@
 |   1171    | [Remove Zero Sum Consecutive Nodes from Linked List](https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/) | [从链表中删去总和值为零的连续节点](https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/) | [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_1171_RemoveZeroSumConsecutiveNodesFromLinkedList/Solution.java) |      Medium       |
 
 
-## Stargazers over time
+## Stars
 
 [![Stargazers over time](https://starchart.cc/dyfloveslife/LeetCodeAndSwordToOffer.svg)](https://starchart.cc/dyfloveslife/LeetCodeAndSwordToOffer)
