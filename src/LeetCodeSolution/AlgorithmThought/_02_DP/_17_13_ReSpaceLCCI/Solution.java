@@ -17,7 +17,7 @@ package LeetCodeSolution.AlgorithmThought._02_DP._17_13_ReSpaceLCCI;
  * 5. 详细解释，参见博客：https://dyfloveslife.github.io/2020/07/09/alg-re-space-LCCI/
  */
 public class Solution {
-    public int respace(String[] dictionary, String sentence) {
+    public int reSpace(String[] dictionary, String sentence) {
         // 长度为 sentence 的长度加 1，是为了保证 sentence 中的第一个字符是从 1 开始的
         int[] dp = new int[sentence.length() + 1];
         int index = 1;
@@ -49,6 +49,6 @@ public class Solution {
         String[] dictionary = {"looked","just","like","her","brother"};
         String sentence = "jesslookedjustliketimherbrother";
 
-        System.out.println(solution.respace(dictionary, sentence));
+        System.out.println(solution.reSpace(dictionary, sentence));
     }
 }

@@ -72,7 +72,6 @@ public class Solution {
         System.out.println(solution.maxProduct(nums4));
 
         System.out.println("===");
-
         System.out.println(solution.maxProduct2(nums1));
         System.out.println(solution.maxProduct2(nums2));
         System.out.println(solution.maxProduct2(nums3));

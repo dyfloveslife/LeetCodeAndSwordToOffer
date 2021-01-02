@@ -21,7 +21,7 @@ package LeetCodeSolution.AlgorithmThought._02_DP._91_DecodeWays;
  * 5. 因此，dp[i] 仅与前两项有关。
  */
 public class Solution {
-    public int numDecodings(String s) {
+    public int numDeCodings(String s) {
         if (s == null || s.length() == 0) {
             return 0;
         }
@@ -55,7 +55,7 @@ public class Solution {
         String s1 = "226";
         String s2 = "12";
 
-        System.out.println(solution.numDecodings(s1));
-        System.out.println(solution.numDecodings(s2));
+        System.out.println(solution.numDeCodings(s1));
+        System.out.println(solution.numDeCodings(s2));
     }
 }

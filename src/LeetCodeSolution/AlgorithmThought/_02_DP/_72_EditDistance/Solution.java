@@ -75,6 +75,7 @@ public class Solution {
         Solution solution = new Solution();
         String word1 = "horse";
         String word2 = "ros";
+
         System.out.println(solution.minDistance(word1, word2));
     }
 }

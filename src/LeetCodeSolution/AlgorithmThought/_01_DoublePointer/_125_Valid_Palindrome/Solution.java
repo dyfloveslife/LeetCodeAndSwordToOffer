@@ -1,7 +1,5 @@
 package LeetCodeSolution.AlgorithmThought._01_DoublePointer._125_Valid_Palindrome;
 
-import sun.text.normalizer.UCharacter;
-
 /*
  * 验证回文串
  *
@@ -9,7 +7,7 @@ import sun.text.normalizer.UCharacter;
  * 给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。
  *
  * 思路：
- * 1. 由于只考虑字母和数字字符，因此可以使用  函数，只要遇到不是字母和数字的字符，则将其越过；
+ * 1. 由于只考虑字母和数字字符，因此可以使用 Character.isLetterOrDigit() 函数，只要遇到不是字母和数字的字符，则将其越过；
  * 2. 使用前后指针分别进行比较即可。
  */
 public class Solution {
