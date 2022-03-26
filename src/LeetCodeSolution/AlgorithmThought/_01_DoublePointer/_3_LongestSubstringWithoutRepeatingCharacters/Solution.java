@@ -10,7 +10,7 @@ import java.util.HashSet;
  *
  * 思路：
  * 1. 使用 HashSet 和双指针；
- * 2. 需要注意的是，如果 set 中已经包含了 right 位置所指的字符，那么应该将 left 所指位置的字符从 set 中删除。
+ * 2. 需要注意的是，如果 set 中已经包含了 right 位置所指的字符，那么应该将 left 所指位置的字符从 set 中删除；
  * 3. 当然，其中的 HashSet 可以使用数组进行代替，因为给定的字符串都是字母。
  */
 public class Solution {
