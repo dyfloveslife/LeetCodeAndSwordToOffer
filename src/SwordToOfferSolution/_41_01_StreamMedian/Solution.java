@@ -36,7 +36,7 @@ public class Solution {
             count += 1;
             maxHeap.offer(num);
             minHeap.offer(maxHeap.poll());
-            // 如果两个堆中的元素之和为奇数，则小根堆需要弹出元素放进大根堆
+            // 如果两个堆中的元素数量之和为奇数，则小根堆需要弹出元素放进大根堆
             // 让大根堆始终比小根堆多一个元素
             if (count % 2 == 1) {
                 maxHeap.offer(minHeap.poll());
