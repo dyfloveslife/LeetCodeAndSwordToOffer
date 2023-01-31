@@ -13,6 +13,7 @@
     - [07.排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#07%E6%8E%92%E5%BA%8F)
     - [08.数学](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#08%E6%95%B0%E5%AD%A6)
     - [09.回溯](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#09%E5%9B%9E%E6%BA%AF)
+    - [10.随机化](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#10%E9%9A%8F%E6%9C%BA%E5%8C%96)
   - [数据结构相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3)
     - [01.数组和矩阵](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#01%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5)
     - [02.字符串](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#02%E5%AD%97%E7%AC%A6%E4%B8%B2)
@@ -444,6 +445,17 @@
 |  320  | [Generalized Abbreviation](https://leetcode.com/problems/generalized-abbreviation/description/)                           | [列举单词的全部缩写](https://leetcode.cn/problems/generalized-abbreviation/description/)              |   TODO   |   Medium   |
 |  351  | [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/description/)                             | [安卓系统手势解锁](https://leetcode.cn/problems/android-unlock-patterns/description/)                 |   TODO   |   Medium   |
 |  377  | [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)                                       | [组合总和 IV](https://leetcode.cn/problems/combination-sum-iv/description/)                           |   TODO   |   Medium   |
+
+#### 10.随机化
+
+|   #   | English Title                                                                                                     | Chinese Title                                                                                                               | Solution | Difficulty |
+| :---: | ----------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | :------: | :--------: |
+|  138  | [Copy List with Random Pointer](https://leetcode.com/problems/copy-list-with-random-pointer/)                     | [复制带随机指针的链表](https://leetcode.cn/problems/copy-list-with-random-pointer/)                                         |   TODO   |   Medium   |
+|  380  | [Insert Delete GetRandom O(1)](https://leetcode.com/problems/insert-delete-getrandom-o1/)                         | [O(1) 时间插入、删除和获取随机元素](https://leetcode.cn/problems/insert-delete-getrandom-o1/)                               |   TODO   |   Medium   |
+|  381  | [O(1) 时间插入、删除和获取随机元素](https://leetcode.com/problems/insert-delete-getrandom-o1-duplicates-allowed/) | [O(1) 时间插入、删除和获取随机元素 - 允许重复](https://leetcode.cn/problems/insert-delete-getrandom-o1-duplicates-allowed/) |   TODO   |    Hard    |
+|  382  | [Linked List Random Node](https://leetcode.com/problems/linked-list-random-node/)                                 | [链表随机节点](https://leetcode.cn/problems/linked-list-random-node/)                                                       |   TODO   |   Medium   |
+|  384  | [Shuffle an Array](https://leetcode.com/problems/shuffle-an-array/)                                               | [打乱数组](https://leetcode.cn/problems/shuffle-an-array/)                                                                  |   TODO   |   Medium   |
+|  398  | [Random Pick Index](https://leetcode.com/problems/random-pick-index/)                                             | [随机数索引](https://leetcode.cn/problems/random-pick-index/)                                                               |   TODO   |   Medium   |
 
 ## 数据结构相关
 #### 01.数组和矩阵
