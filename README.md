@@ -22,6 +22,7 @@
     - [06.图](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#06%E5%9B%BE)
     - [07.位运算](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#07%E4%BD%8D%E8%BF%90%E7%AE%97)
 	- [08.链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#08%E9%93%BE%E8%A1%A8)
+	- [09.拓扑排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#09%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
 - [程序基本输入输出](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/tree/master/src/Other/BasicInputOutput)
 
 # 基础算法
@@ -800,6 +801,14 @@
 |  725  | [Split Linked List in Parts](https://leetcode.com/problems/split-linked-list-in-parts/)                                                           | [分隔链表](https://leetcode-cn.com/problems/split-linked-list-in-parts/)                                                      |             [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_725_SplitLinkedListInParts/Solution.java)              |   Medium   |
 | 1019  | [Next Greater Node In Linked List](https://leetcode.com/problems/next-greater-node-in-linked-list/)                                               | [链表中的下一个更大节点](https://leetcode-cn.com/problems/next-greater-node-in-linked-list/)                                  |          [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_1019_NextGreaterNodeInLinkedList/Solution.java)           |   Medium   |
 | 1171  | [Remove Zero Sum Consecutive Nodes from Linked List](https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/)           | [从链表中删去总和值为零的连续节点](https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/)      |  [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/DataStructure/_08_LinkedList/_1171_RemoveZeroSumConsecutiveNodesFromLinkedList/Solution.java)   |   Medium   |
+
+#### 09.拓扑排序
+
+|   #   | English Title                                                                       | Chinese Title                                                             | Solution | Difficulty |
+| :---: | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | :------: | :--------: |
+|  207  | [Course Schedule](https://leetcode.com/problems/course-schedule/description/)       | [课程表](https://leetcode.cn/problems/course-schedule/description/)       |   TODO   |   Medium   |
+|  210  | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/) | [课程表 II](https://leetcode.cn/problems/course-schedule-ii/description/) |   TODO   |   Medium   |
+|  269  | [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/description/)     | [火星词典](https://leetcode.cn/problems/alien-dictionary/description/)    |   TODO   |    Hard    |
 
 ## Stars
 
