@@ -25,7 +25,6 @@
 - [程序基本输入输出](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/tree/master/src/Other/BasicInputOutput)
 
 # 基础算法
-[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 
 |   #   | English Title                  | Chinese Title                                      |                                                                      Solution                                                                       |
 | :---: | ------------------------------ | -------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -77,7 +76,6 @@
 |  48   | Shortest Path Problem          | 最短路径问题                                       |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/BasicAlgorithm/_48_ShortestPathProblem/Solution.java)      |
 
 # 进阶算法
-[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 
 |   #   | English Title                      | Chinese Title                                       |                                                                             Solution                                                                             |
 | :---: | ---------------------------------- | --------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -112,7 +110,6 @@
 |  27   | LongestSubstring                   | 最长公共字串的长度                                  |            [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/Other/AdvancedAlgorithm/_27_LongestSubstring/Solution.java)            |
 
 # 剑指Offer
-[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 
 |   #   | English Title               | Chinese Title                  |                                                                       Solution                                                                        |
 | :---: | --------------------------- | ------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------: |
@@ -201,12 +198,10 @@
 | 68_02 | LowestCommonAncestor        | 二叉树的最近公共祖先           |     [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/SwordToOfferSolution/_68_02_CommonParentInTree/Solution.java)      |
 
 # LeetCode
-[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
 
 按照不同类别进行分类，参考自 [CyC2018/CS-Notes](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md)、[LeetCode 分类顺序表](https://vbnetvbnet.github.io/cs/#nav-Array)。
 
 ## 算法思想相关
-
 #### 01.双指针
 
 |   #   | English Title                                                                                                                   | Chinese Title                                                                                                     |                                                                                            Solution                                                                                             | Difficulty |
@@ -445,8 +440,6 @@
 |  377  | [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)                                       | [组合总和 IV](https://leetcode.cn/problems/combination-sum-iv/description/)                           |   TODO   |   Medium   |
 
 ## 数据结构相关
-[返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
-
 #### 01.数组和矩阵
 
 |   #   | English Title                                                                                                                                                 | Chinese Title                                                                                                                                   |                                                                                        Solution                                                                                        | Difficulty |
