@@ -12,6 +12,7 @@
     - [06.搜索](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#06%E6%90%9C%E7%B4%A2)
     - [07.排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#07%E6%8E%92%E5%BA%8F)
     - [08.数学](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#08%E6%95%B0%E5%AD%A6)
+    - [09.回溯](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#09%E5%9B%9E%E6%BA%AF)
   - [数据结构相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9B%B8%E5%85%B3)
     - [01.数组和矩阵](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#01%E6%95%B0%E7%BB%84%E5%92%8C%E7%9F%A9%E9%98%B5)
     - [02.字符串](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#02%E5%AD%97%E7%AC%A6%E4%B8%B2)
@@ -394,6 +395,30 @@
 |  396  | [Rotate Function](https://leetcode.com/problems/rotate-function/description/)                                     | [旋转函数](https://leetcode.cn/problems/rotate-function/description/)                                      |                                                                                  TODO                                                                                   |   Medium   |
 |  397  | [Integer Replacement](https://leetcode.com/problems/integer-replacement/description/)                             | [整数替换](https://leetcode.cn/problems/integer-replacement/description/)                                  |                                                                                  TODO                                                                                   |   Medium   |
 |  400  | [Nth Digit](https://leetcode.com/problems/nth-digit/)                                                             | [第 N 个数字](https://leetcode-cn.com/problems/nth-digit/)                                                 |      [Java](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/blob/master/src/LeetCodeSolution/AlgorithmThought/_08_Mathematics/_400_NthDigit/Solution.java)      |    Hard    |
+
+#### 09.回溯
+
+|   #   | English Title                                                                                                             | Chinese Title                                                                                         | Solution | Difficulty |
+| :---: | ------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | :------: | :--------: |
+|  17   | [Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/) | [电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/description/) |   TODO   |   Medium   |
+|  31   | [Next Permutation](https://leetcode.com/problems/next-permutation/description/)                                           | [下一个排列](https://leetcode.cn/problems/next-permutation/description/)                              |   TODO   |   Medium   |
+|  39   | [Combination Sum](https://leetcode.com/problems/combination-sum/description/)                                             | [组合总和](https://leetcode.cn/problems/combination-sum/description/)                                 |   TODO   |   Medium   |
+|  40   | [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)                                       | [组合总和 II](https://leetcode.cn/problems/combination-sum-ii/description/)                           |   TODO   |   Medium   |
+|  46   | [Permutations](https://leetcode.com/problems/permutations/description/)                                                   | [全排列](https://leetcode.cn/problems/permutations/description/)                                      |   TODO   |   Medium   |
+|  47   | [Permutations II](https://leetcode.com/problems/permutations-ii/description/)                                             | [全排列 II](https://leetcode.cn/problems/permutations-ii/description/)                                |   TODO   |   Medium   |
+|  60   | [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/description/)                                   | [排列序列](https://leetcode.cn/problems/permutation-sequence/description/)                            |   TODO   |    Hard    |
+|  77   | [Combinations](https://leetcode.com/problems/combinations/description/)                                                   | [组合](https://leetcode.cn/problems/combinations/description/)                                        |   TODO   |   Medium   |
+|  78   | [Subsets](https://leetcode.com/problems/subsets/description/)                                                             | [子集](https://leetcode.cn/problems/subsets/description/)                                             |   TODO   |   Medium   |
+|  90   | [Subsets II](https://leetcode.com/problems/subsets-ii/description/)                                                       | [子集 II](https://leetcode.cn/problems/subsets-ii/description/)                                       |   TODO   |   Medium   |
+|  93   | [Restore IP Addresses](https://leetcode.com/problems/restore-ip-addresses/description/)                                   | [复原 IP 地址](https://leetcode.cn/problems/restore-ip-addresses/description/)                        |   TODO   |   Medium   |
+|  140  | [Word Break II](https://leetcode.com/problems/word-break-ii/description/)                                                 | [单词拆分 II](https://leetcode.cn/problems/word-break-ii/description/)                                |   TODO   |    Hard    |
+|  216  | [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)                                     | [组合总和 III](https://leetcode.cn/problems/combination-sum-iii/description/)                         |   TODO   |   Medium   |
+|  254  | [Factor Combinations](https://leetcode.com/problems/factor-combinations/description/)                                     | [因子的组合](https://leetcode.cn/problems/factor-combinations/description/)                           |   TODO   |   Medium   |
+|  282  | [Expression Add Operators](https://leetcode.com/problems/expression-add-operators/description/)                           | [给表达式添加运算符](https://leetcode.cn/problems/expression-add-operators/description/)              |   TODO   |    Hard    |
+|  291  | [Word Pattern II](https://leetcode.com/problems/word-pattern-ii/description/)                                             | [单词规律 II](https://leetcode.cn/problems/word-pattern-ii/description/)                              |   TODO   |    Hard    |
+|  320  | [Generalized Abbreviation](https://leetcode.com/problems/generalized-abbreviation/description/)                           | [列举单词的全部缩写](https://leetcode.cn/problems/generalized-abbreviation/description/)              |   TODO   |   Medium   |
+|  351  | [Android Unlock Patterns](https://leetcode.com/problems/android-unlock-patterns/description/)                             | [安卓系统手势解锁](https://leetcode.cn/problems/android-unlock-patterns/description/)                 |   TODO   |   Medium   |
+|  377  | [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)                                       | [组合总和 IV](https://leetcode.cn/problems/combination-sum-iv/description/)                           |   TODO   |   Medium   |
 
 ## 数据结构相关
 [返回目录](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E7%9B%AE%E5%BD%95)
