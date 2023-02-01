@@ -26,6 +26,7 @@
     - [07.位运算](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#07%E4%BD%8D%E8%BF%90%E7%AE%97)
 	- [08.链表](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#08%E9%93%BE%E8%A1%A8)
 	- [09.拓扑排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#09%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
+  - [设计相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E8%AE%BE%E8%AE%A1%E7%9B%B8%E5%85%B3)
 - [程序基本输入输出](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/tree/master/src/Other/BasicInputOutput)
 
 # 基础算法
@@ -847,6 +848,28 @@
 |  207  | [Course Schedule](https://leetcode.com/problems/course-schedule/description/)       | [课程表](https://leetcode.cn/problems/course-schedule/description/)       |   TODO   |   Medium   |
 |  210  | [Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/) | [课程表 II](https://leetcode.cn/problems/course-schedule-ii/description/) |   TODO   |   Medium   |
 |  269  | [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/description/)     | [火星词典](https://leetcode.cn/problems/alien-dictionary/description/)    |   TODO   |    Hard    |
+
+## 设计相关
+
+|   #   | English Title                                                                                                       | Chinese Title                                                                                              | Solution | Difficulty |
+| :---: | ------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | :------: | :--------: |
+|  146  | [LRU Cache](https://leetcode.com/problems/lru-cache/description/)                                                   | [LRU 缓存](https://leetcode.cn/problems/lru-cache/description/)                                            |   TODO   |   Medium   |
+|  170  | [Two Sum III - Data structure design](https://leetcode.com/problems/two-sum-iii-data-structure-design/description/) | [两数之和 III - 数据结构设计](https://leetcode.cn/problems/two-sum-iii-data-structure-design/description/) |   TODO   |    Easy    |
+|  251  | [Flatten 2D Vector](https://leetcode.com/problems/flatten-2d-vector/description/s/)                                 | [展开二维向量](https://leetcode.cn/problems/flatten-2d-vector/description/s/)                              |   TODO   |   Medium   |
+|  281  | [Zigzag Iterator](https://leetcode.com/problems/zigzag-iterator/description/)                                       | [锯齿迭代器](https://leetcode.cn/problems/zigzag-iterator/description/)                                    |   TODO   |   Medium   |
+|  284  | [Peeking Iterator](https://leetcode.com/problems/peeking-iterator/description/)                                     | [顶端迭代器](https://leetcode.cn/problems/peeking-iterator/description/)                                   |   TODO   |   Medium   |
+|  288  | [Unique Word Abbreviation](https://leetcode.com/problems/unique-word-abbreviation/description/)                     | [单词的唯一缩写](https://leetcode.cn/problems/unique-word-abbreviation/description/)                       |   TODO   |   Medium   |
+|  303  | [Range Sum Query - Immutable](https://leetcode.com/problems/range-sum-query-immutable/description/)                 | [区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/description/)             |   TODO   |    Easy    |
+|  304  | [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/description/)           | [二维区域和检索 - 矩阵不可变](https://leetcode.cn/problems/range-sum-query-2d-immutable/description/)      |   TODO   |   Medium   |
+|  307  | [Range Sum Query - Mutable](https://leetcode.com/problems/range-sum-query-mutable/description/)                     | [区域和检索 - 数组可修改](https://leetcode.cn/problems/range-sum-query-mutable/description/)               |   TODO   |   Medium   |
+|  308  | [Range Sum Query 2D - Mutable](https://leetcode.com/problems/range-sum-query-2d-mutable/description/)               | [二维区域和检索 - 可变](https://leetcode.cn/problems/range-sum-query-2d-mutable/description/)              |   TODO   |    Hard    |
+|  346  | [Moving Average from Data Stream](https://leetcode.com/problems/moving-average-from-data-stream/description/)       | [数据流中的移动平均值](https://leetcode.cn/problems/moving-average-from-data-stream/description/)          |   TODO   |    Easy    |
+|  348  | [Design Tic-Tac-Toe](https://leetcode.com/problems/design-tic-tac-toe/description/)                                 | [设计井字棋](https://leetcode.cn/problems/design-tic-tac-toe/description/)                                 |   TODO   |   Medium   |
+|  353  | [Design Snake Game](https://leetcode.com/problems/design-snake-game/description/)                                   | [贪吃蛇](https://leetcode.cn/problems/design-snake-game/description/)                                      |   TODO   |   Medium   |
+|  355  | [Design Twitter](https://leetcode.com/problems/design-twitter/description/s/)                                       | [设计推特](https://leetcode.cn/problems/design-twitter/description/s/)                                     |   TODO   |   Medium   |
+|  359  | [Logger Rate Limiter](https://leetcode.com/problems/logger-rate-limiter/description/)                               | [日志速率限制器](https://leetcode.cn/problems/logger-rate-limiter/description/)                            |   TODO   |    Easy    |
+|  362  | [Design Hit Counter](https://leetcode.com/problems/design-hit-counter/description/)                                 | [敲击计数器](https://leetcode.cn/problems/design-hit-counter/description/)                                 |   TODO   |   Medium   |
+|  379  | [Design Phone Directory](https://leetcode.com/problems/design-phone-directory/description/)                         | [电话目录管理系统](https://leetcode.cn/problems/design-phone-directory/description/)                       |   TODO   |   Medium   |
 
 ## Stars
 
