@@ -155,7 +155,7 @@ SQL(ACID)
 - Transactions
 - Joins
 
-NoSQL(BASE):
+NoSQL(BASE)
 - Highper formance
 - Unstructure ddata(flexible schema)
 - Availability
