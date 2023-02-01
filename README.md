@@ -28,6 +28,7 @@
 	- [09.拓扑排序](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#09%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F)
   - [设计相关](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer#%E8%AE%BE%E8%AE%A1%E7%9B%B8%E5%85%B3)
 - [程序基本输入输出](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/tree/master/src/Other/BasicInputOutput)
+- [建议](https://github.com/dyfloveslife/LeetCodeAndSwordToOffer/tree/master/suggest.md)
 
 # 基础算法
 
