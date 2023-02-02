@@ -29,6 +29,7 @@ import java.util.Arrays;
  * 7. 交换完成后，[i + 1, end) 必然是降序的，即 754 是将序的，然后使其升序即可。
  */
 public class Solution {
+    // 思路二：时间复杂度 O(N)，空间复杂度 O(1)
     public void nextPermutation(int[] nums) {
         if (nums == null || nums.length <= 1) {
             return;
@@ -52,6 +53,27 @@ public class Solution {
         }
 
         reverse(nums, i + 1);
+    }
+
+    // 思路二：时间复杂度 O(N^2)，空间复杂度 O(1)
+    public void nextPermutation2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return;
+        }
+
+        for (int i = nums.length - 2; i >= 0; i--) {
+            if (nums[i] < nums[i + 1]) {
+                for (int j = nums.length - 1; j > i; j--) {
+                    if (nums[j] > nums[i]) {
+                        swap(nums, i, j);
+                        reverse(nums, i + 1);
+                        return;
+                    }
+                }
+            }
+        }
+
+        reverse(nums, 0);
     }
 
     private void reverse(int[] nums, int start) {
