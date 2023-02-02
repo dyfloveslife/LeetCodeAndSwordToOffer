@@ -15,45 +15,75 @@ import java.util.Arrays;
  * 3,2,1 → 1,2,3
  * 1,1,5 → 1,5,1
  *
- * 思路：
- * 0. https://leetcode-cn.com/problems/next-permutation/solution/xia-yi-ge-pai-lie-suan-fa-xiang-jie-si-lu-tui-dao-/
- * 1. 需要注意两点的是：下一个数增加的幅度尽可能小，例如 123465，应将 5 和 4 交换，而不是 6 和 4 交换；
- * 2. 第二点是：将 5 和 4 交换完成后，5 后面的数字需要按照升序的顺序进行排序，即 123546，而不是 123564；
- * 3. 算法的流程是：首先从后往前找到一对相邻的且从左往右升序的元素对 nums[i] 和 nums[j]，其中 i < j 且 nums[i] < nums[j]；
- * 4. 然后在 [j, end) 中从后往前找，找到第一个大于 nums[i] 的元素 nums[k]，将 nums[i] 与 nums[k] 交换；
- * 5. 交换完成后，[j, end) 就是必是降序的，然后使其升序即可。
+ * 思路一：Brute Force
+ * 如果用暴力的方法将所有的排列找到的话，那么时间复杂度是 O(n!)，空间复杂度是 O(n)。
+ *
+ * 思路二：
+ * 1. 分析
+ *  1.1 https://leetcode-cn.com/problems/next-permutation/solution/xia-yi-ge-pai-lie-suan-fa-xiang-jie-si-lu-tui-dao-/
+ *  1.2 https://en.wikipedia.org/wiki/Permutation#Generation_in_lexicographic_order
+ * 2. 以 12385764 为例，其下一个更大的排列为 12386457；
+ * 3. 首先从后往前找到一对相邻的且从左往右升序的元素对 nums[i] 和 nums[i + 1]，其中 nums[i] < nums[i + 1]，这里为 5 和 7；
+ * 5. 然后在 [i + 1, end) 中从后往前找，找到第一个大于 nums[i] 的元素 nums[j]，这个元素是 6，即 j 为 6；
+ * 6. 将 nums[i] 与 nums[j] 交换，即将 5 和 6 交换，此时的序列为 12386754；
+ * 7. 交换完成后，[i + 1, end) 必然是降序的，即 754 是将序的，然后使其升序即可。
  */
 public class Solution {
     public void nextPermutation(int[] nums) {
-        if (nums == null || nums.length < 2) {
+        if (nums == null || nums.length <= 1) {
             return;
         }
 
-        for (int i = nums.length - 1; i > 0; i--) {
-            // 从后往前找，找到一组升序的元素对
-            if (nums[i - 1] < nums[i]) {
-                Arrays.sort(nums, i, nums.length);
-                // 这里和【思路】中描述的不同，
-                // 与其从后往前找，不如先排序，再从 [j, end) 中找到第一个比 nums[i - 1] 的元素，然后进行交换
-                for (int j = i; j < nums.length; j++) {
-                    if (nums[j] > nums[i - 1]) {
-                        int temp = nums[j];
-                        nums[j] = nums[i - 1];
-                        nums[i - 1] = temp;
-                        return;
-                    }
-                }
-            }
+        int i = nums.length - 2;
+        // 从后往前找到一对相邻的且从左往右升序的元素对
+        // 注意第二个表达式的"大于等于"号
+        while (i >= 0 && nums[i] >= nums[i + 1]) {
+            i--;
         }
-        // 如果不存在下一个更大的排列，则将数字按照升序排序
-        Arrays.sort(nums);
+
+        // 给定的 nums 不是最后一个排列
+        if (i >= 0) {
+            // 从后往前找，找到第一个大于 nums[i] 的元素 nums[k]
+            int j = nums.length - 1;
+            while (nums[i] >= nums[j]) {
+                j--;
+            }
+            swap(nums, i, j);
+        }
+
+        reverse(nums, i + 1);
+    }
+
+    private void reverse(int[] nums, int start) {
+        int j = nums.length - 1;
+        while (start < j) {
+            swap(nums, start++, j--);
+        }
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] nums = {1, 2, 3, 8, 5, 7, 6, 4};
+        int[] nums1 = {1, 2, 3, 8, 5, 7, 6, 4};
 
-        solution.nextPermutation(nums);
-        System.out.println(Arrays.toString(nums));
+        solution.nextPermutation(nums1);
+        System.out.println(Arrays.toString(nums1));
+
+        int[] nums2 = {1, 2, 3};
+        solution.nextPermutation(nums2);
+        System.out.println(Arrays.toString(nums2));
+
+        int[] nums3 = {3, 2, 1};
+        solution.nextPermutation(nums3);
+        System.out.println(Arrays.toString(nums3));
+
+        int[] nums4 = {1, 1, 5};
+        solution.nextPermutation(nums4);
+        System.out.println(Arrays.toString(nums4));
     }
 }
