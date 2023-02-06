@@ -12,8 +12,10 @@ import java.util.Arrays;
  *
  * 思路：
  * 0. 与面试题 53-1 一样，也是采用二分的形式，只不过该题需要返回的是索引；
- * 1. 使用两次二分查找，第一次找到 target 的初始位置，第二次找 target 结束位置；
- * 2. 再找结束位置时，需要将 middle 的位置再加 1，以方便查找。
+ * 1. 直观的思路是从前往后遍历一遍数组，用两个变量记录第一次和最后一次 target 的下标，但时间复杂度是 O(n)；
+ * 2. 既然数组有序，则可以使用二分查找，实际上应该是使用两次二分，第一次找到 target 的初始位置，第二次找 target 结束位置；
+ * 3. 但是在找结束位置时，应该找的是第一个大于 target 的位置再减一；
+ * 4. 最终可以分两步：先找第一个大于等于 target 的数，然后再找第一个大于 target 的数。
  */
 public class Solution {
 
@@ -22,53 +24,30 @@ public class Solution {
             return new int[]{-1, -1};
         }
 
-        int firstPosition = getFirstPosition(nums, target);
-        // 如果在找 target 时，本身就没有出现在数组中，则直接返回 [-1, -1] 即可
-        if (firstPosition == -1) {
+        int firstPos = binarySearch(nums, target);
+        int lastPos = binarySearch(nums, target + 1) - 1;
+        if (firstPos == nums.length || nums[firstPos] != target) {
             return new int[]{-1, -1};
         }
 
-        int lastPosition = getLastPosition(nums, target);
-        return new int[]{firstPosition, lastPosition};
+        return new int[]{firstPos, lastPos};
     }
 
-    private int getFirstPosition(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
-
-        while (left < right) {
-            int middle = left + ((right - left) >> 1);
-            if (nums[middle] < target) {
-                left = middle + 1;
-            } else if (nums[middle] == target) {
-                right = middle;
-            } else if (nums[middle] > target) {
-                right = middle - 1;
-            }
-        }
-        if (nums[left] == target) {
-            return left;
-        }
-        return -1;
-    }
-
-    private int getLastPosition(int[] nums, int target) {
-        int left = 0;
-        int right = nums.length - 1;
-
-        while (left < right) {
-            // 注意这里的加 1 操作
-            int middle = 1 + left + ((right - left) >> 1);
-            if (nums[middle] < target) {
-                left = middle + 1;
-            } else if (nums[middle] == target) {
-                left = middle;
-            } else if (nums[middle] > target) {
-                right = middle - 1;
+    public int binarySearch(int[] nums, int target) {
+        // 注意 j 的位置，右边界下标对应的值大于等于目标值
+        // 若数组中不存在大于等于目标值，则假设 nums.length 大于等于目标值
+        int i = 0, j = nums.length;
+        // 循环结束的条件是 i == j，并且 j 对应的值大于等于目标值
+        while (i < j) {
+            int mid = i + ((j - i) >> 1);
+            if (nums[mid] >= target) {
+                j = mid;
+            } else {
+                i = mid + 1;
             }
         }
 
-        return left;
+        return i;
     }
 
     public static void main(String[] args) {
@@ -77,11 +56,12 @@ public class Solution {
         int[] nums2 = {5, 7, 7, 8, 8, 10};
         int[] nums3 = {1};
         int[] nums4 = {1, 3};
+        int[] nums5 = {};
 
-        System.out.println(Arrays.toString(solution.searchRange(nums1, 8)));
-        System.out.println(Arrays.toString(solution.searchRange(nums2, 8)));
-        System.out.println(Arrays.toString(solution.searchRange(nums3, 0)));
-        System.out.println(Arrays.toString(solution.searchRange(nums4, 3)));
-
+        System.out.println(Arrays.toString(solution.searchRange(nums1, 8))); // [-1, -1]
+        System.out.println(Arrays.toString(solution.searchRange(nums2, 8))); // [3, 4]
+        System.out.println(Arrays.toString(solution.searchRange(nums3, 1))); // [0, 0]
+        System.out.println(Arrays.toString(solution.searchRange(nums4, 3))); // [1, 1]
+        System.out.println(Arrays.toString(solution.searchRange(nums5, 0))); // [-1, -1]
     }
 }
