@@ -17,27 +17,79 @@ package LeetCodeSolution.AlgorithmThought._03_Greedy._55_JumpGame;
  * 6. 最后返回 max 是否到达或者超过了数组的长度即可。
  */
 public class Solution {
-    public boolean canJump(int[] nums) {
+    public boolean canJump1(int[] nums) {
         if (nums == null || nums.length == 0) {
             return false;
         }
 
         int max = 0;
         for (int i = 0; i < nums.length; i++) {
+            // if 中的表达式可以这么理解：因为 max 表示最多能够走到的长度，i 表示索引
+            // 只有 i 在 max 范围内才能继续往后走，否则将无法到达最后一个元素
             if (i <= max) {
                 // 当前的位置 i 再加上可以走的距离 nums[i]
                 max = Math.max(max, i + nums[i]);
             }
         }
+
         return max >= nums.length - 1;
+    }
+
+    public boolean canJump2(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+
+        int step = 0;
+        for (int i = 0; i < nums.length; i++) {
+            // if 中的表达式意味着当前位置再也无法跳跃到最后一个元素
+            if (i > step) {
+                return false;
+            }
+
+            step = Math.max(step, i + nums[i]);
+        }
+
+        // 如果可以一直跳到最后，就返回 true
+        return true;
+    }
+
+    public boolean canJump3(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+
+        int step = 0;
+        for (int i = 0; i <= step; i++) {
+            // 第 i 个元素能够跳到的最远距离
+            int temp = i + nums[i];
+            // 更新最远距离
+            step = Math.max(step, temp);
+            // 如果 step 已经超过了数组中最后一个元素，则提前返回
+            if (step >= nums.length - 1) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] nums1 = {2, 3, 1, 1, 4};
-        int[] nums2 = {0};
+        int[] nums2 = {3, 2, 1, 0, 4};
+        int[] nums3 = {0};
 
-        System.out.println(solution.canJump(nums1));
-        System.out.println(solution.canJump(nums2));
+        System.out.println(solution.canJump1(nums1)); // true
+        System.out.println(solution.canJump1(nums2)); // false
+        System.out.println(solution.canJump1(nums3)); // true
+        System.out.println("----");
+        System.out.println(solution.canJump2(nums1)); // true
+        System.out.println(solution.canJump2(nums2)); // false
+        System.out.println(solution.canJump2(nums3)); // true
+        System.out.println("----");
+        System.out.println(solution.canJump3(nums1)); // true
+        System.out.println(solution.canJump3(nums2)); // false
+        System.out.println(solution.canJump3(nums3)); // true
     }
 }
