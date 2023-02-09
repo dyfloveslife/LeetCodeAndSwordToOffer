@@ -49,8 +49,10 @@ public class Solution {
         Solution solution = new Solution();
         int[][] intervals1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         int[][] intervals2 = {{1, 4}, {4, 5}};
+        int[][] intervals3 = {{1, 4}, {2, 3}};
 
         System.out.println(Arrays.deepToString(solution.merge(intervals1))); // [[1, 6], [8, 10], [15, 18]]
-        System.out.println(Arrays.deepToString(solution.merge(intervals2))); // [[1,5]]
+        System.out.println(Arrays.deepToString(solution.merge(intervals2))); // [[1, 5]]
+        System.out.println(Arrays.deepToString(solution.merge(intervals3))); // [[1, 4]]
     }
 }
