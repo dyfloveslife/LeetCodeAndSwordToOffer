@@ -25,6 +25,14 @@ import java.util.List;
  * 5. 需要注意的是：因为答案需要满足按照左端点排序，因此如果第一次遇到满足某个 interval[0] > right 时，说明以后遍历到的其他区间都不会再与 S 重叠；
  * 6. 而且其他区间的左端点一定是大于 left 的，此时可以将 S 加入 ans；
  * 7. 如果不存在这样的区间，则需要将 S 加入 ans。
+ *
+ * 总结：
+ * 0. https://leetcode.cn/problems/insert-interval/solution/cha-ru-qu-jian-by-leetcode-solution/
+ * 1. 当遍历到某个区间 [li, ri] 时，如果 ri < left，说明该区间与 S 不重叠且该区间位于 S 左侧，此时将该区间加入 ans；
+ * 2. 如果 right < li，说明该区间与 S 不重叠且该区间位于 S 右侧，此时将该区间加入 ans；
+ * 3. 如果不满足上面两种情况，说明 S 与该区间存在重叠，此时不需要将该区间加入 ans，而是应该将该区间和 S 合并，即求该区间和 S 的并集，同时更新 S 的范围；
+ * 4. 什么时候将 S 加入 ans 呢？正是因为给定的区间列表是按照起始端点排序的，因此，如果首次遇到 right < li，则说明对于以后遍历到的区间不再会与 S 重叠，此时就可以将 S 加入 ans；
+ * 5. 如果不存在 4 中提到的情况，则说明给定的区间列表为空，或者 left 大于区间列表中最后一个区间的右边界 ri，此时直接将 S 加入 ans 即可。
  */
 public class Solution {
     public int[][] insert(int[][] intervals, int[] newInterval) {
@@ -41,8 +49,9 @@ public class Solution {
             // interval 在 newInterval 的右侧且不相交
             if (right < interval[0]) {
                 // 如果 newInterval 没有被放置过
+                // 总结：4
                 if (!placed) {
-                    //ans.add(newInterval);
+                    // 由于 left、right 会不断更新，因此需要重新创建数组
                     ans.add(new int[]{left, right});
                     placed = true;
                 }
@@ -57,6 +66,7 @@ public class Solution {
                 right = Math.max(right, interval[1]);
             }
         }
+        // 总结：5
         if (!placed) {
             ans.add(new int[]{left, right});
         }
