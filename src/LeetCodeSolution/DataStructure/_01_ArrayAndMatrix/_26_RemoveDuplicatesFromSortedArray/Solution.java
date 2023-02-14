@@ -35,7 +35,7 @@ public class Solution {
         int[] nums1 = {1, 1, 2};
         int[] nums2 = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
 
-        System.out.println(solution.removeDuplicates(nums1));
-        System.out.println(solution.removeDuplicates(nums2));
+        System.out.println(solution.removeDuplicates(nums1)); // 2
+        System.out.println(solution.removeDuplicates(nums2)); // 5
     }
 }
