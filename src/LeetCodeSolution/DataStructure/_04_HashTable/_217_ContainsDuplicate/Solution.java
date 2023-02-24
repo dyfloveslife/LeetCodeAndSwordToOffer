@@ -17,6 +17,21 @@ import java.util.Map;
  * 2. 使用 HashMap 计数。
  */
 public class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return false;
+        }
+
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            if (!set.add(num)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public boolean containsDuplicate1(int[] nums) {
         if (nums == null || nums.length == 0) {
             return false;
@@ -57,6 +72,12 @@ public class Solution {
         int[] nums3 = {1, 2, 3, 4};
         int[] nums4 = {3, 3};
 
+        System.out.println(solution.containsDuplicate(nums1)); // true
+        System.out.println(solution.containsDuplicate(nums2)); // true
+        System.out.println(solution.containsDuplicate(nums3)); // false
+        System.out.println(solution.containsDuplicate(nums4)); // true
+
+        System.out.println("---");
         System.out.println(solution.containsDuplicate1(nums1)); // true
         System.out.println(solution.containsDuplicate1(nums2)); // true
         System.out.println(solution.containsDuplicate1(nums3)); // false
