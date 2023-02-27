@@ -13,9 +13,9 @@ import java.util.List;
  *   "a->b"，如果 a != b
  *   "a"，如果 a == b
  *
- * 思路：
- * 1.
- *
+ * 思路：双指针
+ * 1. 遍历数组的过程中，如果后一个元素与前一个元素的差值为 1，则说明需要继续向右移动指针；
+ * 2. 否则开始结算，需要注意结算时左右索引的位置。
  */
 public class Solution {
     public List<String> summaryRanges(int[] nums) {
