@@ -78,10 +78,5 @@ public class Solution {
         System.out.println(solution.containsNearbyDuplicate2(nums1, 3)); // true
         System.out.println(solution.containsNearbyDuplicate2(nums2, 1)); // true
         System.out.println(solution.containsNearbyDuplicate2(nums3, 2)); // false
-<<<<<<< HEAD
-=======
-        // 123
-        // 456
->>>>>>> 5b2beae (commit test1)
     }
 }
