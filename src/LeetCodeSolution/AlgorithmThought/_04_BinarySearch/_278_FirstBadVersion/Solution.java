@@ -5,7 +5,7 @@ package LeetCodeSolution.AlgorithmThought._04_BinarySearch._278_FirstBadVersion;
  *
  * 题目描述：
  * 假设你有 n 个版本 [1, 2, ..., n]，你想找出导致之后所有版本出错的第一个错误的版本。
- * 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。
+ * 你可以通过调用 bool isBadVersion(version) 接口来判断版本号 version 是否在单元测试中出错。
  * 实现一个函数来查找第一个错误的版本。
  * 你应该尽量减少对调用 API 的次数。
  *
@@ -20,16 +20,18 @@ public class Solution {
             return 0;
         }
 
-        int left = 1;
-        int right = n;
+        int left = 1, right = n;
         while (left < right) {
             int middle = left + ((right - left) >> 1);
+            // 如果 middle 是错误版本的话，则说明 middle 左侧可能还存在错误版本
+            // 因此从 [left, middle] 区间内继续寻找
             if (isBadVersion(middle)) {
                 right = middle;
             } else {
                 left = middle + 1;
             }
         }
+
         return left;
     }
 
