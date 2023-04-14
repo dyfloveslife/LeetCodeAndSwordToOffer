@@ -16,25 +16,26 @@ import java.util.PriorityQueue;
  * 3. 因此，这里的奇偶个数十分重要：
  *    如果是偶数的话，那么当前的中位数就是两个堆的堆顶元素之和，再取平均值；
  *    如果是奇数的话，则只要保证大根堆的元素个数永远比小根堆的元素个数多一个，那么大根堆的堆顶元素就是当前数据流的中位数。
- * 4. 所以，大根堆的堆顶元素始终小于或等于小根堆的堆顶元素；
- *          大根堆的元素个数等于小根堆的元素个数，或比小根堆的元素个数多 1。
+ * 4. 大根堆的堆顶元素始终小于或等于小根堆的堆顶元素；
+ * 5. 大根堆的元素个数等于小根堆的元素个数，或比小根堆的元素个数多 1。
  */
 public class Solution {
 
-    class MedianFinder {
+    static class MedianFinder {
         private int count;
         private PriorityQueue<Integer> minHeap;
         private PriorityQueue<Integer> maxHeap;
 
         public MedianFinder() {
-            count = 0;
-            minHeap = new PriorityQueue<>();
-            maxHeap = new PriorityQueue<>((o1, o2) -> (o2 - o1));
+            this.minHeap = new PriorityQueue<>();
+            this.maxHeap = new PriorityQueue<>((o1, o2) -> (o2 - o1));
         }
 
         public void addNum(int num) {
             count += 1;
+            // 先进大根堆
             maxHeap.offer(num);
+            // 为了保证 maxHeap 中的元素始终大于等于 minHeap 中的元素
             minHeap.offer(maxHeap.poll());
             // 如果两个堆中的元素数量之和为奇数，则小根堆需要弹出元素放进大根堆
             // 让大根堆始终比小根堆多一个元素
@@ -45,10 +46,19 @@ public class Solution {
 
         public double findMedian() {
             if (count % 2 == 0) {
-                return (double) (maxHeap.peek() + minHeap.peek()) / 2;
+                return (maxHeap.peek() + minHeap.peek()) / 2.0;
             } else {
-                return (double) maxHeap.peek();
+                return maxHeap.peek().doubleValue();
             }
         }
+    }
+
+    public static void main(String[] args) {
+        MedianFinder medianFinder = new MedianFinder();
+        medianFinder.addNum(1);
+        medianFinder.addNum(2);
+        medianFinder.addNum(3);
+
+        System.out.println(medianFinder.findMedian()); // 2.0
     }
 }
