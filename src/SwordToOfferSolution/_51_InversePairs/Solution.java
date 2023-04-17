@@ -8,7 +8,7 @@ package SwordToOfferSolution._51_InversePairs;
  * 输入一个数组，求出这个数组中的逆序对的总数。
  *
  * 思路：
- * 采用归并排序的思想，先把数组分成子数组，统计出子数组内部的逆序对数，然后再统计两个相邻数组之间的逆序对数，并且在统计的过程中进行排序。
+ * 采用归并排序的思想，先把数组分成子数组，统计出子数组内部的逆序对数，然后再统计两个相邻数组之间的逆序对数，即在排序的过程中进行统计；
  * 1. 先将数组划分成左右两部分，下面以左部分为例：
  * 2. 左部分直到划分为长度为 2 的子数组，然后再划分为长度为 1 的子数组，比较两个数的大小；
  *      如果左边大于右边，则构成一个逆序对，并进行合并、排序；否则不构成逆序对。
@@ -19,14 +19,13 @@ package SwordToOfferSolution._51_InversePairs;
  * 6. 总之，谁大就移动谁，然后将较大的数复制到 p3 所指向的最终结果数组中即可。
  */
 public class Solution {
-    int res;
+    private int res;
 
     public int reversePairs(int[] nums) {
         if (nums == null || nums.length == 0) {
             return 0;
         }
 
-        res = 0;
         inversePairsCoreMergeSort(nums, 0, nums.length - 1);
         return res;
     }
@@ -45,8 +44,7 @@ public class Solution {
     private void merge(int[] nums, int left, int middle, int right) {
         int[] help = new int[right - left + 1];
         int index = 0;
-        int pos1 = left;
-        int pos2 = middle + 1;
+        int pos1 = left, pos2 = middle + 1;
 
         while (pos1 <= middle && pos2 <= right) {
             if (nums[pos1] <= nums[pos2]) {
@@ -70,8 +68,8 @@ public class Solution {
             help[index++] = nums[pos2++];
         }
 
-        for (int j = 0; j < help.length; j++) {
-            nums[left + j] = help[j];
+        for (int i = 0; i < help.length; i++) {
+            nums[left + i] = help[i];
         }
     }
 
@@ -81,8 +79,8 @@ public class Solution {
         int[] nums2 = {1, 3, 2, 3, 1};
         int[] nums3 = {4, 5, 6, 7};
 
-        System.out.println(solution.reversePairs(nums1));
-        System.out.println(solution.reversePairs(nums2));
-        System.out.println(solution.reversePairs(nums3));
+        System.out.println(solution.reversePairs(nums1)); // 5
+        System.out.println(solution.reversePairs(nums2)); // 4
+        System.out.println(solution.reversePairs(nums3)); // 0
     }
 }
