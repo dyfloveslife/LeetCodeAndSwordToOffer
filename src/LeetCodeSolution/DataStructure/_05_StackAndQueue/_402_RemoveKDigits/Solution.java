@@ -20,7 +20,7 @@ import java.util.LinkedList;
  * 6. 但是，如果给定的是一个递增的字符串，那么根据以上的逻辑，显然都不会进行删除；
  * 7. 因此，每次丢弃一次，k 就减去 1，当 k 减到 0 的时候，就可以终止遍历了；
  * 8. 遍历完成后，如果 k 仍然大于 0，那么不妨假设还剩下 x 个需要删除，那么我们直接将末尾的 x 个元素删除即可；
- * 9. 反过来说，对于删除 k 个元素，就相当于保留 n-k 个数字；
+ * 9. 反过来说，对于删除 k 个元素，就相当于保留 n-k 个数字，按照上述方法丢弃后，再截取前 n-k 个元素即可；
  * 10.我们可以使用单调栈来做这道题，虽说是单调栈，但是除了 stack 以外，双端队列 LinkedList 也可以当作单调栈来使用。
  */
 public class Solution {
@@ -64,8 +64,10 @@ public class Solution {
         Solution solution = new Solution();
         String s1 = "1432219";
         String s2 = "10200";
+        String s3 = "10";
 
-        System.out.println(solution.removeKthDigits(s1, 3));
-        System.out.println(solution.removeKthDigits(s2, 1));
+        System.out.println(solution.removeKthDigits(s1, 3)); // 1219
+        System.out.println(solution.removeKthDigits(s2, 1)); // 200
+        System.out.println(solution.removeKthDigits(s3,2)); // 0
     }
 }
