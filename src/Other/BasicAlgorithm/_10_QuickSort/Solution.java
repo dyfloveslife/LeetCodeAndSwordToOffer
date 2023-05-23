@@ -59,25 +59,31 @@ public class Solution {
     }
 
     // 荷兰国旗问题（稍微有些不同）
-    // 该函数返回的是等于数组最后一个元素 x 的范围的左右边界
+    // 该函数返回的是等于数组最后一个元素 x （pivot）范围的左右边界
     // p[0] 代表等于 x 的左边界，p[1] 代表等于 x 的右边界
     private int[] partition(int[] nums, int left, int right) {
-        int less = left - 1;
+        // 规定"小于等于 pivot 的区域"为 -1 位置，其实就是 left-1 位置
         // 这里将 大于区域的范围 直接定位到 right
-        int more = right;
+        int less = left - 1, more = right;
+        int pivot = nums[right];
 
+        // 停止的条件是：left 和“大于 pivot 的区域”相遇的时候
         while (left < more) {
-            // 小于 num 的情况
-            if (nums[left] < nums[right]) {
+            // 小于 pivot 的情况，将当前数（nums[left]）和“小于等于 pivot 的区域”的下一个元素进行交换，
+            // 然后“小于等于 pivot 的区域”向右扩一个位置
+            if (nums[left] < pivot) {
                 swap(nums, ++less, left++);
-                // 大于 num 的情况，此时 left 需要留在原地，继续考察与 num 的大小关系
-            } else if (nums[left] > nums[right]) {
+                // 大于 pivot 的情况，将当前数（nums[left]）和“大于 pivot 的区域”的左一个元素进行交换，
+                // 然后“大于 pivot 的区域”左扩一个位置
+                // 此时 left 需要留在原地，继续考察与 pivot 的大小关系
+            } else if (nums[left] > pivot) {
                 swap(nums, --more, left);
-                // 等于 num 的情况
+                // 等于 pivot 的情况，直接跳到下一个数
             } else {
                 left++;
             }
         }
+        // 注意 more 一开始是等于 right 的
         // 由于改进后的 partition 函数，初始的时候大于 x 的区域是包含 x 的，所以在划分完之后，
         // 需要将最后一个 x 的位置与 大于 x 区域的第一个数交换，这样就实现了小于 x 的在左边，
         // 等于 x 的在中间，大于 x 的在右边
