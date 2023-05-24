@@ -56,6 +56,7 @@ public class Solution {
         }
 
         // 堆排序的过程：不断的将堆顶与堆中最后一个元素交换，然后再 heapify
+        // heapSize 表示堆中元素的数量，以及当下一个元素来到之后，所放置的位置
         int heapSize = nums.length;
         swap(nums, 0, --heapSize);
         while (heapSize > 0) {
@@ -81,6 +82,7 @@ public class Solution {
     // 此函数表示 0~heapSize-1 上已经形成了堆，由于 i 所指元素变小了，则开始进行堆化处理
     // 即 i 所指的元素开始往下沉
     public void heapify(int[] nums, int i, int heapSize) {
+        // i 的左孩子的索引
         int left = i * 2 + 1;
 
         // while 的条件说明：i 的左孩子也在堆中，没有越界
@@ -101,7 +103,9 @@ public class Solution {
             // largest != i
             // 也就是当前的 i 所指的元素，与其左右较大那个的孩子交换
             swap(nums, largest, i);
+            // i 来到左右孩子中较大的那个位置，然后继续 while
             i = largest;
+            // 继续找下一个的左孩子
             left = i * 2 + 1;
         }
     }
