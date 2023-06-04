@@ -74,7 +74,6 @@ public class Solution {
         return list_Recursively;
     }
 
-
     // 使用栈
     public static int[] reversePrint(ListNode head) {
         if (head == null) {
