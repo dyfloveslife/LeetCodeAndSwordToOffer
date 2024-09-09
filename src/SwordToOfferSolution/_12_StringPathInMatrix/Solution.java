@@ -15,7 +15,7 @@ package SwordToOfferSolution._12_StringPathInMatrix;
  * J D E H
  *
  * 思路：
- * 1. DNS + 回溯；
+ * 1. DFS + 回溯；
  *    剪枝：遇到这条路不可能和目标字符串匹配成功的时候，则立即返回；
  * 2. 按照当前节点的下、上、右、左的顺序开始遍历：
  *    2.1) 如果元素已经访问过了，则返回 false；
@@ -25,20 +25,23 @@ package SwordToOfferSolution._12_StringPathInMatrix;
  */
 class Solution {
     public boolean exist(char[][] board, String word) {
-        if (board == null || board.length == 0 || board[0].length == 0 || word == null || word.length() == 0) {
+        if (board == null || board.length == 0 || board[0].length == 0
+                || word == null || word.length() == 0) {
             return false;
         }
 
+        int m = board.length, n = board[0].length;
         char[] chars = word.toCharArray();
-        boolean[][] visited = new boolean[board.length][board[0].length];
+        boolean[][] visited = new boolean[m][n];
 
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[0].length; j++) {
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if (dfs(board, chars, visited, i, j, 0)) {
                     return true;
                 }
             }
         }
+
         return false;
     }
 

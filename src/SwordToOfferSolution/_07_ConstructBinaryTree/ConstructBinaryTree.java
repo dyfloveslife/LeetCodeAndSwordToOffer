@@ -1,6 +1,7 @@
 package SwordToOfferSolution._07_ConstructBinaryTree;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * 重建二叉树
@@ -40,14 +41,13 @@ class Solution {
         }
     }
 
-    HashMap<Integer, Integer> map = new HashMap<>();
+    Map<Integer, Integer> map = new HashMap<>();
     int[] preArray;
 
     public TreeNode buildTree(int[] preorder, int[] inorder) {
-        int preLen = preorder.length;
-        int inLen = inorder.length;
+        int preLen = preorder.length, inLen = inorder.length;
 
-        if (preLen != inorder.length) {
+        if (preLen != inLen) {
             return null;
         }
 

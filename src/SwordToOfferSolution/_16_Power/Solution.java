@@ -14,17 +14,16 @@ package SwordToOfferSolution._16_Power;
  * 2. 例如 18 的二进制为 10010，即 18 = 1 × 2^4 + 0 × 2^3 + 0 × 2^2 + 1 × 2^1 + 0 × 2^0；
  * 3. 其中，系数可以通过对二进制 10010 不断右移得到；
  * 4. 而指数可以通过底数不断累乘得到；
- * 5. 注意：由于指数 n 可以取到 -2^31 = -2147483648，即整数范围内的最小值，
- *    因此，需要将 n 转换成 long 型。
+ * 5. 注意：由于指数 n 可以取到 -2^31 = -2147483648，即整数范围内的最小值，因此，需要将 n 转换成 long 型。
  */
 public class Solution {
-
     public double myPower(double x, int n) {
         long N = n;
 
         if (N == 0) {
             return 1;
         }
+
         if (N < 0) {
             N = -N;
             x = 1 / x;
@@ -39,8 +38,31 @@ public class Solution {
             x *= x;
             N >>= 1;
         }
+
         return res;
     }
+
+    // 逐渐减少指数 n 的大小
+    public double myPower2(double x, int n) {
+        if (n == Integer.MIN_VALUE) {
+            return (x == 1 || x == -1) ? 1 : 0;
+        }
+
+        if (n == 0) {
+            return 1;
+        }
+
+        if (n < 0) {
+            return myPower2(1 / x, -n);
+        }
+
+        if (n % 2 == 0) {
+            return myPower2(x * x, n / 2);
+        } else {
+            return x * myPower2(x, n - 1);
+        }
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
 
@@ -48,5 +70,12 @@ public class Solution {
         System.out.println(solution.myPower(2.10000, 3));
         System.out.println(solution.myPower(2.00000, -2));
         System.out.println(solution.myPower(2.00000, -2147483648));
+
+        System.out.println("---");
+        System.out.println(solution.myPower2(2.00000, 10));
+        System.out.println(solution.myPower2(2.10000, 3));
+        System.out.println(solution.myPower2(2.00000, -2));
+        System.out.println(solution.myPower2(2.00000, -2147483648));
+
     }
 }

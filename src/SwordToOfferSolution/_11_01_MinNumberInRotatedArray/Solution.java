@@ -25,8 +25,7 @@ public class Solution {
             return -1;
         }
 
-        int left = 0;
-        int right = nums.length - 1;
+        int left = 0, right = nums.length - 1;
         while (left < right) {
             int middle = left + ((right - left) >> 1);
             if (nums[middle] < nums[right]) {
@@ -35,6 +34,7 @@ public class Solution {
                 left = middle + 1;
             }
         }
+
         return nums[left];
     }
 

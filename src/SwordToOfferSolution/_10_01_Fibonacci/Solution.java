@@ -28,7 +28,7 @@ public class Solution {
         dp[1] = 1;
         // 注意 i 的取值范围，画图理解
         for (int i = 2; i <= n; i++) {
-            dp[i] = dp[i - 1] + dp[i - 2];
+            dp[i] = (dp[i - 1] + dp[i - 2]) % 1000000007;
         }
 
         return dp[n];
@@ -44,12 +44,12 @@ public class Solution {
         }
 
         int res = 0;
-        int prepre = 0;
         int pre = 1;
+        int prepre = 0;
 
         for (int i = 2; i <= n; i++) {
-            res = pre + prepre;
-            prepre  = pre;
+            res = (pre + prepre) % 1000000007;
+            prepre = pre;
             pre = res;
         }
         return res;

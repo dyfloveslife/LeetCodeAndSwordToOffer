@@ -93,6 +93,7 @@ public class Solution {
         while (!stack.isEmpty()) {
             res[pos++] = stack.pop();
         }
+
         return res;
     }
 
