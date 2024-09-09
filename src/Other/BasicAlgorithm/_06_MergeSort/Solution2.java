@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 /**
  * Merge sort.
- *
- * @author Youfang Duan
- * @since 2024/09/09 17:57
  */
 public class Solution2 {
 
