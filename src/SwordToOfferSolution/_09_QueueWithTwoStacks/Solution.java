@@ -13,11 +13,11 @@ import java.util.Stack;
  * 2. 如果 stackPop 里面有东西，则 stackPush 一定不要送。
  */
 public class Solution {
-    class CQueue {
+    static class MyQueue {
         Stack<Integer> stackPush;
         Stack<Integer> stackPop;
 
-        public CQueue() {
+        public MyQueue() {
             stackPush = new Stack<>();
             stackPop = new Stack<>();
         }
@@ -27,14 +27,27 @@ public class Solution {
         }
 
         public int deleteHead() {
-            if (stackPop.isEmpty() && stackPush.isEmpty()) {
-                return -1;
-            } else if (stackPop.isEmpty()) {
+            if (stackPop.isEmpty()) {
                 while (!stackPush.isEmpty()) {
                     stackPop.push(stackPush.pop());
                 }
             }
+
             return stackPop.pop();
+        }
+
+        public int peek() {
+            if (stackPop.isEmpty()) {
+                while (!stackPush.isEmpty()) {
+                    stackPop.push(stackPush.pop());
+                }
+            }
+
+            return stackPop.peek();
+        }
+
+        public boolean empty() {
+            return stackPop.isEmpty() && stackPush.empty();
         }
     }
 }

@@ -14,7 +14,7 @@ package SwordToOfferSolution._08_NextNodeInBinaryTrees;
  * 2. 如果当前节点没有右子树，可利用父指针，朝上继续找，直至找到某个节点是其父节点的左孩子，则当前节点的后继就是那个父节点；
  */
 public class Solution {
-    class TreeNode {
+    static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
