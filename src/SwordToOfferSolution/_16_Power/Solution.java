@@ -63,6 +63,28 @@ public class Solution {
         }
     }
 
+    public double myPow(double base, int exponent) {
+        double result = 1;
+        // 处理负指数
+        if (exponent < 0) {
+            base = 1 / base;
+            exponent = -exponent;
+        }
+
+        while (exponent > 0) {
+            // 如果指数都最低位为 1，则将当前 base 乘到结果中
+            if ((exponent & 1) == 1) {
+                result *= base;
+            }
+
+            base *= base;
+            // 右移一位，相当于将指数除以 2
+            exponent >>= 1;
+        }
+
+        return result;
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
 
@@ -77,5 +99,10 @@ public class Solution {
         System.out.println(solution.myPower2(2.00000, -2));
         System.out.println(solution.myPower2(2.00000, -2147483648));
 
+        System.out.println("---");
+        System.out.println(solution.myPow(2.00000, 10));
+        System.out.println(solution.myPow(2.10000, 3));
+        System.out.println(solution.myPow(2.00000, -2));
+        System.out.println(solution.myPow(2.00000, -2147483648));
     }
 }

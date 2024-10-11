@@ -120,7 +120,6 @@ public class Solution {
         return res * n;
     }
 
-
     public static void main(String[] args) {
         Solution solution = new Solution();
 
