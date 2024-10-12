@@ -1,6 +1,8 @@
 package SwordToOfferSolution._18_03_DeleteDuplicatedNodeII;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 /*
  * 删除链表中的重复节点Ⅱ
@@ -21,12 +23,17 @@ import java.util.HashSet;
  */
 public class Solution {
 
-    class ListNode {
-        int val;
-        ListNode next;
+    static class ListNode {
+        private int val;
+        private ListNode next;
 
-        ListNode(int val) {
+        private ListNode(int val) {
             this.val = val;
+        }
+
+        private ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
         }
     }
 
@@ -38,9 +45,7 @@ public class Solution {
 
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-
         ListNode pre = dummy;
-
         ListNode cur = head;
         HashSet<Integer> set = new HashSet<>();
 
@@ -77,5 +82,31 @@ public class Solution {
             cur1 = cur1.next;
         }
         return head;
+    }
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(1);
+
+        Solution solution = new Solution();
+        ListNode newListNode = solution.removeDuplicateNodes1(head);
+        System.out.println(printListNode(newListNode));
+    }
+
+    private static List<Integer> printListNode(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        List<Integer> ans = new ArrayList<>();
+        ListNode cur = head;
+        while (cur != null) {
+            ans.add(cur.val);
+            cur = cur.next;
+        }
+
+        return ans;
     }
 }

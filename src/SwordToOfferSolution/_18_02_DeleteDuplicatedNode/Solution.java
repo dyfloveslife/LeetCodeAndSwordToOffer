@@ -15,15 +15,26 @@ package SwordToOfferSolution._18_02_DeleteDuplicatedNode;
  * 3. 然后让节点 2 的 next 直接指向 4 即可。
  */
 public class Solution {
-    public class ListNode {
-        int val;
-        ListNode next;
+    public static class ListNode {
+        private int val;
+        private ListNode next;
 
-        ListNode(int val) {
+        private ListNode(int val) {
             this.val = val;
+        }
+
+        private ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
         }
     }
 
+    /**
+     * 使用两个指针
+     *
+     * @param head ListNode
+     * @return ListNode
+     */
     public ListNode deleteDuplication(ListNode head) {
         if (head == null || head.next == null) {
             return head;
@@ -33,12 +44,12 @@ public class Solution {
         // 这个 dummy 保证不会被删掉，这种情况下就可以不用管头节点有可能被删掉的情况了
         ListNode dummy = new ListNode(-1);
         dummy.next = head;
-        
+
         // 指向上一个有效的节点
         ListNode pre = dummy;
         // 从头节点开始遍历
         ListNode cur = head;
-        
+
         while (cur != null && cur.next != null) {
             if (cur.val == cur.next.val) {
                 // 如果相同，则后移 cur，直到 cur 和 cur.next 不同为止
@@ -55,6 +66,35 @@ public class Solution {
                 cur = cur.next;
             }
         }
+
+        return dummy.next;
+    }
+
+    /**
+     * 使用一个指针
+     *
+     * @param head ListNode
+     * @return ListNode
+     */
+    public ListNode deleteDuplication2(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode dummy = new ListNode(0, head);
+        ListNode cur = dummy;
+        while (cur.next != null && cur.next.next != null) {
+            if (cur.next.val == cur.next.next.val) {
+                int x = cur.next.val;
+                // 因为要删除重复的节点，所以需要从当前的第一个节点开始判断
+                while (cur.next != null && cur.next.val == x) {
+                    cur.next = cur.next.next;
+                }
+            } else {
+                cur = cur.next;
+            }
+        }
+
         return dummy.next;
     }
 }

@@ -20,7 +20,7 @@ package SwordToOfferSolution._18_01_DeleteNodeInList;
  * 11. 所以，如果给定的待删除节点是 ListNode 类型的，那么它的时间复杂度为 (O(1)*(n-1)+O(n))/n，是 O(1) 的。
  */
 public class Solution {
-    class ListNode {
+    static class ListNode {
         int val;
         ListNode next;
 
