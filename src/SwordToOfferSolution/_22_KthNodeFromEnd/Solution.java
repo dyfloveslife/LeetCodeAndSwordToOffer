@@ -14,11 +14,11 @@ package SwordToOfferSolution._22_KthNodeFromEnd;
  */
 public class Solution {
 
-    class ListNode {
-        int val;
-        ListNode next;
+    static class ListNode {
+        private int val;
+        private ListNode next;
 
-        ListNode(int val) {
+        private ListNode(int val) {
             this.val = val;
         }
     }
@@ -43,9 +43,9 @@ public class Solution {
                 return cur;
             }
         }
+
         return cur;
     }
-
 
     public ListNode findKthToTail(ListNode head, int k) {
         if (head == null || k == 0) {
@@ -65,6 +65,36 @@ public class Solution {
             fast = fast.next;
             slow = slow.next;
         }
+
         return slow;
+    }
+
+    public ListNode trainingPlan(ListNode head, int cnt) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode fast = head, slow = head;
+        for (int i = 0; i < cnt; i++) {
+            fast = fast.next;
+        }
+
+        while (fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
+    }
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        head.next = new ListNode(2);
+        head.next.next = new ListNode(3);
+        head.next.next.next = new ListNode(4);
+        head.next.next.next.next = new ListNode(5);
+
+        Solution solution = new Solution();
+        System.out.println(solution.trainingPlan(head, 2).val);
     }
 }

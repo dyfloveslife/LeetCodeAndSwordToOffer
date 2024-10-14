@@ -1,53 +1,39 @@
 package SwordToOfferSolution._23_EntryNodeInListLoop;
 
-/*
- * 循环链表中的入口节点
- *
+/**
+ * 环形链表
+ * <p>
  * 题目描述：
- * 一个链表中包含环，如何找出环的入口结点？
- *
+ * 给你一个链表的头节点 head ，判断链表中是否有环。
+ * <p>
  * 思路：
- * 1. 两个指针一个 fast、一个 slow 同时从一个链表的头部出发；
- * 2. fast 一次走 2 步，slow 一次走 1 步，如果该链表有环，两个指针必然在环内相遇；
- * 3. 此时只需要把其中的一个指针重新指向链表头部，另一个不变（还在环内）；
- * 4. 这次两个指针一次走一步，相遇的地方就是入口节点。
+ * 1、可以使用哈希表，在来到下一个节点的时候，判断是否已经出现过；
+ * 2、使用「龟兔赛跑」的思想，兔子先跑，乌龟在后，假设链表中存在环，那么兔子会一直处于环中，在某一个时间点，兔子和乌龟一定会相遇。
  */
-
 public class Solution {
-    class ListNode {
-        int val;
-        ListNode next = null;
+    static class ListNode {
+        private int val;
+        private ListNode next;
 
-        ListNode(int val) {
+        private ListNode(int val) {
             this.val = val;
         }
     }
 
-    public ListNode entryNodeInListLoop(ListNode pHead) {
-        if (pHead == null || pHead.next == null) {
-            return null;
+    public boolean hasCycle(ListNode head) {
+        if (head == null) {
+            return false;
         }
 
-        ListNode slowNode = pHead;
-        ListNode fastNode = pHead;
-        while (fastNode != null && fastNode.next != null) {
-            // 慢指针走一步，快指针走两步
-            slowNode = slowNode.next;
-            fastNode = fastNode.next.next;
-            // 如果两个指针相遇了，就让快指针重新指向链表头，然后和慢指针一起同速走
-            if (slowNode == fastNode) {
-                fastNode = pHead;
-                while (slowNode != fastNode) {
-                    slowNode = slowNode.next;
-                    fastNode = fastNode.next;
-                }
-            }
-            // 再次相遇的时候就是环入口
-            if (slowNode == fastNode) {
-                return fastNode;
+        ListNode slow = head, fast = head;
+        while (fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow) {
+                return true;
             }
         }
-        // 要是没有相遇，此链表没有环返回空
-        return null;
+
+        return false;
     }
 }

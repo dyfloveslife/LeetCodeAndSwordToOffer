@@ -31,6 +31,7 @@ public class Solution {
             while (left < right && nums[right] % 2 == 0) right--;
             swap(nums, left, right);
         }
+
         return nums;
     }
 
@@ -60,8 +61,9 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] nums = {1, 2, 3, 4};
+        int[] nums2 = {1, 2, 3, 4, 5};
 
         System.out.println(Arrays.toString(solution.exchange1(nums)));
-        System.out.println(Arrays.toString(solution.exchange2(nums)));
+        System.out.println(Arrays.toString(solution.exchange2(nums2)));
     }
 }
