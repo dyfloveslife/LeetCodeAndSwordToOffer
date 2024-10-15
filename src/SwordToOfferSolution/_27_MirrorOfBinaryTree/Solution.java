@@ -13,20 +13,25 @@ import java.util.Queue;
  * 0. 使用递归的方式；
  * 1. 前序遍历树中的每个节点，如果遍历到的节点有子节点，则交换两个子节点；
  * 2. 当交换完所有非叶节点的左右子节点的时候，就可以得到二叉树的镜像。
- * 3. 使用队列的方式， 套一个 BFS 的模板，然后在当前节点的左右孩子入队之前，交换当前出队节点的左右孩子。
+ * 3. 使用队列的方式，套一个 BFS 的模板，然后在当前节点的左右孩子入队之前，交换当前出队节点的左右孩子。
  */
 public class Solution {
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
+    static class TreeNode {
+        private int val;
+        private TreeNode left;
+        private TreeNode right;
 
-        TreeNode(int val) {
+        private TreeNode(int val) {
             this.val = val;
         }
     }
 
-    // 递归，先序遍历
+    /**
+     * 递归
+     *
+     * @param root TreeNode
+     * @return TreeNode
+     */
     public TreeNode mirrorTree(TreeNode root) {
         if (root == null) {
             return null;
@@ -42,7 +47,12 @@ public class Solution {
         return root;
     }
 
-    // 迭代
+    /**
+     * 迭代（队列）
+     *
+     * @param root TreeNode
+     * @return TreeNode
+     */
     public TreeNode mirrorTree2(TreeNode root) {
         if (root == null) {
             return null;
@@ -52,23 +62,20 @@ public class Solution {
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                // 每次从队列中拿出一个节点，并交换该节点的左右孩子
-                TreeNode node = queue.poll();
+            // 每次从队列中拿出一个节点，并交换这个节点的左右孩子
+            TreeNode tmp = queue.poll();
+            TreeNode left = tmp.left;
+            tmp.left = tmp.right;
+            tmp.right = left;
 
-                TreeNode temp = node.left;
-                node.left = node.right;
-                node.left = temp;
-
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
-                if (node.right != null) {
-                    queue.offer(node.right);
-                }
+            if (tmp.left != null) {
+                queue.offer(tmp.left);
+            }
+            if (tmp.right != null) {
+                queue.offer(tmp.right);
             }
         }
+
         return root;
     }
 }

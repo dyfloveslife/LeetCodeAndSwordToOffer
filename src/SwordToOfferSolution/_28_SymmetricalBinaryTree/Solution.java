@@ -28,28 +28,36 @@ import java.util.Queue;
  * 5. 最后将左节点的左孩子和右节点的右孩子放进队列，再将左节点的右孩子和右节点的左孩子放进队列。
  */
 public class Solution {
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
+    static class TreeNode {
+        private int val;
+        private TreeNode left;
+        private TreeNode right;
 
-        TreeNode(int val) {
+        private TreeNode(int val) {
             this.val = val;
         }
     }
 
-    // 递归
+    /**
+     * 递归
+     *
+     * @param root TreeNode
+     * @return boolean
+     */
     public boolean isSymmetrical(TreeNode root) {
         if (root == null) {
             return true;
         }
+
         return process(root.left, root.right);
     }
 
     private boolean process(TreeNode root1, TreeNode root2) {
+        // 如果两个指针都越过叶子节点，说明从顶到底都对称
         if (root1 == null && root2 == null) {
             return true;
         }
+        // 若只有一个越过叶子节点，说明不对称
         if (root1 == null || root2 == null) {
             return false;
         }
@@ -59,39 +67,43 @@ public class Solution {
         return process(root1.left, root2.right) && process(root1.right, root2.left);
     }
 
-    // BFS
-    public boolean isSymmetrical2(TreeNode root) {
+    /**
+     * 队列
+     *
+     * @param root TreeNode
+     * @return boolean
+     */
+    public boolean isSymmetrical3(TreeNode root) {
         if (root == null) {
             return true;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
         queue.offer(root.left);
         queue.offer(root.right);
 
         while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                // 从队列中取出两个节点，紧接着进行比较
-                TreeNode leftNode = queue.poll();
-                TreeNode rightNode = queue.poll();
-                if (leftNode == null && rightNode == null) {
-                    continue;
-                }
-                if (leftNode == null || rightNode == null) {
-                    return false;
-                }
-                if (leftNode.val != rightNode.val) {
-                    return false;
-                }
-
-                queue.offer(leftNode.left);
-                queue.offer(rightNode.right);
-
-                queue.offer(leftNode.right);
-                queue.offer(rightNode.left);
+            TreeNode left = queue.removeFirst();
+            TreeNode right = queue.removeFirst();
+            if (left == null && right == null) {
+                continue;
             }
+
+            if (left == null || right == null) {
+                return false;
+            }
+
+            if (left.val != right.val) {
+                return false;
+            }
+            // 根据对称的性质，放入对应节点
+            queue.offer(left.left);
+            queue.offer(right.right);
+
+            queue.offer(left.right);
+            queue.offer(right.left);
         }
+
         return true;
     }
 }

@@ -16,33 +16,31 @@ import java.util.Stack;
  *    否则重复压入 min 栈的栈顶；
  * 3. min 栈中的栈顶就是此时 data 栈中的最小元素；
  * 4. 弹出的时候，两个栈的栈顶都同时弹出。
+ * 5. 也就是说，stack1 存储所有元素，stack2 保存的是 stack1 中所有降序元素的子序列；
+ * 6. 入栈的时候，元素 x 先进入 stack1，然后判断 x 与 stack2.peek() 的大小，如果 x < stack2.peek()，则将 x 放入 stack2 中。
  */
 public class Solution {
 
-    class MainStack {
-
-        Stack<Integer> stack1;
-        Stack<Integer> stack2;
+    static class MainStack {
+        private Stack<Integer> stack1;
+        private Stack<Integer> stack2;
 
         public MainStack() {
-            stack1 = new Stack<>();
-            stack2 = new Stack<>();
+            this.stack1 = new Stack<>();
+            this.stack2 = new Stack<>();
         }
 
         public void push(int x) {
             stack1.push(x);
             // 如果辅助栈为空，或者新加入的元素比辅助栈的栈顶小，则将新加入的元素入辅助栈
-            if (stack2.isEmpty() || x < stack2.peek()) {
+            if (stack2.isEmpty() || x <= stack2.peek()) {
                 stack2.push(x);
-            // 如果新加入的元素比辅助栈的栈顶大，则将辅助栈的栈顶再次加入到辅助栈里面
-            } else {
-                stack2.push(stack2.peek());
             }
         }
 
         public void pop() {
-            if (!stack1.isEmpty() && !stack2.isEmpty()) {
-                stack1.pop();
+            // 保持 stack1 和 stack2 的元素一致性
+            if (stack1.pop().equals(stack2.peek())) {
                 stack2.pop();
             }
         }
