@@ -17,12 +17,12 @@ import java.util.Queue;
  * 3. 最后再将每个 ArrayList 添加到最终的结果 list 中进行返回。
  */
 public class Solution {
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
+    static class TreeNode {
+        private int val;
+        private TreeNode left;
+        private TreeNode right;
 
-        TreeNode(int val) {
+        private TreeNode(int val) {
             this.val = val;
         }
     }

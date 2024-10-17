@@ -1,6 +1,10 @@
 package SwordToOfferSolution._32_03_PrintTreesInZigzag;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 /*
  * 之字形打印二叉树（换行）
@@ -22,12 +26,12 @@ import java.util.*;
  * 使用 Collections.reverse(list) 将奇数行中的元素进行反转。
  */
 public class Solution {
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
+    static class TreeNode {
+        private int val;
+        private TreeNode left;
+        private TreeNode right;
 
-        TreeNode(int val) {
+        private TreeNode(int val) {
             this.val = val;
         }
     }
@@ -47,6 +51,9 @@ public class Solution {
             LinkedList<Integer> list = new LinkedList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
+                if (node == null) {
+                    continue;
+                }
                 // 将偶数行的每个元素都添加到队列的头部
                 if (ans.size() % 2 == 0) {
                     list.addLast(node.val);
@@ -81,6 +88,9 @@ public class Solution {
             List<Integer> list = new ArrayList<>();
             for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
+                if (node == null) {
+                    continue;
+                }
                 list.add(node.val);
                 if (node.left != null) {
                     queue.offer(node.left);

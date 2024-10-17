@@ -1,8 +1,8 @@
 package SwordToOfferSolution._34_PathInTree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 /*
  * 二叉树中和为某一值的路径
@@ -17,20 +17,20 @@ import java.util.Stack;
  * 3. 如果当前路径是从根节点到叶节点形成的路径并且各节点值的和等于目标值 sum，则将此路径加入到结果集中。
  */
 public class Solution {
-    class TreeNode {
-        int val;
-        TreeNode left = null;
-        TreeNode right = null;
+    static class TreeNode {
+        private int val;
+        private TreeNode left;
+        private TreeNode right;
 
-        TreeNode(int val) {
+        private TreeNode(int val) {
             this.val = val;
         }
     }
 
-    private List<ArrayList<Integer>> res = new ArrayList<>();
-    private List<Integer> path = new ArrayList<>();
+    private LinkedList<List<Integer>> res = new LinkedList<>();
+    private LinkedList<Integer> path = new LinkedList<>();
 
-    public List<ArrayList<Integer>> pathSum(TreeNode root, int sum) {
+    public List<List<Integer>> pathSum(TreeNode root, int sum) {
         if (root == null) {
             return res;
         }
@@ -56,7 +56,7 @@ public class Solution {
         dfs(root.right, target);
         // 在返回父节点之前，在路径上删除最后一个节点，遍历完一条路径要回退，即回溯
         // 能走到这一步，说明已经到了叶节点了，但路径和不等于 target，需要返回父节点
-        path.remove(path.size() - 1);
+        path.removeLast();
     }
 }
 

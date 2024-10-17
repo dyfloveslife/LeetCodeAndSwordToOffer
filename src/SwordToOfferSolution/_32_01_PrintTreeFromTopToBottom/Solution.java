@@ -18,17 +18,17 @@ import java.util.Queue;
  * 4. 如果队首元素为空则跳过，否则将队首元素的左右孩子加入到队列中。
  */
 public class Solution {
-    class TreeNode {
-        int val = 0;
-        TreeNode left = null;
-        TreeNode right = null;
+    static class TreeNode {
+        private int val;
+        private TreeNode left;
+        private TreeNode right;
 
-        TreeNode(int val) {
+        private TreeNode(int val) {
             this.val = val;
         }
     }
 
-    public int[] levelOrder1(TreeNode root) {
+    public int[] levelOrder(TreeNode root) {
         if (root == null) {
             return new int[0];
         }
@@ -37,44 +37,25 @@ public class Solution {
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
-                TreeNode node = queue.poll();
-                list.add(node.val);
-                if (node.left != null) {
-                    queue.offer(node.left);
-                }
-                if (node.right != null) {
-                    queue.offer(node.right);
-                }
+            TreeNode node = queue.poll();
+            if (node == null) {
+                continue;
+            }
+
+            list.add(node.val);
+            if (node.left != null) {
+                queue.offer(node.left);
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
             }
         }
+
         int[] res = new int[list.size()];
         for (int i = 0; i < res.length; i++) {
             res[i] = list.get(i);
         }
-        return res;
-    }
 
-    public ArrayList<Integer> levelOrder2(TreeNode root) {
-        Queue<TreeNode> queue = new LinkedList<>();
-        ArrayList<Integer> list = new ArrayList<>();
-        if (root == null) {
-            return list;
-        }
-        queue.offer(root);
-        while (!queue.isEmpty()) {
-            int count = queue.size();
-            while (count-- > 0) {
-                TreeNode node = queue.poll();
-                if (node == null) {
-                    continue;
-                }
-                list.add(node.val);
-                queue.offer(node.left);
-                queue.offer(node.right);
-            }
-        }
-        return list;
+        return res;
     }
 }
