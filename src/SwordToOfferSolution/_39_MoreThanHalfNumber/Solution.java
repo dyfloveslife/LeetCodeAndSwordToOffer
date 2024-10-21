@@ -1,6 +1,7 @@
 package SwordToOfferSolution._39_MoreThanHalfNumber;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /*
  * 数组中出现次数超过一半的数字
@@ -13,7 +14,7 @@ import java.util.HashMap;
  * 1. 将数组中的每个元素作为 key，出现的次数作为 value；
  * 2. 如果在统计的过程中，已经发现某个元素的出现次数已经超过了数组长度的一般，则提前返回即可。
  *
- * 思路：多数投票算法
+ * 思路：多数投票算法（摩尔投票法）
  * 1. 定义两个变量：一个是数组中的第一个数，另一个是出现的次数，初始值为 1；
  * 2. 从数组中第二个数开始，如果该数与之前保存的数相同，则计数器加 1；
  * 3. 如果下一个数与之前保存的数不同，则计数器减 1；
@@ -45,8 +46,11 @@ public class Solution {
     }
 
     public int majorityElement2(int[] nums) {
-        HashMap<Integer, Integer> map = new HashMap<>();
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
 
+        Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums) {
             if (map.containsKey(num)) {
                 map.put(num, map.getOrDefault(num, 0) + 1);
@@ -58,9 +62,9 @@ public class Solution {
                 return num;
             }
         }
+
         return 0;
     }
-
 
     public static void main(String[] args) {
         Solution solution = new Solution();

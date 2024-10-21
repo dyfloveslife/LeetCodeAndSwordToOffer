@@ -3,7 +3,10 @@ package SwordToOfferSolution._38_StringPermutation;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 /*
  * 字符串的排列 https://i.loli.net/2019/11/25/6qRl5XMgOAUcfmZ.png
@@ -95,7 +98,51 @@ public class Solution {
         }
     }
 
-    public static void swap(char[] ch, int i, int j) {
+    private List<String> ans = new LinkedList<>();
+    private char[] chars;
+
+    /**
+     * 递归 + 剪枝
+     *
+     * @param s String
+     * @return String[]
+     */
+    public String[] permutation3(String s) {
+        if (s == null || s.isEmpty()) {
+            return null;
+        }
+
+        chars = s.toCharArray();
+        myDFS(0);
+
+        return ans.toArray(new String[ans.size()]);
+    }
+
+    private void myDFS(int x) {
+        if (x == chars.length - 1) {
+            // 添加排列方案
+            ans.add(String.valueOf(chars));
+            return;
+        }
+
+        Set<Character> set = new HashSet<>();
+        for (int i = x; i < chars.length; i++) {
+            char c = chars[i];
+            // 剪枝
+            if (set.contains(c)) {
+                continue;
+            }
+
+            set.add(c);
+            // 交换，将 c 固定在 x 的位置
+            swap(chars, i, x);
+            myDFS(x + 1);
+            // 恢复
+            swap(chars, i, x);
+        }
+    }
+
+    private void swap(char[] ch, int i, int j) {
         char temp = ch[i];
         ch[i] = ch[j];
         ch[j] = temp;

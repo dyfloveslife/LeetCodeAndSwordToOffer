@@ -2,7 +2,6 @@ package SwordToOfferSolution._40_KLeastNumbers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /*
@@ -88,40 +87,30 @@ public class Solution {
 
     // 方法二
     public int[] getLeastNumbers2(int[] nums, int k) {
-        if (nums == null || k > nums.length || k <= 0) {
+        if (nums == null || nums.length == 0) {
             return new int[0];
         }
 
-        // 设置大顶堆
-        // PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> (o2 - o1));
-
-        // 若 o2 > o1，则返回正数；若 o2 < o1，则返回负数；否则返回 0
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
-            // 默认是小顶堆，如果要实现大顶堆，则需要翻转默认的排序器
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2.compareTo(o1);
-            }
-        });
-
-        // 如果容器中已有的数字小于 k 个的话，则直接将当前数字放入到容器中
-        for (int i = 0; i < nums.length; i++) {
-            if (maxHeap.size() < k) {
-                maxHeap.offer(nums[i]);
-                // 注意需要 continue
+        PriorityQueue<Integer> heapMax = new PriorityQueue<>((o1, o2) -> (o2 - o1));
+        for (int num : nums) {
+            if (heapMax.size() < k) {
+                heapMax.offer(num);
                 continue;
             }
-            if (nums[i] < maxHeap.peek()) {
-                maxHeap.poll();
-                maxHeap.offer(nums[i]);
+
+            if (!heapMax.isEmpty() && num < heapMax.peek()) {
+                heapMax.poll();
+                heapMax.offer(num);
             }
         }
 
-        int[] res = new int[maxHeap.size()];
-        for (int i = 0; i < res.length; i++) {
-            res[i] = maxHeap.poll();
+        int[] ans = new int[heapMax.size()];
+        int i = 0;
+        while (!heapMax.isEmpty()) {
+            ans[i++] = heapMax.poll();
         }
-        return res;
+
+        return ans;
     }
 
     public static void main(String[] args) {

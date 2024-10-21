@@ -36,13 +36,12 @@ public class Solution {
         }
     }
 
-//--------------------------先序遍历+递归-------------------------------------
-
     // 序列化：使用先序遍历，将二叉树序列化成字符串
     public String serialize1(TreeNode root) {
         if (root == null) {
             return "null";
         }
+
         StringBuilder sb = mySerialize(root, new StringBuilder());
         return sb.toString();
     }
@@ -80,8 +79,6 @@ public class Solution {
         root.right = myDeserialize(values);
         return root;
     }
-
-//--------------------------层次遍历+队列-------------------------------------
 
     public String serialize2(TreeNode root) {
         if (root == null) {
