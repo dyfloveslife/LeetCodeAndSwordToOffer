@@ -10,9 +10,16 @@ package SwordToOfferSolution._47_MaxValueOfGifts;
  *
  * 思路：经典 DP 问题
  * 1. 当前节点的最大总价值 = max(上面节点的最大总价值 + 左边节点的最大总价值) + 当前节点最大总价值；
- * 2. 第一行和第一列都要进行初始化。
+ * 2. 第一行和第一列都要进行初始化；
+ * 3. 由于每次计算只需要上一行的结果（也就是说只需要维护一行结果即可，之前是将所有行都计算出来），因此可以使用一维数组来存储。
  */
 public class Solution {
+    /**
+     * 时间复杂度 O(mn), 空间复杂度 O(mn)
+     *
+     * @param values int[][]
+     * @return int
+     */
     public int getMost1(int[][] values) {
         if (values == null || values.length == 0 || values[0].length == 0) {
             return 0;
@@ -34,10 +41,16 @@ public class Solution {
                 dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]) + values[i][j];
             }
         }
+
         return dp[n - 1][n - 1];
     }
 
-    // 优化后
+    /**
+     * 时间复杂度 O(mn), 空间复杂度 O(n)
+     *
+     * @param values int[][]
+     * @return int
+     */
     public int getMost2(int[][] values) {
         if (values == null || values.length == 0 || values[0].length == 0) {
             return 0;
@@ -52,6 +65,7 @@ public class Solution {
                 dp[j] = Math.max(dp[j], dp[j - 1]) + values[i - 1][j - 1];
             }
         }
+
         return dp[n];
     }
 

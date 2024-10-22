@@ -41,9 +41,9 @@ public class Solution {
                 left = mid + 1;
             }
         }
+
         return left;
     }
-
 
     public int missingNumber2(int[] nums) {
         if (nums == null || nums.length < 1) {

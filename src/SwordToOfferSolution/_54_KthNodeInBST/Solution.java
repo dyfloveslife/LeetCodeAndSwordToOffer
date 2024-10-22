@@ -50,7 +50,6 @@ public class Solution {
         return list.get(list.size() - k);
     }
 
-
     // 从大到小的第 k 个数，也就是第 k 大的节点
     // 所以使用右-根-左，根据 k 的值直接返回第 k 大的节点
     private int res = 0;
@@ -98,7 +97,6 @@ public class Solution {
         }
         return -1;
     }
-
 
     // 中序遍历（非递归-用栈实现）
     public TreeNode getKthNodeInBST(TreeNode root, int k) {

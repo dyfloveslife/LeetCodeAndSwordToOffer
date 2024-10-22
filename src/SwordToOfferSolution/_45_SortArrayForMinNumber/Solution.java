@@ -16,7 +16,7 @@ import java.util.Arrays;
  */
 public class Solution {
     public String minNumber(int[] nums) {
-        if (nums == null || nums.length < 0) {
+        if (nums == null || nums.length == 0) {
             return "";
         }
 
@@ -25,14 +25,7 @@ public class Solution {
             str[i] = String.valueOf(nums[i]);
         }
 
-         Arrays.sort(str, (o1, o2) -> (o1 + o2).compareTo(o2 + o1));
-//        Arrays.sort(str, new Comparator<String>() {
-//            @Override
-//            public int compare(String o1, String o2) {
-//                return (o1 + o2).compareTo(o2 + o1);
-//            }
-//        });
-
+        Arrays.sort(str, (o1, o2) -> (o1 + o2).compareTo(o2 + o1));
         StringBuilder sb = new StringBuilder();
         for (String s : str) {
             sb.append(s);
@@ -43,7 +36,7 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] nums = {3, 30, 34, 5, 9};
-        
+
         System.out.println(solution.minNumber(nums));
 
         String s1 = 123 + "" + 123;

@@ -78,6 +78,31 @@ public class Solution {
         return res;
     }
 
+    /**
+     * DP
+     * 时间复杂度 O(n)，空间复杂度 O(1)
+     *
+     * @param sales int[]
+     * @return int
+     */
+    public int maxSales(int[] sales) {
+        if (sales == null || sales.length == 0) {
+            return 0;
+        }
+
+        int ans = sales[0];
+        for (int i = 1; i < sales.length; i++) {
+            if (sales[i - 1] > 0) {
+                // 由于 dp[i] 只与 dp[i-1] 和 sales[i] 有关，
+                // 因此可以将 sales 看作 dp 数组，直接在 sales 上进行操作
+                sales[i] += sales[i - 1];
+            }
+
+            ans = Math.max(ans, sales[i]);
+        }
+
+        return ans;
+    }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
@@ -87,7 +112,12 @@ public class Solution {
         System.out.println(solution.maxSubArray1(nums1));
         System.out.println(solution.maxSubArray1(nums2));
 
+        System.out.println("---");
         System.out.println(solution.maxSubArray2(nums1));
         System.out.println(solution.maxSubArray2(nums2));
+
+        System.out.println("---");
+        System.out.println(solution.maxSales(nums1));
+        System.out.println(solution.maxSales(nums2));
     }
 }

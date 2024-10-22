@@ -36,7 +36,6 @@ public class Solution {
         if (firstPosition == -1) {
             return 0;
         }
-
         // 程序在执行到 getLastPosition() 方法之前，由于执行了 getFirstPosition() 方法，
         // 因此，说明 target 一定在 nums 中，所以不必再判断一次
         int lastPosition = getLastPosition(nums, target);
@@ -96,6 +95,69 @@ public class Solution {
         return left;
     }
 
+    /**
+     * 寻找左右边界的方式不同
+     *
+     * @param nums   int[]
+     * @param target int
+     * @return int
+     */
+    public int search2(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+
+        int leftIndex = findLeftBound(nums, target);
+        if (leftIndex == -1) {
+            return 0;
+        }
+
+        int rightIndex = findRightBound(nums, target);
+        return rightIndex - leftIndex + 1;
+    }
+
+    private int findLeftBound(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                // 如果 target 是第一个元素，或者它的前一个元素小于目标值
+                // 说明找到了 target 的左边界
+                if (mid == 0 || nums[mid - 1] < target) {
+                    return mid;
+                }
+                // 否则继续在左侧寻找
+                right = mid - 1;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+
+    private int findRightBound(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                if (mid == nums.length - 1 || nums[mid + 1] > target) {
+                    return mid;
+                }
+
+                left = mid + 1;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
+        return -1;
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
         int[] nums1 = {1, 2, 3, 3, 3, 3, 4, 5};
@@ -105,5 +167,10 @@ public class Solution {
         System.out.println(solution.search(nums1, 3));
         System.out.println(solution.search(nums2, 3));
         System.out.println(solution.search(nums3, 3));
+
+        System.out.println("---");
+        System.out.println(solution.search2(nums1, 3));
+        System.out.println(solution.search2(nums2, 3));
+        System.out.println(solution.search2(nums3, 3));
     }
 }

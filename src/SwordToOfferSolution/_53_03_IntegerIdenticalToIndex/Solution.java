@@ -38,6 +38,7 @@ public class Solution {
                 left = middle + 1;
             }
         }
+
         return -1;
     }
 

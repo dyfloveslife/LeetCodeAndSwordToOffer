@@ -1,7 +1,8 @@
 package SwordToOfferSolution._57_01_TwoNumbersWithSum;
 
 import java.util.Arrays;
-import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 /*
  * 和为 s 的两个数字
@@ -43,6 +44,7 @@ public class Solution {
                 right--;
             }
         }
+
         return new int[]{-1, -1};
     }
 
@@ -52,15 +54,15 @@ public class Solution {
             return new int[]{-1, -1};
         }
 
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Set<Integer> set = new HashSet<>();
         for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
+            set.add(num);
         }
 
-        for (int i = 0; i < nums.length; i++) {
-            int temp = target - nums[i];
-            if (map.containsKey(temp)) {
-                return new int[]{nums[i], temp};
+        for (int num : nums) {
+            int temp = target - num;
+            if (set.contains(temp)) {
+                return new int[]{num, temp};
             }
         }
         return new int[]{-1, -1};

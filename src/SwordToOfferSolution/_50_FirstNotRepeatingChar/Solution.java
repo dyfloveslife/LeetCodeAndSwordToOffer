@@ -20,7 +20,7 @@ package SwordToOfferSolution._50_FirstNotRepeatingChar;
 public class Solution {
 
     public char firstUniqChar1(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return ' ';
         }
 
@@ -39,7 +39,7 @@ public class Solution {
 
 
     public char firstUniqChar2(String str) {
-        if (str == null || str.length() == 0) {
+        if (str == null || str.isEmpty()) {
             return ' ';
         }
 

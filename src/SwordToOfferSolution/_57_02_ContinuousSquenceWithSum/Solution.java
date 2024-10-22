@@ -24,9 +24,7 @@ public class Solution {
 
         int left = 1;
         int right = 2;
-
         List<int[]> res = new ArrayList<>();
-
         while (left < right) {
             int curSum = (right - left + 1) * (left + right) >> 1;
             if (curSum == target) {
