@@ -17,8 +17,7 @@ import java.util.Set;
  * 3. 如果数组中非 0 数字重复出现，即牌中存在对子，则该数组不是连续的。
  *
  * 思路二：
- * 1、使用哈希表，本质上是需要找到数组中最大的数和最小的数，并且满足 max-min<5 即可；
- * 2、
+ * 1、使用哈希表，本质上是需要找到数组中最大的数和最小的数，并且满足 max-min<5 即可。
  */
 public class Solution {
     public boolean isContinuesCards(int[] nums) {
