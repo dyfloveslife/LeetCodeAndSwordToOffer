@@ -28,22 +28,23 @@ package SwordToOfferSolution._58_01_ReverseWordsInSentence;
  */
 public class Solution {
     public String reverseWords(String str) {
-        if (str == null || str.length() == 0) {
+        if (str == null || str.isEmpty()) {
             return "";
         }
 
         String[] strArr = str.split(" ");
         StringBuilder sb = new StringBuilder();
         for (int i = strArr.length - 1; i >= 0; i--) {
-            if (!strArr[i].equals("")) {
+            if (!strArr[i].isEmpty()) {
                 sb.append(strArr[i]).append(" ");
             }
         }
+
         return sb.toString().trim();
     }
 
     public String reverseWords2(String str) {
-        if (str == null || str.length() == 0) {
+        if (str == null || str.isEmpty()) {
             return "";
         }
 
@@ -76,7 +77,7 @@ public class Solution {
 
         System.out.println(solution.reverseWords(str1));
         System.out.println(solution.reverseWords(str2));
-        System.out.println("===============");
+        System.out.println("===");
 
         System.out.println(solution.reverseWords2(str1));
         System.out.println(solution.reverseWords2(str2));

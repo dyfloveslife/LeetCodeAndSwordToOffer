@@ -34,7 +34,7 @@ public class Solution {
         int[] ans = new int[n - k + 1];
         Deque<Integer> deque = new LinkedList<>();
         for (int i = 0; i < n; i++) {
-            // 当双端队列为空，并且双端队列尾部的元素比当前元素小或相等的话，则尾部的元素全部弹出
+            // 当双端队列不为空，并且双端队列尾部的元素比当前元素小或相等的话，则尾部的元素全部弹出
             while (!deque.isEmpty() && nums[deque.peekLast()] <= nums[i]) {
                 deque.pollLast();
             }

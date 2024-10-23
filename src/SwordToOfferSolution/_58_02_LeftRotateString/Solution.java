@@ -16,9 +16,10 @@ package SwordToOfferSolution._58_02_LeftRotateString;
 public class Solution {
 
     public String reverseLeftWords(String s, int n) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return "";
         }
+
         StringBuilder sb = new StringBuilder();
         sb.append(s.substring(n, s.length())).append(s.substring(0, n));
 
@@ -26,7 +27,7 @@ public class Solution {
     }
 
     public String leftRotateString(String str, int n) {
-        if (str == null || str.length() < 1) {
+        if (str == null || str.isEmpty()) {
             return "";
         }
 

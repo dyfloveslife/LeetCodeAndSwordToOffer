@@ -21,7 +21,6 @@ import java.util.List;
  */
 public class Solution {
     public int[][] findContinuousSequence(int target) {
-
         int left = 1;
         int right = 2;
         List<int[]> res = new ArrayList<>();
