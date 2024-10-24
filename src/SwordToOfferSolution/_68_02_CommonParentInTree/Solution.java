@@ -68,10 +68,10 @@ package SwordToOfferSolution._68_02_CommonParentInTree;
  * 2. 具体流程：https://i.loli.net/2020/05/10/hVgcGXwqMBojNRE.png
  */
 public class Solution {
-    class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
+    static class TreeNode {
+        private int val;
+        private TreeNode left;
+        private TreeNode right;
 
         TreeNode(int val) {
             this.val = val;

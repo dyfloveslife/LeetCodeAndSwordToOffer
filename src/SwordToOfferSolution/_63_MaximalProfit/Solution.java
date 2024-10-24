@@ -46,15 +46,15 @@ public class Solution {
 
         int min = Integer.MAX_VALUE;
         int res = 0;
-        for (int i = 1; i < prices.length; i++) {
+        for (int price : prices) {
             // 这里不断更新最小值，在遍历到第 i 个数的时候，需要将之前的最小值（min）与当前第 i 个数比较，取两者最小的
-            if (prices[i] < min) {
-                min = prices[i];
+            if (price < min) {
+                min = price;
             }
 
             // 这里不断更新最大利润，由于之前已经在 prices[i] 和 min 中找到了最小值，则 prices[i]-min 一定是 ≥0 的
             // 由于这里的 prices[i] 代表当前最大卖出价格，所以减去之前的 min 就相当于找到了最大差值
-            res = Math.max(res, prices[i] - min);
+            res = Math.max(res, price - min);
         }
 
         return res;

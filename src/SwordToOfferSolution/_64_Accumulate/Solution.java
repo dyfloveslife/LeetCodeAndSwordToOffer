@@ -1,7 +1,5 @@
 package SwordToOfferSolution._64_Accumulate;
 
-import com.sun.corba.se.impl.oa.poa.AOMEntry;
-
 /*
  * 求 1+2+…+n
  *
