@@ -86,6 +86,7 @@ public class Solution {
                 if (nums[i] == nums[nums[i]]) {
                     return nums[i];
                 }
+
                 swap(nums, nums[i], nums[nums[i]]);
             }
         }
