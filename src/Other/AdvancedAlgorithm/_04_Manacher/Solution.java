@@ -29,6 +29,7 @@ package Other.AdvancedAlgorithm._04_Manacher;
  * 思路三：Manacher
  * 1. 该算法解决的问题是：在一个字符串中找到最长的回文子串；
  * 2. 详见脑图。
+ * 3. https://sm.ms/image/WQlH76hBJtmTcLR
  */
 public class Solution {
     // 思路一
@@ -106,7 +107,7 @@ public class Solution {
 
     // 思路三
     public int longestPalindrome3(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return 0;
         }
 
@@ -138,16 +139,67 @@ public class Solution {
             }
             max = Math.max(max, pArr[i]);
         }
+
         return max - 1;
     }
 
+    /**
+     * 求最长回文子串的长度
+     *
+     * @param s String
+     * @return int
+     */
+    public int longestPalindrome4(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        char[] chars = manacherString(s);
+        int n = chars.length;
+        // 回文半径数组
+        int[] pArr = new int[n];
+        // 最长回文子串的长度
+        int max = 0;
+        // c 表示回文中心，r 表示回文覆盖最右边界的下一个位置
+        // len 表示当来到 i 位置的时候，以 chars[i] 元素为中心的最长回文子串的长度
+        for (int i = 0, c = 0, r = 0, len; i < n; i++) {
+            // r > i 表示 i 被 r 包住了
+            // pArr[2 * c - i] 以 i 位置为对称点的回文半径，并且对称点的回文半径在大回文区域以内
+            // r - i 表示对称点的回文半径在大回文区域以外
+            len = r > i ? Math.min(pArr[2 * c - i], r - i) : 1;
+
+            // 继续向两边扩展
+            while (i + len < n && i - len >= 0 && chars[i + len] == chars[i - len]) {
+                len++;
+            }
+            // 向两边扩展后，考察是否覆盖了最右边界的下一个位置
+            if (i + len > r) {
+                // 向右扩展回文边界
+                r = i + len;
+                // 更新新的回文中心
+                c = i;
+            }
+            max = Math.max(max, len);
+            pArr[i] = len;
+        }
+
+        return max - 1;
+    }
+
+    /**
+     * 将字符 '#' 插入到字符串 s 中
+     *
+     * @param s String
+     * @return char[]
+     */
     private char[] manacherString(String s) {
         char[] chars = s.toCharArray();
         char[] res = new char[s.length() * 2 + 1];
-        int C = 0;
+        int index = 0;
         for (int i = 0; i != res.length; i++) {
-            res[i] = (i & 1) == 0 ? '#' : chars[C++];
+            res[i] = (i & 1) == 0 ? '#' : chars[index++];
         }
+
         return res;
     }
 
@@ -170,5 +222,10 @@ public class Solution {
         System.out.println(solution.longestPalindrome3(s1));
         System.out.println(solution.longestPalindrome3(s2));
         System.out.println(solution.longestPalindrome3(s3));
+        System.out.println("===");
+
+        System.out.println(solution.longestPalindrome4(s1));
+        System.out.println(solution.longestPalindrome4(s2));
+        System.out.println(solution.longestPalindrome4(s3));
     }
 }

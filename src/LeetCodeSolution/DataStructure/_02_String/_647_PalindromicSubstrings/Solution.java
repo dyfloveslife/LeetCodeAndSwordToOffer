@@ -22,7 +22,7 @@ package LeetCodeSolution.DataStructure._02_String._647_PalindromicSubstrings;
  */
 public class Solution {
     public int countSubstrings1(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return 0;
         }
 
@@ -35,6 +35,7 @@ public class Solution {
                 }
             }
         }
+
         return res;
     }
 
@@ -50,7 +51,7 @@ public class Solution {
     }
 
     public int countSubstrings2(String s) {
-        if (s == null || s.length() == 0) {
+        if (s == null || s.isEmpty()) {
             return 0;
         }
 
@@ -76,6 +77,60 @@ public class Solution {
                 }
             }
         }
+
+        return res;
+    }
+
+    /**
+     * Manacher
+     *
+     * @param s String
+     * @return int
+     */
+    public int countSubstrings3(String s) {
+        if (s == null || s.isEmpty()) {
+            return 0;
+        }
+
+        char[] chars = manacherString(s);
+        int n = chars.length;
+        int[] pArr = new int[n];
+        int max = 0;
+        for (int i = 0, c = 0, r = 0, len; i < n; i++) {
+            len = r > i ? Math.min(pArr[2 * c - i], r - i) : 1;
+            while (i + len < n && i - len >= 0 && chars[i + len] == chars[i - len]) {
+                len++;
+            }
+            if (i + len > r) {
+                r = i + len;
+                c = i;
+            }
+            max = Math.max(max, len);
+            pArr[i] = len;
+        }
+
+        int ans = 0;
+        for (int num : pArr) {
+            ans += num / 2;
+        }
+
+        return ans;
+    }
+
+    /**
+     * 将字符 '#' 插入到字符串 s 中
+     *
+     * @param s String
+     * @return char[]
+     */
+    private char[] manacherString(String s) {
+        char[] chars = s.toCharArray();
+        char[] res = new char[s.length() * 2 + 1];
+        int index = 0;
+        for (int i = 0; i != res.length; i++) {
+            res[i] = (i & 1) == 0 ? '#' : chars[index++];
+        }
+
         return res;
     }
 
@@ -90,5 +145,9 @@ public class Solution {
 
         System.out.println(solution.countSubstrings2(s1));
         System.out.println(solution.countSubstrings2(s2));
+        System.out.println("--");
+
+        System.out.println(solution.countSubstrings3(s1));
+        System.out.println(solution.countSubstrings3(s2));
     }
 }
