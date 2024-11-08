@@ -24,6 +24,9 @@ import java.util.Queue;
  *
  * 思路三：反转 list
  * 使用 Collections.reverse(list) 将奇数行中的元素进行反转。
+ *
+ * 思路四：
+ * 1、可以使用一个布尔值，来控制遍历的方向。
  */
 public class Solution {
     static class TreeNode {
@@ -104,6 +107,46 @@ public class Solution {
             }
             ans.add(list);
         }
+        return ans;
+    }
+
+    /**
+     * 双端队列 + 布尔标识
+     *
+     * @param root TreeNode
+     * @return {@link List}<{@link List}<{@link Integer}>>
+     */
+    public List<List<Integer>> levelOrder4(TreeNode root) {
+        List<List<Integer>> ans = new ArrayList<>();
+        if (root == null) {
+            return ans;
+        }
+
+        boolean isLeftToRight = true;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            LinkedList<Integer> tmp = new LinkedList<>();
+            // 处理当前层的所有节点
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+                if (isLeftToRight) {
+                    tmp.addLast(node.val);
+                } else {
+                    tmp.addFirst(node.val);
+                }
+                if (node.left != null) {
+                    queue.offer(node.left);
+                }
+                if (node.right != null) {
+                    queue.offer(node.right);
+                }
+            }
+            ans.add(tmp);
+            isLeftToRight = !isLeftToRight;
+        }
+
         return ans;
     }
 }

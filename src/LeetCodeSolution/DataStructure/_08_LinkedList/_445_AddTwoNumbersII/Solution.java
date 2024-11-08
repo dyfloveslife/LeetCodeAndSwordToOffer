@@ -19,75 +19,77 @@ import java.util.Stack;
  * 4. 每次弹栈的时候，就相当于取了最后一个节点，然后每得到一个值（节点），就使用头插法往前插入即可。
  */
 public class Solution {
-    class ListNode {
-        int val;
-        ListNode next;
+    static class ListNode {
+        private int val;
+        private ListNode next;
 
-        ListNode(int val) {
+        private ListNode(int val) {
             this.val = val;
         }
     }
 
-    // 不对链表进行修改，而是使用栈
+    /**
+     * 使用两个栈
+     *
+     * @param l1 ListNode
+     * @param l2 ListNode
+     * @return ListNode
+     */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        if (l1 == null || l2 == null) {
-            return null;
-        }
-
         Stack<Integer> s1 = new Stack<>();
         Stack<Integer> s2 = new Stack<>();
 
-        while (l1 != null) {
-            s1.push(l1.val);
-            l1 = l1.next;
+        ListNode cur = l1;
+        while (cur != null) {
+            s1.push(cur.val);
+            cur = cur.next;
         }
-        while (l2 != null) {
-            s2.push(l2.val);
-            l2 = l2.next;
+        cur = l2;
+        while (cur != null) {
+            s2.push(cur.val);
+            cur = cur.next;
         }
 
+        // 结果链表的头节点
         ListNode head = null;
         int carry = 0;
-        while (!s1.isEmpty()|| !s2.isEmpty()) {
+        while (!s1.isEmpty() || !s2.isEmpty() || carry > 0) {
             int n1 = !s1.isEmpty() ? s1.pop() : 0;
             int n2 = !s2.isEmpty() ? s2.pop() : 0;
             int sum = n1 + n2 + carry;
             carry = sum / 10;
-            sum = sum % 10;
 
             // 头插法
-            ListNode node = new ListNode(sum);
+            ListNode node = new ListNode(sum % 10);
             node.next = head;
             head = node;
         }
-        if (carry == 1) {
-            ListNode node = new ListNode(1);
-            node.next = head;
-            head = node;
-        }
+
         return head;
     }
 
-    // 如果可以对原链表进行反转的话
+    /**
+     * 通过反转链表实现
+     *
+     * @param l1 ListNode
+     * @param l2 ListNode
+     * @return ListNode
+     */
     public ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
-        if (l1 == null || l2 == null) {
-            return null;
-        }
         l1 = reverseList(l1);
         l2 = reverseList(l2);
 
-        ListNode dummy = new ListNode(-1);
-        ListNode pre = dummy;
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
         int carry = 0;
-        while (l1 != null || l2 != null) {
+        while (l1 != null || l2 != null || carry != 0) {
             int n1 = (l1 != null) ? l1.val : 0;
             int n2 = (l2 != null) ? l2.val : 0;
             int sum = n1 + n2 + carry;
             carry = sum / 10;
-            sum = sum % 10;
 
-            pre.next = new ListNode(sum);
-            pre = pre.next;
+            cur.next = new ListNode(sum % 10);
+            cur = cur.next;
 
             if (l1 != null) {
                 l1 = l1.next;
@@ -96,28 +98,65 @@ public class Solution {
                 l2 = l2.next;
             }
         }
-        if (carry == 1) {
-            pre.next = new ListNode(1);
-        }
-        // 最后记得再将链表反转一次
+
         return reverseList(dummy.next);
     }
 
-    // 单纯的反转链表
+    /**
+     * 直接在 while 中使用头插法
+     *
+     * @param l1 ListNode
+     * @param l2 ListNode
+     * @return ListNode
+     */
+    public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
+        l1 = reverseList(l1);
+        l2 = reverseList(l2);
+
+        ListNode result = null;
+        int carry = 0;
+        while (l1 != null || l2 != null || carry != 0) {
+            int n1 = (l1 != null) ? l1.val : 0;
+            int n2 = (l2 != null) ? l2.val : 0;
+            int sum = n1 + n2 + carry;
+            carry = sum / 10;
+
+            ListNode newNode = new ListNode(sum % 10);
+            // 头插法
+            newNode.next = result;
+            result = newNode;
+            if (l1 != null) {
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                l2 = l2.next;
+            }
+        }
+
+        return result;
+    }
+
+    /**
+     * 迭代式反转单链表
+     *
+     * @param head ListNode
+     * @return ListNode
+     */
     private ListNode reverseList(ListNode head) {
         if (head == null) {
             return null;
         }
 
-        ListNode dummy = null;
-        ListNode pre = dummy;
-
+        ListNode pre = null;
         ListNode cur = head;
         while (cur != null) {
-            ListNode nex = cur.next;
+            // 保存当前节点的下一个节点
+            ListNode next = cur.next;
+            // 修改当前节点的 next 指针
             cur.next = pre;
+            // 后移
             pre = cur;
-            cur = nex;
+            cur = next;
         }
 
         return pre;
