@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class Solution {
 
-    public static List<List<Integer>> permuteUnique(int[] nums) {
+    public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         if (nums == null || nums.length == 0) {
             return res;
@@ -27,11 +27,11 @@ public class Solution {
 
         boolean[] visited = new boolean[nums.length];
         List<Integer> path = new ArrayList<>();
-        dfs(res, path, visited, nums);
+        backtrack(res, path, visited, nums);
         return res;
     }
 
-    public static void dfs(List<List<Integer>> res, List<Integer> path, boolean[] visited, int[] nums) {
+    private void backtrack(List<List<Integer>> res, List<Integer> path, boolean[] visited, int[] nums) {
         if (path.size() == nums.length) {
             res.add(new ArrayList<>(path));
             return;
@@ -42,13 +42,13 @@ public class Solution {
                 continue;
             }
             // 去重
-            if (i > 0 && nums[i] == nums[i - 1] && visited[i - 1] == false) {
+            if (i > 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {
                 continue;
             }
 
             visited[i] = true;
             path.add(nums[i]);
-            dfs(res, path, visited, nums);
+            backtrack(res, path, visited, nums);
             path.remove(path.size() - 1);
             visited[i] = false;
         }
@@ -56,6 +56,8 @@ public class Solution {
 
     public static void main(String[] args) {
         int[] nums = {1, 1, 2};
-        System.out.println(permuteUnique(nums));
+
+        Solution solution = new Solution();
+        System.out.println(solution.permuteUnique(nums));
     }
 }

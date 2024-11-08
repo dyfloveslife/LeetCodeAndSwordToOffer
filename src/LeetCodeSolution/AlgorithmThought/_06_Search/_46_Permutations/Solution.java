@@ -14,86 +14,60 @@ import java.util.List;
  * 1. 回溯+递归；
  * 2. 回溯模板：
  *    result = []
- *    def backtrack(路径, 选择列表):
- *        if  满足结束条件:
- *            result.add(路径)
- *            return
- *
- *        for 选择 in 选择列表:
- *            做选择
- *            backtrack(路径, 选择列表)
- *            撤销选择
- * 3. 核心在于：主需要在递归之前做选择，而在递归之后撤销选择；
+ *    做选择：result.add(...)
+ *    递归：backtrack(...)
+ *    撤销选择：result.remove(...)
+ * 3. 核心在于：需要在递归之前做选择，而在递归之后撤销选择；
  * 4. 对于 abcd 来说，首先可以选择 abcd，然后回溯为 abc_，由于 d 已经被选择过了，以此再次回溯成 ab_ _，
  *    此时可以进一步选择为 abdc。这就是回溯的过程。
  */
 public class Solution {
 
-    // 也可以使用一个 boolean 数组保存是否已经访问过当前节点
-    public static List<List<Integer>> permute1(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
+    private List<List<Integer>> ans = new ArrayList<>();
+    private List<Integer> path = new ArrayList<>();
+    private boolean[] used;
+
+    public List<List<Integer>> permute(int[] nums) {
         if (nums == null || nums.length == 0) {
-            return res;
+            return ans;
         }
 
-        List<Integer> path = new ArrayList<>();
-        boolean[] visited = new boolean[nums.length];
-        dfs1(res, path, visited, nums);
-        return res;
+        used = new boolean[nums.length];
+        backtrack(nums);
+        return ans;
     }
 
-    private static void dfs1(List<List<Integer>> res, List<Integer> path, boolean[] visited, int[] nums) {
+    private void backtrack(int[] nums) {
+        // 找到一个排列
         if (path.size() == nums.length) {
-            res.add(new ArrayList<>(path));
-            return;
-        }
-        for (int i = 0; i < nums.length; i++) {
-            if (visited[i]) {
-                continue;
-            }
-            visited[i] = true;
-            path.add(nums[i]);
-            dfs1(res, path, visited, nums);
-            path.remove(path.size() - 1);
-            visited[i] = false;
-        }
-    }
-
-
-    // 普通的
-    public static List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> res = new ArrayList<>();
-        if (nums == null || nums.length == 0) {
-            return res;
-        }
-
-        List<Integer> path = new ArrayList<>();
-        dfs(res, path, nums);
-        return res;
-    }
-
-    private static void dfs(List<List<Integer>> res, List<Integer> path, int[] nums) {
-        if (path.size() == nums.length) {
-            res.add(new ArrayList<>(path));
+            ans.add(new ArrayList<>(path));
             return;
         }
 
+        // 尝试每个数字
         for (int i = 0; i < nums.length; i++) {
-            // 排除不合法的选择
-            if (path.contains(nums[i])) {
+            // 如果已经使用过该数字，则跳过
+            if (used[i]) {
                 continue;
             }
+
+            used[i] = true;
             // 做选择
             path.add(nums[i]);
-            // 进入下一层决策树
-            dfs(res, path, nums);
+            // 递归
+            backtrack(nums);
             // 撤销选择
             path.remove(path.size() - 1);
+            used[i] = false;
         }
     }
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3};
-        System.out.println(permute1(nums));
+        int[] nums1 = {1, 2, 3};
+        int[] nums2 = {0, 1};
+        int[] nums3 = {1};
+
+        Solution solution = new Solution();
+        System.out.println(solution.permute(nums1));
     }
 }
